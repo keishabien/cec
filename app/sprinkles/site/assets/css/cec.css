@@ -15,10 +15,28 @@ body {
 }
 
 /* bootstrap overrides */
+.form-control {
+    border-color: #bbbcbc;
+}
 .form-control:focus {
     color: #575757;
     background-color: #fff;
     border-color: #034638;
     outline: 0;
     box-shadow: 0 0 2px 0.1rem rgba(0,105,83,.25);
+}
+
+.btn-outline-orange {
+    color: #575757;
+    background-color: transparent;
+    background-image: none;
+    border-color: #bbbcbc;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+.btn-outline-orange:hover {
+    color: #fff;
+    background-color: #f8971d;
+    border-color: #f8971d;
 }
