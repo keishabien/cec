@@ -127,10 +127,11 @@
     </div>
     <div class="col-2">
         <form class="float-right logout" method="post" action="">
-            <button class="btn btn-outline-orange" type="submit" id="logout" value="logout" name="logout">
-                Log Out
-                <i class="fas fa-sign-out-alt"></i>
-            </button>
+            {#<button class="btn btn-outline-orange" type="submit" id="logout" value="logout" name="logout">#}
+                {#Log Out#}
+                {#<i class="fas fa-sign-out-alt"></i>#}
+            {#</button>#}
+            <a href="{{site.uri.public}}/account/logout" class="btn btn-default btn-flat">{{translate("LOGOUT")}}</a>
             <!--                <input id="logout" name="logout" type="submit" value="Log Out">-->
             <!--                <i class="fas fa-sign-out-alt"></i>-->
         </form>
