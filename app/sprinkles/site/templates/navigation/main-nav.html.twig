@@ -74,66 +74,91 @@
 {#</nav>#}
 
 
-
-<div class="row nav">
-    <div class="col-1">
-        <a href="/">
-            <img src="https://www.meritdental.com/wp-content/themes/midwest-2016/images/MidwestDental_logo.png"
-                 alt="logo" class="logo">
-        </a>
-    </div>
-    <div class="col-7">
-
-        <form id="searchAll" action="/results.php" method="GET">
-            <div class="input-group">
-
-                <input type="text" class="search form-control" placeholder="search by zip, office name or doctor"
-                       aria-label="search by zip, office name or doctor" aria-describedby="button-addon2"
-                       name="location_name">
-
-                <div class="input-group-append">
-                    <button class="btn btn-outline-orange" type="submit" id="button-addon2" value="search" name="submit">
-                        <i class="fas fa-search"></i>
+<div class="container">
+    <div class="row nav">
+        <div class="col-sm-1 no-l-pad">
+            <a href="{{ site.uri.public }}">
+                <img src="https://www.meritdental.com/wp-content/themes/midwest-2016/images/MidwestDental_logo.png"
+                     alt="logo" class="logo">
+            </a>
+        </div>
+        <div class="col-sm-7">
+            <form id="searchAll" action="/results.php" method="GET" class="navbar-form">
+                <div class="form-group">
+                    <input type="text" class="search form-control" placeholder="search by zip, office name or doctor"
+                           aria-label="search by zip, office name or doctor" aria-describedby="button-addon2"
+                           name="location_name">
+                    <button class="btn btn-outline-orange" type="submit" id="button-addon2" value="search"
+                            name="submit">
+                        <i class="fa fa-search"></i>
                     </button>
                 </div>
-            </div>
+            </form>
+        </div>
+        <div class="col-sm-2">
+            <ul class="menu">
+                <li class="dropdown">
+                    <a href="#" id="forms" class="dropdown-toggle btn btn-default btn-flat" data-toggle="dropdown"
+                       role="button"
+                       aria-haspopup="true" aria-expanded="false">Forms <i class="fa fa-angle-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="https://meritdental.com/wp-content/uploads/2017/04/Common-Treatment-Plan-Codes-01-30-2018.pdf"
+                               target="_blank">
+                                Common Treatment Plan Codes <i class="fa fa-external-link-alt"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://meritdental.com/wp-content/uploads/2017/04/CEC-QA-Form-04-25-2017.pdf"
+                               target="_blank">
+                                CEC QA Form <i class="fa fa-external-link-alt"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://meritdental.com/wp-content/uploads/2017/04/Meeting-Agendas.docx"
+                               target="_blank">
+                                Meeting Agendas <i class="fa fa-external-link-alt"></i></a>
+                        </li>
+                        <li>
+                            <a href="/update/" target="_blank">CEC UPDATE <i class="fa fa-external-link-alt"></i></a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
 
-        </form>
-    </div>
-    <div class="col-2">
-        <ul class="menu">
-            <li>
-                <a href="#" id="forms">Forms <i class="fas fa-angle-down"></i></a>
-                <ul class="menu-content">
-                    <li>
-                        <a href="https://meritdental.com/wp-content/uploads/2017/04/Common-Treatment-Plan-Codes-01-30-2018.pdf" target="_blank">
-                            Common Treatment Plan Codes <i class="fas fa-external-link-alt"></i></a>
-                    </li>
-                    <li>
-                        <a href="https://meritdental.com/wp-content/uploads/2017/04/CEC-QA-Form-04-25-2017.pdf" target="_blank">
-                            CEC QA Form <i class="fas fa-external-link-alt"></i></a>
-                    </li>
-                    <li>
-                        <a href="https://meritdental.com/wp-content/uploads/2017/04/Meeting-Agendas.docx" target="_blank">
-                            Meeting Agendas <i class="fas fa-external-link-alt"></i></a>
-                    </li>
-                    <li>
-                        <a href="/update/" target="_blank">CEC UPDATE <i class="fas fa-external-link-alt"></i></a>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-
-    </div>
-    <div class="col-2">
-        <form class="float-right logout" method="post" action="">
-            {#<button class="btn btn-outline-orange" type="submit" id="logout" value="logout" name="logout">#}
+        </div>
+        <div class="col-sm-1 pull-right">
+            <form class="logout pull-right" method="post" action="">
+                {#<button class="btn btn-outline-orange" type="submit" id="logout" value="logout" name="logout">#}
                 {#Log Out#}
                 {#<i class="fas fa-sign-out-alt"></i>#}
-            {#</button>#}
-            <a href="{{site.uri.public}}/account/logout" class="btn btn-default btn-flat">{{translate("LOGOUT")}}</a>
-            <!--                <input id="logout" name="logout" type="submit" value="Log Out">-->
-            <!--                <i class="fas fa-sign-out-alt"></i>-->
-        </form>
+                {#</button>#}
+
+                {#<a href="{{ site.uri.public }}/account/logout"#}
+                {#class="btn btn-default btn-flat">{{ translate("LOGOUT") }}</a>#}
+                <!--                <input id="logout" name="logout" type="submit" value="Log Out">-->
+                <!--                <i class="fas fa-sign-out-alt"></i>-->
+
+
+            </form>
+        </div>
+
+
+        <!-- /.navbar-collapse -->
+        <!-- Navbar Right Menu -->
+        <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+                {% block secondary_nav %}
+                    {% if not checkAuthenticated() %}
+                        <li>
+                            <a href="{{ site.uri.public }}/account/sign-in"
+                               class="nav-highlight">{{ translate("SIGNIN") }}</a>
+                        </li>
+                    {% else %}
+                        {% include "navigation/user-card.html.twig" %}
+                    {% endif %}
+                {% endblock %}
+            </ul>
+        </div>
+        <!-- /.navbar-custom-menu -->
+
     </div>
 </div>
