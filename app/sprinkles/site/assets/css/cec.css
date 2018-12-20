@@ -4,6 +4,18 @@ body {
     font-size: 14px;
     color: #575757;
 }
+
+.login-page,
+.register-page {
+    background-color: #FFF;
+    margin: 7% auto;
+}
+.login-box, .register-box {
+    width: 360px;
+    margin: 0 auto;
+    border: 1px solid #bbbcbc;
+}
+
 .content-wrapper, .right-side {
     background-color: #FFF;
 }
@@ -12,6 +24,30 @@ body {
 .main-header .logo {
     height: 30px;
     width: auto;
+}
+.nav {
+    padding: 10px 0;
+}
+.navbar-form {
+    margin: 0;
+}
+.search {
+    min-width: 450px;
+}
+
+/* breadcrumb */
+.breadcrumb {
+    padding: 0;
+    margin-bottom: 10px;
+    list-style: none;
+    background-color: transparent;
+    border-radius: 0;
+    font-size: 12px;
+}
+.breadcrumb > li > a {
+    color: #444;
+    text-decoration: none;
+    display: inline-block;
 }
 
 /* bootstrap overrides */
@@ -40,6 +76,14 @@ body {
     background-color: #f8971d;
     border-color: #f8971d;
 }
+.btn-outline-orange[type="submit"]{
+    margin-left: -3px;
+}
+
+.nav ul {
+    list-style-type: none;
+    padding: 0;
+}
 
 /* form group icon realign */
 .form-group {
@@ -60,4 +104,15 @@ body {
     line-height: 34px;
     text-align: center;
     pointer-events: none;
+}
+
+/* other overrides */
+
+.content-header {
+    padding: 0;
+}
+
+/* paddings */
+.no-l-pad {
+    padding-left: 0;
 }

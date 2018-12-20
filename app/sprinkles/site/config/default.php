@@ -15,7 +15,8 @@ return [
     ],
     'site' => [
         'author'    =>      'Keisha Bien',
-        'title'     =>      'CEC'
+        'title'     =>      'CEC',
+        'logo'      =>      'assets/images/login_cec.jpg'
     ],
     'php' => [
         'timezone' => 'America/Chicago'

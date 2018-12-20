@@ -10,12 +10,13 @@
 {% endblock %}
 
 {% block content %}
-<div class="login-box">
     <div class="login-logo">
-        <a href="{{site.uri.public}}">{{site.title}}</a>
+        <a href="{{site.uri.public}}">
+            <img src="{{assets.url('assets://images/login_cec.jpg')}}">
+        </a>
     </div>
     <!-- /.login-logo -->
-
+<div class="login-box">
     <div class="login-box-body login-form">
         <p class="login-box-msg"><strong>{{translate('SIGNIN')}}</strong></p>
 
