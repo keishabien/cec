@@ -6,8 +6,15 @@ use UserFrosting\Sprinkle\Core\Controller\SimpleController;
 
 class PageController extends SimpleController
 {
+    public function pageIndex($request, $response, $args)
+    {
+        return $this->ci->view->render($response, 'pages/index.html.twig');
+    }
+
     public function pageMembers($request, $response, $args)
     {
         return $this->ci->view->render($response, 'pages/members.html.twig');
     }
+
+
 }
