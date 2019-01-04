@@ -1,6 +1,4 @@
 {% extends "pages/abstract/default.html.twig" %}
-{% set get = '$_GET["submit"]' %}
-{% set zip = '$_GET["location_name"]' %}
 {% set page_active = "search" %}
 
 {# Overrides blocks in head of base template #}
@@ -10,13 +8,15 @@
 {% block body_matter %}
 
     {% if get is defined %}
-        {% for result in results %}
-            {% if zip == result.office_name %}
-                {{ result.office_name }}<br>
-                {% else %}
-                no results found<br>
+        {% if location is defined %}
+            {% if results.office_name starts with zip %}
+                results<br>
+                {{ results.office_name }}<br>
+            {% else %}
+                just zip<br>
+                {{ location }}<br>
             {% endif %}
-        {% endfor %}
+        {% endif %}
     {% endif %}
 
 
@@ -148,4 +148,16 @@
     </div>
     <!-- /.row -->
 
+{% endblock %}
+{% block scripts_page %}
+    <script>
+        $(document).ready(function () {
+
+            $("#searchAll").ufForm({
+                msgTarget: $("#alerts-page")
+            }).on("submitSuccess.ufForm", function (event, data, textStatus, jqXHR) {
+                redirectOnLogin(jqXHR);
+            })
+        });
+    </script>
 {% endblock %}

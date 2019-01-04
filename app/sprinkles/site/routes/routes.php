@@ -10,3 +10,4 @@ $app->get('/members', 'UserFrosting\Sprinkle\Site\Controller\PageController:page
 $app->get('/search', 'UserFrosting\Sprinkle\Site\Controller\SearchController:pageSearch')
     ->setName('search')
     ->add('authGuard');
+
