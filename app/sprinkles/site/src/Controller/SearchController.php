@@ -12,10 +12,25 @@ class SearchController extends SimpleController
 {
     public function pageSearch($request, $response, $args)
     {
+
         $results = Search::all();
 
+        $location = $args['location'];
+//
+        $getParams = $request->getQueryParams();
+//
+//        $result = Search::where('office_name', $location)->get();
+
+//        if ($getParams['format'] == 'json') {
+//            return $response->withJson($result, 200, JSON_PRETTY_PRINT);
+//        } else {
+//            return $response->write("No format specified");
+//        }
+
         return $this->ci->view->render($response, 'pages/search.html.twig', [
-            'results' => $results
+            'results'   =>  $results,
+            'location'       =>  $location,
+            'get'       =>  $_GET["submit"]
         ]);
     }
 
