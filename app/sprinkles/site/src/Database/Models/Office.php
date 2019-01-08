@@ -5,12 +5,12 @@ namespace UserFrosting\Sprinkle\Site\Database\Models;
 use Illuminate\Database\Capsule\Manager as Capsule;
 use UserFrosting\Sprinkle\Core\Database\Models\Model;
 
-class Search extends Model
+class Office extends Model
 {
     /**
      * @var string The name of the table for the current model.
      */
-    protected $table = 'midwest_wrdp1.cec_update';
+    protected $table = 'midwest_wrdp1.office_details';
 
 
     /**
@@ -21,8 +21,8 @@ class Search extends Model
     /**
      * Get the phone record associated with the user.
      */
-    public function search()
+    public function office()
     {
-        return $this->hasOne('App\Search');
+        return $this->hasOne('App\Office');
     }
 }

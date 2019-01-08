@@ -9,15 +9,27 @@
 
     {% if get is defined %}
         {% if location is defined %}
-            {% if results.office_name starts with zip %}
-                results<br>
-                {{ results.office_name }}<br>
-            {% else %}
-                just zip<br>
-                {{ location }}<br>
-            {% endif %}
+            {#{% if results.office_name starts with location %}#}
+                {#results<br>#}
+                {#{{ results.office_name }}<br>#}
+            {#{% else %}#}
+                {#just location<br>#}
+                {#{{ location }}<br>#}
+            {#{% endif %}#}
+
+            {% for merge in merged %}
+
+                {{ merge.office_name }}
+                <br>
+                {{ merge.page_title }}
+            {% endfor %}
+
         {% endif %}
     {% endif %}
+
+
+
+
 
 
     <!-- Team Members -->
@@ -151,13 +163,13 @@
 {% endblock %}
 {% block scripts_page %}
     <script>
-        $(document).ready(function () {
-
-            $("#searchAll").ufForm({
-                msgTarget: $("#alerts-page")
-            }).on("submitSuccess.ufForm", function (event, data, textStatus, jqXHR) {
-                redirectOnLogin(jqXHR);
-            })
-        });
+        // $(document).ready(function () {
+        //
+        //     $("#searchAll").ufForm({
+        //         msgTarget: $("#alerts-page")
+        //     }).on("submitSuccess.ufForm", function (event, data, textStatus, jqXHR) {
+        //         redirectOnLogin(jqXHR);
+        //     })
+        // });
     </script>
 {% endblock %}
