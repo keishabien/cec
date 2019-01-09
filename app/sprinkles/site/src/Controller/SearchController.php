@@ -14,36 +14,33 @@ class SearchController extends SimpleController
 {
     public function pageSearch($request, $response, $args)
     {
-        $location = $_GET['location_name'];
+        $location = $args['location'];
+        $params = $request->getParsedBody();
 
-        $results = Search::distinct()->where('office_name', 'like', '%' . $_GET['location_name'] . '%')->get();
+// Displays 'json'
+        //echo $params['format'];
 
-        $office = Office::distinct()->where(function ($b) {
-            $b->where('page_title', 'like', '%' . $_GET['location_name'] . '%')
-                ->orWhere('zip', 'like', '%' . $_GET['location_name'] . '%');
-        })->get();
+        $results = Search::distinct()->where('office_name', 'like', '%' . $location . '%')->get();
+        //            ->join('office_details', 'cec_update.page_id', '=', 'office_details.page_id')
+
+        $office = Office::distinct()->where('page_title', 'like', '%' . $location . '%')
+                ->orWhere('zip', 'like', '%' . $location . '%')
+            ->get();
 
 
-        $merged = $results->merge($office);
+        //$merged = $results->merge($office);
 
-
-//
-        $getParams = $request->getQueryParams();
-//
-//        $result = Search::where('office_name', $location)->get();
-
-//        if ($getParams['format'] == 'json') {
-//            return $response->withJson($result, 200, JSON_PRETTY_PRINT);
-//        } else {
-//            return $response->write("No format specified");
-//        }
 
         return $this->ci->view->render($response, 'pages/search.html.twig', [
             'results' => $results,
-            'merged'    => $merged,
-            'office'    => $office,
+            //'merged' => $merged,
+            'office' => $office,
             'location' => $location,
-            'get' => $_GET["submit"]
+            'get' => $_GET["submit"],
+            'midwestLogo' => 'https://www.meritdental.com/cecdb/images/midwest-logo.png',
+            'mondoviLogo' => 'https://www.meritdental.com/cecdb/images/mondovi-logo.png',
+            'meritLogo' => 'https://www.meritdental.com/cecdb/images/merit-logo.png',
+            'mountainLogo' => 'https://www.meritdental.com/cecdb/images/mountain-logo.png'
         ]);
     }
 

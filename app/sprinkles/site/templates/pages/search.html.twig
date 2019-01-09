@@ -6,170 +6,67 @@
 
 
 {% block body_matter %}
-
+<div class="row">
     {% if get is defined %}
         {% if location is defined %}
             {#{% if results.office_name starts with location %}#}
-                {#results<br>#}
-                {#{{ results.office_name }}<br>#}
+            {#results<br>#}
+            {#{{ results.office_name }}<br>#}
             {#{% else %}#}
-                {#just location<br>#}
-                {#{{ location }}<br>#}
+            {#just location<br>#}
+            {#{{ location }}<br>#}
             {#{% endif %}#}
 
-            {% for merge in merged %}
+            {% for off in office %}
+                <div class="col-12 col-md-3">
+                    <div class="single">
+                        {% if off.brand == "Midwest" %}
+                            <img src="{{ midwestLogo }}" alt="">
+                        {% elseif off.brand == "Mondovi" %}
+                            <img src="{{ mondoviLogo }}" alt="">
+                        {% elseif off.brand == "Mountain" %}
+                            <img src="{{ mountainLogo }}" alt="">
+                        {% elseif off.brand == "Merit" %}
+                            <img src="{{ meritLogo }}" alt="">
+                        {% endif %}
 
-                {{ merge.office_name }}
-                <br>
-                {{ merge.page_title }}
+                        <p>{{ off.city }}, {{ off.state }}</p>
+
+                        <a href="{{ site.uri.public }}/office/?pageid={{ off.page_id }}&pagetitle={{ off.page_title }}" class="btn btn-outline-orange">
+                        {#<a href="{{ site.uri.public }}/office/" class="btn btn-outline-orange">#}
+                            View Office Information
+                        </a>
+                    </div>
+                </div>
             {% endfor %}
-
         {% endif %}
     {% endif %}
 
+    {#results:<br>#}
+    {#{{ results }}#}
+
+    {#<br><br><br>#}
+
+    {#office:<br>#}
+    {#{{ office }}#}
+    {#<br><br><br>#}
+
+    {#merged:<br>#}
+    {#{{ merged }}#}
 
 
 
-
-
-    <!-- Team Members -->
-    <div class="row">
-        <div class="col-lg-12">
-            <h2 class="page-header">Search Results</h2>
-        </div>
-        <div class="col-md-4 text-center">
-            <div class="thumbnail">
-                <img class="img-responsive" src="//placehold.it/750x450" alt="">
-                <div class="caption">
-                    <h3>John Smith<br>
-                        <small>Job Title</small>
-                    </h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste saepe et quisquam nesciunt
-                        maxime.</p>
-                    <ul class="list-inline">
-                        <li><a href="#"><i class="fa fa-2x fa-facebook-square"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-2x fa-linkedin-square"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-2x fa-twitter-square"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 text-center">
-            <div class="thumbnail">
-                <img class="img-responsive" src="//placehold.it/750x450" alt="">
-                <div class="caption">
-                    <h3>John Smith<br>
-                        <small>Job Title</small>
-                    </h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste saepe et quisquam nesciunt
-                        maxime.</p>
-                    <ul class="list-inline">
-                        <li><a href="#"><i class="fa fa-2x fa-facebook-square"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-2x fa-linkedin-square"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-2x fa-twitter-square"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 text-center">
-            <div class="thumbnail">
-                <img class="img-responsive" src="//placehold.it/750x450" alt="">
-                <div class="caption">
-                    <h3>John Smith<br>
-                        <small>Job Title</small>
-                    </h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste saepe et quisquam nesciunt
-                        maxime.</p>
-                    <ul class="list-inline">
-                        <li><a href="#"><i class="fa fa-2x fa-facebook-square"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-2x fa-linkedin-square"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-2x fa-twitter-square"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 text-center">
-            <div class="thumbnail">
-                <img class="img-responsive" src="//placehold.it/750x450" alt="">
-                <div class="caption">
-                    <h3>John Smith<br>
-                        <small>Job Title</small>
-                    </h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste saepe et quisquam nesciunt
-                        maxime.</p>
-                    <ul class="list-inline">
-                        <li><a href="#"><i class="fa fa-2x fa-facebook-square"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-2x fa-linkedin-square"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-2x fa-twitter-square"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 text-center">
-            <div class="thumbnail">
-                <img class="img-responsive" src="//placehold.it/750x450" alt="">
-                <div class="caption">
-                    <h3>John Smith<br>
-                        <small>Job Title</small>
-                    </h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste saepe et quisquam nesciunt
-                        maxime.</p>
-                    <ul class="list-inline">
-                        <li><a href="#"><i class="fa fa-2x fa-facebook-square"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-2x fa-linkedin-square"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-2x fa-twitter-square"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 text-center">
-            <div class="thumbnail">
-                <img class="img-responsive" src="//placehold.it/750x450" alt="">
-                <div class="caption">
-                    <h3>John Smith<br>
-                        <small>Job Title</small>
-                    </h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste saepe et quisquam nesciunt
-                        maxime.</p>
-                    <ul class="list-inline">
-                        <li><a href="#"><i class="fa fa-2x fa-facebook-square"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-2x fa-linkedin-square"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-2x fa-twitter-square"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- /.row -->
-
+</div>
 {% endblock %}
 {% block scripts_page %}
     <script>
-        // $(document).ready(function () {
-        //
-        //     $("#searchAll").ufForm({
-        //         msgTarget: $("#alerts-page")
-        //     }).on("submitSuccess.ufForm", function (event, data, textStatus, jqXHR) {
-        //         redirectOnLogin(jqXHR);
-        //     })
-        // });
+        $(document).ready(function () {
+
+            $("#searchAll").ufForm({
+                msgTarget: $("#alerts-page")
+            }).on("submitSuccess.ufForm", function (event, data, textStatus, jqXHR) {
+                redirectOnLogin(jqXHR);
+            })
+        });
     </script>
 {% endblock %}
