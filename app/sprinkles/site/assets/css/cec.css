@@ -116,3 +116,20 @@ body {
 .no-l-pad {
     padding-left: 0;
 }
+
+.single {
+    background-color: #F7F5F5;
+    padding: 15px 15px;
+    margin-bottom: 30px;
+}
+.single img {
+    /*margin: 0 auto;*/
+    display: block;
+}
+.single p {
+    color: #474747;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    padding: 15px 0;
+}

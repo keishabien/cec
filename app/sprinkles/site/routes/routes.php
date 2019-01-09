@@ -7,11 +7,10 @@ $app->get('/', 'UserFrosting\Sprinkle\Site\Controller\PageController:pageIndex')
 $app->get('/members', 'UserFrosting\Sprinkle\Site\Controller\PageController:pageMembers')
     ->add('authGuard');
 
-$app->get('/search', 'UserFrosting\Sprinkle\Site\Controller\SearchController:pageSearch')
+$app->get('/search/{location}', 'UserFrosting\Sprinkle\Site\Controller\SearchController:pageSearch')
     ->setName('search')
     ->add('authGuard');
 
-$app->group('/pastries', function () {
-    $this->get('', 'UserFrosting\Sprinkle\Pastries\Controller\PastriesController:pageList')
-        ->setName('pastries');
-})->add('authGuard');
+$app->get('/office', 'UserFrosting\Sprinkle\Site\Controller\OfficeController:pageOffice')
+    ->setName('office')
+    ->add('authGuard');
