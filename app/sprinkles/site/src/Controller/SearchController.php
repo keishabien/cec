@@ -14,17 +14,14 @@ class SearchController extends SimpleController
 {
     public function pageSearch($request, $response, $args)
     {
-        $location = $args['location'];
-        $params = $request->getParsedBody();
+// Request GET data
+        $get = $request->getQueryParams();
 
-// Displays 'json'
-        //echo $params['format'];
-
-        $results = Search::distinct()->where('office_name', 'like', '%' . $location . '%')->get();
+        $results = Search::distinct()->where('office_name', 'like', '%' . $get . '%')->get();
         //            ->join('office_details', 'cec_update.page_id', '=', 'office_details.page_id')
 
-        $office = Office::distinct()->where('page_title', 'like', '%' . $location . '%')
-                ->orWhere('zip', 'like', '%' . $location . '%')
+        $office = Office::distinct()->where('page_title', 'like', '%' . $get . '%')
+                ->orWhere('zip', 'like', '%' . $get . '%')
             ->get();
 
 
@@ -34,8 +31,9 @@ class SearchController extends SimpleController
         return $this->ci->view->render($response, 'pages/search.html.twig', [
             'results' => $results,
             //'merged' => $merged,
+            'params' => $params,
             'office' => $office,
-            'location' => $location,
+            'location' => $get,
             'get' => $_GET["submit"],
             'midwestLogo' => 'https://www.meritdental.com/cecdb/images/midwest-logo.png',
             'mondoviLogo' => 'https://www.meritdental.com/cecdb/images/mondovi-logo.png',
@@ -43,5 +41,4 @@ class SearchController extends SimpleController
             'mountainLogo' => 'https://www.meritdental.com/cecdb/images/mountain-logo.png'
         ]);
     }
-
 }
