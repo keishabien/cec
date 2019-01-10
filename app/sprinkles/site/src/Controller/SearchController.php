@@ -14,14 +14,15 @@ class SearchController extends SimpleController
 {
     public function pageSearch($request, $response, $args)
     {
-// Request GET data
-        $get = $request->getQueryParams();
+        $location = $args['keyword'];
 
-        $results = Search::distinct()->where('office_name', 'like', '%' . $get . '%')->get();
+
+//        $this->ci->db;
+        $results = Search::distinct()->where('office_name', 'like', '%' . $location . '%')->get();
         //            ->join('office_details', 'cec_update.page_id', '=', 'office_details.page_id')
 
-        $office = Office::distinct()->where('page_title', 'like', '%' . $get . '%')
-                ->orWhere('zip', 'like', '%' . $get . '%')
+        $office = Office::distinct()->where('page_title', 'like', '%' . $location . '%')
+                ->orWhere('zip', 'like', '%' . $location . '%')
             ->get();
 
 
@@ -33,7 +34,8 @@ class SearchController extends SimpleController
             //'merged' => $merged,
             'params' => $params,
             'office' => $office,
-            'location' => $get,
+            'keyword' => $location,
+            'location' => $location,
             'get' => $_GET["submit"],
             'midwestLogo' => 'https://www.meritdental.com/cecdb/images/midwest-logo.png',
             'mondoviLogo' => 'https://www.meritdental.com/cecdb/images/mondovi-logo.png',
@@ -41,4 +43,22 @@ class SearchController extends SimpleController
             'mountainLogo' => 'https://www.meritdental.com/cecdb/images/mountain-logo.png'
         ]);
     }
+
+    public function getOwls($request, $response, $args)
+    {
+        $location = $args['location'];
+
+        // GET parameters
+        $params = $request->getQueryParams();
+
+        $this->ci->db;
+        $result = Search::distinct()->where('office_name', 'like', '%' . $location . '%')->get();
+
+        if ($params['format'] == 'json') {
+            return $response->withJson($result, 200, JSON_PRETTY_PRINT);
+        } else {
+            return $response->withJson($result, 200, JSON_PRETTY_PRINT);
+        }
+    }
+
 }

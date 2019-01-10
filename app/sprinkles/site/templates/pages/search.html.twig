@@ -6,17 +6,9 @@
 
 
 {% block body_matter %}
-<div class="row">
-    {% if get is defined %}
-        {% if location is defined %}
-            {#{% if results.office_name starts with location %}#}
-            {#results<br>#}
-            {#{{ results.office_name }}<br>#}
-            {#{% else %}#}
-            {#just location<br>#}
-            {#{{ location }}<br>#}
-            {#{% endif %}#}
+    <div class="row">
 
+        {% if location is defined %}
             {% for off in office %}
                 <div class="col-12 col-md-3">
                     <div class="single">
@@ -32,30 +24,31 @@
 
                         <p>{{ off.city }}, {{ off.state }}</p>
 
-                        <a href="{{ site.uri.public }}/office/?pageid={{ off.page_id }}&pagetitle={{ off.page_title }}" class="btn btn-outline-orange">
-                        {#<a href="{{ site.uri.public }}/office/" class="btn btn-outline-orange">#}
+                        <a href="{{ site.uri.public }}/office/{{ off.page_id }}/{{ off.page_title }}"
+                           class="btn btn-outline-orange">
+                            {#<a href="{{ site.uri.public }}/office/" class="btn btn-outline-orange">#}
                             View Office Information
                         </a>
                     </div>
                 </div>
             {% endfor %}
         {% endif %}
-    {% endif %}
 
-    {#results:<br>#}
-    {#{{ results }}#}
+        <br><br><br>
+        results:<br>
+        {{ results }}
 
-    {#<br><br><br>#}
+        <br><br><br>
 
-    {#office:<br>#}
-    {#{{ office }}#}
-    {#<br><br><br>#}
+        office:<br>
+        {{ office }}
+        <br><br><br>
 
-    {#merged:<br>#}
-    {#{{ merged }}#}
+        merged:<br>
+        {{ merged }}
+        <br><br><br>
+        {{ params }}
 
-{{ params }}
-
-</div>
+    </div>
 {% endblock %}
 
