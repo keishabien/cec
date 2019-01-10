@@ -20,7 +20,8 @@
                 "userfrosting/js/uf-form.js",
                 "userfrosting/js/uf-modal.js",
                 "userfrosting/js/uf-copy.js",
-                "userfrosting/js/uf-init.js"
+                "userfrosting/js/uf-init.js",
+                "js/searchAll.js"
             ],
             "options": {
                 "result": {

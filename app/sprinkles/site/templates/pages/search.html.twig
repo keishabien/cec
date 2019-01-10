@@ -54,19 +54,8 @@
     {#merged:<br>#}
     {#{{ merged }}#}
 
-
+{{ params }}
 
 </div>
 {% endblock %}
-{% block scripts_page %}
-    <script>
-        $(document).ready(function () {
 
-            $("#searchAll").ufForm({
-                msgTarget: $("#alerts-page")
-            }).on("submitSuccess.ufForm", function (event, data, textStatus, jqXHR) {
-                redirectOnLogin(jqXHR);
-            })
-        });
-    </script>
-{% endblock %}

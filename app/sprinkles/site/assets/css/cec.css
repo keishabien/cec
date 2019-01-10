@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
+
 body {
     font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
@@ -10,6 +11,7 @@ body {
     background-color: #FFF;
     margin: 7% auto;
 }
+
 .login-box, .register-box {
     width: 360px;
     margin: 0 auto;
@@ -19,21 +21,68 @@ body {
 .content-wrapper, .right-side {
     background-color: #FFF;
 }
-
+.skin-red .content-wrapper {
+    padding: 10px 5px;
+}
 /* navigaiton */
+.main-header {
+    margin-bottom: 15px;
+}
+.skin-red .main-header {
+    margin: 0
+}
+
 .main-header .logo {
     height: 30px;
     width: auto;
+    padding: 0 15px 0 0;
+    display: inline-block;
 }
-.nav {
-    padding: 10px 0;
+
+.navbar-default {
+    background-color: #FFF;
+    border-color: #FFF;
 }
-.navbar-form {
-    margin: 0;
+
+.navbar-header {
+    margin-top: 8px;
+}
+.navbar .form {
+    float: left;
+    margin-top: 8px;
+    padding-left: 15px;
 }
 .search {
     min-width: 450px;
+    height: 30px;
 }
+
+.navbar-toggle {
+    padding: 8px;
+}
+.input-group-addon {
+    padding: 0;
+    border: none;
+}
+
+
+
+/* user card */
+.navbar-nav > .user-menu > .dropdown-menu {
+    width: 230px;
+    border-top-width: 1px;
+}
+
+.navbar-nav > .user-menu > .dropdown-menu > li.user-header {
+    height: 75px;
+    padding: 10px;
+    text-align: center;
+}
+
+.navbar-nav > .user-menu > .dropdown-menu > li.user-header > p {
+    color: #75787b;
+}
+
 
 /* breadcrumb */
 .breadcrumb {
@@ -44,6 +93,7 @@ body {
     border-radius: 0;
     font-size: 12px;
 }
+
 .breadcrumb > li > a {
     color: #444;
     text-decoration: none;
@@ -54,12 +104,13 @@ body {
 .form-control {
     border-color: #bbbcbc;
 }
+
 .form-control:focus {
     color: #575757;
     background-color: #fff;
     border-color: #034638;
     outline: 0;
-    box-shadow: 0 0 2px 0.1rem rgba(0,105,83,.25);
+    box-shadow: 0 0 2px 0.1rem rgba(0, 105, 83, .25);
 }
 
 .btn-outline-orange {
@@ -71,13 +122,16 @@ body {
     -moz-border-radius: 0;
     border-radius: 0;
 }
+
 .btn-outline-orange:hover {
     color: #fff;
     background-color: #f8971d;
     border-color: #f8971d;
 }
-.btn-outline-orange[type="submit"]{
-    margin-left: -3px;
+
+.btn-outline-orange[type="submit"] {
+    margin-left: -1px;
+    padding: 4px 10px;
 }
 
 .nav ul {
@@ -85,14 +139,33 @@ body {
     padding: 0;
 }
 
+/* dashboard override */
+.skin-red .main-header .logo {
+    width: 230px;
+    height: 70px;
+    line-height: 70px;
+    padding: 0 15px;
+}
+
+.main-sidebar, .left-side {
+    padding-top: 70px;
+}
+
+.main-header .sidebar-toggle {
+    padding: 25px 19px;
+}
+
 /* form group icon realign */
 .form-group {
     position: relative;
+    margin: 0;
 }
+
 .form-control-icon,
-.form-control-feedback{
+.form-control-feedback {
     right: 5px;
 }
+
 .form-control-feedback {
     position: absolute;
     top: 0;
@@ -122,14 +195,61 @@ body {
     padding: 15px 15px;
     margin-bottom: 30px;
 }
+
 .single img {
     /*margin: 0 auto;*/
     display: block;
 }
+
 .single p {
     color: #474747;
     font-size: 18px;
     font-weight: 700;
     line-height: 24px;
     padding: 15px 0;
+}
+
+
+@media screen and (max-width: 767px) {
+    .search {
+        width: 100%;
+    }
+
+    .navbar .form {
+        border: 0;
+        margin: 8px 0;
+        padding: 0;
+    }
+
+    .main-header .navbar-custom-menu {
+        width: 100%;
+    }
+    .navbar-custom-menu .navbar-nav > li {
+        width:100%;
+    }
+    .navbar-default .navbar-collapse,
+    .navbar-default .navbar-form {
+        padding-right: 0;
+        padding-left: 1px;
+    }
+
+    .navbar-default .navbar-collapse,
+    .navbar-default .navbar-form {
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-top:none;
+    }
+}
+@media screen and (max-width:991px){
+    .navbar-custom-menu > .navbar-nav {
+        float: left;
+        width:100%
+    }
+    .navbar-custom-menu > .navbar-nav > li > .dropdown-menu {
+        right: 0;
+        width: 100%;
+    }
+    .search {
+        min-width: 250px;
+    }
 }
