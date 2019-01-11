@@ -10,7 +10,7 @@
 
         {% if location is defined %}
             {% for off in office %}
-                <div class="col-12 col-md-3">
+                <div class="col-12 col-md-3 clear">
                     <div class="single">
                         {% if off.brand == "Midwest" %}
                             <img src="{{ midwestLogo }}" alt="">
@@ -24,7 +24,7 @@
 
                         <p>{{ off.city }}, {{ off.state }}</p>
 
-                        <a href="{{ site.uri.public }}/office/{{ off.page_id }}/{{ off.page_title }}"
+                        <a href="{{ site.uri.public }}/office/{{ off.page_id }}/{{ off.city }}"
                            class="btn btn-outline-orange">
                             {#<a href="{{ site.uri.public }}/office/" class="btn btn-outline-orange">#}
                             View Office Information
@@ -34,20 +34,20 @@
             {% endfor %}
         {% endif %}
 
-        <br><br><br>
-        results:<br>
-        {{ results }}
+        {#<br><br><br>#}
+        {#results:<br>#}
+        {#{{ results }}#}
 
-        <br><br><br>
+        {#<br><br><br>#}
 
-        office:<br>
-        {{ office }}
-        <br><br><br>
+        {#office:<br>#}
+        {#{{ office }}#}
+        {#<br><br><br>#}
 
-        merged:<br>
-        {{ merged }}
-        <br><br><br>
-        {{ params }}
+        {#merged:<br>#}
+        {#{{ merged }}#}
+        {#<br><br><br>#}
+        {#{{ params }}#}
 
     </div>
 {% endblock %}

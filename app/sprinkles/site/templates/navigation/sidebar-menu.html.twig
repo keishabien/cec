@@ -1,0 +1,8 @@
+{% extends '@admin/navigation/sidebar-menu.html.twig' %}
+
+{% block navigation %}
+    {{ parent() }}
+    <li>
+        <a href="{{ site.uri.public }}/offices"><i class="fa fa-building fa-fw"></i> <span>Offices</span></a>
+    </li>
+{% endblock %}

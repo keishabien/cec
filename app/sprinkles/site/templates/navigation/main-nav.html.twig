@@ -16,7 +16,8 @@
         </div>
 
 
-        <form class="form form-inline" id="searchAll" action="{{ site.uri.public }}/search?keyword={{ keyword }}" method="get">
+        <form class="form form-inline" id="searchAll" action="{{ site.uri.public }}/search?keyword={{ keyword }}" method="post">
+            {% include "forms/csrf.html.twig" %}
             <div class="form-group">
                 <div class="input-group">
                     <input type="text" class="search form-control"
@@ -42,7 +43,7 @@
             <div class="navbar-custom-menu navbar-right">
                 <ul class="nav navbar-nav">
                     <li><a href="{{ site.uri.public }}">Home</a></li>
-                    <li><a href="{{ site.uri.public }}/members">Members</a></li>
+                    <li><a href="{{ site.uri.public }}/offices">Offices</a></li>
 
                     {% block secondary_nav %}
                         {% if not checkAuthenticated() %}
