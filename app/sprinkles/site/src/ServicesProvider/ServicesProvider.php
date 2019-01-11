@@ -18,6 +18,11 @@ class ServicesProvider
      */
     public function register($container)
     {
+        $container->extend('classMapper', function ($classMapper, $c) {
+            $classMapper->setClassMapping('office_sprunje', 'UserFrosting\Sprinkle\Site\Database\Models\Office');
+            return $classMapper;
+        });
+
         $container['redirect.onLogin'] = function ($c) {
             /**
              * This method is invoked when a user completes the login process.

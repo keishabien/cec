@@ -20,8 +20,20 @@
                 "userfrosting/js/uf-form.js",
                 "userfrosting/js/uf-modal.js",
                 "userfrosting/js/uf-copy.js",
-                "userfrosting/js/uf-init.js",
-                "js/searchAll.js"
+                "userfrosting/js/uf-init.js"
+            ],
+            "options": {
+                "result": {
+                    "type": {
+                        "scripts": "plain"
+                    }
+                }
+            }
+        },
+        "js/cec": {
+            "scripts": [
+                "js/searchAll.js",
+                "js/offices.js"
             ],
             "options": {
                 "result": {

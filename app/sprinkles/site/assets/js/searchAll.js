@@ -1,10 +1,14 @@
 $(document).ready(function () {
     $("#searchAll").ufForm({
         msgTarget: $("#alerts-page")
-    }).on("submitSuccess.ufForm", function () {
-        var keyword = $('.search').value();
-        window.location.replace(site.uri.public + "/search?keyword=" + keyword);
-    });
+    })
+        .on("submitSuccess.ufForm", function () {
+        window.location.reload();
+        })
+        .on("submitError.ufForm", function () {
+            console.log("fail");
+        })
+    ;
 
     console.log('test');
 });
