@@ -7,18 +7,20 @@ $app->get('/', 'UserFrosting\Sprinkle\Site\Controller\PageController:pageIndex')
 $app->get('/members', 'UserFrosting\Sprinkle\Site\Controller\PageController:pageMembers')
     ->add('authGuard');
 
-$app->get('/offices', 'UserFrosting\Sprinkle\Site\Controller\OfficeController:pageList')
-    ->setName('uri_offices')
-    ->add('authGuard');
 
-$app->get('/api/offices', 'UserFrosting\Sprinkle\Site\Controller\OfficeController:getList')
-    ->add('authGuard');
+$app->group('/offices', function () {
+    $this->get('', 'UserFrosting\Sprinkle\Site\Controller\OfficeController:pageList')
+        ->setName('uri_offices');
+    $this->get('/o/{office_name}', 'UserFrosting\Sprinkle\Site\Controller\OfficeController:pageInfo')
+        ->setName('uri_office');
+})->add('authGuard');
 
-//$app->get('/search/{location}', function ($request, $response, $args) {
-//
-//        echo "Hello, " . $args['location'];
-//});
 
-$app->get('/office/{page_id}/{office_name}', 'UserFrosting\Sprinkle\Site\Controller\OfficeController:pageOffice')
-    ->setName('office')
-    ->add('authGuard');
+
+$app->group('/api', function () {
+    $this->get('/offices', 'UserFrosting\Sprinkle\Site\Controller\OfficeController:getList')
+        ->setName('api_offices');
+
+    $this->get('/offices/o/{office_name}', 'UserFrosting\Sprinkle\Site\Controller\OfficeController:getInfo')
+        ->setName('api_office');
+})        ->add('authGuard');

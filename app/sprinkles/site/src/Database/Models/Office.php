@@ -12,19 +12,10 @@ class Office extends Model
      */
     protected $table = 'midwest_wrdp1.office_details';
 
-    protected $sortable = [
+    protected $fillable = [
         'page_title',
         'state'
     ];
-
-    protected $filterable = [
-        'page_title'
-    ];
-
-    protected $excludeForAll = [
-        'last_activity'
-    ];
-
     /**
      * @var bool Enable timestamps for this class.
      */
