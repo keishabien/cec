@@ -2,13 +2,14 @@
 
 namespace UserFrosting\Sprinkle\Site\Sprunje;
 
+use Illuminate\Database\Capsule\Manager as Capsule;
 use UserFrosting\Sprinkle\Core\Facades\Debug;
 use UserFrosting\Sprinkle\Core\Sprunje\Sprunje;
 use UserFrosting\Sprinkle\Site\Database\Models\Office;
 
 class OfficeSprunje extends Sprunje
 {
-    protected $name = 'offices';
+    protected $name = 'office_details';
 
     protected $sortable = [
         'page_title',
@@ -25,6 +26,11 @@ class OfficeSprunje extends Sprunje
      */
     protected function baseQuery()
     {
-        return $this->classMapper->createInstance('office')->newQuery();
+//        $instance = new Office();
+
+        // Alternatively, if you have defined a class mapping, you can use the classMapper:
+         $instance = $this->classMapper->createInstance('office');
+
+        return $instance->newQuery();
     }
 }

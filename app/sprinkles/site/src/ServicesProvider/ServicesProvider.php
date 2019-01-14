@@ -19,7 +19,7 @@ class ServicesProvider
     public function register($container)
     {
         $container->extend('classMapper', function ($classMapper, $c) {
-            $classMapper->setClassMapping('office_sprunje', 'UserFrosting\Sprinkle\Site\Database\Models\Office');
+            $classMapper->setClassMapping('office', 'UserFrosting\Sprinkle\Site\Database\Models\Office');
             return $classMapper;
         });
 

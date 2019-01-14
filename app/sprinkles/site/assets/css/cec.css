@@ -173,7 +173,7 @@ body {
     background-color: #FFF;
 }
 .skin-red .main-header .logo {
-    background-color: #034638;
+    background-color: #006a52;
     color: #ffffff;
     border-bottom: 0 solid transparent;
 }
@@ -183,6 +183,11 @@ body {
 .skin-red .sidebar-menu > li:hover > a, .skin-red .sidebar-menu > li.active > a {
     border-left-color: #006a52;
 }
+.skin-red .main-header .navbar .sidebar-toggle:hover,
+.skin-red .main-header .logo:hover {
+    background-color: #034638;
+}
+
 /* form group icon realign */
 #searchAll .form-group {
     position: relative;
