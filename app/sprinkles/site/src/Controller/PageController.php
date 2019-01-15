@@ -18,4 +18,9 @@ class PageController extends SimpleController
         $ms->addMessage('info', 'Your owl has successfully captured another vole!');
         return $this->ci->view->render($response, 'pages/members.html.twig');
     }
+
+    public function pageIntake($request, $response, $args)
+    {
+        return $this->ci->view->render($response, 'pages/intake.html.twig');
+    }
 }
