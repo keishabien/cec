@@ -6,6 +6,10 @@ body {
     color: #575757;
 }
 
+h2 {
+    margin-top: 0px;
+}
+
 .login-page,
 .register-page {
     background-color: #FFF;
@@ -153,6 +157,20 @@ body {
     padding: 0;
 }
 
+
+/* intake form */
+.intake-section {
+    background-color: #f4f2f1;
+    padding: 15px;
+}
+.dentist-section {
+    margin-bottom: 20px;
+}
+.form-inline .form-group {
+    margin-bottom: 10px;
+}
+
+
 /* dashboard override */
 .skin-red .main-header .logo {
     width: 230px;
@@ -172,25 +190,32 @@ body {
 .skin-red .main-header li.user-header {
     background-color: #FFF;
 }
+
 .skin-red .main-header .logo {
     background-color: #006a52;
     color: #ffffff;
     border-bottom: 0 solid transparent;
 }
+
 .skin-red .main-header .navbar {
     background-color: #006a52;
 }
+
 .skin-red .sidebar-menu > li:hover > a, .skin-red .sidebar-menu > li.active > a {
     border-left-color: #006a52;
 }
+
 .skin-red .main-header .navbar .sidebar-toggle:hover,
 .skin-red .main-header .logo:hover {
     background-color: #034638;
 }
 
 .office-user-img {
-     margin: 0 auto;
+    margin: 0 auto;
 }
+
+
+
 
 /* form group icon realign */
 #searchAll .form-group {
@@ -216,8 +241,10 @@ body {
     pointer-events: none;
 }
 
-/* other overrides */
 
+
+
+/* other overrides */
 .content-header {
     padding: 0;
 }
@@ -226,6 +253,8 @@ body {
 .no-l-pad {
     padding-left: 0;
 }
+
+
 
 .clear:nth-of-type(4n + 1) {
     clear: both;
