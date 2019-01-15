@@ -33,7 +33,22 @@
         "js/cec": {
             "scripts": [
                 "js/searchAll.js",
-                "js/offices.js"
+                "js/offices.js",
+                "js/office.js",
+                "js/widgets/office.js"
+            ],
+            "options": {
+                "result": {
+                    "type": {
+                        "scripts": "plain"
+                    }
+                }
+            }
+        },
+        "js/office": {
+            "scripts": [
+                "js/office.js",
+                "js/widgets/office.js"
             ],
             "options": {
                 "result": {

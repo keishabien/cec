@@ -25,6 +25,8 @@ class SearchController extends SimpleController
             ->orderBy('page_title', "ASC")
             ->get();
 
+        $merged = $results->merge($office);
+
         return $this->ci->view->render($response, 'pages/search.html.twig', [
             'results' => $results,
             'office' => $office,

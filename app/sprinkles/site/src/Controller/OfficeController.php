@@ -2,6 +2,7 @@
 
 namespace UserFrosting\Sprinkle\Site\Controller;
 
+use Illuminate\Support\Collection;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Exception\NotFoundException;
@@ -76,12 +77,12 @@ class OfficeController extends SimpleController
         }
 
         /** @var UserFrosting\Sprinkle\Core\Util\ClassMapper $classMapper */
-        $classMapper = $this->ci->classMapper;
+//        $classMapper = $this->ci->classMapper;
 
         // Join user's most recent activity
-        $office = $classMapper->createInstance('office')
-            ->where('page_title', $office->page_title)
-            ->first();
+//        $office = $classMapper->createInstance('office')
+//            ->where('page_title', $office->page_title)
+//            ->first();
 
         /** @var UserFrosting\Sprinkle\Account\Authorize\AuthorizationManager $authorizer */
         $authorizer = $this->ci->authorizer;
@@ -166,72 +167,78 @@ class OfficeController extends SimpleController
             'hidden' => []
         ];
 
-        if (!$authorizer->checkAccess($currentUser, 'update_user_field', [
-            'office' => $office,
-            'fields' => ['name', 'email', 'locale']
-        ])) {
-            $editButtons['hidden'][] = 'edit';
-        }
-
-        if (!$authorizer->checkAccess($currentUser, 'update_user_field', [
-            'user' => $user,
-            'fields' => ['flag_enabled']
-        ])) {
-            $editButtons['hidden'][] = 'enable';
-        }
-
-        if (!$authorizer->checkAccess($currentUser, 'update_user_field', [
-            'user' => $user,
-            'fields' => ['flag_verified']
-        ])) {
-            $editButtons['hidden'][] = 'activate';
-        }
-
-        if (!$authorizer->checkAccess($currentUser, 'update_user_field', [
-            'user' => $user,
-            'fields' => ['password']
-        ])) {
-            $editButtons['hidden'][] = 'password';
-        }
-
-        if (!$authorizer->checkAccess($currentUser, 'update_user_field', [
-            'user' => $user,
-            'fields' => ['roles']
-        ])) {
-            $editButtons['hidden'][] = 'roles';
-        }
-
-        if (!$authorizer->checkAccess($currentUser, 'delete_user', [
-            'user' => $user
-        ])) {
-            $editButtons['hidden'][] = 'delete';
-        }
-
+//        if (!$authorizer->checkAccess($currentUser, 'update_user_field', [
+//            'office' => $office,
+//            'fields' => ['name', 'email', 'locale']
+//        ])) {
+//            $editButtons['hidden'][] = 'edit';
+//        }
+//
+//        if (!$authorizer->checkAccess($currentUser, 'update_user_field', [
+//            'user' => $user,
+//            'fields' => ['flag_enabled']
+//        ])) {
+//            $editButtons['hidden'][] = 'enable';
+//        }
+//
+//        if (!$authorizer->checkAccess($currentUser, 'update_user_field', [
+//            'user' => $user,
+//            'fields' => ['flag_verified']
+//        ])) {
+//            $editButtons['hidden'][] = 'activate';
+//        }
+//
+//        if (!$authorizer->checkAccess($currentUser, 'update_user_field', [
+//            'user' => $user,
+//            'fields' => ['password']
+//        ])) {
+//            $editButtons['hidden'][] = 'password';
+//        }
+//
+//        if (!$authorizer->checkAccess($currentUser, 'update_user_field', [
+//            'user' => $user,
+//            'fields' => ['roles']
+//        ])) {
+//            $editButtons['hidden'][] = 'roles';
+//        }
+//
+//        if (!$authorizer->checkAccess($currentUser, 'delete_user', [
+//            'user' => $user
+//        ])) {
+//            $editButtons['hidden'][] = 'delete';
+//        }
+//
         // Determine widgets to display
         $widgets = [
-            'hidden' => []
+            'hidden' => [
+                'activities'
+            ]
         ];
+//
+//        if (!$authorizer->checkAccess($currentUser, 'view_user_field', [
+//            'user' => $user,
+//            'property' => 'permissions'
+//        ])) {
+//            $widgets['hidden'][] = 'permissions';
+//        }
+//
+//        if (!$authorizer->checkAccess($currentUser, 'view_user_field', [
+//            'user' => $user,
+//            'property' => 'activities'
+//        ])) {
+//            $widgets['hidden'][] = 'activities';
+//        }
 
-        if (!$authorizer->checkAccess($currentUser, 'view_user_field', [
-            'user' => $user,
-            'property' => 'permissions'
-        ])) {
-            $widgets['hidden'][] = 'permissions';
-        }
-
-        if (!$authorizer->checkAccess($currentUser, 'view_user_field', [
-            'user' => $user,
-            'property' => 'activities'
-        ])) {
-            $widgets['hidden'][] = 'activities';
-        }
-
-        return $this->ci->view->render($response, 'pages/user.html.twig', [
-            'user' => $office,
+        return $this->ci->view->render($response, 'pages/office.html.twig', [
+            'office' => $office,
             'locales' => $locales,
             'fields' => $fields,
             'tools' => $editButtons,
-            'widgets' => $widgets
+            'widgets' => $widgets,
+            'midwestLogo' => 'https://www.meritdental.com/cecdb/images/midwest-logo.png',
+            'mondoviLogo' => 'https://www.meritdental.com/cecdb/images/mondovi-logo.png',
+            'meritLogo' => 'https://www.meritdental.com/cecdb/images/merit-logo.png',
+            'mountainLogo' => 'https://www.meritdental.com/cecdb/images/mountain-logo.png'
         ]);
     }
 
@@ -258,14 +265,18 @@ class OfficeController extends SimpleController
         }
 
         /** @var UserFrosting\Sprinkle\Core\Util\ClassMapper $classMapper */
-        $classMapper = $this->ci->classMapper;
+        //$classMapper = $this->ci->classMapper;
 
         // Get the user to delete
 //        $user = $classMapper->staticMethod('office', 'where', 'page_title', $data['office_name'])
 //            ->first();
 
-        $user = Office::where('page_title', $data['office_name'])->first();
-        return $user;
+        $office = Office::distinct()->where('page_title', $data['office_name'])->get();
+        $details = Search::distinct()->where('office_name', $data['office_name'])->get();
+
+        $office = $office->merge($details);
+
+        return $office;
     }
 
 }
