@@ -1,6 +1,0 @@
----
-office_name:
-  validators:
-    required:
-      label: "&OFFICE"
-      message: VALIDATE.REQUIRED

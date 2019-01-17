@@ -1,0 +1,39 @@
+# Request schema for the intake form
+
+name:
+  validators:
+    required:
+      label: Name
+      message: Please tell us your name.
+    length:
+      label: Name
+      min: 1
+      max: 50
+      message: "Name must be between {{min}} and {{max}} characters."
+  transformations:
+    - trim
+
+email:
+  validators:
+    required:
+      label: Email
+      message: Please provide an email address.
+    length:
+      label: Email
+      min: 1
+      max: 150
+      message: "Your email address must be between {{min}} and {{max}} characters."
+    email:
+      message: Please provide a valid email address.
+
+phone:
+  validators:
+    telephone:
+      label: Phone
+      message: The phone number you provided is not valid.
+
+message:
+  validators:
+    required:
+      label: Message
+      message: Surely you must have something to say!

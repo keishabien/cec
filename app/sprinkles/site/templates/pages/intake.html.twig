@@ -3,129 +3,201 @@
 {% set page_active = "intake" %}
 
 {# Overrides blocks in head of base template #}
-{% block page_title %}CEC Intake Form{% endblock %}
+
+{% block page_title %}Practice Information Form{% endblock %}
+
+{% block stylesheets_page %}
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker3.css">
+{% endblock %}
 
 {% block body_matter %}
-    <h1>Welcome to the CEC Support App</h1>
+    {#<h1>Welcome to the CEC Support App</h1>#}
 
-    <div class="intake-section">
-        <h2>Dentist Details</h2>
 
-        <form class="form-inline">
-            <div class="dentist-section">
-                <div class="row">
-                    <div class="form-group col-sm-6">
-                        <label for="dentist_name">Dentist Full Name</label>
-                        <input type="text" class="form-control" id="full-name" placeholder="Full Name">
+
+    <form class="form-inline">
+        <div class="dentist-section">
+
+            <h2>Dentist Details</h2>
+            <div class="row">
+                <div class="form-group col-sm-5">
+                    <label for="full-name">Dentist Full Name</label>
+                    <input type="text" class="form-control" id="full-name" placeholder="Full Name" required>
+                </div>
+
+                <div class="form-group col-sm-7">
+                    <label for="provider-num">DentalVision Provider Number (6 digits)</label>
+                    <input type="text" class="form-control" id="provider-num" placeholder="000000" maxlength="6"
+                           pattern="\d{6}" required>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="called-name">How does the doctor refer to themself with patients? (i.e. Dr.
+                    Steven Smith likes patients to call him Dr. Steve)
+                </label>
+
+                <input type="text" id="called-name" class="form-control">
+                {#<span id="helpBlock"#}
+                {#class="help-block">(i.e. Dr. Steven Smith likes patients to call him Dr. Steve)</span>#}
+
+                {#<label for="dentist_name">How does the doctor refer to themself with patients? (i.e. Dr. Steven Smith likes patients to call him Dr. Steve):</label>#}
+                {#<input type="text" class="form-control" id="full-name" placeholder="Full Name">#}
+
+            </div>
+
+
+            <div class="row">
+                <div class="form-group col-sm-4">
+                    Permanent or Locum?
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="locum" id="permanent" value="Permanent">
+                            Permanent
+                        </label>
                     </div>
-
-                    <div class="form-group col-sm-6">
-                        <label for="provider-num">DentalVision Provider Number (6 digits)</label>
-                        <input type="text" class="form-control" id="provider-num" placeholder="000000">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="locum" id="locum" value="Locum">
+                            Locum
+                        </label>
                     </div>
                 </div>
 
 
-                <div class="form-group">
-
-                    <label for="inputHelpBlock">How does the doctor refer to themself with patients? (i.e. Dr.
-                        Steven Smith likes patients to call him Dr. Steve)
-                    </label>
-
-                    <input type="text" id="inputHelpBlock" class="form-control" aria-describedby="helpBlock">
-                    {#<span id="helpBlock"#}
-                    {#class="help-block">(i.e. Dr. Steven Smith likes patients to call him Dr. Steve)</span>#}
-
-                    {#<label for="dentist_name">How does the doctor refer to themself with patients? (i.e. Dr. Steven Smith likes patients to call him Dr. Steve):</label>#}
-                    {#<input type="text" class="form-control" id="full-name" placeholder="Full Name">#}
-
-                </div>
-
-
-                <div class="row">
-                    <div class="form-group col-sm-6">
-                        Permanent or Locum?
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="blankRadio" id="blankRadio1" value="option1" aria-label="">
-                                Permanent
-                            </label>
-                        </div>
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="blankRadio" id="blankRadio1" value="option1" aria-label="">
-                                Locum
-                            </label>
-                        </div>
+                <div class="form-group has-feedback has-feedback-left col-sm-8">
+                    <label for="start-date" class="control-label">When did this doctor start at your location?</label>
+                    <div class="inline-feedback input-group">
+                        <input type="text" class="form-control datepicker" id="start-date">
+                        <i class="form-control-feedback fa fa-calendar"></i>
                     </div>
+                </div>
+            </div>
 
+            <div class="form-group has-feedback has-feedback-left">
+                <label for="exit-date" class="control-label">If the doctor is exiting, what is their last day seeing
+                    patients?
+                </label>
 
-                    <div class="form-group col-sm-6">
-                        <label for="start-date">When did this doctor start at your location?</label>
-                        <input type="text" class="form-control" id="provider-num" placeholder="">
+                <div class="inline-feedback input-group">
+                    <input type="text" class="form-control datepicker" id="exit-date">
+                    <i class="form-control-feedback fa fa-calendar"></i>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-sm-4">
+                    Is the doctor currently or going on leave?
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="leave" id="yes" value="Yes">
+                            Yes
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="leave" id="no" value="No">
+                            No
+                        </label>
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="start-date">If the doctor is exiting, what is their last day seeing patients?</label>
-                    <input type="text" class="form-control" id="provider-num" placeholder="">
+                <div class="form-group has-feedback has-feedback-left col-sm-4">
+                    <label for="leave-start-date" class="control-label">Leave start date:</label>
+                    <div class="inline-feedback input-group">
+                        <input type="text" class="form-control datepicker" id="leave-start-date">
+                        <i class="form-control-feedback fa fa-calendar"></i>
+                    </div>
                 </div>
 
-                <div class="row">
-                    <div class="form-group col-sm-4">
-                        Is the doctor currently or going on leave?
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="blankRadio" id="blankRadio1" value="option1" aria-label="">
-                                Yes
-                            </label>
-                        </div>
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="blankRadio" id="blankRadio1" value="option1" aria-label="">
-                                No
-                            </label>
-                        </div>
-                    </div>
-                    <div class="form-group col-sm-4">
-                        <label for="start-date">Leave start date:</label>
-                        <input type="text" class="form-control" id="provider-num" placeholder="">
-                    </div>
-                    <div class="form-group col-sm-4">
-                        <label for="start-date">Leave end date:</label>
-                        <input type="text" class="form-control" id="provider-num" placeholder="">
+
+                <div class="form-group has-feedback has-feedback-left col-sm-4">
+                    <label for="leave-start-date" class="control-label">Leave end date:</label>
+                    <div class="inline-feedback input-group">
+                        <input type="text" class="form-control datepicker" id="leave-end-date">
+                        <i class="form-control-feedback fa fa-calendar"></i>
                     </div>
                 </div>
 
             </div>
+        </div>
 
-        </form>
-    </div>
-    <button type="submit" class="btn btn-default">Submit</button>
-    <button class="btn btn-default repeat">repeat</button>
+        <div class="dentist-button-row">
+            <a class="btn btn-default repeat-dentist pull-right"><i class="fa fa-plus"></i> Add Dentist</a><br>
+        </div>
+
+        <div class="hygienist-section">
+            <h2>Hygienist Details</h2>
+            <div class="row">
+                <div class="form-group col-sm-5">
+                    <label for="dentist_name">Dentist Full Name</label>
+                    <input type="text" class="form-control" id="full-name" placeholder="Full Name" required>
+                </div>
+
+                <div class="form-group col-sm-7">
+                    <label for="provider-num">DentalVision Provider Number (6 digits)</label>
+                    <input type="text" class="form-control" id="provider-num" placeholder="000000" maxlength="6"
+                           pattern="\d{6}" required>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="hygienist-button-row">
+            <a class="btn btn-default repeat-hygienist pull-right">+ Add Hygienist</a><br>
+        </div>
+        <button type="submit" class="btn btn-orange  pull-right">Next ></button>
+    </form>
+
+
 
 {% endblock %}
 
 
 
 {% block scripts_page %}
-    <!-- Script to Activate the Carousel -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.js"></script>
 
     <script>
-        // Cloning Form
-        var id_count = 1;
-        $('.repeat').on('click', function () {
-            var source = $('.intake-section:first'), clone = source.clone();
+        $('.datepicker').datepicker({
+        });
+
+        // Cloning Dentist
+        var den_count = 1;
+        $('.repeat-dentist').on('click', function () {
+            var source = $('.dentist-section:first'), clone = source.clone();
             clone.find(':input').attr('id', function (i, val) {
-                return val + "-" + id_count;
+                return val + "-" + den_count;
             });
-            clone.appendTo('.body');
-            id_count++;
+            clone.insertBefore('.dentist-button-row');
+            den_count++;
+        });
+
+        var hyg_count = 1;
+        $('.repeat-hygienist').on('click', function () {
+            var source = $('.hygienist-section:first'), clone = source.clone();
+            clone.find(':input').attr('id', function (i, val) {
+                return val + "-" + hyg_count;
+            });
+            clone.insertBefore('.hygienist-button-row');
+            hyg_count++;
         });
 
         // Removing Form Field
         $('body').on('click', '.remove', function () {
             var closest = $(this).closest('.form-holder').remove();
+        });
+
+        //submit form
+        $("#sign-in").ufForm({
+            // validators: page.validators.login,
+            msgTarget: $("#alerts-page")
+        }).on("submitSuccess.ufForm", function (event, data, textStatus, jqXHR) {
+            redirectOnLogin(jqXHR);
         });
     </script>
 

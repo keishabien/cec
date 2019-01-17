@@ -5,9 +5,14 @@ body {
     font-size: 14px;
     color: #575757;
 }
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 
 h2 {
     margin-top: 0px;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .login-page,
@@ -42,6 +47,7 @@ h2 {
 /* navigaiton */
 .main-header {
     margin-bottom: 15px;
+    box-shadow: 0px 0px 3px #757575;
 }
 
 .skin-red .main-header {
@@ -118,6 +124,15 @@ h2 {
     display: inline-block;
 }
 
+.page-title {
+    font-size: 26px;
+    font-weight: 700;
+    background-color: #006a52;
+    color: #FFF;
+    padding: 20px;
+    margin-top: 0;
+}
+
 /* bootstrap overrides */
 .form-control {
     border-color: #bbbcbc;
@@ -152,6 +167,11 @@ h2 {
     padding: 4px 10px;
 }
 
+.btn-orange {
+    background-color: #f18a00;
+    color: #FFF;
+}
+
 .nav ul {
     list-style-type: none;
     padding: 0;
@@ -159,17 +179,28 @@ h2 {
 
 
 /* intake form */
-.intake-section {
+.dentist-section,
+.hygienist-section{
     background-color: #f4f2f1;
     padding: 15px;
-}
-.dentist-section {
     margin-bottom: 20px;
 }
 .form-inline .form-group {
     margin-bottom: 10px;
 }
-
+.dentist-button-row,
+.hygienist-button-row {
+    width: 100%;
+    margin: 20px 0;
+    height: 35px;
+}
+.input-group.calendar .input-group-addon {
+    border: 1px solid #bbbcbc;
+    padding: 0 7px;
+}
+.input-group.calendar .form-control{
+    border-left:0;
+}
 
 /* dashboard override */
 .skin-red .main-header .logo {
@@ -227,12 +258,18 @@ h2 {
 .form-control-feedback {
     right: 5px;
 }
-
+.has-feedback-left .form-control {
+    padding-right: 12px;
+    padding-left: 34px;
+}
+.has-feedback-left .form-control-feedback {
+    left: 0;
+}
 .form-control-feedback {
     position: absolute;
     top: 0;
     right: 5px;
-    z-index: 2;
+    z-index: 5;
     display: block;
     width: 34px;
     height: 34px;
@@ -240,7 +277,9 @@ h2 {
     text-align: center;
     pointer-events: none;
 }
-
+.datepicker {
+    border-radius: 0 !important;
+}
 
 
 

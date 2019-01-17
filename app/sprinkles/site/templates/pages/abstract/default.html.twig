@@ -23,14 +23,15 @@
                     <section class="row">
                         <div class="col-sm-12">
                             <div id="alerts-page"></div>
-                            {#<h1>{% block header_title %}{{ block('page_title') }}{% endblock %}</h1>#}
+                            <h1 class="page-title">{% block header_title %}{{ block('page_title') }}{% endblock %}</h1>
                             {#{% if block('page_description') is not empty %}#}
-                            {#<h1>#}
-                            {#<small>{% block header_description %}{{ block('page_description') }}{% endblock %}</small>#}
-                            {#</h1>{% endif %}#}
-                            {% block breadcrumb %}
-                                {% include 'navigation/breadcrumb.html.twig' with {page_title: block('page_title')} %}
-                            {% endblock %}
+                                {#<h1>#}
+                                {#<small>{% block header_description %}{{ block('page_description') }}{% endblock %}</small>#}
+                                {#</h1>#}
+                            {#{% endif %}#}
+                            {#{% block breadcrumb %}#}
+                            {#{% include 'navigation/breadcrumb.html.twig' with {page_title: block('page_title')} %}#}
+                            {#{% endblock %}#}
                         </div>
                     </section>
                 {% endblock %}
