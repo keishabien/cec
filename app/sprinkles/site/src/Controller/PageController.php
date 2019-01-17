@@ -3,6 +3,8 @@
 namespace UserFrosting\Sprinkle\Site\Controller;
 
 use UserFrosting\Sprinkle\Core\Controller\SimpleController;
+use UserFrosting\Fortress\RequestSchema;
+
 
 class PageController extends SimpleController
 {
@@ -21,6 +23,7 @@ class PageController extends SimpleController
 
     public function pageIntake($request, $response, $args)
     {
+        $schema = new RequestSchema('schema://requests/intake-form.yaml');
         return $this->ci->view->render($response, 'pages/intake.html.twig');
     }
 }
