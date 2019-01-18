@@ -7,18 +7,21 @@
 return [
     'address_book' => [
         'admin' => [
-            'name'  => 'Keisha'
+            'name' => 'Keisha'
         ]
     ],
     'debug' => [
         'smtp' => true
     ],
     'site' => [
-        'author'    =>      'Keisha Bien',
-        'title'     =>      'CEC',
-        'logo'      =>      'assets/images/login_cec.jpg'
+        'author' => 'Keisha Bien',
+        'title' => 'CEC',
+        'logo' => 'assets/images/login_cec.jpg',
+        'registration' => [
+            'enabled' => false
+        ]
     ],
     'php' => [
-        'timezone' => 'America/Chicago'
-    ]
+    'timezone' => 'America/Chicago'
+]
 ];

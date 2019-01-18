@@ -15,6 +15,14 @@ h2 {
     font-weight: bold;
 }
 
+a, a:visited {
+    color: #006a52;
+}
+
+a:hover, a:focus {
+    color: #f8971d;
+}
+
 .login-page,
 .register-page {
     background-color: #FFF;
@@ -180,16 +188,23 @@ h2 {
 
 /* intake form */
 .dentist-section,
-.hygienist-section{
+.hygienist-section,
+.adult-npie-section,
+.child-npie-section{
     background-color: #f4f2f1;
     padding: 15px;
     margin-bottom: 20px;
+}
+.dentist-section:first-of-type h2 i{
+    display: none;
 }
 .form-inline .form-group {
     margin-bottom: 10px;
 }
 .dentist-button-row,
-.hygienist-button-row {
+.hygienist-button-row,
+.adult-button-row,
+.child-button-row{
     width: 100%;
     margin: 20px 0;
     height: 35px;
@@ -280,12 +295,18 @@ h2 {
 .datepicker {
     border-radius: 0 !important;
 }
+.office-select {
+    margin: 5px 0 15px;
+}
 
 
 
 /* other overrides */
 .content-header {
     padding: 0;
+}
+.form-group.has-success .form-control, .form-group.has-success .input-group-addon {
+    border-color: #006a52;
 }
 
 /* paddings */

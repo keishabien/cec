@@ -18,23 +18,30 @@
 
 
 
-    <form class="form-inline">
-        <select class="form-control" name="offices" id="offices">
-            <option>Please Select</option>
-        </select>
+    <form class="form-inline" method="get" action="{{ site.uri.public }}/intake/npie">
+        {% include "forms/csrf.html.twig" %}
+        <div class="office-select">
+            <select class="form-control" name="offices" id="offices">
+                <option>Please Select Your Office</option>
+                {% for office in offices %}
+                    <option value="{{ office.page_title }}">{{ office.page_title }}</option>
+                {% endfor %}
+            </select>
+        </div>
 
         <div class="dentist-section">
 
-            <h2>Dentist Details</h2>
+            <h2 id="dentist-details-1">Dentist 1 Details</h2>
             <div class="row">
                 <div class="form-group col-sm-5">
-                    <label for="full-name">Dentist Full Name</label>
-                    <input type="text" class="form-control" id="full-name" placeholder="Full Name" required>
+                    <label for="dentist-full-name-1">Dentist Full Name</label>
+                    <input type="text" class="form-control" id="dentist-full-name-1" placeholder="Full Name" required>
                 </div>
 
                 <div class="form-group col-sm-7">
-                    <label for="provider-num">DentalVision Provider Number (6 digits)</label>
-                    <input type="text" class="form-control" id="provider-num" placeholder="000000" maxlength="6"
+                    <label for="dentist-provider-num-1">DentalVision Provider Number (6 digits)</label>
+                    <input type="text" class="form-control" id="dentist-provider-num-1" placeholder="000000"
+                           maxlength="6"
                            pattern="\d{6}" required>
                 </div>
             </div>
@@ -42,11 +49,11 @@
 
             <div class="form-group">
 
-                <label for="called-name">How does the doctor refer to themself with patients? (i.e. Dr.
+                <label for="dentist-called-name-1">How does the doctor refer to themself with patients? (i.e. Dr.
                     Steven Smith likes patients to call him Dr. Steve)
                 </label>
 
-                <input type="text" id="called-name" class="form-control">
+                <input type="text" id="dentist-called-name-1" class="form-control">
                 {#<span id="helpBlock"#}
                 {#class="help-block">(i.e. Dr. Steven Smith likes patients to call him Dr. Steve)</span>#}
 
@@ -60,14 +67,14 @@
                 <div class="form-group col-sm-4">
                     Permanent or Locum?
                     <div class="radio">
-                        <label>
-                            <input type="radio" name="locum" id="permanent" value="Permanent">
+                        <label for="dentist-permanent-1">
+                            <input type="radio" name="dentist-locum-1" id="dentist-permanent-1" value="Permanent">
                             Permanent
                         </label>
                     </div>
                     <div class="radio">
-                        <label>
-                            <input type="radio" name="locum" id="locum" value="Locum">
+                        <label for="dentist-locum-1">
+                            <input type="radio" name="dentist-locum-1" id="dentist-locum-1" value="Locum">
                             Locum
                         </label>
                     </div>
@@ -75,22 +82,23 @@
 
 
                 <div class="form-group has-feedback has-feedback-left col-sm-8">
-                    <label for="start-date" class="control-label">When did this doctor start at your location?
+                    <label for="dentist-start-date-1" class="control-label">When did this doctor start at your location?
                     </label>
                     <div class="inline-feedback input-group">
-                        <input type="text" class="form-control datepicker" id="start-date">
+                        <input type="text" class="form-control datepicker" id="dentist-start-date-1">
                         <i class="form-control-feedback fa fa-calendar"></i>
                     </div>
                 </div>
             </div>
 
             <div class="form-group has-feedback has-feedback-left">
-                <label for="exit-date" class="control-label">If the doctor is exiting, what is their last day seeing
+                <label for="dentist-exit-date-1" class="control-label">If the doctor is exiting, what is their last day
+                    seeing
                     patients?
                 </label>
 
                 <div class="inline-feedback input-group">
-                    <input type="text" class="form-control datepicker" id="exit-date">
+                    <input type="text" class="form-control datepicker" id="dentist-exit-date-1">
                     <i class="form-control-feedback fa fa-calendar"></i>
                 </div>
             </div>
@@ -99,32 +107,32 @@
                 <div class="form-group col-sm-4">
                     Is the doctor currently or going on leave?
                     <div class="radio">
-                        <label>
-                            <input type="radio" name="leave" id="yes" value="Yes">
+                        <label for="dentist-yes-1">
+                            <input type="radio" name="dentist-leave-1" id="dentist-yes-1" value="Yes">
                             Yes
                         </label>
                     </div>
                     <div class="radio">
-                        <label>
-                            <input type="radio" name="leave" id="no" value="No">
+                        <label for="dentist-no-1">
+                            <input type="radio" name="dentist-leave-1" id="dentist-no-1" value="No">
                             No
                         </label>
                     </div>
                 </div>
 
                 <div class="form-group has-feedback has-feedback-left col-sm-4">
-                    <label for="leave-start-date" class="control-label">Leave start date:</label>
+                    <label for="dentist-leave-start-date-1" class="control-label">Leave start date:</label>
                     <div class="inline-feedback input-group">
-                        <input type="text" class="form-control datepicker" id="leave-start-date">
+                        <input type="text" class="form-control datepicker" id="dentist-leave-start-date-1">
                         <i class="form-control-feedback fa fa-calendar"></i>
                     </div>
                 </div>
 
 
                 <div class="form-group has-feedback has-feedback-left col-sm-4">
-                    <label for="leave-start-date" class="control-label">Leave end date:</label>
+                    <label for="dentist-leave-start-date-1" class="control-label">Leave end date:</label>
                     <div class="inline-feedback input-group">
-                        <input type="text" class="form-control datepicker" id="leave-end-date">
+                        <input type="text" class="form-control datepicker" id="dentist-leave-end-date-1">
                         <i class="form-control-feedback fa fa-calendar"></i>
                     </div>
                 </div>
@@ -137,16 +145,17 @@
         </div>
 
         <div class="hygienist-section">
-            <h2>Hygienist Details</h2>
+            <h2 id="hygienist-details">Hygienist 1 Details</h2>
             <div class="row">
                 <div class="form-group col-sm-5">
-                    <label for="dentist_name">Dentist Full Name</label>
-                    <input type="text" class="form-control" id="full-name" placeholder="Full Name" required>
+                    <label for="hygienist-name">Hygienist Full Name</label>
+                    <input type="text" class="form-control" id="hygienist-name" placeholder="Full Name" required>
                 </div>
 
                 <div class="form-group col-sm-7">
-                    <label for="provider-num">DentalVision Provider Number (6 digits)</label>
-                    <input type="text" class="form-control" id="provider-num" placeholder="000000" maxlength="6"
+                    <label for="hygienist-provider-num">DentalVision Provider Number (6 digits)</label>
+                    <input type="text" class="form-control" id="hygienist-provider-num" placeholder="000000"
+                           maxlength="6"
                            pattern="\d{6}" required>
                 </div>
             </div>
@@ -158,7 +167,7 @@
         </div>
         <button type="submit" class="btn btn-orange  pull-right">Next ></button>
     </form>
-
+    <a type="submit" class="btn btn-orange  pull-right" href="{{ site.uri.public }}/intake/npie">Next ></a>
 
 
 {% endblock %}
@@ -169,34 +178,14 @@
     <script type="text/javascript"
             src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.js"></script>
 
+    <!-- Include page-specific JS -->
+    {{ assets.js('js/intake-dr-hyg') | raw }}
+
     <script>
-        $('.datepicker').datepicker({});
+        $('.datepicker').datepicker();
 
-        // Cloning Dentist
-        var den_count = 1;
-        $('.repeat-dentist').on('click', function () {
-            var source = $('.dentist-section:first'), clone = source.clone();
-            clone.find(':input').attr('id', function (i, val) {
-                return val + "-" + den_count;
-            });
-            clone.insertBefore('.dentist-button-row');
-            den_count++;
-        });
 
-        var hyg_count = 1;
-        $('.repeat-hygienist').on('click', function () {
-            var source = $('.hygienist-section:first'), clone = source.clone();
-            clone.find(':input').attr('id', function (i, val) {
-                return val + "-" + hyg_count;
-            });
-            clone.insertBefore('.hygienist-button-row');
-            hyg_count++;
-        });
 
-        // Removing Form Field
-        $('body').on('click', '.remove', function () {
-            var closest = $(this).closest('.form-holder').remove();
-        });
 
         //submit form
         $("#sign-in").ufForm({
