@@ -9,7 +9,8 @@
 {% block stylesheets_page %}
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker3.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker3.css">
 {% endblock %}
 
 {% block body_matter %}
@@ -18,6 +19,10 @@
 
 
     <form class="form-inline">
+        <select class="form-control" name="offices" id="offices">
+            <option>Please Select</option>
+        </select>
+
         <div class="dentist-section">
 
             <h2>Dentist Details</h2>
@@ -70,7 +75,8 @@
 
 
                 <div class="form-group has-feedback has-feedback-left col-sm-8">
-                    <label for="start-date" class="control-label">When did this doctor start at your location?</label>
+                    <label for="start-date" class="control-label">When did this doctor start at your location?
+                    </label>
                     <div class="inline-feedback input-group">
                         <input type="text" class="form-control datepicker" id="start-date">
                         <i class="form-control-feedback fa fa-calendar"></i>
@@ -160,11 +166,11 @@
 
 
 {% block scripts_page %}
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.js"></script>
 
     <script>
-        $('.datepicker').datepicker({
-        });
+        $('.datepicker').datepicker({});
 
         // Cloning Dentist
         var den_count = 1;
