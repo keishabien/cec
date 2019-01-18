@@ -4,7 +4,7 @@ namespace UserFrosting\Sprinkle\Site\Controller;
 
 use UserFrosting\Sprinkle\Core\Controller\SimpleController;
 use UserFrosting\Fortress\RequestSchema;
-
+use UserFrosting\Sprinkle\Site\Database\Models\Office;
 
 class PageController extends SimpleController
 {
@@ -24,6 +24,24 @@ class PageController extends SimpleController
     public function pageIntake($request, $response, $args)
     {
         $schema = new RequestSchema('schema://requests/intake-form.yaml');
-        return $this->ci->view->render($response, 'pages/intake.html.twig');
+
+        $offices = Office::distinct()->where('page_title', 'like', '% Dentist Office')->orderBy('page_title', 'ASC')->get();
+//            SELECT distinct page_title, page_id FROM office_details where page_title like "% Dentist Office" ORDER BY page_title
+
+        return $this->ci->view->render($response, 'pages/intake-dr-hyg-details.html.twig', [
+            'offices' => $offices,
+        ]);
+    }
+
+    public function pageNPIE($request, $response, $args)
+    {
+        $schema = new RequestSchema('schema://requests/intake-form.yaml');
+
+        $offices = Office::distinct()->where('page_title', 'like', '% Dentist Office')->orderBy('page_title', 'ASC')->get();
+//            SELECT distinct page_title, page_id FROM office_details where page_title like "% Dentist Office" ORDER BY page_title
+
+        return $this->ci->view->render($response, 'pages/intake-npie.html.twig', [
+            'offices' => $offices,
+        ]);
     }
 }

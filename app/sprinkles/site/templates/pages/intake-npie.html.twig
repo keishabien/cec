@@ -1,0 +1,294 @@
+{% extends "pages/abstract/default.html.twig" %}
+
+{% set page_active = "npie" %}
+
+{# Overrides blocks in head of base template #}
+
+{% block page_title %}Practice Information Form{% endblock %}
+
+
+{% block body_matter %}
+    {#<h1>Welcome to the CEC Support App</h1>#}
+
+
+
+    <form class="form-inline">
+
+        <div class="adult-npie-section">
+            <h2 id="adult-npie">Adult NPIE 1</h2>
+
+            <div class="row">
+                <div class="form-group col-sm-6">
+                    New patient can be scheduled in Doctor or Hygiene chair?
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="adult-npie-scheduled" id="yes" value="Yes">
+                            Yes
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="adult-npie-scheduled" id="no" value="No">
+                            No
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group col-sm-6">
+                    <label for="adult-chair">Which chair do you schedule new adult patients in?</label>
+                    <select class="form-control" name="adult-chair" id="adult-chair">
+                        <option>Please select</option>
+                        <option value="hygiene">Hygiene</option>
+                        <option value="doctor">Doctor</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="form-group col-sm-6">
+                    <label for="adult-hygiene-units">Hygiene Units</label>
+                    <select class="form-control" name="adult-hygiene-units" id="adult-hygiene-units">
+                        <option>Please select</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-sm-6">
+                    <label for="adult-doctor-units">Doctor Units</label>
+                    <select class="form-control" name="adult-doctor-units" id="adult-doctor-units">
+                        <option>Please select</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-sm-6">
+                    Is the first visit exam and x-rays only?
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="adult-first-exam" id="yes" value="Yes">
+                            Yes
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="adult-first-exam" id="no" value="No">
+                            No
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group col-sm-6">
+                    Does the patient get a cleaning the same day?
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="adult-first-cleaning" id="yes" value="Yes">
+                            Yes
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="adult-first-cleaning" id="no" value="No">
+                            No
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="adult-button-row">
+            <a class="btn btn-default repeat-adult pull-right"><i class="fa fa-plus"></i> Add Adult NPIE</a><br>
+        </div>
+
+        <div class="child-npie-section">
+
+            <h2 id="child-npie">Child NPIE 1</h2>
+
+
+            <div class="row">
+                <div class="form-group col-sm-6">
+                    New child patient can be scheduled in Doctor or Hygiene chair?
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="child-npie-scheduled" id="yes" value="Yes">
+                            Yes
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="child-npie-scheduled" id="no" value="No">
+                            No
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group col-sm-6">
+                    <label for="child-chair">Which chair do you schedule new child patients in?</label>
+                    <select class="form-control" name="child-chair" id="child-chair">
+                        <option>Please select</option>
+                        <option value="hygiene">Hygiene</option>
+                        <option value="doctor">Doctor</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="form-group col-sm-6">
+                    <label for="child-hygiene-units">Hygiene Units</label>
+                    <select class="form-control" name="child-hygiene-units" id="child-hygiene-units">
+                        <option>Please select</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-sm-6">
+                    <label for="child-doctor-units">Doctor Units</label>
+                    <select class="form-control" name="child-doctor-units" id="child-doctor-units">
+                        <option>Please select</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-sm-6">
+                    Is the first visit exam and x-rays only?
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="child-first-exam" id="yes" value="Yes">
+                            Yes
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="child-first-exam" id="no" value="No">
+                            No
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group col-sm-6">
+                    Does the patient get a cleaning the same day?
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="child-first-cleaning" id="yes" value="Yes">
+                            Yes
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="child-first-cleaning" id="no" value="No">
+                            No
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="child-button-row">
+            <a class="btn btn-default repeat-child pull-right">+ Add Child NPIE</a><br>
+        </div>
+        <button type="submit" class="btn btn-orange  pull-right">Next ></button>
+    </form>
+
+
+
+{% endblock %}
+
+
+
+{% block scripts_page %}
+
+    <script>
+
+
+        // Cloning Dentist
+        var adult_count = 2;
+        $('.repeat-adult').on('click', function () {
+            var source = $('.adult-npie-section:first'), clone = source.clone();
+            clone.find(':input').attr('id', function (i, val) {
+                return val + "-" + adult_count;
+            });
+            clone.find('#adult-npie').attr('id', function (i, val) {
+                return val + "-" + adult_count;
+            });
+            clone.insertBefore('.adult-button-row');
+            document.getElementById('adult-npie-' + adult_count).innerHTML = "Adult NPIE " + adult_count + "<i class=\"fa fa-times pull-right remove\"></i>";
+            adult_count++;
+        });
+
+        var child_count = 2;
+        $('.repeat-child').on('click', function () {
+            var source = $('.child-npie-section:first'), clone = source.clone();
+            clone.find(':input').attr('id', function (i, val) {
+                return val + "-" + child_count;
+            });
+            clone.find('#child-npie').attr('id', function (i, val) {
+                return val + "-" + child_count;
+            });
+            clone.insertBefore('.child-button-row');
+            document.getElementById('child-npie-' + child_count).innerHTML = "Child NPIE " + child_count + "<i class=\"fa fa-times pull-right remove\"></i>";
+            child_count++;
+        });
+
+        // Removing Form Field
+        $('body').on('click', '.remove', function () {
+            var closest = $(this).closest('.adult-npie-section, .child-npie-section').remove();
+        });
+
+        //submit form
+        $("#sign-in").ufForm({
+            // validators: page.validators.login,
+            msgTarget: $("#alerts-page")
+        }).on("submitSuccess.ufForm", function (event, data, textStatus, jqXHR) {
+            redirectOnLogin(jqXHR);
+        });
+    </script>
+
+{% endblock %}
