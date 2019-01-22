@@ -73,7 +73,7 @@
 
             <div class="row">
                 <div class="col-sm-4">
-                    <div class="form-group has-feedback">
+                    <div class="form-group has-feedback radio">
                         Permanent or Locum?
                         <div class="radio">
                             <label for="dentist-permanent-1">
@@ -115,7 +115,7 @@
                                 <i class="fa fa-calendar"></i>
                             </span>
                             <input type="text" class="form-control datepicker" id="dentist-exit-date-1"
-                            name="dentist-end-date">
+                                   name="dentist-end-date">
                         </div>
                     </div>
                 </div>
@@ -124,7 +124,7 @@
 
             <div class="row">
                 <div class="col-sm-4">
-                    <div class="form-group">
+                    <div class="form-group has-feedback radio">
                         Is the doctor currently or going on leave?
                         <div class="radio">
                             <label for="dentist-yes-1">
@@ -141,20 +141,29 @@
                     </div>
                 </div>
 
-                <div class="form-group has-feedback has-feedback-left col-sm-4">
-                    <label for="dentist-leave-start-date-1" class="control-label">Leave start date:</label>
-                    <div class="inline-feedback input-group">
-                        <input type="text" class="form-control datepicker" id="dentist-leave-start-date-1">
-                        <i class="form-control-feedback fa fa-calendar"></i>
+                <div class="col-sm-4">
+                    <div class="form-group has-feedback has-feedback-left">
+                        <label for="dentist-leave-start-date-1" class="control-label">Leave start date:</label>
+                        <div class="inline-feedback input-group">
+                        <span class="input-group-addon input-group-override">
+                                <i class="fa fa-calendar"></i>
+                            </span>
+                            <input type="text" class="form-control datepicker" id="dentist-leave-start-date-1"
+                                   name="dentist-leave-start-date">
+                        </div>
                     </div>
                 </div>
 
-
-                <div class="form-group has-feedback has-feedback-left col-sm-4">
-                    <label for="dentist-leave-start-date-1" class="control-label">Leave end date:</label>
-                    <div class="inline-feedback input-group">
-                        <input type="text" class="form-control datepicker" id="dentist-leave-end-date-1">
-                        <i class="form-control-feedback fa fa-calendar"></i>
+                <div class="col-sm-4">
+                    <div class="form-group has-feedback has-feedback-left">
+                        <label for="dentist-leave-end-date-1" class="control-label">Leave end date:</label>
+                        <div class="inline-feedback input-group">
+                        <span class="input-group-addon input-group-override">
+                                <i class="fa fa-calendar"></i>
+                            </span>
+                            <input type="text" class="form-control datepicker" id="dentist-leave-end-date-1"
+                                   name="dentist-leave-end-date">
+                        </div>
                     </div>
                 </div>
 
@@ -169,13 +178,13 @@
             <h2 id="hygienist-details">Hygienist 1 Details</h2>
             <div class="row">
                 <div class="form-group col-sm-5">
-                    <label for="hygienist-name">Hygienist Full Name</label>
-                    <input type="text" class="form-control" id="hygienist-name" placeholder="Full Name" required>
+                    <label for="hygienist-name" class="control-label">Hygienist Full Name</label>
+                    <input type="text" class="form-control" id="hygienist-name" name="hygienist-name" placeholder="Full Name">
                 </div>
 
                 <div class="form-group col-sm-7">
-                    <label for="hygienist-provider-num">DentalVision Provider Number (6 digits)</label>
-                    <input type="text" class="form-control" id="hygienist-provider-num" placeholder="000000">
+                    <label for="hygienist-provider-num" class="control-label">DentalVision Provider Number (6 digits)</label>
+                    <input type="text" class="form-control" id="hygienist-provider-num" name="hygienist-provider-num" placeholder="000000">
                 </div>
             </div>
 
