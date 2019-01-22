@@ -18,11 +18,11 @@
 
 
 
-    <form class="form-inline" method="get" action="{{ site.uri.public }}/intake/npie">
+    <form class="form-inline intake" method="post" action="{{ site.uri.public }}/intake/npie">
         {% include "forms/csrf.html.twig" %}
         <div class="office-select">
-            <select class="form-control" name="offices" id="offices">
-                <option>Please Select Your Office</option>
+            <select class="form-control" name="location" id="offices">
+                <option value="">Please Select Your Office</option>
                 {% for office in offices %}
                     <option value="{{ office.page_title }}">{{ office.page_title }}</option>
                 {% endfor %}
@@ -33,27 +33,35 @@
 
             <h2 id="dentist-details-1">Dentist 1 Details</h2>
             <div class="row">
-                <div class="form-group col-sm-5">
-                    <label for="dentist-full-name-1">Dentist Full Name</label>
-                    <input type="text" class="form-control" id="dentist-full-name-1" placeholder="Full Name" required>
+                <div class="col-sm-5">
+                    <div class="form-group has-feedback">
+                        <label for="dentist-full-name-1" class="control-label">Dentist Full Name</label>
+                        <input type="text" class="form-control" name="dentist-full-name" id="dentist-full-name-1"
+                               placeholder="Full Name">
+                    </div>
                 </div>
 
-                <div class="form-group col-sm-7">
-                    <label for="dentist-provider-num-1">DentalVision Provider Number (6 digits)</label>
-                    <input type="text" class="form-control" id="dentist-provider-num-1" placeholder="000000"
-                           maxlength="6"
-                           pattern="\d{6}" required>
+
+                <div class="col-sm-7">
+                    <div class="form-group has-feedback">
+                        <label for="dentist-provider-num-1" class="control-label">DentalVision Provider Number (6
+                            digits)
+                        </label>
+                        <input type="text" class="form-control" id="dentist-provider-num-1" placeholder="000000"
+                               name="dentist-provider-num">
+                    </div>
                 </div>
             </div>
 
 
-            <div class="form-group">
+            <div class="form-group has-feedback">
 
-                <label for="dentist-called-name-1">How does the doctor refer to themself with patients? (i.e. Dr.
+                <label for="dentist-called-name-1" class="control-label">How does the doctor refer to themself with
+                    patients? (i.e. Dr.
                     Steven Smith likes patients to call him Dr. Steve)
                 </label>
 
-                <input type="text" id="dentist-called-name-1" class="form-control">
+                <input type="text" id="dentist-called-name-1" name="dentist-called-name" class="form-control">
                 {#<span id="helpBlock"#}
                 {#class="help-block">(i.e. Dr. Steven Smith likes patients to call him Dr. Steve)</span>#}
 
@@ -64,59 +72,72 @@
 
 
             <div class="row">
-                <div class="form-group col-sm-4">
-                    Permanent or Locum?
-                    <div class="radio">
-                        <label for="dentist-permanent-1">
-                            <input type="radio" name="dentist-locum-1" id="dentist-permanent-1" value="Permanent">
-                            Permanent
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="dentist-locum-1">
-                            <input type="radio" name="dentist-locum-1" id="dentist-locum-1" value="Locum">
-                            Locum
-                        </label>
+                <div class="col-sm-4">
+                    <div class="form-group has-feedback">
+                        Permanent or Locum?
+                        <div class="radio">
+                            <label for="dentist-permanent-1">
+                                <input type="radio" name="locum-radio" id="dentist-permanent-1" value="Permanent">
+                                Permanent
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label for="dentist-locum-1">
+                                <input type="radio" name="locum-radio" id="dentist-locum-1" value="Locum">
+                                Locum
+                            </label>
+                        </div>
                     </div>
                 </div>
 
+                <div class="col-sm-8">
+                    <div class="form-group has-feedback has-feedback-left">
+                        <label for="dentist-start-date-1" class="control-label">When did this doctor start at your
+                            location?
+                        </label>
+                        <div class="inline-feedback input-group">
+                            <span class="input-group-addon input-group-override">
+                                <i class="fa fa-calendar"></i>
+                            </span>
+                            <input type="text" class="form-control datepicker" id="dentist-start-date-1"
+                                   name="dentist-start-date">
+                        </div>
+                    </div>
 
-                <div class="form-group has-feedback has-feedback-left col-sm-8">
-                    <label for="dentist-start-date-1" class="control-label">When did this doctor start at your location?
-                    </label>
-                    <div class="inline-feedback input-group">
-                        <input type="text" class="form-control datepicker" id="dentist-start-date-1">
-                        <i class="form-control-feedback fa fa-calendar"></i>
+
+                    <div class="form-group has-feedback has-feedback-left">
+                        <label for="dentist-exit-date-1" class="control-label">If the doctor is exiting, what is their
+                            last day seeing patients?
+                        </label>
+
+                        <div class="inline-feedback input-group">
+                            <span class="input-group-addon input-group-override">
+                                <i class="fa fa-calendar"></i>
+                            </span>
+                            <input type="text" class="form-control datepicker" id="dentist-exit-date-1"
+                            name="dentist-end-date">
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="form-group has-feedback has-feedback-left">
-                <label for="dentist-exit-date-1" class="control-label">If the doctor is exiting, what is their last day
-                    seeing
-                    patients?
-                </label>
-
-                <div class="inline-feedback input-group">
-                    <input type="text" class="form-control datepicker" id="dentist-exit-date-1">
-                    <i class="form-control-feedback fa fa-calendar"></i>
-                </div>
-            </div>
 
             <div class="row">
-                <div class="form-group col-sm-4">
-                    Is the doctor currently or going on leave?
-                    <div class="radio">
-                        <label for="dentist-yes-1">
-                            <input type="radio" name="dentist-leave-1" id="dentist-yes-1" value="Yes">
-                            Yes
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="dentist-no-1">
-                            <input type="radio" name="dentist-leave-1" id="dentist-no-1" value="No">
-                            No
-                        </label>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        Is the doctor currently or going on leave?
+                        <div class="radio">
+                            <label for="dentist-yes-1">
+                                <input type="radio" name="leave-radio" id="dentist-yes-1" value="Yes">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label for="dentist-no-1">
+                                <input type="radio" name="leave-radio" id="dentist-no-1" value="No">
+                                No
+                            </label>
+                        </div>
                     </div>
                 </div>
 
@@ -154,9 +175,7 @@
 
                 <div class="form-group col-sm-7">
                     <label for="hygienist-provider-num">DentalVision Provider Number (6 digits)</label>
-                    <input type="text" class="form-control" id="hygienist-provider-num" placeholder="000000"
-                           maxlength="6"
-                           pattern="\d{6}" required>
+                    <input type="text" class="form-control" id="hygienist-provider-num" placeholder="000000">
                 </div>
             </div>
 
@@ -178,6 +197,11 @@
     <script type="text/javascript"
             src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.js"></script>
 
+    <!-- Include validation rules -->
+    <script>
+        {% include "pages/partials/page.js.twig" %}
+    </script>
+
     <!-- Include page-specific JS -->
     {{ assets.js('js/intake-dr-hyg') | raw }}
 
@@ -185,14 +209,11 @@
         $('.datepicker').datepicker();
 
 
-
-
         //submit form
-        $("#sign-in").ufForm({
-            // validators: page.validators.login,
-            msgTarget: $("#alerts-page")
+        $(".intake").ufForm({
+            validators: page.validators.intake
         }).on("submitSuccess.ufForm", function (event, data, textStatus, jqXHR) {
-            redirectOnLogin(jqXHR);
+            window.location.replace(site.uri.public + "/intake/npie");
         });
     </script>
 

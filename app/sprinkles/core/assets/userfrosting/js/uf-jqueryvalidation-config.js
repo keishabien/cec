@@ -33,7 +33,10 @@ jQuery.validator.setDefaults({
     errorPlacement: function(error, element) {
         if(element.parent('.input-group').length) {
             error.insertAfter(element.parent());
-        } else {
+        }else if(element.is(":radio")){
+            //create override for my radio buttons
+            error.insertAfter(element.parent().parent().next());
+        }else {
             error.insertAfter(element);
         }
     },
