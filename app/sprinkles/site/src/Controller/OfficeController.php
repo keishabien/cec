@@ -211,7 +211,6 @@ class OfficeController extends SimpleController
         // Determine widgets to display
         $widgets = [
             'hidden' => [
-                'activities'
             ]
         ];
 //

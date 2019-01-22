@@ -120,11 +120,7 @@
                         <i class="fa fa-drivers-license"></i> {% endverbatim %}{{ translate("ROLE.MANAGE") }}{% verbatim %}
                         </a>
                     </li>
-                    <li>
-                        <a href="#" data-user_name="{{row.user_name}}" class="js-user-password">
-                        <i class="fa fa-key"></i> {% endverbatim %}{{ translate("USER.ADMIN.CHANGE_PASSWORD") }}{% verbatim %}
-                        </a>
-                    </li>
+
                     <li>
                     {{#ifx row.flag_enabled '==' 1 }}
                         <a href="#" data-user_name="{{row.user_name}}" class="js-user-disable">

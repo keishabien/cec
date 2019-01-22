@@ -1,6 +1,6 @@
 {% extends "pages/abstract/default.html.twig" %}
 
-{% set page_active = "npie" %}
+{% set page_active = "recall" %}
 
 {# Overrides blocks in head of base template #}
 
@@ -10,45 +10,18 @@
 {% block body_matter %}
     {#<h1>Welcome to the CEC Support App</h1>#}
 
-    {% for dat in data %}
-        {{ dat }}
-    {% endfor %}
+
 
     <form class="form-inline">
 
         <div class="adult-npie-section">
-            <h2 id="adult-npie">Adult NPIE 1</h2>
+            <h2 id="adult-npie">Adult Recall 1</h2>
 
             <div class="row">
                 <div class="form-group col-sm-6">
-                    New patient can be scheduled in Doctor or Hygiene chair?
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="adult-npie-scheduled" id="yes" value="Yes">
-                            Yes
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="adult-npie-scheduled" id="no" value="No">
-                            No
-                        </label>
-                    </div>
-                </div>
-                <div class="form-group col-sm-6">
-                    <label for="adult-chair">Which chair do you schedule new adult patients in?</label>
-                    <select class="form-control" name="adult-chair" id="adult-chair">
-                        <option>Please select</option>
-                        <option value="hygiene">Hygiene</option>
-                        <option value="doctor">Doctor</option>
-                    </select>
-                </div>
-            </div>
-
-
-            <div class="row">
-                <div class="form-group col-sm-6">
-                    <label for="adult-hygiene-units">Hygiene Units</label>
+                    <label for="adult-hygiene-units">For an adult patient with no treatment plan, how many units is that
+                        patient scheduled in hygiene?
+                    </label>
                     <select class="form-control" name="adult-hygiene-units" id="adult-hygiene-units">
                         <option>Please select</option>
                         <option value="1">1</option>
@@ -67,8 +40,98 @@
                 </div>
 
                 <div class="form-group col-sm-6">
-                    <label for="adult-doctor-units">Doctor Units</label>
+                    <label for="adult-doctor-units">After how many years since their last visit do you consider the
+                        patient "new" and schedule them as a new patient?
+                    </label>
                     <select class="form-control" name="adult-doctor-units" id="adult-doctor-units">
+                        <option>Please select</option>
+                        <option value="<1 year">Less than 1 year</option>
+                        <option value="1 year">1 year</option>
+                        <option value="2 years">2 years</option>
+                        <option value="3 years">3 years</option>
+                        <option value="4 years">4 years</option>
+                        <option value="5 years">5 years</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-sm-6">
+                    Is it okay if a patient is treatment planned for SRP, and only wants a regular cleaning?
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="adult-npie-scheduled" id="yes" value="Yes">
+                            Yes
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="adult-npie-scheduled" id="no" value="No">
+                            No
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group col-sm-6">
+                    If no, should we transfer the call to the practice?
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="adult-npie-scheduled" id="yes" value="Yes">
+                            Yes
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="adult-npie-scheduled" id="no" value="No">
+                            No
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-sm-6">
+                    <label for="adult-hygiene-units">If yes, how many units should we schedule for a regular cleaning?
+                    </label>
+                    <select class="form-control" name="adult-hygiene-units" id="adult-hygiene-units">
+                        <option>Please select</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                </div>
+                <div class="form-group col-sm-6">
+                    Should we also schedule them for an exam or consultation with the doctor?
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="adult-npie-scheduled" id="yes" value="Yes">
+                            Yes
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="adult-npie-scheduled" id="no" value="No">
+                            No
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="form-group col-sm-6">
+                    <label for="adult-hygiene-units">If a patient is treatment planned for perio maintenance and no
+                        units are attached, how many units do you schedule?
+                    </label>
+                    <select class="form-control" name="adult-hygiene-units" id="adult-hygiene-units">
                         <option>Please select</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -85,40 +148,6 @@
                     </select>
                 </div>
             </div>
-
-            <div class="row">
-                <div class="form-group col-sm-6">
-                    Is the first visit exam and x-rays only?
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="adult-first-exam" id="yes" value="Yes">
-                            Yes
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="adult-first-exam" id="no" value="No">
-                            No
-                        </label>
-                    </div>
-                </div>
-
-                <div class="form-group col-sm-6">
-                    Does the patient get a cleaning the same day?
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="adult-first-cleaning" id="yes" value="Yes">
-                            Yes
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="adult-first-cleaning" id="no" value="No">
-                            No
-                        </label>
-                    </div>
-                </div>
-            </div>
         </div>
 
 
@@ -128,12 +157,34 @@
 
         <div class="child-npie-section">
 
-            <h2 id="child-npie">Child NPIE 1</h2>
+            <h2 id="child-npie">Child Recall 1</h2>
 
 
             <div class="row">
                 <div class="form-group col-sm-6">
-                    New child patient can be scheduled in Doctor or Hygiene chair?
+                    Child Age Range
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="child-npie-scheduled" id="yes" value="Yes">
+                            Age 0-3
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="child-npie-scheduled" id="no" value="No">
+                            Age 4-10
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="child-npie-scheduled" id="no" value="No">
+                            Age 11-17
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group col-sm-6">
+                    If the patient got braces since their last visit, do you add a unit?
+
                     <div class="radio">
                         <label>
                             <input type="radio" name="child-npie-scheduled" id="yes" value="Yes">
@@ -146,14 +197,6 @@
                             No
                         </label>
                     </div>
-                </div>
-                <div class="form-group col-sm-6">
-                    <label for="child-chair">Which chair do you schedule new child patients in?</label>
-                    <select class="form-control" name="child-chair" id="child-chair">
-                        <option>Please select</option>
-                        <option value="hygiene">Hygiene</option>
-                        <option value="doctor">Doctor</option>
-                    </select>
                 </div>
             </div>
 
@@ -195,40 +238,6 @@
                         <option value="11">11</option>
                         <option value="12">12</option>
                     </select>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="form-group col-sm-6">
-                    Is the first visit exam and x-rays only?
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="child-first-exam" id="yes" value="Yes">
-                            Yes
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="child-first-exam" id="no" value="No">
-                            No
-                        </label>
-                    </div>
-                </div>
-
-                <div class="form-group col-sm-6">
-                    Does the patient get a cleaning the same day?
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="child-first-cleaning" id="yes" value="Yes">
-                            Yes
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="child-first-cleaning" id="no" value="No">
-                            No
-                        </label>
-                    </div>
                 </div>
             </div>
         </div>

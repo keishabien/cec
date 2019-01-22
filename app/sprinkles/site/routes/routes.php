@@ -12,4 +12,7 @@ $app->group('/intake', function () {
         ->setName('npie');
     $this->post('/npie', 'UserFrosting\Sprinkle\Site\Controller\PageController:pageNPIE')
         ->setName('npie');
+
+    $this->get('/recall', 'UserFrosting\Sprinkle\Site\Controller\PageController:pageRecall')
+        ->setName('npie');
 });

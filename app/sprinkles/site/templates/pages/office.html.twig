@@ -90,16 +90,16 @@
 
                             <h3 class="profile-username text-center">{{office[0].page_title}}</h3>
                             <div class="text-center">
-                                {% if user.flag_enabled == 0 %}
+                                {% if office.flag_enabled == 0 %}
                                     <i class="fa fa-fw fa-minus-circle fa-lg text-red" title="{{translate('DISABLED')}}"></i>
                                 {% endif %}
-                                {% if user.flag_verified == 0 %}
+                                {% if office.flag_verified == 0 %}
                                     <i class="fa fa-fw fa-bolt fa-lg text-yellow" title="{{translate('UNACTIVATED')}}"></i>
                                 {% endif %}
                             </div>
-                            <h4 class="text-muted text-center">{{office[0].page_title}}
+                            {#<h4 class="text-muted text-center">{{office[0].page_title}}#}
                                 {#{% if 'group' not in fields.hidden %} • {{user.group.name}}{% endif %}#}
-                            </h4>
+                            {#</h4>#}
 
                             {% if 'email' not in fields.hidden %}
                                 <hr>
@@ -107,6 +107,15 @@
                                 <p class="text-muted box-profile-property js-copy-container">
                                     <i class="fa fa-copy uf-copy-trigger js-copy-trigger"></i>
                                     <span class="js-copy-target">{{office[0].office_email}}</span>
+                                </p>
+                            {% endif %}
+
+                            {% if 'phone' not in fields.hidden %}
+                                <hr>
+                                <strong><i class="fa fa-phone margin-r-5"></i> Phone</strong>
+                                <p class="text-muted box-profile-property js-copy-container">
+                                    <i class="fa fa-copy uf-copy-trigger js-copy-trigger"></i>
+                                    <span class="js-copy-target">{{office[0].phone}}</span>
                                 </p>
                             {% endif %}
 
@@ -126,7 +135,7 @@
                         {% include "tables/table-tool-menu.html.twig" %}
                     </div>
                     <div class="box-body">
-                        {% include "tables/activities.html.twig" with {
+                        {% include "tables/offices.html.twig" with {
                                 "table" : {
                                     "id" : "table-user-activities"
                                 }

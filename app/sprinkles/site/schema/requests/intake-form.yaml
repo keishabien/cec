@@ -1,39 +1,64 @@
 # Request schema for the intake form
 
-name:
+location:
   validators:
     required:
-      label: Name
+      label: Location
+      message: Please select a location
+
+
+dentist-full-name:
+  validators:
+    required:
+      label: Dentist Full Name
       message: Please tell us your name.
     length:
-      label: Name
+      label: Dentist Full Name
       min: 1
       max: 50
       message: "Name must be between {{min}} and {{max}} characters."
   transformations:
+    - escape
     - trim
 
-email:
+dentist-provider-num:
   validators:
+    regex:
+      regex: ^\d{6}$
+      message: "Please enter only 6 numbers."
     required:
-      label: Email
-      message: Please provide an email address.
+      label: Dentist Provider Number
+      message: "Please provide a provider number."
+
+dentist-called-name:
+  validators:
     length:
-      label: Email
+      label: Dentist Called Name
       min: 1
-      max: 150
-      message: "Your email address must be between {{min}} and {{max}} characters."
-    email:
-      message: Please provide a valid email address.
+      max: 50
+      message: "Name must be between {{min}} and {{max}} characters."
+  transformations:
+    - escape
+    - trim
 
-phone:
-  validators:
-    telephone:
-      label: Phone
-      message: The phone number you provided is not valid.
-
-message:
+locum-radio:
   validators:
     required:
-      label: Message
-      message: Surely you must have something to say!
+      message: "Please select an option."
+
+dentist-start-date:
+  validators:
+    regex:
+      regex: ^((0[1-9]|1[0-2])/(0[1-9]|[12]\d|3[01])/[12]\d{3})$
+      message: "The date you provided is not valid."
+
+dentist-end-date:
+  validators:
+    regex:
+      regex: ^((0[1-9]|1[0-2])/(0[1-9]|[12]\d|3[01])/[12]\d{3})$
+      message: "The date you provided is not valid."
+
+leave-radio:
+  validators:
+    required:
+      message: "Please select an option."

@@ -5,6 +5,9 @@ namespace UserFrosting\Sprinkle\Site\Controller;
 use UserFrosting\Sprinkle\Core\Controller\SimpleController;
 use UserFrosting\Fortress\RequestSchema;
 use UserFrosting\Sprinkle\Site\Database\Models\Office;
+use UserFrosting\Fortress\Adapter\JqueryValidationAdapter;
+use UserFrosting\Fortress\RequestDataTransformer;
+use UserFrosting\Fortress\ServerSideValidator;
 
 class PageController extends SimpleController
 {
@@ -24,24 +27,60 @@ class PageController extends SimpleController
     public function pageIntake($request, $response, $args)
     {
         $schema = new RequestSchema('schema://requests/intake-form.yaml');
+        $validator = new JqueryValidationAdapter($schema, $this->ci->translator);
 
         $offices = Office::distinct()->where('page_title', 'like', '% Dentist Office')->orderBy('page_title', 'ASC')->get();
 //            SELECT distinct page_title, page_id FROM office_details where page_title like "% Dentist Office" ORDER BY page_title
 
         return $this->ci->view->render($response, 'pages/intake-dr-hyg-details.html.twig', [
             'offices' => $offices,
+            'page' => [
+                'validators' => [
+                    'intake' => $validator->rules('json', false)
+                ]
+            ]
         ]);
     }
 
     public function pageNPIE($request, $response, $args)
+    {
+
+// Get submitted data
+        $params = $request->getParsedBody();
+
+// Load the request schema
+        $schema = new RequestSchema('schema://requests/intake-form.yaml');
+
+// Whitelist and set parameter defaults
+        $validator = new JqueryValidationAdapter($schema, $this->ci->translator);
+
+        $offices = Office::distinct()->where('page_title', 'like', '% Dentist Office')->orderBy('page_title', 'ASC')->get();
+//            SELECT distinct page_title, page_id FROM office_details where page_title like "% Dentist Office" ORDER BY page_title
+
+        $rules = $validator->rules();
+
+
+
+        return $this->ci->view->render($response, 'pages/intake-npie.html.twig', [
+            'offices' => $offices,
+            'data' => $data,
+            'page' => [
+                'validators' => [
+                    'intake' => $rules
+                ]
+            ]
+        ]);
+    }
+
+    public function pageRecall($request, $response, $args)
     {
         $schema = new RequestSchema('schema://requests/intake-form.yaml');
 
         $offices = Office::distinct()->where('page_title', 'like', '% Dentist Office')->orderBy('page_title', 'ASC')->get();
 //            SELECT distinct page_title, page_id FROM office_details where page_title like "% Dentist Office" ORDER BY page_title
 
-        return $this->ci->view->render($response, 'pages/intake-npie.html.twig', [
-            'offices' => $offices,
+        return $this->ci->view->render($response, 'pages/intake-recall.html.twig', [
+            'offices' => $offices
         ]);
     }
 }

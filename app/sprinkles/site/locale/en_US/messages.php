@@ -24,7 +24,7 @@ return [
         "INFO_PAGE"         => "Office information page for {{name}}",
         "LATEST"            => "Latest Offices",
         "PAGE_DESCRIPTION"  => "A listing of the offices.  Provides management tools including the ability to edit offices details and more.",
-        "SUMMARY"           => "Account Summary",
+        "SUMMARY"           => "Office Summary",
         "VIEW_ALL"          => "View all offices"
     ],
 
