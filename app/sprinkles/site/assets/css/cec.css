@@ -216,6 +216,9 @@ a:hover, a:focus {
 .input-group.calendar .form-control{
     border-left:0;
 }
+.radio .form-control-feedback{
+    position: relative;
+}
 
 /* dashboard override */
 .skin-red .main-header .logo {

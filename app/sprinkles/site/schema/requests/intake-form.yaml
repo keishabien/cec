@@ -49,16 +49,54 @@ locum-radio:
 dentist-start-date:
   validators:
     regex:
-      regex: ^((0[1-9]|1[0-2])/(0[1-9]|[12]\d|3[01])/[12]\d{3})$
+      regex: ^(0[1-9]|1[0-2])/(0[1-9]|[12]\d|3[01])/[12]\d{3}$
       message: "The date you provided is not valid."
+    required:
+      label: Dentist Start Date
+      message: "Please provide a start date."
 
 dentist-end-date:
   validators:
     regex:
-      regex: ^((0[1-9]|1[0-2])/(0[1-9]|[12]\d|3[01])/[12]\d{3})$
+      regex: ^(0[1-9]|1[0-2])/(0[1-9]|[12]\d|3[01])/[12]\d{3}$
       message: "The date you provided is not valid."
 
 leave-radio:
   validators:
     required:
       message: "Please select an option."
+
+dentist-leave-start-date:
+  validators:
+    regex:
+      regex: ^((0[1-9]|1[0-2])/(0[1-9]|[12]\d|3[01])/[12]\d{3})$
+      message: "The date you provided is not valid."
+
+dentist-leave-end-date:
+  validators:
+    regex:
+      regex: ^((0[1-9]|1[0-2])/(0[1-9]|[12]\d|3[01])/[12]\d{3})$
+      message: "The date you provided is not valid."
+
+hygienist-name:
+  validators:
+    required:
+      label: Hygienist Name
+      message: Please tell us a hygienst's name.
+    length:
+      label: Hygienist Name
+      min: 1
+      max: 50
+      message: "Name must be between {{min}} and {{max}} characters."
+  transformations:
+    - escape
+    - trim
+
+hygienist-provider-num:
+  validators:
+    regex:
+      regex: ^\d{6}$
+      message: "Please enter only 6 numbers."
+    required:
+      label: Hygienist Provider Number
+      message: "Please provide a provider number."
