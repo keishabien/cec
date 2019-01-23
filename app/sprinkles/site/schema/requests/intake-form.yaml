@@ -7,7 +7,7 @@ location:
       message: Please select a location
 
 
-dentist-full-name:
+name:
   validators:
     required:
       label: Dentist Full Name

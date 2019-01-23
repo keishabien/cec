@@ -16,7 +16,7 @@
 {% block body_matter %}
     {#<h1>Welcome to the CEC Support App</h1>#}
 
-
+<div id="alerts-page"></div>
 
     <form class="form-inline intake" method="post" action="{{ site.uri.public }}/intake/npie">
         {% include "forms/csrf.html.twig" %}
@@ -36,7 +36,7 @@
                 <div class="col-sm-5">
                     <div class="form-group has-feedback">
                         <label for="dentist-full-name-1" class="control-label">Dentist Full Name</label>
-                        <input type="text" class="form-control" name="dentist-full-name" id="dentist-full-name-1"
+                        <input type="text" class="form-control" name="name" id="dentist-full-name-1"
                                placeholder="Full Name">
                     </div>
                 </div>
@@ -57,17 +57,9 @@
             <div class="form-group has-feedback">
 
                 <label for="dentist-called-name-1" class="control-label">How does the doctor refer to themself with
-                    patients? (i.e. Dr.
-                    Steven Smith likes patients to call him Dr. Steve)
+                    patients? (i.e. Dr. Steven Smith likes patients to call him Dr. Steve)
                 </label>
-
                 <input type="text" id="dentist-called-name-1" name="dentist-called-name" class="form-control">
-                {#<span id="helpBlock"#}
-                {#class="help-block">(i.e. Dr. Steven Smith likes patients to call him Dr. Steve)</span>#}
-
-                {#<label for="dentist_name">How does the doctor refer to themself with patients? (i.e. Dr. Steven Smith likes patients to call him Dr. Steve):</label>#}
-                {#<input type="text" class="form-control" id="full-name" placeholder="Full Name">#}
-
             </div>
 
 
@@ -174,28 +166,28 @@
             <a class="btn btn-default repeat-dentist pull-right"><i class="fa fa-plus"></i> Add Dentist</a><br>
         </div>
 
-        <div class="hygienist-section">
-            <h2 id="hygienist-details">Hygienist 1 Details</h2>
-            <div class="row">
-                <div class="form-group col-sm-5">
-                    <label for="hygienist-name" class="control-label">Hygienist Full Name</label>
-                    <input type="text" class="form-control" id="hygienist-name" name="hygienist-name" placeholder="Full Name">
-                </div>
+        {#<div class="hygienist-section">#}
+            {#<h2 id="hygienist-details">Hygienist 1 Details</h2>#}
+            {#<div class="row">#}
+                {#<div class="form-group col-sm-5">#}
+                    {#<label for="hygienist-name" class="control-label">Hygienist Full Name</label>#}
+                    {#<input type="text" class="form-control" id="hygienist-name" name="hygienist-name" placeholder="Full Name">#}
+                {#</div>#}
 
-                <div class="form-group col-sm-7">
-                    <label for="hygienist-provider-num" class="control-label">DentalVision Provider Number (6 digits)</label>
-                    <input type="text" class="form-control" id="hygienist-provider-num" name="hygienist-provider-num" placeholder="000000">
-                </div>
-            </div>
+                {#<div class="form-group col-sm-7">#}
+                    {#<label for="hygienist-provider-num" class="control-label">DentalVision Provider Number (6 digits)</label>#}
+                    {#<input type="text" class="form-control" id="hygienist-provider-num" name="hygienist-provider-num" placeholder="000000">#}
+                {#</div>#}
+            {#</div>#}
 
-        </div>
+        {#</div>#}
 
         <div class="hygienist-button-row">
             <a class="btn btn-default repeat-hygienist pull-right">+ Add Hygienist</a><br>
         </div>
         <button type="submit" class="btn btn-orange  pull-right">Next ></button>
     </form>
-    <a type="submit" class="btn btn-orange  pull-right" href="{{ site.uri.public }}/intake/npie">Next ></a>
+    {#<a class="btn btn-orange  pull-right" href="{{ site.uri.public }}/intake/npie">Next ></a>#}
 
 
 {% endblock %}
@@ -212,7 +204,7 @@
     </script>
 
     <!-- Include page-specific JS -->
-    {{ assets.js('js/intake-dr-hyg') | raw }}
+    {{ assets.js('js/intake') | raw }}
 
     <script>
         $('.datepicker').datepicker();
@@ -220,9 +212,12 @@
 
         //submit form
         $(".intake").ufForm({
-            validators: page.validators.intake
+            validators: page.validators.intake,
+            msgTarget: $("#alerts-page")
         }).on("submitSuccess.ufForm", function (event, data, textStatus, jqXHR) {
-            window.location.replace(site.uri.public + "/intake/npie");
+            // window.location.reload();
+            // window.location.replace(site.uri.public + "/intake/npie");
+            console.log(data);
         });
     </script>
 

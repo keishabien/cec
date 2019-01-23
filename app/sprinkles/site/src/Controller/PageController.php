@@ -5,6 +5,7 @@ namespace UserFrosting\Sprinkle\Site\Controller;
 use UserFrosting\Sprinkle\Core\Controller\SimpleController;
 use UserFrosting\Fortress\RequestSchema;
 use UserFrosting\Sprinkle\Site\Database\Models\Office;
+use UserFrosting\Sprinkle\Site\Database\Models\Intake;
 use UserFrosting\Fortress\Adapter\JqueryValidationAdapter;
 use UserFrosting\Fortress\RequestDataTransformer;
 use UserFrosting\Fortress\ServerSideValidator;
@@ -40,6 +41,61 @@ class PageController extends SimpleController
                 ]
             ]
         ]);
+    }
+
+    public function intake($request, $response, $args)
+    {
+
+        /** @var \UserFrosting\Sprinkle\Core\Alert\AlertStream $ms */
+        $ms = $this->ci->alerts;
+
+        /** @var \UserFrosting\Sprinkle\Core\Util\ClassMapper $classMapper */
+        $classMapper = $this->ci->classMapper;
+
+        /** @var \UserFrosting\Support\Repository\Repository $config */
+        $config = $this->ci->config;
+
+        // Get POST parameters: user_name, first_name, last_name, email, password, passwordc, captcha, spiderbro, csrf_token
+        $params = $request->getParsedBody();
+
+        $schema = new RequestSchema('schema://requests/intake-form.yaml');
+        // Whitelist and set parameter defaults
+        $transformer = new RequestDataTransformer($schema);
+        $data = $transformer->transform($params);
+
+
+        $error = false;
+
+        // Validate request data
+        $validator = new ServerSideValidator($schema, $this->ci->translator);
+        if (!$validator->validate($data)) {
+            $ms->addValidationErrors($validator);
+            $error = true;
+        }
+
+        if ($error) {
+            return $response->withStatus(400);
+        }
+// All checks passed!  log events/activities, create user, and send verification email (if required)
+        // Begin transaction - DB will be rolled back if an exception occurs
+
+            // Log throttleable event
+            //$throttler->logEvent('registration_attempt');
+
+            $intake = $classMapper->createInstance('intake', $data);
+
+            // Store new user to database
+            $intake->save();
+
+            // Create activity record
+//            $this->ci->userActivityLogger->info("User {$user->user_name} registered for a new account.", [
+//                'type' => 'sign_up',
+//                'user_id' => $user->id
+//            ]);
+            $ms->addMessageTranslated('success', 'OFFICE.COMPLETE', $data);
+
+
+        return $response->withStatus(200);
     }
 
     public function pageNPIE($request, $response, $args)
@@ -80,6 +136,18 @@ class PageController extends SimpleController
 //            SELECT distinct page_title, page_id FROM office_details where page_title like "% Dentist Office" ORDER BY page_title
 
         return $this->ci->view->render($response, 'pages/intake-recall.html.twig', [
+            'offices' => $offices
+        ]);
+    }
+
+    public function pageFinal($request, $response, $args)
+    {
+        $schema = new RequestSchema('schema://requests/intake-form.yaml');
+
+        $offices = Office::distinct()->where('page_title', 'like', '% Dentist Office')->orderBy('page_title', 'ASC')->get();
+//            SELECT distinct page_title, page_id FROM office_details where page_title like "% Dentist Office" ORDER BY page_title
+
+        return $this->ci->view->render($response, 'pages/intake-final.html.twig', [
             'offices' => $offices
         ]);
     }

@@ -15,6 +15,10 @@ h2 {
     font-weight: bold;
 }
 
+h3 {
+    font-size: 18px;
+}
+
 a, a:visited {
     color: #006a52;
 }
@@ -190,7 +194,10 @@ a:hover, a:focus {
 .dentist-section,
 .hygienist-section,
 .adult-npie-section,
-.child-npie-section{
+.child-npie-section,
+.adult-recall-section,
+.child-recall-section,
+.final-section{
     background-color: #f4f2f1;
     padding: 15px;
     margin-bottom: 20px;
@@ -216,6 +223,7 @@ a:hover, a:focus {
 .input-group.calendar .form-control{
     border-left:0;
 }
+
 .radio .form-control-feedback{
     position: relative;
 }
