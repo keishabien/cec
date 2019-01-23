@@ -13,6 +13,7 @@ return [
 
         "ACTIVATE"          => "Activate office",
         "CREATE"            => "Create office",
+        "COMPLETE"          => "Form submitted",
         "CREATED"           => "Office <strong>{{office_name}}</strong> has been successfully created",
         "DELETE"            => "Delete office",
         "DELETE_CONFIRM"    => "Are you sure you want to delete the office <strong>{{name}}</strong>?",
