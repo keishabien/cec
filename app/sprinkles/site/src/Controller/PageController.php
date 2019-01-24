@@ -77,6 +77,8 @@ class PageController extends SimpleController
         }
 
         if ($error) {
+            Debug::debug("var data");
+            Debug::debug(print_r($data,true));
             return $response->withStatus(400);
         }
 // All checks passed!  log events/activities, create user, and send verification email (if required)
@@ -90,17 +92,16 @@ class PageController extends SimpleController
 
 
             $intake->dentist_id = '1';
-            $intake->office_id = $data['location'];
-            $intake->name = $data['dentist-full-name'];
-            $intake->nickname = $data['dentist-called-name'];
-            $intake->provider_num = $data['dentist-provider-num'];
-            $intake->emergency_num = $data['dentist-emer-num'];
-            $intake->locum = $data['locum-radio'];
-            $intake->start_date = $data['dentist-start-date'];
-            $intake->end_date = $data['dentist-end-date'];
-            $intake->leave = $data['leave-radio'];
-            $intake->leave_start_date = $data['leave-start-date'];
-            $intake->leave_end_date = $data['leave-end-date'];
+//            $intake->name = $data['dentist-full-name'];
+//            $intake->nickname = $data['dentist-called-name'];
+//            $intake->provider_num = $data['dentist-provider-num'];
+//            $intake->emergency_num = $data['dentist-emer-num'];
+//            $intake->locum = $data['locum-radio'];
+//            $intake->start_date = $data['dentist-start-date'];
+//            $intake->end_date = $data['dentist-end-date'];
+//            $intake->leave = $data['leave-radio'];
+//            $intake->leave_start_date = $data['leave-start-date'];
+//            $intake->leave_end_date = $data['leave-end-date'];
 
 //            Debug::debug("var data");
 //            Debug::debug(print_r($data,true));

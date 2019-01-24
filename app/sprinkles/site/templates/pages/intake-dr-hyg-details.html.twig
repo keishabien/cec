@@ -16,19 +16,47 @@
 {% block body_matter %}
     {#<h1>Welcome to the CEC Support App</h1>#}
 
-<div id="alerts-page"></div>
+    <div id="alerts-page"></div>
 
     <form class="form-inline intake" method="post" action="{{ site.uri.public }}/intake/npie">
 
         {% include "forms/csrf.html.twig" %}
         <div class="office-select">
-            <select class="form-control" name="location" id="offices">
+            <select class="form-control" name="office_id" id="offices">
                 <option value="">Please Select Your Office</option>
                 {% for office in offices %}
                     <option value="{{ office.office_id }}">{{ office.name }}</option>
                 {% endfor %}
             </select>
         </div>
+
+        <div id="member-phones">
+            <label>Phone numbers</label>
+            <table class="table table-striped">
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+
+{% verbatim %}
+<script id="member-phones-row" type="text/x-handlebars-template">
+    <tr class="uf-collection-row">
+        <td>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-phone fa-fw"></i></span>
+                <input type="hidden" name="phones[{{ rownum }}][id]" value="{{id}}">
+                <input type="text" class="form-control" name="phones[{{ rownum }}][label]" value="{{label}}" placeholder="Label">
+            </div>
+        </td>
+        <td>
+            <input type="text" class="form-control" name="phones[{{ rownum }}][number]" value="{{number}}" placeholder="Number">
+        </td>
+        <td>
+            <button type="button" class="btn btn-link btn-trash js-delete-row pull-right" title="Delete"> <i class="fa fa-trash"></i> </button>
+        </td>
+    </tr>
+</script>
+{% endverbatim %}
 
         <div class="dentist-section">
 
@@ -37,7 +65,7 @@
                 <div class="col-sm-5">
                     <div class="form-group has-feedback">
                         <label for="dentist-full-name-1" class="control-label">Dentist Full Name</label>
-                        <input type="text" class="form-control" name="dentist-full-name" id="dentist-full-name-1"
+                        <input type="text" class="form-control" name="name[]" id="dentist-full-name-1"
                                placeholder="Full Name">
                     </div>
                 </div>
@@ -49,7 +77,7 @@
                             digits)
                         </label>
                         <input type="text" class="form-control" id="dentist-provider-num-1" placeholder="000000"
-                               name="dentist-provider-num">
+                               name="provider_num[]">
                     </div>
                 </div>
             </div>
@@ -59,13 +87,13 @@
                 <label for="dentist-called-name-1" class="control-label">How does the doctor refer to themself with
                     patients? (i.e. Dr. Steven Smith likes patients to call him Dr. Steve)
                 </label>
-                <input type="text" id="dentist-called-name-1" name="dentist-called-name" class="form-control">
+                <input type="text" id="dentist-called-name-1" name="nickname[]" class="form-control">
             </div>
 
             <div class="form-group has-feedback">
                 <label for="dentist-emer-num-1" class="control-label">Dentist Emergency Number
                 </label>
-                <input type="text" id="dentist-emer-num-1" name="dentist-emer-num" class="form-control">
+                <input type="text" id="dentist-emer-num-1" name="emergency_num[]" class="form-control">
             </div>
 
 
@@ -75,13 +103,13 @@
                         Permanent or Locum?
                         <div class="radio">
                             <label for="dentist-permanent-1">
-                                <input type="radio" name="locum-radio" id="dentist-permanent-1" value="Y">
+                                <input type="radio" name="locum[]" id="dentist-permanent-1" value="Y">
                                 Permanent
                             </label>
                         </div>
                         <div class="radio">
                             <label for="dentist-locum-1">
-                                <input type="radio" name="locum-radio" id="dentist-locum-1" value="N">
+                                <input type="radio" name="locum[]" id="dentist-locum-1" value="N">
                                 Locum
                             </label>
                         </div>
@@ -98,7 +126,7 @@
                                 <i class="fa fa-calendar"></i>
                             </span>
                             <input type="text" class="form-control datepicker" id="dentist-start-date-1"
-                                   name="dentist-start-date">
+                                   name="start_date[]">
                         </div>
                     </div>
 
@@ -113,7 +141,7 @@
                                 <i class="fa fa-calendar"></i>
                             </span>
                             <input type="text" class="form-control datepicker" id="dentist-exit-date-1"
-                                   name="dentist-end-date">
+                                   name="end_date[]">
                         </div>
                     </div>
                 </div>
@@ -126,13 +154,13 @@
                         Is the doctor currently or going on leave?
                         <div class="radio">
                             <label for="dentist-yes-1">
-                                <input type="radio" name="leave-radio" id="dentist-yes-1" value="Y">
+                                <input type="radio" name="leave[]" id="dentist-yes-1" value="Y">
                                 Yes
                             </label>
                         </div>
                         <div class="radio">
                             <label for="dentist-no-1">
-                                <input type="radio" name="leave-radio" id="dentist-no-1" value="N">
+                                <input type="radio" name="leave[]" id="dentist-no-1" value="N">
                                 No
                             </label>
                         </div>
@@ -147,7 +175,7 @@
                                 <i class="fa fa-calendar"></i>
                             </span>
                             <input type="text" class="form-control datepicker" id="dentist-leave-start-date-1"
-                                   name="dentist-leave-start-date">
+                                   name="leave_start_date[]">
                         </div>
                     </div>
                 </div>
@@ -160,7 +188,7 @@
                                 <i class="fa fa-calendar"></i>
                             </span>
                             <input type="text" class="form-control datepicker" id="dentist-leave-end-date-1"
-                                   name="dentist-leave-end-date">
+                                   name="leave_end_date[]">
                         </div>
                     </div>
                 </div>
@@ -173,18 +201,18 @@
         </div>
 
         {#<div class="hygienist-section">#}
-            {#<h2 id="hygienist-details">Hygienist 1 Details</h2>#}
-            {#<div class="row">#}
-                {#<div class="form-group col-sm-5">#}
-                    {#<label for="hygienist-name" class="control-label">Hygienist Full Name</label>#}
-                    {#<input type="text" class="form-control" id="hygienist-name" name="hygienist-name" placeholder="Full Name">#}
-                {#</div>#}
+        {#<h2 id="hygienist-details">Hygienist 1 Details</h2>#}
+        {#<div class="row">#}
+        {#<div class="form-group col-sm-5">#}
+        {#<label for="hygienist-name" class="control-label">Hygienist Full Name</label>#}
+        {#<input type="text" class="form-control" id="hygienist-name" name="hygienist-name" placeholder="Full Name">#}
+        {#</div>#}
 
-                {#<div class="form-group col-sm-7">#}
-                    {#<label for="hygienist-provider-num" class="control-label">DentalVision Provider Number (6 digits)</label>#}
-                    {#<input type="text" class="form-control" id="hygienist-provider-num" name="hygienist-provider-num" placeholder="000000">#}
-                {#</div>#}
-            {#</div>#}
+        {#<div class="form-group col-sm-7">#}
+        {#<label for="hygienist-provider-num" class="control-label">DentalVision Provider Number (6 digits)</label>#}
+        {#<input type="text" class="form-control" id="hygienist-provider-num" name="hygienist-provider-num" placeholder="000000">#}
+        {#</div>#}
+        {#</div>#}
 
         {#</div>#}
 
@@ -210,23 +238,29 @@
     </script>
 
     <!-- Include page-specific JS -->
-    {{ assets.js('js/intake') | raw }}
+    {#{{ assets.js('js/intake') | raw }}#}
+    {{ assets.js('js/form-widgets') | raw }}
+    {{ assets.css('css/form-widgets') | raw }}
 
     <script>
         $('.datepicker').datepicker();
 
+        // collection
+        // $('#member-phones').ufCollection({
+        //     rowTemplate: $('#member-phones-row').html()
+        // });
+
+        $('.repeat-dentist').ufCollection('addRow', {
+                rowTemplate: $('#member-phones-row').html()
+        });
 
         //submit form
         $(".intake").ufForm({
             validators: page.validators.intake,
             msgTarget: $("#alerts-page")
         }).on("submitSuccess.ufForm", function (event, data, textStatus, jqXHR) {
-            // window.location.reload();
-            // window.location.replace(site.uri.public + "/intake/npie");
-            console.log(textStatus);
+            window.location.replace(site.uri.public + "/intake/npie");
         }).on("submitError.ufForm", function (event, data, textStatus, jqXHR) {
-            // window.location.reload();
-            // window.location.replace(site.uri.public + "/intake/npie");
             console.log(textStatus);
         });
     </script>

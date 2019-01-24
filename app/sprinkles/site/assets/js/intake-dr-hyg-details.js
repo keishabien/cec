@@ -5,7 +5,7 @@ $('.repeat-dentist').on('click', function () {
     clone.find(':input').attr('id', function (i, val) {
         val = val.substr(0, val.lastIndexOf('-'));
         return val + "-" + den_count;
-    });
+    }).val('');
 
     clone.find('label').attr('for', function (i, val) {
         val = val.substr(0, val.lastIndexOf('-'));
@@ -19,6 +19,7 @@ $('.repeat-dentist').on('click', function () {
     clone.insertBefore('.dentist-button-row');
     den_count++;
     console.log("repeat: " + den_count);
+    $('.datepicker').datepicker();
 });
 
 // Removing Form Field

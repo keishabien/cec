@@ -1,14 +1,17 @@
 # Request schema for the intake form
 
-location:
+office_id:
   validators:
     required:
       label: Location
       message: "Please select a location."
 
 
-dentist-full-name:
+name[]:
   validators:
+#    regex:
+#      regex: ^[a-zA-Z ]*.[a-zA-Z ]*$
+#      message: "Please provide only letters."
     required:
       label: Dentist Full Name
       message: Please tell us your name.
@@ -21,7 +24,7 @@ dentist-full-name:
     - escape
     - trim
 
-dentist-provider-num:
+provider_num[]:
   validators:
     regex:
       regex: ^\d{6}$
@@ -30,8 +33,11 @@ dentist-provider-num:
       label: Dentist Provider Number
       message: "Please provide a dentist provider number."
 
-dentist-called-name:
+nickname[]:
   validators:
+    regex:
+      regex: ^[a-zA-Z ]*.[a-zA-Z ]*$
+      message: "Please provide only letters."
     length:
       label: Dentist Called Name
       min: 1
@@ -41,18 +47,18 @@ dentist-called-name:
     - escape
     - trim
 
-dentist-emer-num:
+emergency_num[]:
   validators:
     regex:
       regex: ^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})\s*$
       message: "Please provide a valid dentist phone number."
 
-locum-radio:
+locum[]:
   validators:
     required:
       message: "Please select an option."
 
-dentist-start-date:
+start_date[]:
   validators:
     regex:
       regex: ^(0[1-9]|1[0-2])\/(0[1-9]|[12]\d|3[01])\/[12]\d{3}$
@@ -61,24 +67,24 @@ dentist-start-date:
       label: Dentist Start Date
       message: "Please provide a start date."
 
-dentist-end-date:
+end_date[]:
   validators:
     regex:
       regex: ^(0[1-9]|1[0-2])\/(0[1-9]|[12]\d|3[01])\/[12]\d{3}$
       message: "The end date you provided is not valid."
 
-leave-radio:
+leave[]:
   validators:
     required:
       message: "Please select an option."
 
-dentist-leave-start-date:
+leave_start_date[]:
   validators:
     regex:
       regex: ^(0[1-9]|1[0-2])\/(0[1-9]|[12]\d|3[01])\/[12]\d{3}$
       message: "The leave start date you provided is not valid."
 
-dentist-leave-end-date:
+leave_end_date[]:
   validators:
     regex:
       regex: ^(0[1-9]|1[0-2])\/(0[1-9]|[12]\d|3[01])\/[12]\d{3}$
