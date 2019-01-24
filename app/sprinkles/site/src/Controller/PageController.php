@@ -2,13 +2,16 @@
 
 namespace UserFrosting\Sprinkle\Site\Controller;
 
+use Illuminate\Database\Capsule\Manager as Capsule;
 use UserFrosting\Sprinkle\Core\Controller\SimpleController;
 use UserFrosting\Fortress\RequestSchema;
 use UserFrosting\Sprinkle\Site\Database\Models\Office;
+use UserFrosting\Sprinkle\Site\Database\Models\CECOffice;
 use UserFrosting\Sprinkle\Site\Database\Models\Intake;
 use UserFrosting\Fortress\Adapter\JqueryValidationAdapter;
 use UserFrosting\Fortress\RequestDataTransformer;
 use UserFrosting\Fortress\ServerSideValidator;
+use UserFrosting\Sprinkle\Core\Facades\Debug;
 
 class PageController extends SimpleController
 {
@@ -30,7 +33,7 @@ class PageController extends SimpleController
         $schema = new RequestSchema('schema://requests/intake-form.yaml');
         $validator = new JqueryValidationAdapter($schema, $this->ci->translator);
 
-        $offices = Office::distinct()->where('page_title', 'like', '% Dentist Office')->orderBy('page_title', 'ASC')->get();
+        $offices = CECOffice::distinct()->where('name', 'like', '% Dentist Office')->orderBy('name', 'ASC')->get();
 //            SELECT distinct page_title, page_id FROM office_details where page_title like "% Dentist Office" ORDER BY page_title
 
         return $this->ci->view->render($response, 'pages/intake-dr-hyg-details.html.twig', [
@@ -48,6 +51,12 @@ class PageController extends SimpleController
 
         /** @var \UserFrosting\Sprinkle\Core\Alert\AlertStream $ms */
         $ms = $this->ci->alerts;
+
+        /** @var \UserFrosting\Sprinkle\Core\Util\ClassMapper $classMapper */
+        $classMapper = $this->ci->classMapper;
+
+        /** @var \UserFrosting\Support\Repository\Repository $config */
+        $config = $this->ci->config;
 
         // Get POST parameters: user_name, first_name, last_name, email, password, passwordc, captcha, spiderbro, csrf_token
         $params = $request->getParsedBody();
@@ -70,19 +79,44 @@ class PageController extends SimpleController
         if ($error) {
             return $response->withStatus(400);
         }
+// All checks passed!  log events/activities, create user, and send verification email (if required)
+        // Begin transaction - DB will be rolled back if an exception occurs
+        Capsule::transaction(function () use ($classMapper, $data, $ms, $config) {
+            // Log throttleable event
+            //$throttler->logEvent('registration_attempt');
 
-        $intake = new Intake([
-            'name' => $data['name']
-        ]);
+            $intake = new Intake($data);
 
-        // check if saved
-        $saved = $intake->save();
 
-        if(!$saved){
-            return $response->withStatus(400);
-        }
 
-        $ms->addMessageTranslated('success', 'OFFICE.COMPLETE', $data);
+            $intake->dentist_id = '1';
+            $intake->office_id = $data['location'];
+            $intake->name = $data['dentist-full-name'];
+            $intake->nickname = $data['dentist-called-name'];
+            $intake->provider_num = $data['dentist-provider-num'];
+            $intake->emergency_num = $data['dentist-emer-num'];
+            $intake->locum = $data['locum-radio'];
+            $intake->start_date = $data['dentist-start-date'];
+            $intake->end_date = $data['dentist-end-date'];
+            $intake->leave = $data['leave-radio'];
+            $intake->leave_start_date = $data['leave-start-date'];
+            $intake->leave_end_date = $data['leave-end-date'];
+
+//            Debug::debug("var data");
+//            Debug::debug(print_r($data,true));
+            Debug::debug("var intake");
+            Debug::debug(print_r($intake,true));
+            // Store new user to database
+            $intake->save();
+
+            // Create activity record
+//            $this->ci->userActivityLogger->info("User {$user->user_name} registered for a new account.", [
+//                'type' => 'sign_up',
+//                'user_id' => $user->id
+//            ]);
+//            $ms->addMessageTranslated('success', 'OFFICE.COMPLETE');
+
+        });
 
         return $response->withStatus(200);
     }

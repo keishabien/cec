@@ -4,10 +4,10 @@ location:
   validators:
     required:
       label: Location
-      message: Please select a location
+      message: "Please select a location."
 
 
-name:
+dentist-full-name:
   validators:
     required:
       label: Dentist Full Name
@@ -16,7 +16,7 @@ name:
       label: Dentist Full Name
       min: 1
       max: 50
-      message: "Name must be between {{min}} and {{max}} characters."
+      message: "Dentist name must be between {{min}} and {{max}} characters."
   transformations:
     - escape
     - trim
@@ -28,7 +28,7 @@ dentist-provider-num:
       message: "Please enter only 6 numbers."
     required:
       label: Dentist Provider Number
-      message: "Please provide a provider number."
+      message: "Please provide a dentist provider number."
 
 dentist-called-name:
   validators:
@@ -36,10 +36,16 @@ dentist-called-name:
       label: Dentist Called Name
       min: 1
       max: 50
-      message: "Name must be between {{min}} and {{max}} characters."
+      message: "Dentist nickname must be between {{min}} and {{max}} characters."
   transformations:
     - escape
     - trim
+
+dentist-emer-num:
+  validators:
+    regex:
+      regex: ^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})\s*$
+      message: "Please provide a valid dentist phone number."
 
 locum-radio:
   validators:
@@ -49,7 +55,7 @@ locum-radio:
 dentist-start-date:
   validators:
     regex:
-      regex: ^(0[1-9]|1[0-2])/(0[1-9]|[12]\d|3[01])/[12]\d{3}$
+      regex: ^(0[1-9]|1[0-2])\/(0[1-9]|[12]\d|3[01])\/[12]\d{3}$
       message: "The date you provided is not valid."
     required:
       label: Dentist Start Date
@@ -58,8 +64,8 @@ dentist-start-date:
 dentist-end-date:
   validators:
     regex:
-      regex: ^(0[1-9]|1[0-2])/(0[1-9]|[12]\d|3[01])/[12]\d{3}$
-      message: "The date you provided is not valid."
+      regex: ^(0[1-9]|1[0-2])\/(0[1-9]|[12]\d|3[01])\/[12]\d{3}$
+      message: "The end date you provided is not valid."
 
 leave-radio:
   validators:
@@ -69,34 +75,34 @@ leave-radio:
 dentist-leave-start-date:
   validators:
     regex:
-      regex: ^((0[1-9]|1[0-2])/(0[1-9]|[12]\d|3[01])/[12]\d{3})$
-      message: "The date you provided is not valid."
+      regex: ^(0[1-9]|1[0-2])\/(0[1-9]|[12]\d|3[01])\/[12]\d{3}$
+      message: "The leave start date you provided is not valid."
 
 dentist-leave-end-date:
   validators:
     regex:
-      regex: ^((0[1-9]|1[0-2])/(0[1-9]|[12]\d|3[01])/[12]\d{3})$
-      message: "The date you provided is not valid."
+      regex: ^(0[1-9]|1[0-2])\/(0[1-9]|[12]\d|3[01])\/[12]\d{3}$
+      message: "The leave end date you provided is not valid."
 
-hygienist-name:
-  validators:
-    required:
-      label: Hygienist Name
-      message: Please tell us a hygienst's name.
-    length:
-      label: Hygienist Name
-      min: 1
-      max: 50
-      message: "Name must be between {{min}} and {{max}} characters."
-  transformations:
-    - escape
-    - trim
-
-hygienist-provider-num:
-  validators:
-    regex:
-      regex: ^\d{6}$
-      message: "Please enter only 6 numbers."
-    required:
-      label: Hygienist Provider Number
-      message: "Please provide a provider number."
+#hygienist-name:
+#  validators:
+#    required:
+#      label: Hygienist Name
+#      message: Please tell us a hygienst's name.
+#    length:
+#      label: Hygienist Name
+#      min: 1
+#      max: 50
+#      message: "Name must be between {{min}} and {{max}} characters."
+#  transformations:
+#    - escape
+#    - trim
+#
+#hygienist-provider-num:
+#  validators:
+#    regex:
+#      regex: ^\d{6}$
+#      message: "Please enter only 6 numbers."
+#    required:
+#      label: Hygienist Provider Number
+#      message: "Please provide a provider number."
