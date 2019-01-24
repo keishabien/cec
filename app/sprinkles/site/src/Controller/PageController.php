@@ -49,12 +49,6 @@ class PageController extends SimpleController
         /** @var \UserFrosting\Sprinkle\Core\Alert\AlertStream $ms */
         $ms = $this->ci->alerts;
 
-        /** @var \UserFrosting\Sprinkle\Core\Util\ClassMapper $classMapper */
-        $classMapper = $this->ci->classMapper;
-
-        /** @var \UserFrosting\Support\Repository\Repository $config */
-        $config = $this->ci->config;
-
         // Get POST parameters: user_name, first_name, last_name, email, password, passwordc, captcha, spiderbro, csrf_token
         $params = $request->getParsedBody();
 
@@ -76,24 +70,19 @@ class PageController extends SimpleController
         if ($error) {
             return $response->withStatus(400);
         }
-// All checks passed!  log events/activities, create user, and send verification email (if required)
-        // Begin transaction - DB will be rolled back if an exception occurs
 
-            // Log throttleable event
-            //$throttler->logEvent('registration_attempt');
+        $intake = new Intake([
+            'name' => $data['name']
+        ]);
 
-            $intake = $classMapper->createInstance('intake', $data);
+        // check if saved
+        $saved = $intake->save();
 
-            // Store new user to database
-            $intake->save();
+        if(!$saved){
+            return $response->withStatus(400);
+        }
 
-            // Create activity record
-//            $this->ci->userActivityLogger->info("User {$user->user_name} registered for a new account.", [
-//                'type' => 'sign_up',
-//                'user_id' => $user->id
-//            ]);
-            $ms->addMessageTranslated('success', 'OFFICE.COMPLETE', $data);
-
+        $ms->addMessageTranslated('success', 'OFFICE.COMPLETE', $data);
 
         return $response->withStatus(200);
     }
@@ -114,7 +103,6 @@ class PageController extends SimpleController
 //            SELECT distinct page_title, page_id FROM office_details where page_title like "% Dentist Office" ORDER BY page_title
 
         $rules = $validator->rules();
-
 
 
         return $this->ci->view->render($response, 'pages/intake-npie.html.twig', [

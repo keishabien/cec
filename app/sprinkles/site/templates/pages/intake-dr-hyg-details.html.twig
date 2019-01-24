@@ -216,8 +216,12 @@
             msgTarget: $("#alerts-page")
         }).on("submitSuccess.ufForm", function (event, data, textStatus, jqXHR) {
             // window.location.reload();
+            window.location.replace(site.uri.public + "/intake/npie");
+            // console.log(data);
+        }).on("submitError.ufForm", function (event, data, textStatus, jqXHR) {
+            // window.location.reload();
             // window.location.replace(site.uri.public + "/intake/npie");
-            console.log(data);
+            console.log(textStatus);
         });
     </script>
 
