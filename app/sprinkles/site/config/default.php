@@ -11,7 +11,9 @@ return [
         ]
     ],
     'debug' => [
-        'smtp' => true
+        'smtp' => true,
+        'queries' => true,
+        'ajax'  => true
     ],
     'site' => [
         'author' => 'Keisha Bien',
