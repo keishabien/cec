@@ -19,12 +19,13 @@
 <div id="alerts-page"></div>
 
     <form class="form-inline intake" method="post" action="{{ site.uri.public }}/intake/npie">
+
         {% include "forms/csrf.html.twig" %}
         <div class="office-select">
             <select class="form-control" name="location" id="offices">
                 <option value="">Please Select Your Office</option>
                 {% for office in offices %}
-                    <option value="{{ office.page_title }}">{{ office.page_title }}</option>
+                    <option value="{{ office.office_id }}">{{ office.name }}</option>
                 {% endfor %}
             </select>
         </div>
@@ -36,7 +37,7 @@
                 <div class="col-sm-5">
                     <div class="form-group has-feedback">
                         <label for="dentist-full-name-1" class="control-label">Dentist Full Name</label>
-                        <input type="text" class="form-control" name="name" id="dentist-full-name-1"
+                        <input type="text" class="form-control" name="dentist-full-name" id="dentist-full-name-1"
                                placeholder="Full Name">
                     </div>
                 </div>
@@ -55,11 +56,16 @@
 
 
             <div class="form-group has-feedback">
-
                 <label for="dentist-called-name-1" class="control-label">How does the doctor refer to themself with
                     patients? (i.e. Dr. Steven Smith likes patients to call him Dr. Steve)
                 </label>
                 <input type="text" id="dentist-called-name-1" name="dentist-called-name" class="form-control">
+            </div>
+
+            <div class="form-group has-feedback">
+                <label for="dentist-emer-num-1" class="control-label">Dentist Emergency Number
+                </label>
+                <input type="text" id="dentist-emer-num-1" name="dentist-emer-num" class="form-control">
             </div>
 
 
@@ -69,13 +75,13 @@
                         Permanent or Locum?
                         <div class="radio">
                             <label for="dentist-permanent-1">
-                                <input type="radio" name="locum-radio" id="dentist-permanent-1" value="Permanent">
+                                <input type="radio" name="locum-radio" id="dentist-permanent-1" value="Y">
                                 Permanent
                             </label>
                         </div>
                         <div class="radio">
                             <label for="dentist-locum-1">
-                                <input type="radio" name="locum-radio" id="dentist-locum-1" value="Locum">
+                                <input type="radio" name="locum-radio" id="dentist-locum-1" value="N">
                                 Locum
                             </label>
                         </div>
@@ -120,13 +126,13 @@
                         Is the doctor currently or going on leave?
                         <div class="radio">
                             <label for="dentist-yes-1">
-                                <input type="radio" name="leave-radio" id="dentist-yes-1" value="Yes">
+                                <input type="radio" name="leave-radio" id="dentist-yes-1" value="Y">
                                 Yes
                             </label>
                         </div>
                         <div class="radio">
                             <label for="dentist-no-1">
-                                <input type="radio" name="leave-radio" id="dentist-no-1" value="No">
+                                <input type="radio" name="leave-radio" id="dentist-no-1" value="N">
                                 No
                             </label>
                         </div>
@@ -216,8 +222,8 @@
             msgTarget: $("#alerts-page")
         }).on("submitSuccess.ufForm", function (event, data, textStatus, jqXHR) {
             // window.location.reload();
-            window.location.replace(site.uri.public + "/intake/npie");
-            // console.log(data);
+            // window.location.replace(site.uri.public + "/intake/npie");
+            console.log(textStatus);
         }).on("submitError.ufForm", function (event, data, textStatus, jqXHR) {
             // window.location.reload();
             // window.location.replace(site.uri.public + "/intake/npie");
