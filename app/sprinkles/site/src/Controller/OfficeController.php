@@ -32,7 +32,7 @@ class OfficeController extends SimpleController
             throw new ForbiddenException();
         }
 
-        return $this->ci->view->render($response, 'pages/offices.html.twig');
+        return $this->ci->view->render($response, 'pages/dashboard/offices.html.twig');
     }
 
     public function getList($request, $response, $args)
@@ -228,7 +228,7 @@ class OfficeController extends SimpleController
 //            $widgets['hidden'][] = 'activities';
 //        }
 
-        return $this->ci->view->render($response, 'pages/office.html.twig', [
+        return $this->ci->view->render($response, 'pages/dashboard/office.html.twig', [
             'office' => $office,
             'locales' => $locales,
             'fields' => $fields,

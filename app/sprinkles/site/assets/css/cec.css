@@ -328,6 +328,9 @@ a:hover, a:focus {
 .form-group.has-success .form-control, .form-group.has-success .input-group-addon {
     border-color: #006a52;
 }
+.box.box-primary {
+    border-top-color: #f8971d;
+}
 
 /* paddings */
 .no-l-pad {
