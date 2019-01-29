@@ -3,9 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="d6dbf2c5-d130-46b5-a490-fbeb9d35fb5b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/sprinkles/site/assets/css/cec.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/site/assets/css/cec.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/sprinkles/site/routes/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/site/routes/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/sprinkles/site/src/Controller/PageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/site/src/Controller/PageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/sprinkles/site/templates/pages/intake-dr-hyg-details.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/site/templates/pages/intake-dr-hyg-details.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/sprinkles/site/src/Controller/OfficeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/site/src/Controller/OfficeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/sprinkles/site/src/Controller/SearchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/site/src/Controller/SearchController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/sprinkles/site/templates/pages/abstract/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/site/templates/pages/abstract/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/sprinkles/site/templates/pages/office.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/site/templates/pages/dashboard/office.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/sprinkles/site/templates/pages/offices.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/site/templates/pages/dashboard/offices.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/sprinkles/site/templates/pages/search.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/site/templates/pages/search.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,29 +26,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/sprinkles/site/routes/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+            <state relative-caret-position="138">
+              <caret line="6" column="12" lean-forward="true" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="37" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/sprinkles/site/src/Database/Models/Intake.php">
+        <entry file="file://$PROJECT_DIR$/app/sprinkles/site/src/Controller/SearchController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="20" />
-              <folding>
-                <element signature="e#62#113#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/sprinkles/site/src/Controller/PageController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="371">
-              <caret line="38" column="76" selection-start-line="38" selection-start-column="76" selection-end-line="38" selection-end-column="76" />
+            <state relative-caret-position="276">
+              <caret line="21" column="20" lean-forward="true" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
               <folding>
                 <element signature="e#57#108#0#PHP" expanded="true" />
               </folding>
@@ -52,28 +45,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/sprinkles/site/schema/requests/intake-form.yaml">
+        <entry file="file://$PROJECT_DIR$/app/sprinkles/site/templates/pages/search.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="4" column="13" lean-forward="true" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+            <state relative-caret-position="276">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/sprinkles/site/templates/pages/intake-dr-hyg-details.html.twig">
+        <entry file="file://$PROJECT_DIR$/app/sprinkles/site/templates/navigation/search.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5154">
-              <caret line="252" lean-forward="true" selection-start-line="252" selection-end-line="252" />
+            <state>
+              <caret column="118" selection-start-column="118" selection-end-column="118" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/sprinkles/site/templates/pages/intake-ufCollection.html.twig">
+        <entry file="file://$PROJECT_DIR$/app/sprinkles/site/templates/pages/abstract/base.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="639">
-              <caret line="258" column="31" lean-forward="true" selection-start-line="258" selection-start-column="31" selection-end-line="258" selection-end-column="31" />
+            <state relative-caret-position="225">
+              <caret line="94" column="71" selection-start-line="94" selection-start-column="71" selection-end-line="94" selection-end-column="78" />
             </state>
           </provider>
         </entry>
@@ -92,7 +85,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>repeat-dentist</find>
       <find>hygienist</find>
       <find>dentist</find>
       <find>location_id</find>
@@ -122,6 +114,7 @@
       <find>useDropdown</find>
       <find>addRow</find>
       <find>pageIn</find>
+      <find>office.html.twig</find>
     </findStrings>
     <replaceStrings>
       <replace>repeat-adult</replace>
@@ -144,11 +137,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/sprinkles.json" />
         <option value="$PROJECT_DIR$/app/sprinkles/site/assets/js/searchAll.js" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_22.php" />
         <option value="$PROJECT_DIR$/app/sprinkles/site/templates/pages/partials/footer.html.twig" />
-        <option value="$PROJECT_DIR$/app/sprinkles/site/templates/pages/search.html.twig" />
         <option value="$PROJECT_DIR$/app/sprinkles/site/assets/js/offices.js" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_23.php" />
         <option value="$PROJECT_DIR$/app/sprinkles/site/src/ServicesProvider/ServicesProvider.php" />
@@ -157,20 +148,16 @@
         <option value="$PROJECT_DIR$/app/sprinkles/site/templates/pages/offices.html.twig" />
         <option value="$PROJECT_DIR$/app/sprinkles/site/src/Sprunje/OfficeSprunje.php" />
         <option value="$PROJECT_DIR$/app/sprinkles/site/schema/requests/get-office-name" />
-        <option value="$PROJECT_DIR$/app/sprinkles/site/src/Controller/SearchController.php" />
         <option value="$PROJECT_DIR$/app/sprinkles/site/assets/js/office.js" />
         <option value="$PROJECT_DIR$/app/sprinkles/site/assets/js/widgets/office.js" />
         <option value="$PROJECT_DIR$/app/sprinkles/site/templates/modals/offices.php" />
         <option value="$PROJECT_DIR$/app/sprinkles/site/templates/modals/office.html.twig" />
         <option value="$PROJECT_DIR$/app/sprinkles/site/templates/navigation/sidebar.html.twig" />
         <option value="$PROJECT_DIR$/app/sprinkles/site/templates/navigation/sidebar-menu.html.twig" />
-        <option value="$PROJECT_DIR$/app/sprinkles/site/routes/offices.php" />
-        <option value="$PROJECT_DIR$/app/sprinkles/site/templates/navigation/search.html.twig" />
         <option value="$PROJECT_DIR$/app/sprinkles/site/templates/navigation/main-nav.html.twig" />
         <option value="$PROJECT_DIR$/app/sprinkles/site/templates/pages/abstract/default.html.twig" />
         <option value="$PROJECT_DIR$/app/sprinkles/site/templates/pages/intake.html.twig" />
         <option value="$PROJECT_DIR$/app/sprinkles/site/templates/pages/sign-in.html.twig" />
-        <option value="$PROJECT_DIR$/app/sprinkles/site/src/Controller/OfficeController.php" />
         <option value="$PROJECT_DIR$/app/sprinkles/site/templates/pages/office.html.twig" />
         <option value="$PROJECT_DIR$/app/sprinkles/site/templates/tables/offices.html.twig" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_5.sql" />
@@ -180,7 +167,6 @@
         <option value="$PROJECT_DIR$/app/sprinkles/site/asset-bundles.json" />
         <option value="$PROJECT_DIR$/app/sprinkles/site/assets/js/intake-recall.js" />
         <option value="$PROJECT_DIR$/app/sprinkles/site/templates/pages/intake-recall.html.twig" />
-        <option value="$PROJECT_DIR$/app/sprinkles/site/assets/css/cec.css" />
         <option value="$PROJECT_DIR$/app/sprinkles/site/locale/en_US/messages.php" />
         <option value="$PROJECT_DIR$/app/sprinkles/site/templates/pages/intake-final.html.twig" />
         <option value="$PROJECT_DIR$/app/sprinkles/site/templates/pages/intake-npie.html.twig" />
@@ -192,9 +178,16 @@
         <option value="$PROJECT_DIR$/app/sprinkles/site/assets/js/intake-dr-hyg-details.js" />
         <option value="$PROJECT_DIR$/app/sprinkles/site/schema/requests/intake-form.yaml" />
         <option value="$PROJECT_DIR$/app/sprinkles/site/templates/pages/intake-dr-hyg-details.html.twig" />
-        <option value="$PROJECT_DIR$/app/sprinkles/site/routes/routes.php" />
         <option value="$PROJECT_DIR$/app/sprinkles/site/src/Controller/PageController.php" />
         <option value="$PROJECT_DIR$/app/sprinkles/site/templates/pages/intake-ufCollection.html.twig" />
+        <option value="$PROJECT_DIR$/app/sprinkles/site/src/Controller/OfficeController.php" />
+        <option value="$PROJECT_DIR$/app/sprinkles/site/routes/offices.php" />
+        <option value="$PROJECT_DIR$/app/sprinkles/site/assets/css/cec.css" />
+        <option value="$PROJECT_DIR$/app/sprinkles/site/templates/pages/search.html.twig" />
+        <option value="$PROJECT_DIR$/app/sprinkles/site/templates/navigation/search.html.twig" />
+        <option value="$PROJECT_DIR$/app/sprinkles/site/routes/routes.php" />
+        <option value="$PROJECT_DIR$/app/sprinkles/site/src/Controller/SearchController.php" />
+        <option value="$PROJECT_DIR$/app/sprinkles/site/templates/pages/abstract/base.html.twig" />
       </list>
     </option>
   </component>
@@ -303,7 +296,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -437,6 +429,15 @@
               <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
               <item name="site" type="462c0819:PsiDirectoryNode" />
               <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
+              <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
+              <item name="site" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -523,7 +524,26 @@
               <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
               <item name="site" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="navigation" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
+              <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
+              <item name="site" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
+              <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
+              <item name="site" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="abstract" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
@@ -547,6 +567,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -560,16 +581,17 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\userfrosting\app\sprinkles\site\templates" />
-      <recent name="C:\wamp64\www\userfrosting\app\sprinkles\site\templates\pages" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\userfrosting\app\sprinkles\site\templates\pages" />
       <recent name="C:\wamp64\www\userfrosting\app\sprinkles\site\src\Database\Models" />
       <recent name="C:\wamp64\www\userfrosting\app\sprinkles\site\assets\js" />
       <recent name="C:\wamp64\www\userfrosting\app\sprinkles\site\schema\requests" />
       <recent name="C:\wamp64\www\userfrosting\app\sprinkles\site\templates\navigation" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\userfrosting\app\sprinkles\site\templates\pages\dashboard" />
+      <recent name="C:\wamp64\www\userfrosting\app\sprinkles\site\templates" />
+      <recent name="C:\wamp64\www\userfrosting\app\sprinkles\site\templates\pages" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -619,18 +641,22 @@
       <workItem from="1547133503663" duration="41268000" />
       <workItem from="1547495683616" duration="11104000" />
       <workItem from="1547575268519" duration="47302000" />
-      <workItem from="1548085762051" duration="71314000" />
+      <workItem from="1548085762051" duration="71393000" />
+      <workItem from="1548429265267" duration="4180000" />
+      <workItem from="1548451378756" duration="16000" />
+      <workItem from="1548452607801" duration="31000" />
+      <workItem from="1548798474246" duration="4169000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="276302000" />
+    <option name="totallyTimeSpent" value="284777000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.18123667" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18283582" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -695,49 +721,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/core/src/Database/Relations/BelongsToManyConstrained.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#290#329#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/core/src/Database/Models/Model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1656" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/core/src/Database/Models/Concerns/HasRelationships.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-759" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/templates/navigation/main-nav.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="29" column="33" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/templates/pages/sign-in.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1633">
-          <caret line="71" column="4" selection-start-line="71" selection-start-column="4" selection-end-line="72" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/core/src/Database/Migrations/v400/SessionsTable.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-276" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/admin/templates/tables/activities.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-824" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/sprinkles/admin/templates/tables/roles.html.twig">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -748,7 +731,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/templates/pages/office.html.twig">
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/templates/pages/dashboard/office.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-303">
           <caret line="77" column="30" lean-forward="true" selection-start-line="77" selection-start-column="30" selection-end-line="77" selection-end-column="30" />
@@ -758,7 +741,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/templates/pages/offices.html.twig">
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/templates/pages/dashboard/offices.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="386">
           <caret line="32" column="14" lean-forward="true" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
@@ -775,23 +758,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/src/Controller/OfficeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2962">
-          <caret line="205" column="29" lean-forward="true" selection-start-line="205" selection-start-column="29" selection-end-line="205" selection-end-column="29" />
-          <folding>
-            <element signature="e#57#91#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_5.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" column="32" lean-forward="true" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/sprinkles/core/assets/userfrosting/js/uf-jqueryvalidation-config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="303">
@@ -799,44 +765,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/scp44126/var/www/midwest/.htaccess">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="69" column="29" selection-start-line="69" selection-start-column="29" selection-end-line="69" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/assets/js/intake-npie.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2599">
-          <caret line="134" column="37" lean-forward="true" selection-start-line="134" selection-start-column="37" selection-end-line="134" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/assets/js/intake-recall.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="140" column="33" selection-start-line="140" selection-start-column="33" selection-end-line="140" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/asset-bundles.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="64" column="33" selection-start-line="64" selection-start-column="33" selection-end-line="64" selection-end-column="33" />
-          <folding>
-            <element signature="n#!!block;n#css/form-widgets#0;n#!!block;n#bundle#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/assets/css/cec.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="225" selection-start-line="225" selection-end-line="225" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/scp44126/var/www/midwest/.htaccess" />
     <entry file="file://$PROJECT_DIR$/app/sprinkles/site/templates/pages/intake-recall.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="87">
@@ -848,13 +777,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
           <caret line="97" selection-start-line="97" selection-end-line="100" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/routes/offices.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="8" selection-start-line="8" selection-end-line="14" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -1341,23 +1263,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/src/Database/Models/Office.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="26" lean-forward="true" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
-          <folding>
-            <element signature="e#62#113#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/src/Database/Models/CECOffice.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/sprinkles/site/config/default.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
@@ -1379,23 +1284,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/schema/requests/intake-form.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="13" lean-forward="true" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/assets/js/intake-dr-hyg-details.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/sprinkles/site/src/Database/Models/Intake.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
+        <state relative-caret-position="345">
           <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="20" />
           <folding>
             <element signature="e#62#113#0#PHP" expanded="true" />
@@ -1403,34 +1294,166 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/routes/routes.php">
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/schema/requests/intake-form.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/templates/pages/intake-ufCollection.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="34" column="47" selection-start-line="34" selection-start-column="47" selection-end-line="34" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/assets/js/intake-dr-hyg-details.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" column="48" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/assets/js/intake-npie.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2530">
+          <caret line="110" column="22" selection-start-line="110" selection-start-column="22" selection-end-line="110" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/assets/js/intake-recall.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
-          <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_5.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="33" lean-forward="true" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/src/Controller/OfficeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+          <folding>
+            <element signature="e#57#91#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/routes/offices.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/assets/css/cec.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="331" column="29" selection-start-line="331" selection-start-column="29" selection-end-line="331" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/src/Database/Models/Search.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/src/Database/Models/Office.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="26" lean-forward="true" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+          <folding>
+            <element signature="e#62#113#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/src/Database/Models/CECOffice.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/templates/pages/abstract/default.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-626" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/asset-bundles.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-28">
+          <caret line="64" column="33" selection-start-line="64" selection-start-column="33" selection-end-line="64" selection-end-column="33" />
+          <folding>
+            <element signature="n#!!block;n#css/form-widgets#0;n#!!block;n#bundle#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/templates/pages/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/templates/pages/intake-dr-hyg-details.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="244" column="2" selection-start-line="244" selection-start-column="2" selection-end-line="272" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/sprinkles/site/src/Controller/PageController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="38" column="76" selection-start-line="38" selection-start-column="76" selection-end-line="38" selection-end-column="76" />
+        <state relative-caret-position="575">
+          <caret line="121" column="8" selection-start-line="121" selection-start-column="8" selection-end-line="121" selection-end-column="42" />
           <folding>
             <element signature="e#57#108#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/templates/pages/intake-dr-hyg-details.html.twig">
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/routes/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5154">
-          <caret line="252" lean-forward="true" selection-start-line="252" selection-end-line="252" />
+        <state relative-caret-position="138">
+          <caret line="6" column="12" lean-forward="true" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/templates/pages/intake-ufCollection.html.twig">
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/templates/navigation/search.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="639">
-          <caret line="258" column="31" lean-forward="true" selection-start-line="258" selection-start-column="31" selection-end-line="258" selection-end-column="31" />
+        <state>
+          <caret column="118" selection-start-column="118" selection-end-column="118" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/src/Controller/SearchController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="21" column="20" lean-forward="true" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+          <folding>
+            <element signature="e#57#108#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/templates/pages/search.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/templates/pages/abstract/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="94" column="71" selection-start-line="94" selection-start-column="71" selection-end-line="94" selection-end-column="78" />
         </state>
       </provider>
     </entry>

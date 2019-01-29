@@ -8,33 +8,32 @@ use Slim\Exception\NotFoundException;
 use UserFrosting\Sprinkle\Core\Controller\SimpleController;
 use UserFrosting\Support\Exception\ForbiddenException;
 use UserFrosting\Sprinkle\Site\Database\Models\Search;
-use UserFrosting\Sprinkle\Site\Database\Models\Office;
+use UserFrosting\Sprinkle\Site\Database\Models\CECOffice;
 
 class SearchController extends SimpleController
 {
     public function pageSearch($request, $response, $args)
     {
-//        $this->ci->db;
-        $results = Search::distinct()->where('office_name', 'like', '%' . $location . '%')
-            ->orderBy('office_name', "ASC")
-            ->get();
-        //            ->join('office_details', 'cec_update.page_id', '=', 'office_details.page_id')
+        $keyword = $request->getParsedBody();
 
-        $office = Office::distinct()->where('page_title', 'like', '%' . $location . '%')
-                ->orWhere('zip', 'like', '%' . $location . '%')
-            ->orderBy('page_title', "ASC")
+        $office = CECOffice::distinct()->where('name', 'like', '%' . $keyword . '%')
+                ->orWhere('zip', 'like', '%' . $keyword . '%')
+            ->orderBy('name', "ASC")
             ->get();
 
-        $merged = $results->merge($office);
 
         return $this->ci->view->render($response, 'pages/search.html.twig', [
             'results' => $results,
+            'keyword'   => $keyword,
             'office' => $office,
             'location' => $location,
             'midwestLogo' => 'https://www.meritdental.com/cecdb/images/midwest-logo.png',
             'mondoviLogo' => 'https://www.meritdental.com/cecdb/images/mondovi-logo.png',
             'meritLogo' => 'https://www.meritdental.com/cecdb/images/merit-logo.png',
-            'mountainLogo' => 'https://www.meritdental.com/cecdb/images/mountain-logo.png'
+            'mountainLogo' => 'https://www.meritdental.com/cecdb/images/mountain-logo.png',
+            "page" => [
+                'keyword'   => $keyword
+            ]
         ]);
     }
 
