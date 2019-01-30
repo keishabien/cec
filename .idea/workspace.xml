@@ -3,16 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="d6dbf2c5-d130-46b5-a490-fbeb9d35fb5b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/sprinkles/site/assets/css/cec.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/site/assets/css/cec.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/sprinkles/site/routes/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/site/routes/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/sprinkles/site/src/Controller/OfficeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/site/src/Controller/OfficeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/sprinkles/site/src/Controller/SearchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/site/src/Controller/SearchController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/sprinkles/site/templates/pages/abstract/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/site/templates/pages/abstract/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/sprinkles/site/templates/pages/office.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/site/templates/pages/dashboard/office.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/sprinkles/site/templates/pages/offices.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/site/templates/pages/dashboard/offices.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/sprinkles/site/templates/pages/search.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/site/templates/pages/search.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/sprinkles.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,20 +17,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/sprinkles/site/routes/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="6" column="12" lean-forward="true" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="37" />
+            <state relative-caret-position="144">
+              <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="37" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file leaf-file-name="SearchController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/sprinkles/site/src/Controller/SearchController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="21" column="20" lean-forward="true" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+            <state relative-caret-position="360">
+              <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
               <folding>
                 <element signature="e#57#108#0#PHP" expanded="true" />
               </folding>
@@ -44,16 +38,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file leaf-file-name="search.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/sprinkles/site/templates/pages/search.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
+            <state relative-caret-position="288">
               <caret line="12" selection-start-line="12" selection-end-line="12" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file leaf-file-name="search.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/sprinkles/site/templates/navigation/search.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state>
@@ -62,11 +56,25 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/sprinkles/site/templates/pages/abstract/base.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
+            <state relative-caret-position="37">
               <caret line="94" column="71" selection-start-line="94" selection-start-column="71" selection-end-line="94" selection-end-column="78" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sprinkles.example.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/sprinkles.example.json">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="sprinkles.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/sprinkles.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -137,7 +145,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/sprinkles/site/assets/js/searchAll.js" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_22.php" />
         <option value="$PROJECT_DIR$/app/sprinkles/site/templates/pages/partials/footer.html.twig" />
         <option value="$PROJECT_DIR$/app/sprinkles/site/assets/js/offices.js" />
@@ -188,8 +195,30 @@
         <option value="$PROJECT_DIR$/app/sprinkles/site/routes/routes.php" />
         <option value="$PROJECT_DIR$/app/sprinkles/site/src/Controller/SearchController.php" />
         <option value="$PROJECT_DIR$/app/sprinkles/site/templates/pages/abstract/base.html.twig" />
+        <option value="$PROJECT_DIR$/app/sprinkles.json" />
       </list>
     </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/build/node_modules" />
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/app/sprinkles/core/assets/vendor/bootstrap/package.json" />
+      <path value="$PROJECT_DIR$/app/sprinkles/core/assets/vendor/clipboard/package.json" />
+      <path value="$PROJECT_DIR$/app/sprinkles/core/assets/vendor/handlebars/package.json" />
+      <path value="$PROJECT_DIR$/app/sprinkles/core/assets/vendor/jquery-slimscroll/package.json" />
+      <path value="$PROJECT_DIR$/app/sprinkles/core/assets/vendor/jquery-validation/package.json" />
+      <path value="$PROJECT_DIR$/app/sprinkles/core/assets/vendor/select2/package.json" />
+      <path value="$PROJECT_DIR$/app/sprinkles/core/assets/vendor/speakingurl/package.json" />
+      <path value="$PROJECT_DIR$/build/package.json" />
+    </packageJsonPaths>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -283,10 +312,9 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="-15" />
+    <option name="width" value="3865" />
+    <option name="height" value="2075" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -319,240 +347,6 @@
               <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
-              <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
-              <item name="account" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
-              <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
-              <item name="account" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
-              <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
-              <item name="account" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
-              <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
-              <item name="account" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
-              <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
-              <item name="account" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
-              <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
-              <item name="account" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
-              <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
-              <item name="account" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
-              <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
-              <item name="account" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
-              <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
-              <item name="account" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
-              <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
-              <item name="account" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
-              <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
-              <item name="site" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
-              <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
-              <item name="site" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
-              <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
-              <item name="site" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
-              <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
-              <item name="site" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
-              <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
-              <item name="site" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
-              <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
-              <item name="site" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
-              <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
-              <item name="site" type="462c0819:PsiDirectoryNode" />
-              <item name="schema" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
-              <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
-              <item name="site" type="462c0819:PsiDirectoryNode" />
-              <item name="schema" type="462c0819:PsiDirectoryNode" />
-              <item name="requests" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
-              <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
-              <item name="site" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
-              <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
-              <item name="site" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
-              <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
-              <item name="site" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Database" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
-              <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
-              <item name="site" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Database" type="462c0819:PsiDirectoryNode" />
-              <item name="Models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
-              <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
-              <item name="site" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
-              <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
-              <item name="site" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="navigation" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
-              <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
-              <item name="site" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
-              <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
-              <item name="site" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="abstract" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
-              <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
-              <item name="site" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="tables" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
@@ -609,7 +403,6 @@
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
-      <method v="2" />
     </configuration>
   </component>
   <component name="SvnConfiguration">
@@ -646,35 +439,37 @@
       <workItem from="1548451378756" duration="16000" />
       <workItem from="1548452607801" duration="31000" />
       <workItem from="1548798474246" duration="4169000" />
+      <workItem from="1548864654868" duration="313000" />
+      <workItem from="1548867903307" duration="1608000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="284777000" />
+    <option name="totallyTimeSpent" value="286698000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18283582" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18779343" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5010661" side_tool="true" weight="0.22860238" />
+      <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32932165" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4989339" visible="true" weight="0.156013" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5010661" side_tool="true" weight="0.22860238" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4989339" visible="true" weight="0.4014706" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -705,39 +500,15 @@
         </entry>
       </map>
     </option>
-    <option name="RECENT_FILTERS">
-      <map>
-        <entry key="Branch">
-          <value>
-            <list />
-          </value>
-        </entry>
-        <entry key="User">
-          <value>
-            <list />
-          </value>
-        </entry>
-      </map>
-    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/admin/templates/tables/roles.html.twig">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/admin/templates/tables/users.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="20" column="64" selection-end-line="149" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/sprinkles/site/templates/pages/dashboard/office.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-303">
           <caret line="77" column="30" lean-forward="true" selection-start-line="77" selection-start-column="30" selection-end-line="77" selection-end-column="30" />
-          <folding>
-            <element signature="e#874#5132#0#Twig" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -796,242 +567,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-69">
           <caret line="125" column="96" lean-forward="true" selection-start-line="125" selection-start-column="96" selection-end-line="125" selection-end-column="96" />
-          <folding>
-            <element signature="e#1277#1437#0#PHP" />
-            <element signature="e#1490#1940#0#PHP" />
-            <element signature="e#2450#2565#0#PHP" />
-            <element signature="e#3080#3202#0#PHP" />
-            <element signature="e#3390#3590#0#PHP" />
-            <element signature="e#3600#3789#0#PHP" />
-            <element signature="e#3799#3869#0#PHP" />
-            <element signature="e#4141#4247#0#PHP" />
-            <element signature="e#4201#4246#0#PHP" />
-            <element signature="e#4136#4413#0#PHP" />
-            <element signature="e#4263#4403#0#PHP" />
-            <element signature="e#4485#4583#0#PHP" />
-            <element signature="e#5292#5514#0#PHP" />
-            <element signature="e#5408#5513#0#PHP" />
-            <element signature="e#6253#6390#0#PHP" />
-            <element signature="e#6253#6669#0#PHP" />
-            <element signature="e#6423#6668#1#PHP" />
-            <element signature="e#6860#7357#0#PHP" />
-            <element signature="e#7362#9513#0#PHP" />
-            <element signature="e#7531#7616#0#PHP" />
-            <element signature="e#8013#8151#0#PHP" />
-            <element signature="e#8073#8150#0#PHP" />
-            <element signature="e#8008#8208#0#PHP" />
-            <element signature="e#8487#9335#0#PHP" />
-            <element signature="e#8509#9334#2#PHP" />
-            <element signature="e#8898#9035#0#PHP" />
-            <element signature="e#8898#9275#0#PHP" />
-            <element signature="e#9068#9274#1#PHP" />
-            <element signature="e#9346#9463#0#PHP" />
-            <element signature="e#9415#9462#0#PHP" />
-            <element signature="e#9519#9960#0#PHP" />
-            <element signature="e#9965#11918#0#PHP" />
-            <element signature="e#10129#10214#0#PHP" />
-            <element signature="e#10534#10628#0#PHP" />
-            <element signature="e#10588#10627#0#PHP" />
-            <element signature="e#10529#10685#0#PHP" />
-            <element signature="e#10939#11119#0#PHP" />
-            <element signature="e#11245#11648#0#PHP" />
-            <element signature="e#11267#11647#2#PHP" />
-            <element signature="e#11423#11636#0#PHP" />
-            <element signature="e#11530#11635#0#PHP" />
-            <element signature="e#11758#11867#0#PHP" />
-            <element signature="e#11818#11866#0#PHP" />
-            <element signature="e#11924#12060#0#PHP" />
-            <element signature="e#12065#13571#0#PHP" />
-            <element signature="e#12236#12321#0#PHP" />
-            <element signature="e#12839#12977#0#PHP" />
-            <element signature="e#12897#12976#0#PHP" />
-            <element signature="e#12834#13034#0#PHP" />
-            <element signature="e#13137#13257#0#PHP" />
-            <element signature="e#13159#13256#2#PHP" />
-            <element signature="e#13577#13701#0#PHP" />
-            <element signature="e#13706#15233#0#PHP" />
-            <element signature="e#13871#13956#0#PHP" />
-            <element signature="e#14143#14246#0#PHP" />
-            <element signature="e#14143#14355#0#PHP" />
-            <element signature="e#14714#14805#0#PHP" />
-            <element signature="e#14765#14804#0#PHP" />
-            <element signature="e#14709#14862#0#PHP" />
-            <element signature="e#15239#15435#0#PHP" />
-            <element signature="e#15440#16524#0#PHP" />
-            <element signature="e#15884#15997#0#PHP" />
-            <element signature="e#16530#16799#0#PHP" />
-            <element signature="e#16804#18288#0#PHP" />
-            <element signature="e#17058#17143#0#PHP" />
-            <element signature="e#17463#17557#0#PHP" />
-            <element signature="e#17517#17556#0#PHP" />
-            <element signature="e#17458#17614#0#PHP" />
-            <element signature="e#17868#18048#0#PHP" />
-            <element signature="e#18065#18281#0#PHP" />
-            <element signature="e#18140#18280#0#PHP" />
-            <element signature="e#18193#18270#1#PHP" />
-            <element signature="e#18294#18797#0#PHP" />
-            <element signature="e#18802#21610#0#PHP" />
-            <element signature="e#19367#19482#0#PHP" />
-            <element signature="e#19840#19915#0#PHP" />
-            <element signature="e#20220#20326#0#PHP" />
-            <element signature="e#20280#20325#0#PHP" />
-            <element signature="e#20216#20603#0#PHP" />
-            <element signature="e#20446#20603#0#PHP" />
-            <element signature="e#20674#20841#0#PHP" />
-            <element signature="e#21112#21603#0#PHP" />
-            <element signature="e#21172#21602#0#PHP" />
-            <element signature="e#21293#21488#1#PHP" />
-            <element signature="e#21512#21592#1#PHP" />
-            <element signature="e#21616#21889#0#PHP" />
-            <element signature="e#21894#24691#0#PHP" />
-            <element signature="e#22139#22224#0#PHP" />
-            <element signature="e#22399#22501#0#PHP" />
-            <element signature="e#23000#23137#0#PHP" />
-            <element signature="e#23060#23136#0#PHP" />
-            <element signature="e#22995#23194#0#PHP" />
-            <element signature="e#23535#23621#0#PHP" />
-            <element signature="e#23723#23858#0#PHP" />
-            <element signature="e#23783#23857#0#PHP" />
-            <element signature="e#23718#23916#0#PHP" />
-            <element signature="e#24173#24684#0#PHP" />
-            <element signature="e#24233#24683#0#PHP" />
-            <element signature="e#24354#24569#1#PHP" />
-            <element signature="e#24593#24673#1#PHP" />
-            <element signature="e#24697#24970#0#PHP" />
-            <element signature="e#24975#26350#0#PHP" />
-            <element signature="e#25228#25313#0#PHP" />
-            <element signature="e#25716#25854#0#PHP" />
-            <element signature="e#25776#25853#0#PHP" />
-            <element signature="e#25711#25911#0#PHP" />
-            <element signature="e#26126#26343#0#PHP" />
-            <element signature="e#26199#26342#0#PHP" />
-            <element signature="e#26252#26332#1#PHP" />
-            <element signature="e#26356#26626#0#PHP" />
-            <element signature="e#26631#27695#0#PHP" />
-            <element signature="e#26881#26966#0#PHP" />
-            <element signature="e#27366#27501#0#PHP" />
-            <element signature="e#27426#27500#0#PHP" />
-            <element signature="e#27361#27558#0#PHP" />
-            <element signature="e#27575#27688#0#PHP" />
-            <element signature="e#27648#27687#0#PHP" />
-            <element signature="e#27701#27941#0#PHP" />
-            <element signature="e#27946#29390#0#PHP" />
-            <element signature="e#28118#28203#0#PHP" />
-            <element signature="e#28584#28723#0#PHP" />
-            <element signature="e#28642#28722#0#PHP" />
-            <element signature="e#28579#28780#0#PHP" />
-            <element signature="e#29396#29533#0#PHP" />
-            <element signature="e#29538#31020#0#PHP" />
-            <element signature="e#29704#29789#0#PHP" />
-            <element signature="e#30307#30440#0#PHP" />
-            <element signature="e#30365#30439#0#PHP" />
-            <element signature="e#30302#30497#0#PHP" />
-            <element signature="e#30595#30706#0#PHP" />
-            <element signature="e#30617#30705#2#PHP" />
-            <element signature="e#31026#31493#0#PHP" />
-            <element signature="e#31498#35283#0#PHP" />
-            <element signature="e#31690#31840#0#PHP" />
-            <element signature="e#32160#32259#0#PHP" />
-            <element signature="e#32211#32258#0#PHP" />
-            <element signature="e#32155#32316#0#PHP" />
-            <element signature="e#32708#32786#0#PHP" />
-            <element signature="e#32848#33116#0#PHP" />
-            <element signature="e#32899#33043#0#PHP" />
-            <element signature="e#32957#33042#0#PHP" />
-            <element signature="e#32894#33106#0#PHP" />
-            <element signature="e#33181#33219#0#PHP" />
-            <element signature="e#33235#33388#0#PHP" />
-            <element signature="e#33295#33387#0#PHP" />
-            <element signature="e#33230#33448#0#PHP" />
-            <element signature="e#33463#33605#0#PHP" />
-            <element signature="e#33523#33604#0#PHP" />
-            <element signature="e#33458#33667#0#PHP" />
-            <element signature="e#33682#33825#0#PHP" />
-            <element signature="e#33742#33824#0#PHP" />
-            <element signature="e#33677#33889#0#PHP" />
-            <element signature="e#33904#34042#0#PHP" />
-            <element signature="e#33964#34041#0#PHP" />
-            <element signature="e#33899#34106#0#PHP" />
-            <element signature="e#34121#34256#0#PHP" />
-            <element signature="e#34181#34255#0#PHP" />
-            <element signature="e#34116#34317#0#PHP" />
-            <element signature="e#34332#34426#0#PHP" />
-            <element signature="e#34386#34425#0#PHP" />
-            <element signature="e#34327#34488#0#PHP" />
-            <element signature="e#34549#34587#0#PHP" />
-            <element signature="e#34603#34742#0#PHP" />
-            <element signature="e#34661#34741#0#PHP" />
-            <element signature="e#34598#34805#0#PHP" />
-            <element signature="e#34820#34958#0#PHP" />
-            <element signature="e#34878#34957#0#PHP" />
-            <element signature="e#34815#35020#0#PHP" />
-            <element signature="e#35037#35276#0#PHP" />
-            <element signature="e#35096#35275#0#PHP" />
-            <element signature="e#35289#35610#0#PHP" />
-            <element signature="e#35615#36183#0#PHP" />
-            <element signature="e#35987#36100#0#PHP" />
-            <element signature="e#36189#36680#0#PHP" />
-            <element signature="e#36685#40465#0#PHP" />
-            <element signature="e#36845#36930#0#PHP" />
-            <element signature="e#37617#37739#0#PHP" />
-            <element signature="e#37812#38123#0#PHP" />
-            <element signature="e#37861#38113#0#PHP" />
-            <element signature="e#37968#38053#0#PHP" />
-            <element signature="e#38054#38113#0#PHP" />
-            <element signature="e#38526#38691#0#PHP" />
-            <element signature="e#38586#38690#0#PHP" />
-            <element signature="e#38521#38748#0#PHP" />
-            <element signature="e#38822#39028#0#PHP" />
-            <element signature="e#39204#39498#0#PHP" />
-            <element signature="e#39508#39578#0#PHP" />
-            <element signature="e#39665#40292#0#PHP" />
-            <element signature="e#39687#40291#2#PHP" />
-            <element signature="e#39806#39963#0#PHP" />
-            <element signature="e#39859#39949#0#PHP" />
-            <element signature="e#40043#40280#0#PHP" />
-            <element signature="e#40169#40279#0#PHP" />
-            <element signature="e#40303#40415#0#PHP" />
-            <element signature="e#40359#40414#0#PHP" />
-            <element signature="e#40471#41003#0#PHP" />
-            <element signature="e#41008#46084#0#PHP" />
-            <element signature="e#41169#41254#0#PHP" />
-            <element signature="e#41755#41893#0#PHP" />
-            <element signature="e#41815#41892#0#PHP" />
-            <element signature="e#41750#41950#0#PHP" />
-            <element signature="e#42117#42323#0#PHP" />
-            <element signature="e#42413#42496#0#PHP" />
-            <element signature="e#42565#42616#0#PHP" />
-            <element signature="e#43042#43470#0#PHP" />
-            <element signature="e#43255#43438#0#PHP" />
-            <element signature="e#43322#43424#0#PHP" />
-            <element signature="e#43733#44480#0#PHP" />
-            <element signature="e#43847#44369#0#PHP" />
-            <element signature="e#44117#44369#0#PHP" />
-            <element signature="e#44380#44480#0#PHP" />
-            <element signature="e#44567#45237#0#PHP" />
-            <element signature="e#44589#45236#2#PHP" />
-            <element signature="e#44665#44932#0#PHP" />
-            <element signature="e#44832#44932#0#PHP" />
-            <element signature="e#44984#45225#0#PHP" />
-            <element signature="e#45113#45224#0#PHP" />
-            <element signature="e#45280#46034#0#PHP" />
-            <element signature="e#45328#45685#0#PHP" />
-            <element signature="e#45370#45500#0#PHP" />
-            <element signature="e#45428#45499#0#PHP" />
-            <element signature="e#45516#45685#0#PHP" />
-            <element signature="e#45539#45670#0#PHP" />
-            <element signature="e#45598#45669#0#PHP" />
-            <element signature="e#45696#45883#0#PHP" />
-            <element signature="e#45749#45872#0#PHP" />
-            <element signature="e#45808#45871#0#PHP" />
-            <element signature="e#45884#46034#0#PHP" />
-            <element signature="e#45903#46023#0#PHP" />
-            <element signature="e#45959#46022#0#PHP" />
-            <element signature="e#46090#47303#0#PHP" />
-            <element signature="e#46570#46998#0#PHP" />
-            <element signature="e#46783#46966#0#PHP" />
-            <element signature="e#46850#46952#0#PHP" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1039,9 +574,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1475">
           <caret line="346" column="57" selection-start-line="346" selection-start-column="51" selection-end-line="346" selection-end-column="57" />
-          <folding>
-            <element signature="e#290#308#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1075,157 +607,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="486">
           <caret line="1198" column="44" lean-forward="true" selection-start-line="1198" selection-start-column="44" selection-end-line="1198" selection-end-column="44" />
-          <folding>
-            <element signature="e#1283#1558#0#PHP" />
-            <element signature="e#1614#1950#0#PHP" />
-            <element signature="e#1955#4053#0#PHP" />
-            <element signature="e#2620#3084#0#PHP" />
-            <element signature="e#2869#3052#0#PHP" />
-            <element signature="e#2936#3038#0#PHP" />
-            <element signature="e#3310#3384#0#PHP" />
-            <element signature="e#3726#4047#0#PHP" />
-            <element signature="e#3969#4047#0#PHP" />
-            <element signature="e#4059#4617#0#PHP" />
-            <element signature="e#4622#6182#0#PHP" />
-            <element signature="e#5538#5784#0#PHP" />
-            <element signature="e#5874#6043#0#PHP" />
-            <element signature="e#6188#7067#0#PHP" />
-            <element signature="e#7072#10501#0#PHP" />
-            <element signature="e#8050#8192#0#PHP" />
-            <element signature="e#8370#8419#0#PHP" />
-            <element signature="e#8510#8677#0#PHP" />
-            <element signature="e#8846#10280#0#PHP" />
-            <element signature="e#8868#10279#2#PHP" />
-            <element signature="e#9395#10269#0#PHP" />
-            <element signature="e#9801#9942#0#PHP" />
-            <element signature="e#9801#10202#0#PHP" />
-            <element signature="e#9979#10201#1#PHP" />
-            <element signature="e#10507#10857#0#PHP" />
-            <element signature="e#10862#11028#0#PHP" />
-            <element signature="e#11034#11286#0#PHP" />
-            <element signature="e#11291#11674#0#PHP" />
-            <element signature="e#11522#11617#0#PHP" />
-            <element signature="e#11522#11667#0#PHP" />
-            <element signature="e#11680#12347#0#PHP" />
-            <element signature="e#12352#15693#0#PHP" />
-            <element signature="e#12874#13037#0#PHP" />
-            <element signature="e#13695#13837#0#PHP" />
-            <element signature="e#14226#14286#0#PHP" />
-            <element signature="e#14370#14567#0#PHP" />
-            <element signature="e#14400#14509#0#PHP" />
-            <element signature="e#14459#14508#0#PHP" />
-            <element signature="e#14879#15063#0#PHP" />
-            <element signature="e#15699#15944#0#PHP" />
-            <element signature="e#15949#16267#0#PHP" />
-            <element signature="e#16273#16691#0#PHP" />
-            <element signature="e#16696#17248#0#PHP" />
-            <element signature="e#16992#17241#0#PHP" />
-            <element signature="e#17062#17240#0#PHP" />
-            <element signature="e#17086#17230#1#PHP" />
-            <element signature="e#17120#17216#1#PHP" />
-            <element signature="e#17255#17679#0#PHP" />
-            <element signature="e#17684#18831#0#PHP" />
-            <element signature="e#17882#17998#0#PHP" />
-            <element signature="e#18202#18371#0#PHP" />
-            <element signature="e#18584#18824#0#PHP" />
-            <element signature="e#18647#18823#0#PHP" />
-            <element signature="e#18671#18813#1#PHP" />
-            <element signature="e#18705#18799#1#PHP" />
-            <element signature="e#18837#19259#0#PHP" />
-            <element signature="e#19264#19832#0#PHP" />
-            <element signature="e#19568#19825#0#PHP" />
-            <element signature="e#19642#19824#0#PHP" />
-            <element signature="e#19666#19814#1#PHP" />
-            <element signature="e#19700#19800#1#PHP" />
-            <element signature="e#19838#20095#0#PHP" />
-            <element signature="e#20100#20900#0#PHP" />
-            <element signature="e#20575#20893#0#PHP" />
-            <element signature="e#20644#20892#0#PHP" />
-            <element signature="e#20668#20809#1#PHP" />
-            <element signature="e#20702#20795#1#PHP" />
-            <element signature="e#20906#21306#0#PHP" />
-            <element signature="e#21311#22054#0#PHP" />
-            <element signature="e#21731#22047#0#PHP" />
-            <element signature="e#21798#22046#0#PHP" />
-            <element signature="e#21822#21963#1#PHP" />
-            <element signature="e#21856#21949#1#PHP" />
-            <element signature="e#22513#24161#0#PHP" />
-            <element signature="e#22896#23020#0#PHP" />
-            <element signature="e#24167#24514#0#PHP" />
-            <element signature="e#24519#25528#0#PHP" />
-            <element signature="e#24909#25078#0#PHP" />
-            <element signature="e#25285#25521#0#PHP" />
-            <element signature="e#25347#25520#0#PHP" />
-            <element signature="e#25371#25510#1#PHP" />
-            <element signature="e#25405#25496#1#PHP" />
-            <element signature="e#25534#26005#0#PHP" />
-            <element signature="e#26693#26897#0#PHP" />
-            <element signature="e#27646#27768#0#PHP" />
-            <element signature="e#27882#28044#0#PHP" />
-            <element signature="e#28054#28124#0#PHP" />
-            <element signature="e#28445#28607#0#PHP" />
-            <element signature="e#28547#28606#0#PHP" />
-            <element signature="e#28729#29702#0#PHP" />
-            <element signature="e#29707#36765#0#PHP" />
-            <element signature="e#30467#30647#0#PHP" />
-            <element signature="e#30764#30986#0#PHP" />
-            <element signature="e#31050#31225#0#PHP" />
-            <element signature="e#31456#31615#0#PHP" />
-            <element signature="e#32028#32150#0#PHP" />
-            <element signature="e#32374#32448#0#PHP" />
-            <element signature="e#32511#32711#0#PHP" />
-            <element signature="e#32721#32910#0#PHP" />
-            <element signature="e#32958#33304#0#PHP" />
-            <element signature="e#33113#33294#0#PHP" />
-            <element signature="e#33314#33384#0#PHP" />
-            <element signature="e#33546#33722#0#PHP" />
-            <element signature="e#33663#33722#0#PHP" />
-            <element signature="e#33933#34171#0#PHP" />
-            <element signature="e#34641#36714#0#PHP" />
-            <element signature="e#34663#36713#2#PHP" />
-            <element signature="e#35042#35227#0#PHP" />
-            <element signature="e#35135#35226#0#PHP" />
-            <element signature="e#35662#36703#0#PHP" />
-            <element signature="e#36066#36207#0#PHP" />
-            <element signature="e#36066#36382#0#PHP" />
-            <element signature="e#36244#36381#1#PHP" />
-            <element signature="e#36554#36703#0#PHP" />
-            <element signature="e#36771#37369#0#PHP" />
-            <element signature="e#37374#40763#0#PHP" />
-            <element signature="e#38360#38502#0#PHP" />
-            <element signature="e#38680#38729#0#PHP" />
-            <element signature="e#38818#38985#0#PHP" />
-            <element signature="e#39181#40599#0#PHP" />
-            <element signature="e#39203#40598#2#PHP" />
-            <element signature="e#39799#40588#0#PHP" />
-            <element signature="e#40205#40346#0#PHP" />
-            <element signature="e#40205#40521#0#PHP" />
-            <element signature="e#40383#40520#1#PHP" />
-            <element signature="e#40769#41414#0#PHP" />
-            <element signature="e#41419#43651#0#PHP" />
-            <element signature="e#42391#42533#0#PHP" />
-            <element signature="e#42723#42834#0#PHP" />
-            <element signature="e#42778#42833#0#PHP" />
-            <element signature="e#42845#43032#0#PHP" />
-            <element signature="e#43317#43395#0#PHP" />
-            <element signature="e#43657#44187#0#PHP" />
-            <element signature="e#44876#45080#0#PHP" />
-            <element signature="e#45829#45951#0#PHP" />
-            <element signature="e#45997#46209#0#PHP" />
-            <element signature="e#46466#46721#0#PHP" />
-            <element signature="e#46731#46801#0#PHP" />
-            <element signature="e#46854#47110#0#PHP" />
-            <element signature="e#46992#47110#0#PHP" />
-            <element signature="e#47533#47592#0#PHP" />
-            <element signature="e#47724#48096#0#PHP" />
-            <element signature="e#48101#48869#0#PHP" />
-            <element signature="e#48767#48862#0#PHP" />
-            <element signature="e#48787#48837#0#PHP" />
-            <element signature="e#48875#49348#0#PHP" />
-            <element signature="e#49353#51055#0#PHP" />
-            <element signature="e#50366#50612#0#PHP" />
-            <element signature="e#50702#50883#0#PHP" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1270,27 +651,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="12" lean-forward="true" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/logs/userfrosting.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-23460">
-          <caret line="2097" lean-forward="true" selection-start-line="2097" selection-end-line="2097" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/.env" />
+    <entry file="file://$PROJECT_DIR$/app/logs/userfrosting.log" />
     <entry file="file://$PROJECT_DIR$/app/sprinkles/site/src/Database/Models/Intake.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="20" />
-          <folding>
-            <element signature="e#62#113#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1329,20 +695,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_5.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="33" lean-forward="true" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_5.sql" />
     <entry file="file://$PROJECT_DIR$/app/sprinkles/site/src/Controller/OfficeController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
           <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-          <folding>
-            <element signature="e#57#91#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1371,9 +728,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
           <caret line="7" column="26" lean-forward="true" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
-          <folding>
-            <element signature="e#62#113#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1393,9 +747,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-28">
           <caret line="64" column="33" selection-start-line="64" selection-start-column="33" selection-end-line="64" selection-end-column="33" />
-          <folding>
-            <element signature="n#!!block;n#css/form-widgets#0;n#!!block;n#bundle#0;n#!!top" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1413,16 +764,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="575">
           <caret line="121" column="8" selection-start-line="121" selection-start-column="8" selection-end-line="121" selection-end-column="42" />
-          <folding>
-            <element signature="e#57#108#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/sprinkles/site/routes/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="12" lean-forward="true" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="37" />
+        <state relative-caret-position="144">
+          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -1435,8 +783,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/sprinkles/site/src/Controller/SearchController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="21" column="20" lean-forward="true" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+        <state relative-caret-position="360">
+          <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
           <folding>
             <element signature="e#57#108#0#PHP" expanded="true" />
           </folding>
@@ -1445,15 +793,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/sprinkles/site/templates/pages/search.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
+        <state relative-caret-position="288">
           <caret line="12" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/sprinkles/site/templates/pages/abstract/base.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
+        <state relative-caret-position="37">
           <caret line="94" column="71" selection-start-line="94" selection-start-column="71" selection-end-line="94" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles.example.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
         </state>
       </provider>
     </entry>
