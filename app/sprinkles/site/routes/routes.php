@@ -4,6 +4,7 @@ $app->get('/', 'UserFrosting\Sprinkle\Site\Controller\PageController:pageIndex')
     ->add('authGuard')
     ->setName('index');
 
+
 //$app->post('/search?keyword={keyword}', 'UserFrosting\Sprinkle\Site\Controller\SearchController:pageSearch')
 //    ->add('authGuard');
 //
