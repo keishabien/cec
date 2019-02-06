@@ -10,7 +10,8 @@ class Search extends Model
     /**
      * @var string The name of the table for the current model.
      */
-    protected $table = 'midwest_wrdp1.cec_update';
+//    protected $table = 'midwest_wrdp1.cec_update';
+    protected $table = 'cec.office_details';
 
 
     /**
