@@ -3,13 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="d6dbf2c5-d130-46b5-a490-fbeb9d35fb5b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/sprinkles/site/assets/css/cec.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/site/assets/css/cec.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/sprinkles/site/routes/offices.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/site/routes/offices.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/sprinkles/site/routes/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/site/routes/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/sprinkles/site/src/Controller/OfficeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/site/src/Controller/OfficeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/sprinkles/site/schema/requests/search.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/site/schema/requests/search.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/sprinkles/site/src/Controller/SearchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/site/src/Controller/SearchController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/sprinkles/site/templates/pages/abstract/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/site/templates/pages/abstract/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/sprinkles/site/templates/pages/office.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/site/templates/pages/dashboard/office.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/sprinkles/site/templates/pages/offices.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/site/templates/pages/dashboard/offices.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/sprinkles/site/src/Database/Models/Intake.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/site/src/Database/Models/Intake.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/sprinkles/site/templates/pages/search.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/site/templates/pages/search.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,20 +24,80 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/sprinkles/site/routes/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="6" column="12" lean-forward="true" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="37" />
+            <state relative-caret-position="368">
+              <caret line="22" column="45" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/sprinkles/site/src/Controller/SearchController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="183" column="31" lean-forward="true" selection-start-line="183" selection-start-column="31" selection-end-line="183" selection-end-column="31" />
+              <folding>
+                <element signature="e#57#108#0#PHP" expanded="true" />
+                <element signature="e#612#741#0#PHP" />
+                <element signature="e#612#778#0#PHP" />
+                <element signature="e#1402#1457#1#PHP" />
+                <element signature="e#1481#1995#0#PHP" />
+                <element signature="e#1782#1989#0#PHP" />
+                <element signature="e#1900#1989#0#PHP" />
+                <element signature="e#2553#2668#0#PHP" />
+                <element signature="e#5104#5425#0#PHP" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/sprinkles/site/src/Controller/SearchController.php">
+        <entry file="file://$PROJECT_DIR$/app/sprinkles/site/src/Controller/OfficeController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="21" column="20" lean-forward="true" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+            <state relative-caret-position="322">
+              <caret line="69" column="55" lean-forward="true" selection-start-line="69" selection-start-column="55" selection-end-line="69" selection-end-column="55" />
               <folding>
-                <element signature="e#57#108#0#PHP" expanded="true" />
+                <element signature="e#767#1347#0#PHP" />
+                <element signature="e#1139#1252#0#PHP" />
+                <element signature="e#1353#2400#0#PHP" />
+                <element signature="e#1785#1900#0#PHP" />
+                <element signature="e#2406#2532#0#PHP" />
+                <element signature="e#2704#2791#0#PHP" />
+                <element signature="e#2928#2963#0#PHP" />
+                <element signature="e#3424#3521#0#PHP" />
+                <element signature="e#3477#3520#0#PHP" />
+                <element signature="e#3419#3578#0#PHP" />
+                <element signature="e#3958#4425#0#PHP" />
+                <element signature="e#4430#8734#0#PHP" />
+                <element signature="e#4624#4777#0#PHP" />
+                <element signature="e#5097#5194#0#PHP" />
+                <element signature="e#5150#5193#0#PHP" />
+                <element signature="e#5092#5251#0#PHP" />
+                <element signature="e#5654#5732#0#PHP" />
+                <element signature="e#5794#6066#0#PHP" />
+                <element signature="e#5845#5993#0#PHP" />
+                <element signature="e#5903#5992#0#PHP" />
+                <element signature="e#5840#6056#0#PHP" />
+                <element signature="e#6131#6169#0#PHP" />
+                <element signature="e#6172#6248#0#PHP" />
+                <element signature="e#7585#7636#0#PHP" />
+                <element signature="e#7611#7626#1#PHP" />
+                <element signature="e#7638#7640#0#PHP" />
+                <element signature="e#8114#8727#0#PHP" />
+                <element signature="e#8185#8726#0#PHP" />
+                <element signature="e#8740#10186#0#PHP" />
+                <element signature="e#9215#9644#0#PHP" />
+                <element signature="e#9428#9612#0#PHP" />
+                <element signature="e#9495#9598#0#PHP" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/sprinkles/site/routes/offices.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="460">
+              <caret line="22" column="90" selection-start-line="22" selection-start-column="90" selection-end-line="22" selection-end-column="90" />
             </state>
           </provider>
         </entry>
@@ -47,26 +105,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/sprinkles/site/templates/pages/search.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="12" selection-start-line="12" selection-end-line="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/sprinkles/site/templates/navigation/search.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="118" selection-start-column="118" selection-end-column="118" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/sprinkles/site/templates/pages/abstract/base.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="94" column="71" selection-start-line="94" selection-start-column="71" selection-end-line="94" selection-end-column="78" />
+            <state relative-caret-position="253">
+              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
             </state>
           </provider>
         </entry>
@@ -85,11 +125,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>hygienist</find>
-      <find>dentist</find>
-      <find>location_id</find>
-      <find>regi</find>
-      <find>ufForm</find>
       <find>redirectOnLo</find>
       <find>page.js</find>
       <find>page.validat</find>
@@ -115,6 +150,11 @@
       <find>addRow</find>
       <find>pageIn</find>
       <find>office.html.twig</find>
+      <find>getUserFromParams</find>
+      <find>uri_user</find>
+      <find>vic</find>
+      <find>user_name</find>
+      <find>getQ</find>
     </findStrings>
     <replaceStrings>
       <replace>repeat-adult</replace>
@@ -137,9 +177,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/sprinkles/site/assets/js/searchAll.js" />
-        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_22.php" />
-        <option value="$PROJECT_DIR$/app/sprinkles/site/templates/pages/partials/footer.html.twig" />
         <option value="$PROJECT_DIR$/app/sprinkles/site/assets/js/offices.js" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_23.php" />
         <option value="$PROJECT_DIR$/app/sprinkles/site/src/ServicesProvider/ServicesProvider.php" />
@@ -174,20 +211,23 @@
         <option value="$PROJECT_DIR$/app/sprinkles/account/assets/userfrosting/js/pages/account-settings.js" />
         <option value="$PROJECT_DIR$/app/sprinkles/site/config/default.php" />
         <option value="$PROJECT_DIR$/app/sprinkles/site/src/Database/Models/CEC-Office.php" />
-        <option value="$PROJECT_DIR$/app/sprinkles/site/src/Database/Models/Intake.php" />
         <option value="$PROJECT_DIR$/app/sprinkles/site/assets/js/intake-dr-hyg-details.js" />
         <option value="$PROJECT_DIR$/app/sprinkles/site/schema/requests/intake-form.yaml" />
         <option value="$PROJECT_DIR$/app/sprinkles/site/templates/pages/intake-dr-hyg-details.html.twig" />
         <option value="$PROJECT_DIR$/app/sprinkles/site/src/Controller/PageController.php" />
         <option value="$PROJECT_DIR$/app/sprinkles/site/templates/pages/intake-ufCollection.html.twig" />
         <option value="$PROJECT_DIR$/app/sprinkles/site/src/Controller/OfficeController.php" />
-        <option value="$PROJECT_DIR$/app/sprinkles/site/routes/offices.php" />
         <option value="$PROJECT_DIR$/app/sprinkles/site/assets/css/cec.css" />
-        <option value="$PROJECT_DIR$/app/sprinkles/site/templates/pages/search.html.twig" />
         <option value="$PROJECT_DIR$/app/sprinkles/site/templates/navigation/search.html.twig" />
-        <option value="$PROJECT_DIR$/app/sprinkles/site/routes/routes.php" />
-        <option value="$PROJECT_DIR$/app/sprinkles/site/src/Controller/SearchController.php" />
         <option value="$PROJECT_DIR$/app/sprinkles/site/templates/pages/abstract/base.html.twig" />
+        <option value="$PROJECT_DIR$/app/sprinkles/site/routes/offices.php" />
+        <option value="$PROJECT_DIR$/app/sprinkles/site/schema/requests/search.yaml" />
+        <option value="$PROJECT_DIR$/app/sprinkles/site/src/Database/Models/Intake.php" />
+        <option value="$USER_HOME$/AppData/Local/Temp/scp29208/var/www/midwest/.htaccess" />
+        <option value="$PROJECT_DIR$/app/sprinkles/site/src/Sprunje/CECOfficeSprunje.php" />
+        <option value="$PROJECT_DIR$/app/sprinkles/site/routes/routes.php" />
+        <option value="$PROJECT_DIR$/app/sprinkles/site/templates/pages/search.html.twig" />
+        <option value="$PROJECT_DIR$/app/sprinkles/site/src/Controller/SearchController.php" />
       </list>
     </option>
   </component>
@@ -325,52 +365,14 @@
               <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
-              <item name="account" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
               <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
-              <item name="account" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
-              <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
-              <item name="account" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
-              <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
-              <item name="account" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
-              <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
-              <item name="account" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
-              <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
-              <item name="account" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
               <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -378,7 +380,7 @@
               <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
-              <item name="account" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -386,7 +388,7 @@
               <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
-              <item name="account" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Controller" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -395,17 +397,9 @@
               <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
-              <item name="account" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
-              <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
-              <item name="account" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Sprunje" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
@@ -413,40 +407,6 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
               <item name="site" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
-              <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
-              <item name="site" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
-              <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
-              <item name="site" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
-              <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
-              <item name="site" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
-              <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
-              <item name="site" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
@@ -508,6 +468,15 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Database" type="462c0819:PsiDirectoryNode" />
               <item name="Models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
+              <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
+              <item name="site" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Sprunje" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
@@ -581,17 +550,17 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\userfrosting\app\sprinkles\site\templates\pages" />
-      <recent name="C:\wamp64\www\userfrosting\app\sprinkles\site\src\Database\Models" />
-      <recent name="C:\wamp64\www\userfrosting\app\sprinkles\site\assets\js" />
-      <recent name="C:\wamp64\www\userfrosting\app\sprinkles\site\schema\requests" />
-      <recent name="C:\wamp64\www\userfrosting\app\sprinkles\site\templates\navigation" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\userfrosting\app\sprinkles\site\templates\pages\dashboard" />
       <recent name="C:\wamp64\www\userfrosting\app\sprinkles\site\templates" />
       <recent name="C:\wamp64\www\userfrosting\app\sprinkles\site\templates\pages" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\userfrosting\app\sprinkles\site\src\Sprunje" />
+      <recent name="C:\wamp64\www\userfrosting\app\sprinkles\site\templates\pages" />
+      <recent name="C:\wamp64\www\userfrosting\app\sprinkles\site\src\Database\Models" />
+      <recent name="C:\wamp64\www\userfrosting\app\sprinkles\site\assets\js" />
+      <recent name="C:\wamp64\www\userfrosting\app\sprinkles\site\schema\requests" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -645,18 +614,20 @@
       <workItem from="1548429265267" duration="4180000" />
       <workItem from="1548451378756" duration="16000" />
       <workItem from="1548452607801" duration="31000" />
-      <workItem from="1548798474246" duration="4169000" />
+      <workItem from="1548798474246" duration="4239000" />
+      <workItem from="1549037098625" duration="725000" />
+      <workItem from="1549474168752" duration="14500000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="284777000" />
+    <option name="totallyTimeSpent" value="300072000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18283582" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18710022" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -721,50 +692,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/admin/templates/tables/roles.html.twig">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/admin/templates/tables/users.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="20" column="64" selection-end-line="149" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/templates/pages/dashboard/office.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-303">
-          <caret line="77" column="30" lean-forward="true" selection-start-line="77" selection-start-column="30" selection-end-line="77" selection-end-column="30" />
-          <folding>
-            <element signature="e#874#5132#0#Twig" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/templates/pages/dashboard/offices.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="32" column="14" lean-forward="true" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/assets/js/office.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/templates/tables/offices.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="40" column="23" lean-forward="true" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/core/assets/userfrosting/js/uf-jqueryvalidation-config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="37" column="64" selection-start-line="37" selection-start-column="64" selection-end-line="37" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Temp/scp44126/var/www/midwest/.htaccess" />
     <entry file="file://$PROJECT_DIR$/app/sprinkles/site/templates/pages/intake-recall.html.twig">
       <provider selected="true" editor-type-id="text-editor">
@@ -789,249 +716,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
           <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/admin/src/Controller/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-69">
-          <caret line="125" column="96" lean-forward="true" selection-start-line="125" selection-start-column="96" selection-end-line="125" selection-end-column="96" />
-          <folding>
-            <element signature="e#1277#1437#0#PHP" />
-            <element signature="e#1490#1940#0#PHP" />
-            <element signature="e#2450#2565#0#PHP" />
-            <element signature="e#3080#3202#0#PHP" />
-            <element signature="e#3390#3590#0#PHP" />
-            <element signature="e#3600#3789#0#PHP" />
-            <element signature="e#3799#3869#0#PHP" />
-            <element signature="e#4141#4247#0#PHP" />
-            <element signature="e#4201#4246#0#PHP" />
-            <element signature="e#4136#4413#0#PHP" />
-            <element signature="e#4263#4403#0#PHP" />
-            <element signature="e#4485#4583#0#PHP" />
-            <element signature="e#5292#5514#0#PHP" />
-            <element signature="e#5408#5513#0#PHP" />
-            <element signature="e#6253#6390#0#PHP" />
-            <element signature="e#6253#6669#0#PHP" />
-            <element signature="e#6423#6668#1#PHP" />
-            <element signature="e#6860#7357#0#PHP" />
-            <element signature="e#7362#9513#0#PHP" />
-            <element signature="e#7531#7616#0#PHP" />
-            <element signature="e#8013#8151#0#PHP" />
-            <element signature="e#8073#8150#0#PHP" />
-            <element signature="e#8008#8208#0#PHP" />
-            <element signature="e#8487#9335#0#PHP" />
-            <element signature="e#8509#9334#2#PHP" />
-            <element signature="e#8898#9035#0#PHP" />
-            <element signature="e#8898#9275#0#PHP" />
-            <element signature="e#9068#9274#1#PHP" />
-            <element signature="e#9346#9463#0#PHP" />
-            <element signature="e#9415#9462#0#PHP" />
-            <element signature="e#9519#9960#0#PHP" />
-            <element signature="e#9965#11918#0#PHP" />
-            <element signature="e#10129#10214#0#PHP" />
-            <element signature="e#10534#10628#0#PHP" />
-            <element signature="e#10588#10627#0#PHP" />
-            <element signature="e#10529#10685#0#PHP" />
-            <element signature="e#10939#11119#0#PHP" />
-            <element signature="e#11245#11648#0#PHP" />
-            <element signature="e#11267#11647#2#PHP" />
-            <element signature="e#11423#11636#0#PHP" />
-            <element signature="e#11530#11635#0#PHP" />
-            <element signature="e#11758#11867#0#PHP" />
-            <element signature="e#11818#11866#0#PHP" />
-            <element signature="e#11924#12060#0#PHP" />
-            <element signature="e#12065#13571#0#PHP" />
-            <element signature="e#12236#12321#0#PHP" />
-            <element signature="e#12839#12977#0#PHP" />
-            <element signature="e#12897#12976#0#PHP" />
-            <element signature="e#12834#13034#0#PHP" />
-            <element signature="e#13137#13257#0#PHP" />
-            <element signature="e#13159#13256#2#PHP" />
-            <element signature="e#13577#13701#0#PHP" />
-            <element signature="e#13706#15233#0#PHP" />
-            <element signature="e#13871#13956#0#PHP" />
-            <element signature="e#14143#14246#0#PHP" />
-            <element signature="e#14143#14355#0#PHP" />
-            <element signature="e#14714#14805#0#PHP" />
-            <element signature="e#14765#14804#0#PHP" />
-            <element signature="e#14709#14862#0#PHP" />
-            <element signature="e#15239#15435#0#PHP" />
-            <element signature="e#15440#16524#0#PHP" />
-            <element signature="e#15884#15997#0#PHP" />
-            <element signature="e#16530#16799#0#PHP" />
-            <element signature="e#16804#18288#0#PHP" />
-            <element signature="e#17058#17143#0#PHP" />
-            <element signature="e#17463#17557#0#PHP" />
-            <element signature="e#17517#17556#0#PHP" />
-            <element signature="e#17458#17614#0#PHP" />
-            <element signature="e#17868#18048#0#PHP" />
-            <element signature="e#18065#18281#0#PHP" />
-            <element signature="e#18140#18280#0#PHP" />
-            <element signature="e#18193#18270#1#PHP" />
-            <element signature="e#18294#18797#0#PHP" />
-            <element signature="e#18802#21610#0#PHP" />
-            <element signature="e#19367#19482#0#PHP" />
-            <element signature="e#19840#19915#0#PHP" />
-            <element signature="e#20220#20326#0#PHP" />
-            <element signature="e#20280#20325#0#PHP" />
-            <element signature="e#20216#20603#0#PHP" />
-            <element signature="e#20446#20603#0#PHP" />
-            <element signature="e#20674#20841#0#PHP" />
-            <element signature="e#21112#21603#0#PHP" />
-            <element signature="e#21172#21602#0#PHP" />
-            <element signature="e#21293#21488#1#PHP" />
-            <element signature="e#21512#21592#1#PHP" />
-            <element signature="e#21616#21889#0#PHP" />
-            <element signature="e#21894#24691#0#PHP" />
-            <element signature="e#22139#22224#0#PHP" />
-            <element signature="e#22399#22501#0#PHP" />
-            <element signature="e#23000#23137#0#PHP" />
-            <element signature="e#23060#23136#0#PHP" />
-            <element signature="e#22995#23194#0#PHP" />
-            <element signature="e#23535#23621#0#PHP" />
-            <element signature="e#23723#23858#0#PHP" />
-            <element signature="e#23783#23857#0#PHP" />
-            <element signature="e#23718#23916#0#PHP" />
-            <element signature="e#24173#24684#0#PHP" />
-            <element signature="e#24233#24683#0#PHP" />
-            <element signature="e#24354#24569#1#PHP" />
-            <element signature="e#24593#24673#1#PHP" />
-            <element signature="e#24697#24970#0#PHP" />
-            <element signature="e#24975#26350#0#PHP" />
-            <element signature="e#25228#25313#0#PHP" />
-            <element signature="e#25716#25854#0#PHP" />
-            <element signature="e#25776#25853#0#PHP" />
-            <element signature="e#25711#25911#0#PHP" />
-            <element signature="e#26126#26343#0#PHP" />
-            <element signature="e#26199#26342#0#PHP" />
-            <element signature="e#26252#26332#1#PHP" />
-            <element signature="e#26356#26626#0#PHP" />
-            <element signature="e#26631#27695#0#PHP" />
-            <element signature="e#26881#26966#0#PHP" />
-            <element signature="e#27366#27501#0#PHP" />
-            <element signature="e#27426#27500#0#PHP" />
-            <element signature="e#27361#27558#0#PHP" />
-            <element signature="e#27575#27688#0#PHP" />
-            <element signature="e#27648#27687#0#PHP" />
-            <element signature="e#27701#27941#0#PHP" />
-            <element signature="e#27946#29390#0#PHP" />
-            <element signature="e#28118#28203#0#PHP" />
-            <element signature="e#28584#28723#0#PHP" />
-            <element signature="e#28642#28722#0#PHP" />
-            <element signature="e#28579#28780#0#PHP" />
-            <element signature="e#29396#29533#0#PHP" />
-            <element signature="e#29538#31020#0#PHP" />
-            <element signature="e#29704#29789#0#PHP" />
-            <element signature="e#30307#30440#0#PHP" />
-            <element signature="e#30365#30439#0#PHP" />
-            <element signature="e#30302#30497#0#PHP" />
-            <element signature="e#30595#30706#0#PHP" />
-            <element signature="e#30617#30705#2#PHP" />
-            <element signature="e#31026#31493#0#PHP" />
-            <element signature="e#31498#35283#0#PHP" />
-            <element signature="e#31690#31840#0#PHP" />
-            <element signature="e#32160#32259#0#PHP" />
-            <element signature="e#32211#32258#0#PHP" />
-            <element signature="e#32155#32316#0#PHP" />
-            <element signature="e#32708#32786#0#PHP" />
-            <element signature="e#32848#33116#0#PHP" />
-            <element signature="e#32899#33043#0#PHP" />
-            <element signature="e#32957#33042#0#PHP" />
-            <element signature="e#32894#33106#0#PHP" />
-            <element signature="e#33181#33219#0#PHP" />
-            <element signature="e#33235#33388#0#PHP" />
-            <element signature="e#33295#33387#0#PHP" />
-            <element signature="e#33230#33448#0#PHP" />
-            <element signature="e#33463#33605#0#PHP" />
-            <element signature="e#33523#33604#0#PHP" />
-            <element signature="e#33458#33667#0#PHP" />
-            <element signature="e#33682#33825#0#PHP" />
-            <element signature="e#33742#33824#0#PHP" />
-            <element signature="e#33677#33889#0#PHP" />
-            <element signature="e#33904#34042#0#PHP" />
-            <element signature="e#33964#34041#0#PHP" />
-            <element signature="e#33899#34106#0#PHP" />
-            <element signature="e#34121#34256#0#PHP" />
-            <element signature="e#34181#34255#0#PHP" />
-            <element signature="e#34116#34317#0#PHP" />
-            <element signature="e#34332#34426#0#PHP" />
-            <element signature="e#34386#34425#0#PHP" />
-            <element signature="e#34327#34488#0#PHP" />
-            <element signature="e#34549#34587#0#PHP" />
-            <element signature="e#34603#34742#0#PHP" />
-            <element signature="e#34661#34741#0#PHP" />
-            <element signature="e#34598#34805#0#PHP" />
-            <element signature="e#34820#34958#0#PHP" />
-            <element signature="e#34878#34957#0#PHP" />
-            <element signature="e#34815#35020#0#PHP" />
-            <element signature="e#35037#35276#0#PHP" />
-            <element signature="e#35096#35275#0#PHP" />
-            <element signature="e#35289#35610#0#PHP" />
-            <element signature="e#35615#36183#0#PHP" />
-            <element signature="e#35987#36100#0#PHP" />
-            <element signature="e#36189#36680#0#PHP" />
-            <element signature="e#36685#40465#0#PHP" />
-            <element signature="e#36845#36930#0#PHP" />
-            <element signature="e#37617#37739#0#PHP" />
-            <element signature="e#37812#38123#0#PHP" />
-            <element signature="e#37861#38113#0#PHP" />
-            <element signature="e#37968#38053#0#PHP" />
-            <element signature="e#38054#38113#0#PHP" />
-            <element signature="e#38526#38691#0#PHP" />
-            <element signature="e#38586#38690#0#PHP" />
-            <element signature="e#38521#38748#0#PHP" />
-            <element signature="e#38822#39028#0#PHP" />
-            <element signature="e#39204#39498#0#PHP" />
-            <element signature="e#39508#39578#0#PHP" />
-            <element signature="e#39665#40292#0#PHP" />
-            <element signature="e#39687#40291#2#PHP" />
-            <element signature="e#39806#39963#0#PHP" />
-            <element signature="e#39859#39949#0#PHP" />
-            <element signature="e#40043#40280#0#PHP" />
-            <element signature="e#40169#40279#0#PHP" />
-            <element signature="e#40303#40415#0#PHP" />
-            <element signature="e#40359#40414#0#PHP" />
-            <element signature="e#40471#41003#0#PHP" />
-            <element signature="e#41008#46084#0#PHP" />
-            <element signature="e#41169#41254#0#PHP" />
-            <element signature="e#41755#41893#0#PHP" />
-            <element signature="e#41815#41892#0#PHP" />
-            <element signature="e#41750#41950#0#PHP" />
-            <element signature="e#42117#42323#0#PHP" />
-            <element signature="e#42413#42496#0#PHP" />
-            <element signature="e#42565#42616#0#PHP" />
-            <element signature="e#43042#43470#0#PHP" />
-            <element signature="e#43255#43438#0#PHP" />
-            <element signature="e#43322#43424#0#PHP" />
-            <element signature="e#43733#44480#0#PHP" />
-            <element signature="e#43847#44369#0#PHP" />
-            <element signature="e#44117#44369#0#PHP" />
-            <element signature="e#44380#44480#0#PHP" />
-            <element signature="e#44567#45237#0#PHP" />
-            <element signature="e#44589#45236#2#PHP" />
-            <element signature="e#44665#44932#0#PHP" />
-            <element signature="e#44832#44932#0#PHP" />
-            <element signature="e#44984#45225#0#PHP" />
-            <element signature="e#45113#45224#0#PHP" />
-            <element signature="e#45280#46034#0#PHP" />
-            <element signature="e#45328#45685#0#PHP" />
-            <element signature="e#45370#45500#0#PHP" />
-            <element signature="e#45428#45499#0#PHP" />
-            <element signature="e#45516#45685#0#PHP" />
-            <element signature="e#45539#45670#0#PHP" />
-            <element signature="e#45598#45669#0#PHP" />
-            <element signature="e#45696#45883#0#PHP" />
-            <element signature="e#45749#45872#0#PHP" />
-            <element signature="e#45808#45871#0#PHP" />
-            <element signature="e#45884#46034#0#PHP" />
-            <element signature="e#45903#46023#0#PHP" />
-            <element signature="e#45959#46022#0#PHP" />
-            <element signature="e#46090#47303#0#PHP" />
-            <element signature="e#46570#46998#0#PHP" />
-            <element signature="e#46783#46966#0#PHP" />
-            <element signature="e#46850#46952#0#PHP" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1284,23 +968,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/src/Database/Models/Intake.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="20" />
-          <folding>
-            <element signature="e#62#113#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/schema/requests/intake-form.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/sprinkles/site/templates/pages/intake-ufCollection.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="782">
@@ -1336,51 +1003,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/src/Controller/OfficeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-          <folding>
-            <element signature="e#57#91#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/routes/offices.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/sprinkles/site/assets/css/cec.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="409">
           <caret line="331" column="29" selection-start-line="331" selection-start-column="29" selection-end-line="331" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/src/Database/Models/Search.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/src/Database/Models/Office.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="26" lean-forward="true" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
-          <folding>
-            <element signature="e#62#113#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/src/Database/Models/CECOffice.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -1419,10 +1045,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/routes/routes.php">
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/schema/requests/intake-form.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="12" lean-forward="true" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="37" />
+        <state relative-caret-position="-69">
+          <caret line="9" selection-start-line="9" selection-end-line="24" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/templates/pages/abstract/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="96" column="50" selection-start-line="96" selection-start-column="50" selection-end-line="96" selection-end-column="50" />
         </state>
       </provider>
     </entry>
@@ -1433,27 +1066,410 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/src/Controller/SearchController.php">
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/schema/requests/search.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="21" column="20" lean-forward="true" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+        <state>
+          <caret column="8" selection-start-column="8" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/src/Database/Models/Intake.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
           <folding>
-            <element signature="e#57#108#0#PHP" expanded="true" />
+            <element signature="e#62#113#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/src/Database/Models/Office.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="26" lean-forward="true" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+          <folding>
+            <element signature="e#62#113#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/scp29208/var/www/midwest/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-748">
+          <caret line="1140" column="29" lean-forward="true" selection-start-line="1140" selection-start-column="29" selection-end-line="1140" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/admin/src/Sprunje/UserSprunje.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/src/Database/Models/CECOffice.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+          <folding>
+            <element signature="e#62#113#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/admin/routes/users.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/admin/src/Controller/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-850">
+          <caret line="307" column="61" selection-start-line="307" selection-start-column="61" selection-end-line="307" selection-end-column="61" />
+          <folding>
+            <element signature="e#1277#1437#0#PHP" />
+            <element signature="e#1490#1940#0#PHP" />
+            <element signature="e#1945#6854#0#PHP" />
+            <element signature="e#2450#2565#0#PHP" />
+            <element signature="e#3080#3202#0#PHP" />
+            <element signature="e#3390#3590#0#PHP" />
+            <element signature="e#3600#3789#0#PHP" />
+            <element signature="e#3799#3869#0#PHP" />
+            <element signature="e#4141#4247#0#PHP" />
+            <element signature="e#4201#4246#0#PHP" />
+            <element signature="e#4136#4413#0#PHP" />
+            <element signature="e#4263#4403#0#PHP" />
+            <element signature="e#4485#4583#0#PHP" />
+            <element signature="e#5292#5514#0#PHP" />
+            <element signature="e#5408#5513#0#PHP" />
+            <element signature="e#6253#6390#0#PHP" />
+            <element signature="e#6253#6669#0#PHP" />
+            <element signature="e#6423#6668#1#PHP" />
+            <element signature="e#6860#7357#0#PHP" />
+            <element signature="e#7362#9513#0#PHP" />
+            <element signature="e#7531#7616#0#PHP" />
+            <element signature="e#8013#8151#0#PHP" />
+            <element signature="e#8073#8150#0#PHP" />
+            <element signature="e#8008#8208#0#PHP" />
+            <element signature="e#8487#9335#0#PHP" />
+            <element signature="e#8509#9334#2#PHP" />
+            <element signature="e#8898#9035#0#PHP" />
+            <element signature="e#8898#9275#0#PHP" />
+            <element signature="e#9068#9274#1#PHP" />
+            <element signature="e#9346#9463#0#PHP" />
+            <element signature="e#9415#9462#0#PHP" />
+            <element signature="e#9519#9960#0#PHP" />
+            <element signature="e#9965#11918#0#PHP" />
+            <element signature="e#10129#10214#0#PHP" />
+            <element signature="e#10534#10628#0#PHP" />
+            <element signature="e#10588#10627#0#PHP" />
+            <element signature="e#10529#10685#0#PHP" />
+            <element signature="e#10939#11119#0#PHP" />
+            <element signature="e#11245#11648#0#PHP" />
+            <element signature="e#11267#11647#2#PHP" />
+            <element signature="e#11423#11636#0#PHP" />
+            <element signature="e#11530#11635#0#PHP" />
+            <element signature="e#11758#11867#0#PHP" />
+            <element signature="e#11818#11866#0#PHP" />
+            <element signature="e#11924#12060#0#PHP" />
+            <element signature="e#12065#13571#0#PHP" />
+            <element signature="e#12236#12321#0#PHP" />
+            <element signature="e#12839#12977#0#PHP" />
+            <element signature="e#12897#12976#0#PHP" />
+            <element signature="e#12834#13034#0#PHP" />
+            <element signature="e#13137#13257#0#PHP" />
+            <element signature="e#13159#13256#2#PHP" />
+            <element signature="e#13577#13701#0#PHP" />
+            <element signature="e#13706#15233#0#PHP" />
+            <element signature="e#13871#13956#0#PHP" />
+            <element signature="e#15239#15435#0#PHP" />
+            <element signature="e#15440#16524#0#PHP" />
+            <element signature="e#15884#15997#0#PHP" />
+            <element signature="e#16530#16799#0#PHP" />
+            <element signature="e#16804#18288#0#PHP" />
+            <element signature="e#17058#17143#0#PHP" />
+            <element signature="e#17463#17557#0#PHP" />
+            <element signature="e#17517#17556#0#PHP" />
+            <element signature="e#17458#17614#0#PHP" />
+            <element signature="e#17868#18048#0#PHP" />
+            <element signature="e#18065#18281#0#PHP" />
+            <element signature="e#18140#18280#0#PHP" />
+            <element signature="e#18193#18270#1#PHP" />
+            <element signature="e#18294#18797#0#PHP" />
+            <element signature="e#18802#21610#0#PHP" />
+            <element signature="e#19367#19482#0#PHP" />
+            <element signature="e#19840#19915#0#PHP" />
+            <element signature="e#20220#20326#0#PHP" />
+            <element signature="e#20280#20325#0#PHP" />
+            <element signature="e#20216#20603#0#PHP" />
+            <element signature="e#20446#20603#0#PHP" />
+            <element signature="e#20674#20841#0#PHP" />
+            <element signature="e#21112#21603#0#PHP" />
+            <element signature="e#21172#21602#0#PHP" />
+            <element signature="e#21293#21488#1#PHP" />
+            <element signature="e#21512#21592#1#PHP" />
+            <element signature="e#21616#21889#0#PHP" />
+            <element signature="e#21894#24691#0#PHP" />
+            <element signature="e#22139#22224#0#PHP" />
+            <element signature="e#22399#22501#0#PHP" />
+            <element signature="e#23000#23137#0#PHP" />
+            <element signature="e#23060#23136#0#PHP" />
+            <element signature="e#22995#23194#0#PHP" />
+            <element signature="e#23535#23621#0#PHP" />
+            <element signature="e#23723#23858#0#PHP" />
+            <element signature="e#23783#23857#0#PHP" />
+            <element signature="e#23718#23916#0#PHP" />
+            <element signature="e#24173#24684#0#PHP" />
+            <element signature="e#24233#24683#0#PHP" />
+            <element signature="e#24354#24569#1#PHP" />
+            <element signature="e#24593#24673#1#PHP" />
+            <element signature="e#24697#24970#0#PHP" />
+            <element signature="e#24975#26350#0#PHP" />
+            <element signature="e#25228#25313#0#PHP" />
+            <element signature="e#25716#25854#0#PHP" />
+            <element signature="e#25776#25853#0#PHP" />
+            <element signature="e#25711#25911#0#PHP" />
+            <element signature="e#26126#26343#0#PHP" />
+            <element signature="e#26199#26342#0#PHP" />
+            <element signature="e#26252#26332#1#PHP" />
+            <element signature="e#26356#26626#0#PHP" />
+            <element signature="e#26631#27695#0#PHP" />
+            <element signature="e#26881#26966#0#PHP" />
+            <element signature="e#27366#27501#0#PHP" />
+            <element signature="e#27426#27500#0#PHP" />
+            <element signature="e#27361#27558#0#PHP" />
+            <element signature="e#27575#27688#0#PHP" />
+            <element signature="e#27648#27687#0#PHP" />
+            <element signature="e#27701#27941#0#PHP" />
+            <element signature="e#27946#29390#0#PHP" />
+            <element signature="e#28118#28203#0#PHP" />
+            <element signature="e#28584#28723#0#PHP" />
+            <element signature="e#28642#28722#0#PHP" />
+            <element signature="e#28579#28780#0#PHP" />
+            <element signature="e#29396#29533#0#PHP" />
+            <element signature="e#29538#31020#0#PHP" />
+            <element signature="e#29704#29789#0#PHP" />
+            <element signature="e#30307#30440#0#PHP" />
+            <element signature="e#30365#30439#0#PHP" />
+            <element signature="e#30302#30497#0#PHP" />
+            <element signature="e#30595#30706#0#PHP" />
+            <element signature="e#30617#30705#2#PHP" />
+            <element signature="e#31026#31493#0#PHP" />
+            <element signature="e#31498#35283#0#PHP" />
+            <element signature="e#31690#31840#0#PHP" />
+            <element signature="e#32160#32259#0#PHP" />
+            <element signature="e#32211#32258#0#PHP" />
+            <element signature="e#32155#32316#0#PHP" />
+            <element signature="e#32708#32786#0#PHP" />
+            <element signature="e#32848#33116#0#PHP" />
+            <element signature="e#32899#33043#0#PHP" />
+            <element signature="e#32957#33042#0#PHP" />
+            <element signature="e#32894#33106#0#PHP" />
+            <element signature="e#33181#33219#0#PHP" />
+            <element signature="e#33235#33388#0#PHP" />
+            <element signature="e#33295#33387#0#PHP" />
+            <element signature="e#33230#33448#0#PHP" />
+            <element signature="e#33463#33605#0#PHP" />
+            <element signature="e#33523#33604#0#PHP" />
+            <element signature="e#33458#33667#0#PHP" />
+            <element signature="e#33682#33825#0#PHP" />
+            <element signature="e#33742#33824#0#PHP" />
+            <element signature="e#33677#33889#0#PHP" />
+            <element signature="e#33904#34042#0#PHP" />
+            <element signature="e#33964#34041#0#PHP" />
+            <element signature="e#33899#34106#0#PHP" />
+            <element signature="e#34121#34256#0#PHP" />
+            <element signature="e#34181#34255#0#PHP" />
+            <element signature="e#34116#34317#0#PHP" />
+            <element signature="e#34332#34426#0#PHP" />
+            <element signature="e#34386#34425#0#PHP" />
+            <element signature="e#34327#34488#0#PHP" />
+            <element signature="e#34549#34587#0#PHP" />
+            <element signature="e#34603#34742#0#PHP" />
+            <element signature="e#34661#34741#0#PHP" />
+            <element signature="e#34598#34805#0#PHP" />
+            <element signature="e#34820#34958#0#PHP" />
+            <element signature="e#34878#34957#0#PHP" />
+            <element signature="e#34815#35020#0#PHP" />
+            <element signature="e#35037#35276#0#PHP" />
+            <element signature="e#35096#35275#0#PHP" />
+            <element signature="e#35289#35610#0#PHP" />
+            <element signature="e#35615#36183#0#PHP" />
+            <element signature="e#35987#36100#0#PHP" />
+            <element signature="e#36189#36680#0#PHP" />
+            <element signature="e#36685#40465#0#PHP" />
+            <element signature="e#36845#36930#0#PHP" />
+            <element signature="e#37617#37739#0#PHP" />
+            <element signature="e#37812#38123#0#PHP" />
+            <element signature="e#37861#38113#0#PHP" />
+            <element signature="e#37968#38053#0#PHP" />
+            <element signature="e#38054#38113#0#PHP" />
+            <element signature="e#38526#38691#0#PHP" />
+            <element signature="e#38586#38690#0#PHP" />
+            <element signature="e#38521#38748#0#PHP" />
+            <element signature="e#38822#39028#0#PHP" />
+            <element signature="e#39204#39498#0#PHP" />
+            <element signature="e#39508#39578#0#PHP" />
+            <element signature="e#39665#40292#0#PHP" />
+            <element signature="e#39687#40291#2#PHP" />
+            <element signature="e#39806#39963#0#PHP" />
+            <element signature="e#39859#39949#0#PHP" />
+            <element signature="e#40043#40280#0#PHP" />
+            <element signature="e#40169#40279#0#PHP" />
+            <element signature="e#40303#40415#0#PHP" />
+            <element signature="e#40359#40414#0#PHP" />
+            <element signature="e#40471#41003#0#PHP" />
+            <element signature="e#41008#46084#0#PHP" />
+            <element signature="e#41169#41254#0#PHP" />
+            <element signature="e#41755#41893#0#PHP" />
+            <element signature="e#41815#41892#0#PHP" />
+            <element signature="e#41750#41950#0#PHP" />
+            <element signature="e#42117#42323#0#PHP" />
+            <element signature="e#42413#42496#0#PHP" />
+            <element signature="e#42565#42616#0#PHP" />
+            <element signature="e#43042#43470#0#PHP" />
+            <element signature="e#43255#43438#0#PHP" />
+            <element signature="e#43322#43424#0#PHP" />
+            <element signature="e#43733#44480#0#PHP" />
+            <element signature="e#43847#44369#0#PHP" />
+            <element signature="e#44117#44369#0#PHP" />
+            <element signature="e#44380#44480#0#PHP" />
+            <element signature="e#44567#45237#0#PHP" />
+            <element signature="e#44589#45236#2#PHP" />
+            <element signature="e#44665#44932#0#PHP" />
+            <element signature="e#44832#44932#0#PHP" />
+            <element signature="e#44984#45225#0#PHP" />
+            <element signature="e#45113#45224#0#PHP" />
+            <element signature="e#45280#46034#0#PHP" />
+            <element signature="e#45328#45685#0#PHP" />
+            <element signature="e#45370#45500#0#PHP" />
+            <element signature="e#45428#45499#0#PHP" />
+            <element signature="e#45516#45685#0#PHP" />
+            <element signature="e#45539#45670#0#PHP" />
+            <element signature="e#45598#45669#0#PHP" />
+            <element signature="e#45696#45883#0#PHP" />
+            <element signature="e#45749#45872#0#PHP" />
+            <element signature="e#45808#45871#0#PHP" />
+            <element signature="e#45884#46034#0#PHP" />
+            <element signature="e#45903#46023#0#PHP" />
+            <element signature="e#45959#46022#0#PHP" />
+            <element signature="e#46570#46998#0#PHP" />
+            <element signature="e#46783#46966#0#PHP" />
+            <element signature="e#46850#46952#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/src/Sprunje/OfficeSprunje.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-69" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/src/Sprunje/CECOfficeSprunje.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="15" column="34" lean-forward="true" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
+          <folding>
+            <element signature="e#53#98#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/src/Sprunje/SearchSprunje.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="54" lean-forward="true" selection-start-line="5" selection-start-column="54" selection-end-line="5" selection-end-column="54" />
+          <folding>
+            <element signature="e#53#98#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/src/Database/Models/Search.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+          <folding>
+            <element signature="e#62#113#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/sprinkles/site/templates/pages/search.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        <state relative-caret-position="253">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/templates/pages/abstract/base.html.twig">
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/routes/offices.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="94" column="71" selection-start-line="94" selection-start-column="71" selection-end-line="94" selection-end-column="78" />
+        <state relative-caret-position="460">
+          <caret line="22" column="90" selection-start-line="22" selection-start-column="90" selection-end-line="22" selection-end-column="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/src/Controller/OfficeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="69" column="55" lean-forward="true" selection-start-line="69" selection-start-column="55" selection-end-line="69" selection-end-column="55" />
+          <folding>
+            <element signature="e#767#1347#0#PHP" />
+            <element signature="e#1139#1252#0#PHP" />
+            <element signature="e#1353#2400#0#PHP" />
+            <element signature="e#1785#1900#0#PHP" />
+            <element signature="e#2406#2532#0#PHP" />
+            <element signature="e#2704#2791#0#PHP" />
+            <element signature="e#2928#2963#0#PHP" />
+            <element signature="e#3424#3521#0#PHP" />
+            <element signature="e#3477#3520#0#PHP" />
+            <element signature="e#3419#3578#0#PHP" />
+            <element signature="e#3958#4425#0#PHP" />
+            <element signature="e#4430#8734#0#PHP" />
+            <element signature="e#4624#4777#0#PHP" />
+            <element signature="e#5097#5194#0#PHP" />
+            <element signature="e#5150#5193#0#PHP" />
+            <element signature="e#5092#5251#0#PHP" />
+            <element signature="e#5654#5732#0#PHP" />
+            <element signature="e#5794#6066#0#PHP" />
+            <element signature="e#5845#5993#0#PHP" />
+            <element signature="e#5903#5992#0#PHP" />
+            <element signature="e#5840#6056#0#PHP" />
+            <element signature="e#6131#6169#0#PHP" />
+            <element signature="e#6172#6248#0#PHP" />
+            <element signature="e#7585#7636#0#PHP" />
+            <element signature="e#7611#7626#1#PHP" />
+            <element signature="e#7638#7640#0#PHP" />
+            <element signature="e#8114#8727#0#PHP" />
+            <element signature="e#8185#8726#0#PHP" />
+            <element signature="e#8740#10186#0#PHP" />
+            <element signature="e#9215#9644#0#PHP" />
+            <element signature="e#9428#9612#0#PHP" />
+            <element signature="e#9495#9598#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/routes/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="22" column="45" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/site/src/Controller/SearchController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="183" column="31" lean-forward="true" selection-start-line="183" selection-start-column="31" selection-end-line="183" selection-end-column="31" />
+          <folding>
+            <element signature="e#57#108#0#PHP" expanded="true" />
+            <element signature="e#612#741#0#PHP" />
+            <element signature="e#612#778#0#PHP" />
+            <element signature="e#1402#1457#1#PHP" />
+            <element signature="e#1481#1995#0#PHP" />
+            <element signature="e#1782#1989#0#PHP" />
+            <element signature="e#1900#1989#0#PHP" />
+            <element signature="e#2553#2668#0#PHP" />
+            <element signature="e#5104#5425#0#PHP" />
+          </folding>
         </state>
       </provider>
     </entry>
