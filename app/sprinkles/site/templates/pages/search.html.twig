@@ -8,11 +8,14 @@
 {% block body_matter %}
     <div class="row">
 
+        {#{{ keyword }}#}
 
-            {{ keyword }}
+        {% for key in keyword %}
+            {{ key }}
+        {% endfor %}
 
 
-
+{{ office }}
         {#{% if keyword is defined %}#}
             {#{% for off in office %}#}
                 {#<div class="col-12 col-md-3 clear">#}
