@@ -10,7 +10,7 @@ class Intake extends Model
     /**
      * @var string The name of the table for the current model.
      */
-    protected $table = 'dentist_details';
+    protected $table = 'cec.dentist_details';
 
     protected $fillable = [
         'dentist_id',
