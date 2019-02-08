@@ -10,12 +10,13 @@ class Office extends Model
     /**
      * @var string The name of the table for the current model.
      */
-    protected $table = 'midwest_wrdp1.office_details';
+//    protected $table = 'midwest_wrdp1.office_details';
+    protected $table = 'cec.office_details';
 
-    protected $fillable = [
-        'page_title',
-        'state'
-    ];
+//    protected $fillable = [
+//        'page_title',
+//        'state'
+//    ];
     /**
      * @var bool Enable timestamps for this class.
      */

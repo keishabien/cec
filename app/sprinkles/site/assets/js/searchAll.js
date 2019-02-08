@@ -3,7 +3,7 @@ $(document).ready(function () {
         msgTarget: $("#alerts-page")
     })
         .on("submitSuccess.ufForm", function () {
-        window.location.reload();
+        return true;
         })
         .on("submitError.ufForm", function () {
             console.log("fail");

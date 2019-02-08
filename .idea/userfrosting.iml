@@ -7,11 +7,15 @@
       <excludeFolder url="file://$MODULE_DIR$/app/vendor/birke/rememberme" />
       <excludeFolder url="file://$MODULE_DIR$/app/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/app/vendor/container-interop/container-interop" />
+      <excludeFolder url="file://$MODULE_DIR$/app/vendor/doctrine/annotations" />
       <excludeFolder url="file://$MODULE_DIR$/app/vendor/doctrine/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/app/vendor/doctrine/collections" />
+      <excludeFolder url="file://$MODULE_DIR$/app/vendor/doctrine/common" />
       <excludeFolder url="file://$MODULE_DIR$/app/vendor/doctrine/dbal" />
       <excludeFolder url="file://$MODULE_DIR$/app/vendor/doctrine/event-manager" />
       <excludeFolder url="file://$MODULE_DIR$/app/vendor/doctrine/inflector" />
       <excludeFolder url="file://$MODULE_DIR$/app/vendor/doctrine/instantiator" />
+      <excludeFolder url="file://$MODULE_DIR$/app/vendor/doctrine/lexer" />
       <excludeFolder url="file://$MODULE_DIR$/app/vendor/ezyang/htmlpurifier" />
       <excludeFolder url="file://$MODULE_DIR$/app/vendor/filp/whoops" />
       <excludeFolder url="file://$MODULE_DIR$/app/vendor/fzaninotto/faker" />

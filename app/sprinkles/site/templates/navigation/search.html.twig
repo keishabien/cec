@@ -1,5 +1,5 @@
-<form class="form form-inline" id="searchAll" action="{{ site.uri.public }}/search?keyword={{ keyword }}" method="post">
-    {% include "forms/csrf.html.twig" %}
+<form class="form form-inline" id="searchAll" action="{{ site.uri.public }}/search?keyword={{ keyword }}" method="get">
+    {#{% include "forms/csrf.html.twig" %}#}
     <div class="form-group">
         <div class="input-group">
             <input type="text" class="search form-control"

@@ -4,8 +4,8 @@ $app->get('/', 'UserFrosting\Sprinkle\Site\Controller\PageController:pageIndex')
     ->add('authGuard')
     ->setName('index');
 
-$app->get('/search?keyword={keyword}', 'UserFrosting\Sprinkle\Site\Controller\SearchController:pageSearch')
-    ->add('authGuard');
+//$app->get('/search?keyword={keyword}', 'UserFrosting\Sprinkle\Site\Controller\SearchController:pageSearch')
+//    ->add('authGuard');
 
 
 
@@ -14,6 +14,8 @@ $app->group('/search', function () {
     $this->get('', 'UserFrosting\Sprinkle\Site\Controller\SearchController:pageList');
 
     $this->get('?keyword={keyword}', 'UserFrosting\Sprinkle\Site\Controller\SearchController:pageInfo');
+
+    $this->get('/{keyword}', 'UserFrosting\Sprinkle\Site\Controller\SearchController:pageSearch');
 })->add('authGuard');
 
 
@@ -21,8 +23,8 @@ $app->group('/search', function () {
 $app->group('/api/search', function () {
     $this->get('', 'UserFrosting\Sprinkle\Site\Controller\SearchController:getList');
 
-    $this->get('?keyword={keyword}', 'UserFrosting\Sprinkle\Site\Controller\SearchController:getInfo');
-})        ->add('authGuard');
+    $this->get('/{input}', 'UserFrosting\Sprinkle\Site\Controller\SearchController:getInfo');
+})->add('authGuard');
 
 
 

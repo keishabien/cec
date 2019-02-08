@@ -89,6 +89,10 @@
       <path value="$PROJECT_DIR$/app/vendor/league/factory-muffin" />
       <path value="$PROJECT_DIR$/app/vendor/fzaninotto/faker" />
       <path value="$PROJECT_DIR$/app/vendor/wikimedia/composer-merge-plugin" />
+      <path value="$PROJECT_DIR$/app/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/app/vendor/doctrine/annotations" />
+      <path value="$PROJECT_DIR$/app/vendor/doctrine/collections" />
+      <path value="$PROJECT_DIR$/app/vendor/doctrine/common" />
     </include_path>
   </component>
   <component name="PhpUnit">
