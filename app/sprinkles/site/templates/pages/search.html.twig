@@ -8,8 +8,11 @@
 {% block body_matter %}
     <div class="row">
 
+        {#{{ keyword }}#}
 
-            {{ keyword }}
+        {% for key in keyword %}
+            {{ key }}
+        {% endfor %}
 
 
 
@@ -28,6 +31,7 @@
                         {% endif %}
 
                         <p>{{ off.city }}, {{ off.state }}</p>
+
 
                         {#<a href="{{ site.uri.public }}/office/{{ off.page_id }}/{{ off.city }}"#}
                            {#class="btn btn-outline-orange">#}

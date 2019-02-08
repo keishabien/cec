@@ -19,6 +19,10 @@ $app->group('/search', function () {
 })->add('authGuard');
 
 
+$app->get('/search', 'UserFrosting\Sprinkle\Site\Controller\SearchController:pageList')
+    ->setName('uri_search')
+    ->add('authGuard');
+
 
 $app->group('/api/search', function () {
     $this->get('', 'UserFrosting\Sprinkle\Site\Controller\SearchController:getList');
@@ -26,8 +30,9 @@ $app->group('/api/search', function () {
     $this->get('/{input}', 'UserFrosting\Sprinkle\Site\Controller\SearchController:getInfo');
 })->add('authGuard');
 
-
-
+    $this->get('?keyword={keyword}', 'UserFrosting\Sprinkle\Site\Controller\SearchController:getInfo')
+       ->add('authGuard');
+});
 
 
 

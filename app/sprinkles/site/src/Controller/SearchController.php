@@ -5,7 +5,11 @@ namespace UserFrosting\Sprinkle\Site\Controller;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Exception\NotFoundException;
+use UserFrosting\Fortress\RequestDataTransformer;
+use UserFrosting\Fortress\RequestSchema;
+use UserFrosting\Fortress\ServerSideValidator;
 use UserFrosting\Sprinkle\Core\Controller\SimpleController;
+use UserFrosting\Support\Exception\BadRequestException;
 use UserFrosting\Support\Exception\ForbiddenException;
 use UserFrosting\Fortress\RequestDataTransformer;
 use UserFrosting\Fortress\RequestSchema;
@@ -17,11 +21,16 @@ use UserFrosting\Sprinkle\Site\Database\Models\Office;
 use UserFrosting\Sprinkle\Site\Sprunje\OfficeSprunje;
 use UserFrosting\Sprinkle\Site\Sprunje\SearchSprunje;
 
+use UserFrosting\Sprinkle\Site\Sprunje\CECOfficeSprunje;
+
+
 class SearchController extends SimpleController
 {
     public function pageSearch($request, $response, $args)
     {
+
         $keyword = $args['keyword'];
+
 
         $office = CECOffice::distinct()->where('name', 'like', '%' . $keyword . '%')
                 ->orWhere('zip', 'like', '%' . $keyword . '%')
@@ -44,16 +53,22 @@ class SearchController extends SimpleController
         ]);
     }
 
+
     public function pageList($request, $response, $args)
     {
-        /** @var UserFrosting\Sprinkle\Account\Authorize\AuthorizationManager $authorizer */
+        // GET parameters
+        $params = $request->getQueryParams();
+
+        /** @var UserFrosting\Sprinkle\Account\Authorize\AuthorizationManager */
+
         $authorizer = $this->ci->authorizer;
 
         /** @var UserFrosting\Sprinkle\Account\Database\Models\User $currentUser */
         $currentUser = $this->ci->currentUser;
 
         // Access-controlled page
-        if (!$authorizer->checkAccess($currentUser, 'uri_users')) {
+
+        if (!$authorizer->checkAccess($currentUser, 'api_offices')) {
             throw new ForbiddenException();
         }
 
@@ -61,23 +76,15 @@ class SearchController extends SimpleController
     }
 
     /**
-     * Renders a page displaying a user's information, in read-only mode.
+     * Renders the user listing page.
      *
-     * This checks that the currently logged-in user has permission to view the requested user's info.
-     * It checks each field individually, showing only those that you have permission to view.
-     * This will also try to show buttons for activating, disabling/enabling, deleting, and editing the user.
+     * This page renders a table of users, with dropdown menus for admin actions for each user.
+     * Actions typically include: edit user details, activate user, enable/disable user, delete user.
      * This page requires authentication.
      * Request type: GET
      */
-    public function pageInfo($request, $response, $args)
+    public function pageList($request, $response, $args)
     {
-        $office = $this->getUserFromParams($args);
-
-        // If the user no longer exists, forward to main user listing page
-        if (!$office) {
-            $usersPage = $this->ci->router->pathFor('uri_office');
-            return $response->withRedirect($usersPage, 404);
-        }
 
         /** @var UserFrosting\Sprinkle\Account\Authorize\AuthorizationManager $authorizer */
         $authorizer = $this->ci->authorizer;
@@ -86,118 +93,31 @@ class SearchController extends SimpleController
         $currentUser = $this->ci->currentUser;
 
         // Access-controlled page
-        if (!$authorizer->checkAccess($currentUser, 'uri_office', [
-            'office' => $office
-        ])) {
+
+        if (!$authorizer->checkAccess($currentUser, 'uri_search')) {
             throw new ForbiddenException();
         }
 
-        /** @var UserFrosting\Config\Config $config */
-        $config = $this->ci->config;
+        $keyword = $request->getQueryParams();
 
-        // Get a list of all locales
-        $locales = $config->getDefined('site.locales.available');
+        $office = CECOffice::distinct()->where('name', 'like', '%' . $keyword . '%')
+            ->orWhere('zip', 'like', '%' . $keyword . '%')
+            ->orderBy('name', "ASC")
+            ->get();
 
-        // Determine fields that currentUser is authorized to view
-        $fieldNames = ['page_title', 'page_id', 'phone', 'address', 'city', 'state', 'zip'];
-
-        // Generate form
-        $fields = [
-            // Always hide these
-            'hidden' => ['theme']
-        ];
-
-        // Determine which fields should be hidden
-        foreach ($fieldNames as $field) {
-            if (!$authorizer->checkAccess($currentUser, 'view_user_field', [
-                'office' => $office,
-                'property' => $field
-            ])) {
-                $fields['hidden'][] = $field;
-            }
-        }
-
-        // Determine buttons to display
-        $editButtons = [
-            'hidden' => []
-        ];
-
-//        if (!$authorizer->checkAccess($currentUser, 'update_user_field', [
-//            'office' => $office,
-//            'fields' => ['name', 'email', 'locale']
-//        ])) {
-//            $editButtons['hidden'][] = 'edit';
-//        }
-//
-//        if (!$authorizer->checkAccess($currentUser, 'update_user_field', [
-//            'user' => $user,
-//            'fields' => ['flag_enabled']
-//        ])) {
-//            $editButtons['hidden'][] = 'enable';
-//        }
-//
-//        if (!$authorizer->checkAccess($currentUser, 'update_user_field', [
-//            'user' => $user,
-//            'fields' => ['flag_verified']
-//        ])) {
-//            $editButtons['hidden'][] = 'activate';
-//        }
-//
-//        if (!$authorizer->checkAccess($currentUser, 'update_user_field', [
-//            'user' => $user,
-//            'fields' => ['password']
-//        ])) {
-//            $editButtons['hidden'][] = 'password';
-//        }
-//
-//        if (!$authorizer->checkAccess($currentUser, 'update_user_field', [
-//            'user' => $user,
-//            'fields' => ['roles']
-//        ])) {
-//            $editButtons['hidden'][] = 'roles';
-//        }
-//
-//        if (!$authorizer->checkAccess($currentUser, 'delete_user', [
-//            'user' => $user
-//        ])) {
-//            $editButtons['hidden'][] = 'delete';
-//        }
-//
-        // Determine widgets to display
-        $widgets = [
-            'hidden' => [
-            ]
-        ];
-//
-//        if (!$authorizer->checkAccess($currentUser, 'view_user_field', [
-//            'user' => $user,
-//            'property' => 'permissions'
-//        ])) {
-//            $widgets['hidden'][] = 'permissions';
-//        }
-//
-//        if (!$authorizer->checkAccess($currentUser, 'view_user_field', [
-//            'user' => $user,
-//            'property' => 'activities'
-//        ])) {
-//            $widgets['hidden'][] = 'activities';
-//        }
 
         return $this->ci->view->render($response, 'pages/search.html.twig', [
+            'results' => $results,
+            'keyword'   => $keyword,
             'office' => $office,
-            'locales' => $locales,
-            'fields' => $fields,
-            'tools' => $editButtons,
-            'widgets' => $widgets,
+            'location' => $location,
+
             'midwestLogo' => 'https://www.meritdental.com/cecdb/images/midwest-logo.png',
             'mondoviLogo' => 'https://www.meritdental.com/cecdb/images/mondovi-logo.png',
             'meritLogo' => 'https://www.meritdental.com/cecdb/images/merit-logo.png',
             'mountainLogo' => 'https://www.meritdental.com/cecdb/images/mountain-logo.png'
         ]);
     }
-
-
-
 
     public function quickInfo($request, $response, $args)
     {
@@ -282,6 +202,7 @@ class SearchController extends SimpleController
 
     protected function getUserFromParams($params)
     {
+
         // Load the request schema
         $schema = new RequestSchema('schema://requests/search.yaml');
 
@@ -309,11 +230,13 @@ class SearchController extends SimpleController
 //        $office = $classMapper->staticMethod('CECOffice', 'where', 'name', $data['input'])
 //            ->first();
 
+
 //        $office = Office::distinct()->where('page_title', $data['office_name'])->get();
         $office = Office::distinct()->where('name', 'like', '%' .  $data['input'] . '%')->get();
 //        $details = Search::distinct()->where('name', $data['keyword'])->get();
 
 //        $office = $office->merge($details);
+
 
         return $office;
     }
