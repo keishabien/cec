@@ -270,10 +270,10 @@ class OfficeController extends SimpleController
 //        $user = $classMapper->staticMethod('office', 'where', 'page_title', $data['office_name'])
 //            ->first();
 
-        $office = Office::distinct()->where('page_title', $data['office_name'])->get();
-        $details = Search::distinct()->where('office_name', $data['office_name'])->get();
+        $office = Office::distinct()->where('name', $data['office_name'])->get();
+//        $details = Search::distinct()->where('office_name', $data['office_name'])->get();
 
-        $office = $office->merge($details);
+//        $office = $office->merge($details);
 
         return $office;
     }

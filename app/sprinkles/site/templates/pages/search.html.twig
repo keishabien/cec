@@ -13,31 +13,31 @@
 
 
 
-        {#{% if keyword is defined %}#}
-            {#{% for off in office %}#}
-                {#<div class="col-12 col-md-3 clear">#}
-                    {#<div class="single">#}
-                        {#{% if off.brand == "Midwest" %}#}
-                            {#<img src="{{ midwestLogo }}" alt="">#}
-                        {#{% elseif off.brand == "Mondovi" %}#}
-                            {#<img src="{{ mondoviLogo }}" alt="">#}
-                        {#{% elseif off.brand == "Mountain" %}#}
-                            {#<img src="{{ mountainLogo }}" alt="">#}
-                        {#{% elseif off.brand == "Merit" %}#}
-                            {#<img src="{{ meritLogo }}" alt="">#}
-                        {#{% endif %}#}
+        {% if keyword is defined %}
+            {% for off in office %}
+                <div class="col-12 col-md-3 clear">
+                    <div class="single">
+                        {% if off.brand == "Midwest" %}
+                            <img src="{{ midwestLogo }}" alt="">
+                        {% elseif off.brand == "Mondovi" %}
+                            <img src="{{ mondoviLogo }}" alt="">
+                        {% elseif off.brand == "Mountain" %}
+                            <img src="{{ mountainLogo }}" alt="">
+                        {% elseif off.brand == "Merit" %}
+                            <img src="{{ meritLogo }}" alt="">
+                        {% endif %}
 
-                        {#<p>{{ off.city }}, {{ off.state }}</p>#}
+                        <p>{{ off.city }}, {{ off.state }}</p>
 
                         {#<a href="{{ site.uri.public }}/office/{{ off.page_id }}/{{ off.city }}"#}
                            {#class="btn btn-outline-orange">#}
-                            {#<a href="{{ site.uri.public }}/office/" class="btn btn-outline-orange">#}
-                            {#View Office Information#}
-                        {#</a>#}
-                    {#</div>#}
-                {#</div>#}
-            {#{% endfor %}#}
-        {#{% endif %}#}
+                            <a href="{{ site.uri.public }}/office/" class="btn btn-outline-orange">
+                            View Office Information
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
 
 
 
