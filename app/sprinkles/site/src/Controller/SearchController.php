@@ -11,10 +11,8 @@ use UserFrosting\Fortress\ServerSideValidator;
 use UserFrosting\Sprinkle\Core\Controller\SimpleController;
 use UserFrosting\Support\Exception\BadRequestException;
 use UserFrosting\Support\Exception\ForbiddenException;
-use UserFrosting\Fortress\RequestDataTransformer;
-use UserFrosting\Fortress\RequestSchema;
-use UserFrosting\Fortress\ServerSideValidator;
-use UserFrosting\Support\Exception\BadRequestException;
+use UserFrosting\Support\Exception\HttpException;
+
 use UserFrosting\Sprinkle\Site\Database\Models\Search;
 use UserFrosting\Sprinkle\Site\Database\Models\CECOffice;
 use UserFrosting\Sprinkle\Site\Database\Models\Office;
@@ -30,6 +28,8 @@ class SearchController extends SimpleController
     {
 
         $keyword = $args['keyword'];
+
+        $params = $request->getQueryParams();
 
 
         $office = CECOffice::distinct()->where('name', 'like', '%' . $keyword . '%')
@@ -54,26 +54,26 @@ class SearchController extends SimpleController
     }
 
 
-    public function pageList($request, $response, $args)
-    {
-        // GET parameters
-        $params = $request->getQueryParams();
-
-        /** @var UserFrosting\Sprinkle\Account\Authorize\AuthorizationManager */
-
-        $authorizer = $this->ci->authorizer;
-
-        /** @var UserFrosting\Sprinkle\Account\Database\Models\User $currentUser */
-        $currentUser = $this->ci->currentUser;
-
-        // Access-controlled page
-
-        if (!$authorizer->checkAccess($currentUser, 'api_offices')) {
-            throw new ForbiddenException();
-        }
-
-        return $this->ci->view->render($response, 'pages/search.html.twig');
-    }
+//    public function pageList($request, $response, $args)
+//    {
+//        // GET parameters
+//        $params = $request->getQueryParams();
+//
+//        /** @var UserFrosting\Sprinkle\Account\Authorize\AuthorizationManager */
+//
+//        $authorizer = $this->ci->authorizer;
+//
+//        /** @var UserFrosting\Sprinkle\Account\Database\Models\User $currentUser */
+//        $currentUser = $this->ci->currentUser;
+//
+//        // Access-controlled page
+//
+//        if (!$authorizer->checkAccess($currentUser, 'api_offices')) {
+//            throw new ForbiddenException();
+//        }
+//
+//        return $this->ci->view->render($response, 'pages/search.html.twig');
+//    }
 
     /**
      * Renders the user listing page.
@@ -85,37 +85,25 @@ class SearchController extends SimpleController
      */
     public function pageList($request, $response, $args)
     {
+        $params = $request->getQueryParams();
 
-        /** @var UserFrosting\Sprinkle\Account\Authorize\AuthorizationManager $authorizer */
-        $authorizer = $this->ci->authorizer;
 
-        /** @var UserFrosting\Sprinkle\Account\Database\Models\User $currentUser */
-        $currentUser = $this->ci->currentUser;
-
-        // Access-controlled page
-
-        if (!$authorizer->checkAccess($currentUser, 'uri_search')) {
-            throw new ForbiddenException();
-        }
-
-        $keyword = $request->getQueryParams();
-
-        $office = CECOffice::distinct()->where('name', 'like', '%' . $keyword . '%')
-            ->orWhere('zip', 'like', '%' . $keyword . '%')
+        $office = CECOffice::distinct()->where('name', 'like', '%' . $params['keyword'] . '%')
+            ->orWhere('zip', 'like', '%' . $params['keyword'] . '%')
             ->orderBy('name', "ASC")
             ->get();
 
 
         return $this->ci->view->render($response, 'pages/search.html.twig', [
-            'results' => $results,
-            'keyword'   => $keyword,
+            'keyword'   => $params['keyword'],
             'office' => $office,
-            'location' => $location,
-
             'midwestLogo' => 'https://www.meritdental.com/cecdb/images/midwest-logo.png',
             'mondoviLogo' => 'https://www.meritdental.com/cecdb/images/mondovi-logo.png',
             'meritLogo' => 'https://www.meritdental.com/cecdb/images/merit-logo.png',
-            'mountainLogo' => 'https://www.meritdental.com/cecdb/images/mountain-logo.png'
+            'mountainLogo' => 'https://www.meritdental.com/cecdb/images/mountain-logo.png',
+            "page" => [
+                'keyword'   => $keyword
+            ]
         ]);
     }
 
@@ -146,20 +134,32 @@ class SearchController extends SimpleController
      */
     public function getInfo($request, $response, $args)
     {
-        $office = $this->getUserFromParams($args);
+        // Load the request schema
+        $schema = new RequestSchema('schema://requests/search.yaml');
+
+        // Whitelist and set parameter defaults
+        $transformer = new RequestDataTransformer($schema);
+        $data = $transformer->transform($args);
+
+        // Validate, and throw exception on validation errors.
+        $validator = new ServerSideValidator($schema, $this->ci->translator);
+        if (!$validator->validate($data)) {
+            // TODO: encapsulate the communication of error messages from ServerSideValidator to the BadRequestException
+            $e = new BadRequestException();
+            foreach ($validator->errors() as $idx => $field) {
+                foreach ($field as $eidx => $error) {
+                    $e->addUserMessage($error);
+                }
+            }
+            throw $e;
+        }
+
+        $office = Office::distinct()->where('name', 'like', '%' .  $data['input'] . '%')->get();
 
         // If the user doesn't exist, return 404
         if (!$office) {
             throw new NotFoundException($request, $response);
         }
-
-        /** @var UserFrosting\Sprinkle\Core\Util\ClassMapper $classMapper */
-//        $classMapper = $this->ci->classMapper;
-
-        // Join user's most recent activity
-//        $office = $classMapper->createInstance('office')
-//            ->where('page_title', $office->page_title)
-//            ->first();
 
         /** @var UserFrosting\Sprinkle\Account\Authorize\AuthorizationManager $authorizer */
         $authorizer = $this->ci->authorizer;
@@ -183,6 +183,36 @@ class SearchController extends SimpleController
             // For example, if you plan to insert it into an HTML DOM, you must escape it on the client side (or use client-side templating).
             return $response->withJson($result, 200, JSON_PRETTY_PRINT);
         }
+    }
+
+
+    /**
+     * Returns info for a single office.
+     *
+     * This page requires authentication.
+     * Request type: GET
+     */
+    public function getInput($request, $response, $args)
+    {
+        $params = $request->getQueryParams();
+        // Load the request schema
+
+
+        $office = Office::distinct()->where('name', 'like', '%' .  $params['keyword'] . '%')->first();
+
+        // If the user doesn't exist, return 404
+        if (!$office) {
+            throw new NotFoundException($request, $response);
+        }
+
+
+        $result = $office->toArray();
+
+
+            // Be careful how you consume this data - it has not been escaped and contains untrusted user-supplied content.
+            // For example, if you plan to insert it into an HTML DOM, you must escape it on the client side (or use client-side templating).
+            return $response->withJson($result, 200, JSON_PRETTY_PRINT);
+
     }
 
     public function getList($request, $response, $args)

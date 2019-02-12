@@ -8,15 +8,8 @@
 {% block body_matter %}
     <div class="row">
 
-        {#{{ keyword }}#}
-
-        {% for key in keyword %}
-            {{ key }}
-        {% endfor %}
-
-
-
         {% if keyword is defined %}
+
             {% for off in office %}
                 <div class="col-12 col-md-3 clear">
                     <div class="single">
@@ -42,24 +35,6 @@
                 </div>
             {% endfor %}
         {% endif %}
-
-
-
-        {#<br><br><br>#}
-        {#results:<br>#}
-        {#{{ results }}#}
-
-        {#<br><br><br>#}
-
-        {#office:<br>#}
-        {#{{ office }}#}
-        {#<br><br><br>#}
-
-        {#merged:<br>#}
-        {#{{ merged }}#}
-        {#<br><br><br>#}
-        {#{{ params }}#}
-
     </div>
 {% endblock %}
 
