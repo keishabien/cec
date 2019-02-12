@@ -86,17 +86,8 @@
                     <script>window.jQuery || document.write('<script src="{{ assets.url('assets://vendor/jquery/dist/jquery.min.js', true) }}"><\/script>')</script>
 
                     {{ assets.js() | raw }}
+                    {{ assets.js('js/search') | raw }}
 
-                    <script>
-                       //submit search form
-                        $("#searchAll").ufForm({
-                            msgTarget: $("#alerts-page")
-                        }).on("submitSuccess.ufForm", function (event, data, textStatus, jqXHR) {
-                            window.location.replace(site.uri.public + "/search");
-                        }).on("submitError.ufForm", function (event, data, textStatus, jqXHR) {
-                            console.log(textStatus);
-                        });
-                    </script>
                 {% endblock %}
 
                 {# Override this block in a child layout template or page template to specify or override scripts for groups of similar pages. #}

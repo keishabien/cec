@@ -20,11 +20,11 @@ h3 {
 }
 
 a, a:visited {
-    color: #006a52;
+    color: #f8971d;
 }
 
 a:hover, a:focus {
-    color: #f8971d;
+    color: #ffbb65;
 }
 
 .login-page,
@@ -60,6 +60,7 @@ a:hover, a:focus {
 .main-header {
     margin-bottom: 15px;
     box-shadow: 0px 0px 3px #757575;
+    max-height: 84px;
 }
 
 .skin-red .main-header {
@@ -180,7 +181,12 @@ a:hover, a:focus {
 }
 
 .btn-orange {
-    background-color: #f18a00;
+    background-color: #f8971d;
+    color: #FFF;
+}
+
+.btn-orange:hover {
+    background-color: #ffbb65;
     color: #FFF;
 }
 
@@ -393,13 +399,10 @@ a:hover, a:focus {
     .navbar-default .navbar-form {
         padding-right: 0;
         padding-left: 1px;
-    }
-
-    .navbar-default .navbar-collapse,
-    .navbar-default .navbar-form {
         border-bottom-width: 1px;
         border-bottom-style: solid;
         border-top: none;
+        box-shadow: 0px 5px 12px 1px rgba(0,0,0,.15);
     }
 }
 

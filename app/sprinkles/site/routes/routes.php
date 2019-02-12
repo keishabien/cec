@@ -4,35 +4,26 @@ $app->get('/', 'UserFrosting\Sprinkle\Site\Controller\PageController:pageIndex')
     ->add('authGuard')
     ->setName('index');
 
-//$app->get('/search?keyword={keyword}', 'UserFrosting\Sprinkle\Site\Controller\SearchController:pageSearch')
-//    ->add('authGuard');
-
-
 
 
 $app->group('/search', function () {
     $this->get('', 'UserFrosting\Sprinkle\Site\Controller\SearchController:pageList');
 
-    $this->get('?keyword={keyword}', 'UserFrosting\Sprinkle\Site\Controller\SearchController:pageInfo');
+    $this->get('?keyword={keyword}', 'UserFrosting\Sprinkle\Site\Controller\SearchController:pageSearch');
 
     $this->get('/{keyword}', 'UserFrosting\Sprinkle\Site\Controller\SearchController:pageSearch');
 })->add('authGuard');
 
 
-$app->get('/search', 'UserFrosting\Sprinkle\Site\Controller\SearchController:pageList')
-    ->setName('uri_search')
-    ->add('authGuard');
-
 
 $app->group('/api/search', function () {
-    $this->get('', 'UserFrosting\Sprinkle\Site\Controller\SearchController:getList');
+    $this->get('', 'UserFrosting\Sprinkle\Site\Controller\SearchController:getInput');
 
     $this->get('/{input}', 'UserFrosting\Sprinkle\Site\Controller\SearchController:getInfo');
+
+//    $this->get('?keyword={input}', 'UserFrosting\Sprinkle\Site\Controller\SearchController:getInput');
 })->add('authGuard');
 
-    $this->get('?keyword={keyword}', 'UserFrosting\Sprinkle\Site\Controller\SearchController:getInfo')
-       ->add('authGuard');
-});
 
 
 

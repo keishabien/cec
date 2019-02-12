@@ -20,7 +20,7 @@ return [
         'title' => 'CEC',
         'logo' => 'assets/images/login_cec.jpg',
         'registration' => [
-            'enabled' => true
+            'enabled' => false
         ]
     ],
     'php' => [
