@@ -6,7 +6,7 @@
  *
  * Target page: all - search function
  */
-$(document).ready(function() {
+$(document).ready(function () {
     /**
      * If there is a redirect parameter in the query string, redirect to that page.
      * Otherwise, if there is a UF-Redirect header, redirect to that page.
@@ -18,39 +18,28 @@ $(document).ready(function() {
         if (keyword) {
             console.log(keyword);
             // Strip leading slashes from redirect strings
-            var redirectString = site.uri.public + '/search/?keyword=' + keyword;
+            var redirectString = site.uri.public + '/offices?keyword=' + keyword;
 
             // Strip excess trailing slashes for clean URLs. e.g. if redirect=%2F
             // redirectString = redirectString.replace(/\/+$/, "/");
 
             // Redirect
             window.location.replace(redirectString);
-        // }
-        // else if (jqXHR.getResponseHeader('UF-Redirect')) {
-        //     window.location.replace(jqXHR.getResponseHeader('UF-Redirect'));
+            // }
+            // else if (jqXHR.getResponseHeader('UF-Redirect')) {
+            //     window.location.replace(jqXHR.getResponseHeader('UF-Redirect'));
         } else {
             // window.location.replace(site.uri.public);
             console.log('no keyword');
         }
     }
 
-    // $("#sign-in").ufForm({
-    //     validators: page.validators.login,
-    //     msgTarget: $("#alerts-page")
-    // }).on("submitSuccess.ufForm", function(event, data, textStatus, jqXHR) {
-    //     redirectOnLogin(jqXHR);
-    // });
-
-
-//submit search form
+    //submit search form
     $("#searchAll").ufForm({
         msgTarget: $("#alerts-page")
     }).on("submitSuccess.ufForm", function (event, data, textStatus, jqXHR) {
-        // redirectOnSearch(jqXHR);
         var keyword = $('input[name="keyword"]').val();
-        // console.log(keyword);
         redirectOnSearch(keyword);
-        // window.location.replace(site.uri.public + "/search");
     }).on("submitError.ufForm", function (event, data, textStatus, jqXHR) {
         console.log(textStatus);
     });

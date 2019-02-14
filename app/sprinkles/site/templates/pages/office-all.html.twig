@@ -1,0 +1,43 @@
+{% extends "pages/abstract/default.html.twig" %}
+{% set page_active = "search" %}
+
+{# Overrides blocks in head of base template #}
+{% block page_title %}{{ translate("SEARCH") }}{% endblock %}
+
+
+{% block body_matter %}
+    <div class="row">
+
+        {% if keyword is defined %}
+            {% if office %}
+                {% for off in office %}
+                    <div class="col-12 col-md-3 clear">
+                        <div class="single">
+                            {% if off.brand == "Midwest" %}
+                                <img src="{{ midwestLogo }}" alt="">
+                            {% elseif off.brand == "Mondovi" %}
+                                <img src="{{ mondoviLogo }}" alt="">
+                            {% elseif off.brand == "Mountain" %}
+                                <img src="{{ mountainLogo }}" alt="">
+                            {% elseif off.brand == "Merit" %}
+                                <img src="{{ meritLogo }}" alt="">
+                            {% endif %}
+
+                            <p>{{ off.city }}, {{ off.state }}</p>
+
+
+                            {#<a href="{{ site.uri.public }}/office/{{ off.page_id }}/{{ off.city }}"#}
+                            {#class="btn btn-outline-orange">#}
+                            <a href="{{ site.uri.public }}/offices/" class="btn btn-orange-round">
+                                View Office Information
+                            </a>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                else!
+            {% endif %}
+        {% endif %}
+    </div>
+{% endblock %}
+
