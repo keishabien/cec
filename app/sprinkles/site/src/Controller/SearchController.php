@@ -38,7 +38,7 @@ class SearchController extends SimpleController
             ->get();
 
 
-        return $this->ci->view->render($response, 'pages/search.html.twig', [
+        return $this->ci->view->render($response, 'pages/office-all.html.twig', [
             'results' => $results,
             'keyword'   => $keyword,
             'office' => $office,
@@ -94,7 +94,7 @@ class SearchController extends SimpleController
             ->get();
 
 
-        return $this->ci->view->render($response, 'pages/search.html.twig', [
+        return $this->ci->view->render($response, 'pages/office-all.html.twig', [
             'keyword'   => $params['keyword'],
             'office' => $office,
             'midwestLogo' => 'https://www.meritdental.com/cecdb/images/midwest-logo.png',
@@ -198,7 +198,7 @@ class SearchController extends SimpleController
         // Load the request schema
 
 
-        $office = Office::distinct()->where('name', 'like', '%' .  $params['keyword'] . '%')->first();
+        $office = Office::distinct()->where('name', 'like', '%' .  $params['keyword'] . '%')->get();
 
         // If the user doesn't exist, return 404
         if (!$office) {
