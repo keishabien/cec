@@ -1,0 +1,241 @@
+{% extends "pages/abstract/default.html.twig" %}
+{% set page_active = "single office" %}
+
+{# Overrides blocks in head of base template #}
+{% block page_title %}{{ office.brand }} Dental - {{ newName }}
+    <div>Hours</div>
+{% endblock %}
+
+
+{% block body_matter %}
+    {#<div class="row">#}
+
+    {#{% if keyword is defined %}#}
+    {#<div class="col-12 col-md-3 clear">#}
+    {#<div class="single">#}
+    {#{% if office.brand == "Midwest" %}#}
+    {#<img src="{{ midwestLogo }}" alt="">#}
+    {#{% elseif office.brand == "Mondovi" %}#}
+    {#<img src="{{ mondoviLogo }}" alt="">#}
+    {#{% elseif office.brand == "Mountain" %}#}
+    {#<img src="{{ mountainLogo }}" alt="">#}
+    {#{% elseif office.brand == "Merit" %}#}
+    {#<img src="{{ meritLogo }}" alt="">#}
+    {#{% endif %}#}
+
+    {#<p>{{ office.city }}, {{ office.state }}</p>#}
+
+
+    {#<a href="{{ site.uri.public }}/office/{{ off.page_id }}/{{ off.city }}"#}
+    {#class="btn btn-outline-orange">#}
+    {#<a href="{{ site.uri.public }}/offices/" class="btn btn-orange-round">#}
+    {#View Office Information#}
+    {#</a>#}
+    {#</div>#}
+    {#</div>#}
+
+    {#{% endif %}#}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {#<div class="desktop" id="hours-btn">Hours#}
+    {#<div id="hours-drop">#}
+    {#<p><span>Open Today:</span>#}
+    {#<span>#}
+    {#<?php echo $day;?>#}
+    {#</span>#}
+    {#</p>#}
+    {#<?php#}
+    {#if($mon){ ?>#}
+    {#<span>Mon:</span>#}
+    {#<span>#}
+    {#<?php echo $details[0]['mon_hours']; ?>#}
+    {#</span>#}
+    {#<?php }#}
+    {#if($tue){ ?>#}
+    {#<span>Tue:</span>#}
+    {#<span>#}
+    {#<?php echo $details[0]['tue_hours']; ?>#}
+    {#</span>#}
+    {#<?php }#}
+    {#if($wed){ ?>#}
+    {#<span>Wed:</span>#}
+    {#<span>#}
+    {#<?php echo $details[0]['wed_hours']; ?>#}
+    {#</span>#}
+    {#<?php }#}
+    {#if($thu){ ?>#}
+    {#<span>Thu:</span>#}
+    {#<span>#}
+    {#<?php echo $details[0]['thur_hours']; ?>#}
+    {#</span>#}
+    {#<?php }#}
+    {#if($fri){ ?>#}
+    {#<span>Fri:</span>#}
+    {#<span>#}
+    {#<?php echo $details[0]['fri_hours'];?>#}
+    {#</span>#}
+    {#<?php }#}
+    {#if($sat){ ?>#}
+    {#<span>Sat:</span>#}
+    {#<span>#}
+    {#<?php echo $details[0]['sat_hours']; ?>#}
+    {#</span>#}
+    {#<?php }#}
+    {#if($sun){ ?>#}
+    {#<span>Sun:</span>#}
+    {#<span>#}
+    {#<?php echo $details[0]['sun_hours']; ?>#}
+    {#</span>#}
+    {#<?php } ?>#}
+    {#<p>*Please note office hours are subject to change.</p>#}
+    {#</div>#}
+    {#</div>#}
+    {#</div>#}
+
+    <div class="visible-xs-block">
+        <div class="col-sm-6 left">
+            <div class="row">
+                <div class="col-sm-4 title">
+                    <p>Masking #:</p>
+                </div>
+                <div class="col-sm-8 info">{{ office.masking_number }}</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 title">
+                    <p>Office Extension:</p>
+                </div>
+                <div class="col-sm-8 info">{{ office.extension }}</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 title">
+                    <p>Office #:</p>
+                </div>
+                <div class="col-sm-8 info">{{ office.phone }}</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 title">
+                    <p>Email Address:</p>
+                </div>
+                <div class="col-sm-8 info">{{ office.email }}</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 title">
+                    <p>Office Address:</p>
+                </div>
+                <div class="col-sm-8 info">{{ office.address }}</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 title">
+                    <p>Doctors:</p>
+                </div>
+                <div class="col-sm-8 info">{{ doctor[0].name }}</div>
+            </div>
+        </div>
+        <div class="col-sm-6 right">
+
+            <div class="row">
+                <div class="col-sm-4 title">
+                    <p>BOM:</p>
+                </div>
+                <div class="col-sm-8 info"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4 title">
+                    <p>BOM #:</p>
+                </div>
+                <div class="col-sm-8 info"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4 title">
+                    <p>Hygienists:</p>
+                </div>
+                <div class="col-sm-8 info"></div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <div class="visible-sm-block visible-md-block visible-lg-block">
+        <div class="col-md-6 left">
+            <div class="row">
+                <div class="col-sm-4 title">
+                    <p>Masking #:</p>
+                    <p>Office Extension:</p>
+                    <p>Office #:</p>
+                    <p>Email Address:</p>
+                    <p>Office Address:</p>
+                    <p>Doctors:</p>
+                </div>
+                <div class="col-sm-8 info">
+                    <p>{{ office.masking_number }}</p>
+                    <p>{{ office.extension }}</p>
+                    <p>{{ office.phone }}</p>
+                    <p>{{ office.email }}</p>
+                    <p>{{ office.address }}</p>
+                    <p>{{ doctor[0].name }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 right">
+            <div class="row">
+                <div class="col-sm-4 title">
+                    <p>BOM:</p>
+                    <p>BOM #:</p>
+                    <p>Hygienists:</p>
+                </div>
+                <div class="col-sm-8 info"></div>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+
+
+
+    <div class="row">
+        <div class="col-sm-3">NPIE Adult</div>
+        <div class="col-sm-3">NPIE Child</div>
+        <div class="col-sm-3">Recall Adult</div>
+        <div class="col-sm-3">Recall Child</div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">NPIE Notes</div>
+        <div class="col-sm-6">Recall Notes</div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">Offers</div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4">Office Image</div>
+        <div class="col-sm-4">Google Map</div>
+        <div class="col-sm-4">Directions</div>
+    </div>
+
+
+{% endblock %}
+
