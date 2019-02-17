@@ -1,9 +1,9 @@
-{% extends "pages/abstract/default.html.twig" %}
+{% extends "pages/abstract/office-single-default.html.twig" %}
 {% set page_active = "single office" %}
 
 {# Overrides blocks in head of base template #}
 {% block page_title %}{{ office.brand }} Dental - {{ newName }}
-    <div>Hours</div>
+    <div id="hours">Hours <i class="fa fa-chevron-down"></i></div>
 {% endblock %}
 
 
@@ -113,65 +113,76 @@
 
     <div class="visible-xs-block">
         <div class="col-sm-6 left">
-            <div class="row">
-                <div class="col-sm-4 title">
-                    <p>Masking #:</p>
-                </div>
-                <div class="col-sm-8 info">{{ office.masking_number }}</div>
+
+            <div class="col-xs-6 col-sm-4 title">
+                <p>Masking #:</p>
             </div>
-            <div class="row">
-                <div class="col-sm-4 title">
-                    <p>Office Extension:</p>
-                </div>
-                <div class="col-sm-8 info">{{ office.extension }}</div>
+            <div class="col-xs-6 col-sm-8 info">
+                {{ office.masking_number }}
             </div>
-            <div class="row">
-                <div class="col-sm-4 title">
-                    <p>Office #:</p>
-                </div>
-                <div class="col-sm-8 info">{{ office.phone }}</div>
+            <div class="clear"></div>
+
+            <div class="col-xs-6 col-sm-4 title">
+                <p>Office Extension:</p>
             </div>
-            <div class="row">
-                <div class="col-sm-4 title">
-                    <p>Email Address:</p>
-                </div>
-                <div class="col-sm-8 info">{{ office.email }}</div>
+            <div class="col-xs-6 col-sm-8 info">
+                {{ office.extension }}
             </div>
-            <div class="row">
-                <div class="col-sm-4 title">
-                    <p>Office Address:</p>
-                </div>
-                <div class="col-sm-8 info">{{ office.address }}</div>
+            <div class="clear"></div>
+
+            <div class="col-xs-6 col-sm-4 title">
+                <p>Office #:</p>
             </div>
-            <div class="row">
-                <div class="col-sm-4 title">
-                    <p>Doctors:</p>
-                </div>
-                <div class="col-sm-8 info">{{ doctor[0].name }}</div>
+            <div class="col-xs-6 col-sm-8 info">
+                {{ office.phone }}
             </div>
+            <div class="clear"></div>
+
+            <div class="col-xs-6 col-sm-4 title">
+                <p>Email Address:</p>
+            </div>
+            <div class="col-xs-6 col-sm-8 info">
+                {{ office.email }}
+            </div>
+            <div class="clear"></div>
+
+            <div class="col-xs-6 col-sm-4 title">
+                <p>Office Address:</p>
+            </div>
+            <div class="col-xs-6 col-sm-8 info">
+                {{ office.address }}
+            </div>
+            <div class="clear"></div>
+
+            <div class="col-xs-6 col-sm-4 title">
+                <p>Doctors:</p>
+            </div>
+            <div class="col-xs-6 col-sm-8 info">
+                {{ doctor[0].name }}
+            </div>
+            <div class="clear"></div>
+
         </div>
         <div class="col-sm-6 right">
 
-            <div class="row">
-                <div class="col-sm-4 title">
-                    <p>BOM:</p>
-                </div>
-                <div class="col-sm-8 info"></div>
-            </div>
 
-            <div class="row">
-                <div class="col-sm-4 title">
-                    <p>BOM #:</p>
-                </div>
-                <div class="col-sm-8 info"></div>
+            <div class="col-xs-6 col-sm-4 title">
+                <p>BOM:</p>
             </div>
+            <div class="col-xs-6 col-sm-8 info"></div>
+            <div class="clear"></div>
 
-            <div class="row">
-                <div class="col-sm-4 title">
-                    <p>Hygienists:</p>
-                </div>
-                <div class="col-sm-8 info"></div>
+            <div class="col-xs-6 col-sm-4 title">
+                <p>BOM #:</p>
             </div>
+            <div class="col-xs-6 col-sm-8 info"></div>
+            <div class="clear"></div>
+
+            <div class="col-xs-6 ol-sm-4 title">
+                <p>Hygienists:</p>
+            </div>
+            <div class="col-xs-6 col-sm-8 info"></div>
+            <div class="clear"></div>
 
         </div>
     </div>
@@ -180,61 +191,73 @@
 
     <div class="visible-sm-block visible-md-block visible-lg-block">
         <div class="col-md-6 left">
-            <div class="row">
-                <div class="col-sm-4 title">
-                    <p>Masking #:</p>
-                    <p>Office Extension:</p>
-                    <p>Office #:</p>
-                    <p>Email Address:</p>
-                    <p>Office Address:</p>
-                    <p>Doctors:</p>
-                </div>
-                <div class="col-sm-8 info">
-                    <p>{{ office.masking_number }}</p>
-                    <p>{{ office.extension }}</p>
-                    <p>{{ office.phone }}</p>
-                    <p>{{ office.email }}</p>
-                    <p>{{ office.address }}</p>
-                    <p>{{ doctor[0].name }}</p>
-                </div>
+            <div class="col-sm-4 title">
+                <p>Masking #:</p>
+                <p>Office Extension:</p>
+                <p>Office #:</p>
+                <p>Email Address:</p>
+                <p>Office Address:</p>
+                <p>Doctors:</p>
+            </div>
+            <div class="col-sm-8 info">
+                <p>{{ office.masking_number }}</p>
+                <p>{{ office.extension }}</p>
+                <p>{{ office.phone }}</p>
+                <p>{{ office.email }}</p>
+                <p>{{ office.address }}</p>
+                <p>{{ doctor[0].name }}</p>
             </div>
         </div>
         <div class="col-md-6 right">
-            <div class="row">
-                <div class="col-sm-4 title">
-                    <p>BOM:</p>
-                    <p>BOM #:</p>
-                    <p>Hygienists:</p>
-                </div>
-                <div class="col-sm-8 info"></div>
+            <div class="col-sm-4 title">
+                <p>BOM:</p>
+                <p>BOM #:</p>
+                <p>Hygienists:</p>
             </div>
+            <div class="col-sm-8 info"></div>
         </div>
     </div>
+    </section>
+    <div class="clear space-20"></div>
+
+
+    <section class="row">
+
+        <div class="col-sm-3">
+            <div class="adult">
+                <h3>NPIE Adult</h3>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="child">
+                <h3>NPIE Child</h3>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="adult">
+                <h3>Recall Adult</h3>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="child">
+                <h3>Recall Child</h3>
+            </div>
+        </div>
+    </section>
     <div class="clear"></div>
 
+    <div class="col-sm-6 notes">NPIE Notes</div>
+    <div class="col-sm-6 notes">Recall Notes</div>
 
+    <div class="clear"></div>
 
-    <div class="row">
-        <div class="col-sm-3">NPIE Adult</div>
-        <div class="col-sm-3">NPIE Child</div>
-        <div class="col-sm-3">Recall Adult</div>
-        <div class="col-sm-3">Recall Child</div>
-    </div>
+    <div class="col-sm-12">Offers</div>
 
-    <div class="row">
-        <div class="col-sm-6">NPIE Notes</div>
-        <div class="col-sm-6">Recall Notes</div>
-    </div>
+    <div class="clear"></div>
 
-    <div class="row">
-        <div class="col-sm-12">Offers</div>
-    </div>
-
-    <div class="row">
-        <div class="col-sm-4">Office Image</div>
-        <div class="col-sm-4">Google Map</div>
-        <div class="col-sm-4">Directions</div>
-    </div>
+    <div class="col-sm-4">Office Image</div>
+    <div class="col-sm-4">Google Map</div>
+    <div class="col-sm-4">Directions</div>
 
 
 {% endblock %}
