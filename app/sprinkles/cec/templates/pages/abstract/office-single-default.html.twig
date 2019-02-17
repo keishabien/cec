@@ -12,7 +12,7 @@
     <div class="wrapper">
 
         {#<header class="main-header">#}
-            {% include "navigation/main-nav.html.twig" %}
+        {% include "navigation/main-nav.html.twig" %}
         {#</header>#}
 
         <!-- Full Width Column -->
@@ -25,9 +25,9 @@
                             <div id="alerts-page"></div>
                             <h1 class="page-title">{% block header_title %}{{ block('page_title') }}{% endblock %}</h1>
                             {#{% if block('page_description') is not empty %}#}
-                                {#<h1>#}
-                                {#<small>{% block header_description %}{{ block('page_description') }}{% endblock %}</small>#}
-                                {#</h1>#}
+                            {#<h1>#}
+                            {#<small>{% block header_description %}{{ block('page_description') }}{% endblock %}</small>#}
+                            {#</h1>#}
                             {#{% endif %}#}
                             {#{% block breadcrumb %}#}
                             {#{% include 'navigation/breadcrumb.html.twig' with {page_title: block('page_title')} %}#}
@@ -36,9 +36,7 @@
                     </section>
                 {% endblock %}
                 <section class="row">
-                    <div class="col-sm-12 body">
-                        {% block body_matter %}{% endblock %}
-                    </div>
+                    {% block body_matter %}{% endblock %}
                 </section>
             </div>
         </div>

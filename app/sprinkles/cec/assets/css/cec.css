@@ -4,6 +4,7 @@ body {
     font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
     color: #575757;
+    padding-top: 65px;
 }
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
     font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -57,17 +58,15 @@ a:hover, a:focus {
 }
 
 /* navigaiton */
-.main-header {
-    margin-bottom: 15px;
-    box-shadow: 0px 0px 3px #757575;
-    max-height: 84px;
-}
 
 .skin-red .main-header {
     margin: 0
 }
 
-.main-header .logo {
+.navbar-header {
+    padding: 8px 15px 0;
+}
+.navbar-header .logo {
     height: 30px;
     width: auto;
     padding: 0 15px 0 0;
@@ -77,16 +76,15 @@ a:hover, a:focus {
 .navbar-default {
     background-color: #FFF;
     border-color: #FFF;
+    box-shadow: 0px 0px 3px #757575;
 }
 
-.navbar-header {
-    margin-top: 8px;
-}
+
 
 .navbar .form {
     float: left;
     margin-top: 8px;
-    padding-left: 15px;
+    padding: 5px 0;
 }
 
 .search {
@@ -101,6 +99,11 @@ a:hover, a:focus {
 .input-group-addon {
     padding: 0;
     border: none;
+}
+
+.navbar-custom-menu > .navbar-nav {
+    float: left;
+    width: 100%;
 }
 
 
@@ -193,7 +196,9 @@ a:hover, a:focus {
     color: #FFF;
 }
 
-.btn-orange-round {
+.btn-orange-round,
+.btn-orange-round:visited,
+.btn-orange-round:link {
     color: #fff;
     font-size: 14px;
     font-weight: 400;
@@ -363,7 +368,9 @@ a:hover, a:focus {
 .no-l-pad {
     padding-left: 0;
 }
-
+.space-20 {
+    margin-bottom: 20px;
+}
 
 
 .clear:nth-of-type(4n + 1) {
@@ -376,7 +383,7 @@ a:hover, a:focus {
 .single {
     background-color: #F7F5F5;
     padding: 15px 15px;
-    margin-bottom: 30px;
+    margin: 15px 0;
 }
 
 .single img {
@@ -401,6 +408,15 @@ a:hover, a:focus {
 }
 
 /* SINGLE OFFICE */
+#hours {
+    background: #FFF;
+    color: #006a52;
+    padding: 18px;
+    position: absolute;
+    right: 17px;
+    top: 2px;
+}
+
 .title {
     background-color: #eae6e4;
 }
@@ -415,16 +431,30 @@ a:hover, a:focus {
     min-height: 20px;
     margin-bottom: 15px;
 }
+.adult {
+    background-color: #006a52;
+    padding: 20px;
+}
+.child {
+    background-color: #f8971d;
+    padding: 20px;
+}
 
+.adult h3,
+.child h3 {
+    color: #FFF;
+    margin-top: 0;
+    font-weight: bold;
+}
 
 @media screen and (max-width: 767px) {
 
 
-    .navbar .form {
-        border: 0;
-        margin: 8px 0;
-        padding: 0;
-    }
+    /*.navbar .form {*/
+        /*border: 0;*/
+        /*margin: 8px 0;*/
+        /*padding: 0;*/
+    /*}*/
 
     .main-header .navbar-custom-menu {
         width: 100%;
@@ -454,13 +484,16 @@ a:hover, a:focus {
     .search {
         min-width: 250px;
     }
-    .left .title,
-    .left .info {
+    .title,
+    .info {
         padding: 20px 20px 0;
     }
-    .right .title,
-    .right .info {
-        padding: 0 20px 20px;
+
+    .navbar-header{
+        padding: 8px 0 0;
+    }
+    .navbar .form {
+        padding: 0;
     }
 }
 
