@@ -20,7 +20,10 @@ return [
         'title' => 'CEC',
         'logo' => 'assets/images/login_cec.jpg',
         'registration' => [
-            'enabled' => false
+            'enabled' => false,
+            'user_defaults' => [
+                'group' => 'midwest'
+            ]
         ]
     ],
     'php' => [
