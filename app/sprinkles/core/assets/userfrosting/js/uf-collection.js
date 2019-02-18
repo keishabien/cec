@@ -265,17 +265,25 @@
          */
         _touchRow: function(row) {
             row.removeClass('uf-collection-row-virgin');
-            row.find('.js-delete-row').show();
+            // row.find('.js-delete-row').show();
+
+            // KEISHA EDIT - Maintain hidden delete row on the first row only
+            if(!row.is(':first-child')){
+                row.find('.js-delete-row').show();
+            }
+
 
             this.$element.trigger('rowTouch.ufCollection', row);
 
             // If we're not using dropdowns, assert that the table doesn't already have a virgin row.  If not, create a new virgin row.
-            if (!this.settings.useDropdown) {
-                var virginRows = this.settings.rowContainer.find('.uf-collection-row-virgin').length;
-                if (!virginRows) {
-                    this._createVirginRow();
-                }
-            }
+
+            // KEISHA EDIT - Hiding this - I don't want the touch to add row option
+            // if (!this.settings.useDropdown) {
+            //     var virginRows = this.settings.rowContainer.find('.uf-collection-row-virgin').length;
+            //     if (!virginRows) {
+            //         this._createVirginRow();
+            //     }
+            // }
         },
         /**
          * Initialize the select2 dropdown for this collection on a specified control element.
