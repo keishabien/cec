@@ -55,27 +55,6 @@ class SearchController extends SimpleController
     }
 
 
-//    public function pageList($request, $response, $args)
-//    {
-//        // GET parameters
-//        $params = $request->getQueryParams();
-//
-//        /** @var UserFrosting\Sprinkle\Account\Authorize\AuthorizationManager */
-//
-//        $authorizer = $this->ci->authorizer;
-//
-//        /** @var UserFrosting\Sprinkle\Account\Database\Models\User $currentUser */
-//        $currentUser = $this->ci->currentUser;
-//
-//        // Access-controlled page
-//
-//        if (!$authorizer->checkAccess($currentUser, 'api_offices')) {
-//            throw new ForbiddenException();
-//        }
-//
-//        return $this->ci->view->render($response, 'pages/search.html.twig');
-//    }
-
     /**
      * Renders the user listing page.
      *
@@ -142,24 +121,6 @@ class SearchController extends SimpleController
         ]);
     }
 
-    public function quickInfo($request, $response, $args)
-    {
-
-        $keyword = $args['input'];
-
-        $params = $request->getQueryParams();
-
-        $this->getContainer()->db;
-//        $result = User::where('name', $keyword)->get();
-        $result = Search::where('name', 'like', 'dog')->get();
-
-        if ($params['format'] == 'json') {
-            return $response->withJson($result, 200, JSON_PRETTY_PRINT);
-        } else {
-            return $response->withJson($result, 200, JSON_PRETTY_PRINT);
-        }
-    }
-
 
     /**
      * Returns info for a single office.
@@ -189,7 +150,18 @@ class SearchController extends SimpleController
             throw $e;
         }
 
-        $office = Office::distinct()->where('name', 'like', '%' .  $data['input'] . '%')->get();
+
+        //check to see if input is a zip code or text
+        $input = $data['input'];
+
+        if(preg_match('/\d*/', $input, $matches)){
+            $input = $matches[0];
+            $office = Office::distinct()->where('zip',  $input)->get();
+        }else {
+            $office = Office::distinct()->where('name', 'like', '%' .  $input . '%')->get();
+        }
+
+
 
         // If the user doesn't exist, return 404
         if (!$office) {
@@ -210,6 +182,7 @@ class SearchController extends SimpleController
         }
 
         $result = $office->toArray();
+
 
         if(!$result){
             echo "fail";
@@ -250,20 +223,7 @@ class SearchController extends SimpleController
 
     }
 
-    public function getList($request, $response, $args)
-    {
-        // GET parameters
-        $params = $request->getQueryParams();
 
-        /** @var UserFrosting\Sprinkle\Core\Util\ClassMapper $classMapper */
-        $classMapper = $this->ci->classMapper;
-
-        $sprunje = new SearchSprunje($classMapper, $params);
-
-        // Be careful how you consume this data - it has not been escaped and contains untrusted user-supplied content.
-        // For example, if you plan to insert it into an HTML DOM, you must escape it on the client side (or use client-side templating).
-        return $sprunje->toResponse($response);
-    }
 
     protected function getUserFromParams($params)
     {

@@ -31,30 +31,28 @@
         </div>
 
 
-        {#{% verbatim %}#}
-{#<script id="dentist-details-row" type="text/x-handlebars-template">#}
-    {#<tr class="uf-collection-row">#}
-
-        {#<td class="col-xs-12 col-sm-5">#}
-            {#<div class="form-group has-feedback">#}
-                {#<label for="dentist-full-name-1" class="control-label">Dentist Full Name</label>#}
-                {#<input type="text" class="form-control" name="name[]" id="dentist-full-name-1"#}
-                       {#placeholder="Full Name">#}
-            {#</div>#}
-        {#</td>#}
-        {#<td class="col-xs-12 col-sm-7">#}
-            {#<div class="form-group has-feedback">#}
-                {#<label for="dentist-provider-num-1" class="control-label">DentalVision Provider Number (6#}
-                    {#digits)#}
-                {#</label>#}
-                {#<input type="text" class="form-control" id="dentist-provider-num-1" placeholder="000000"#}
-                       {#name="provider_num[]">#}
-            {#</div>#}
-        {#</td>#}
-
-    {#</tr>#}
-{#</script>#}
-{#{% endverbatim %}#}
+{% verbatim %}
+<script id="dentist-details-row" type="text/x-handlebars-template">
+    <tr class="uf-collection-row">
+        <td class="col-xs-12 col-sm-5">
+            <div class="form-group has-feedback">
+                <label for="dentist-full-name-1" class="control-label">Dentist Full Name</label>
+                <input type="text" class="form-control" name="name[]" id="dentist-full-name-1"
+                       placeholder="Full Name">
+            </div>
+        </td>
+        <td class="col-xs-12 col-sm-7">
+            <div class="form-group has-feedback">
+                <label for="dentist-provider-num-1" class="control-label">DentalVision Provider Number (6
+                    digits)
+                </label>
+                <input type="text" class="form-control" id="dentist-provider-num-1" placeholder="000000"
+                       name="provider_num[]">
+            </div>
+        </td>
+    </tr>
+</script>
+{% endverbatim %}
 
 
         <div class="dentist-section">
