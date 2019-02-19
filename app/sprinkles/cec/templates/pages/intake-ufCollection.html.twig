@@ -31,23 +31,158 @@
         </div>
 
 
-{% verbatim %}
+        {% verbatim %}
 <script id="dentist-details-row" type="text/x-handlebars-template">
     <tr class="uf-collection-row">
-        <td class="col-xs-12 col-sm-5">
-            <div class="form-group has-feedback">
-                <label for="dentist-full-name-1" class="control-label">Dentist Full Name</label>
-                <input type="text" class="form-control" name="name[]" id="dentist-full-name-1"
-                       placeholder="Full Name">
-            </div>
-        </td>
-        <td class="col-xs-12 col-sm-7">
-            <div class="form-group has-feedback">
-                <label for="dentist-provider-num-1" class="control-label">DentalVision Provider Number (6
-                    digits)
-                </label>
-                <input type="text" class="form-control" id="dentist-provider-num-1" placeholder="000000"
-                       name="provider_num[]">
+         <td>
+            <div class="dentist-section">
+                <div class="row">
+                    <div class="col-xs-10">
+
+                    {{#ifCond rownum 0 }}
+                        <h2 id="dentist[{{ rownum }}][id]">Dentist 1 Details</h2>
+                        {{else}}
+                        <h2 id="dentist[{{ rownum }}][id]">Dentist {{ math rownum "+" 1 }} Details</h2>
+                    {{/ifCond}}
+                        <input type="hidden" name="dentist[{{ rownum }}][id]" value="">
+                    </div>
+                    <div class="col-xs-2 pull-right">
+                        <button type="button" class="btn btn-link btn-trash js-delete-row pull-right" title="Delete"> <i class="fa fa-times"></i> </button>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-5">
+                        <div class="form-group has-feedback">
+                            <label for="dentist[{{ rownum }}][full-name]" class="control-label">Dentist Full Name</label>
+                            <input type="text" class="form-control customer" name="dentist[{{ rownum }}][full-name]" id="dentist[{{ rownum }}][full-name]"
+                                   placeholder="Full Name">
+                        </div>
+                    </div>
+
+                    <div class="col-sm-7">
+                        <div class="form-group has-feedback">
+                            <label for="dentist[{{ rownum }}][provider-num]" class="control-label">DentalVision Provider Number (6
+                                digits)
+                            </label>
+                            <input type="text" class="form-control" id="dentist[{{ rownum }}][provider-num]" placeholder="000000"
+                                   name="dentist[{{ rownum }}][provider-num]">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="form-group has-feedback">
+                            <label for="dentist-called-name-1" class="control-label">How does the doctor refer to themself with
+                                patients? (i.e. Dr. Steven Smith likes patients to call him Dr. Steve)
+                            </label>
+                            <input type="text" id="dentist-called-name-1" name="nickname[]" class="form-control">
+                        </div>
+
+                        <div class="form-group has-feedback">
+                            <label for="dentist-emer-num-1" class="control-label">Dentist Emergency Number
+                            </label>
+                            <input type="text" id="dentist-emer-num-1" name="emergency_num[]" class="form-control">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group has-feedback radio">
+                            Permanent or Locum?
+                            <div class="radio">
+                                <label for="dentist-permanent-1">
+                                    <input type="radio" name="locum[]" id="dentist-permanent-1" value="Y">
+                                    Permanent
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label for="dentist-locum-1">
+                                    <input type="radio" name="locum[]" id="dentist-locum-1" value="N">
+                                    Locum
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-8">
+                        <div class="form-group has-feedback has-feedback-left">
+                            <label for="dentist-start-date-1" class="control-label">When did this doctor start at your
+                                location?
+                            </label>
+                            <div class="inline-feedback input-group">
+                                <span class="input-group-addon input-group-override">
+                                    <i class="fa fa-calendar"></i>
+                                </span>
+                                <input type="text" class="form-control datepicker" id="dentist-start-date-1"
+                                       name="start_date[]">
+                            </div>
+                        </div>
+
+                        <div class="form-group has-feedback has-feedback-left">
+                            <label for="dentist-exit-date-1" class="control-label">If the doctor is exiting, what is their
+                                last day seeing patients?
+                            </label>
+
+                            <div class="inline-feedback input-group">
+                                <span class="input-group-addon input-group-override">
+                                    <i class="fa fa-calendar"></i>
+                                </span>
+                                <input type="text" class="form-control datepicker" id="dentist-exit-date-1"
+                                       name="end_date[]">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group has-feedback radio">
+                            Is the doctor currently or going on leave?
+                            <div class="radio">
+                                <label for="dentist-yes-1">
+                                    <input type="radio" name="leave[]" id="dentist-yes-1" value="Y">
+                                    Yes
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label for="dentist-no-1">
+                                    <input type="radio" name="leave[]" id="dentist-no-1" value="N">
+                                    No
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="form-group has-feedback has-feedback-left">
+                            <label for="dentist-leave-start-date-1" class="control-label">Leave start date:</label>
+                            <div class="inline-feedback input-group">
+                            <span class="input-group-addon input-group-override">
+                                    <i class="fa fa-calendar"></i>
+                                </span>
+                                <intep type="text" class="form-control datepicker" id="dentist-leave-start-date-1"
+                                       name="leave_start_date[]">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="form-group has-feedback has-feedback-left">
+                            <label for="dentist-leave-end-date-1" class="control-label">Leave end date:</label>
+                            <div class="inline-feedback input-group">
+                            <span class="input-group-addon input-group-override">
+                                    <i class="fa fa-calendar"></i>
+                                </span>
+                                <input type="text" class="form-control datepicker" id="dentist-leave-end-date-1"
+                                       name="leave_end_date[]">
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </td>
     </tr>
@@ -55,151 +190,11 @@
 {% endverbatim %}
 
 
-        <div class="dentist-section">
-
-
-            <div id="dentist-div" class="table-responsive">
-                <table class="table">
-                    <tbody>
-                    </tbody>
-                </table>
-            </div>
-
-
-            <h2 id="dentist-details-1">Dentist 1 Details</h2>
-            <div class="row">
-                <div class="col-sm-5">
-                    <div class="form-group has-feedback">
-                        <label for="dentist-full-name-1" class="control-label">Dentist Full Name</label>
-                        <input type="text" class="form-control" name="name[]" id="dentist-full-name-1"
-                               placeholder="Full Name">
-                    </div>
-                </div>
-
-
-                <div class="col-sm-7">
-                    <div class="form-group has-feedback">
-                        <label for="dentist-provider-num-1" class="control-label">DentalVision Provider Number (6
-                            digits)
-                        </label>
-                        <input type="text" class="form-control" id="dentist-provider-num-1" placeholder="000000"
-                               name="provider_num[]">
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="form-group has-feedback">
-                <label for="dentist-called-name-1" class="control-label">How does the doctor refer to themself with
-                    patients? (i.e. Dr. Steven Smith likes patients to call him Dr. Steve)
-                </label>
-                <input type="text" id="dentist-called-name-1" name="nickname[]" class="form-control">
-            </div>
-
-            <div class="form-group has-feedback">
-                <label for="dentist-emer-num-1" class="control-label">Dentist Emergency Number
-                </label>
-                <input type="text" id="dentist-emer-num-1" name="emergency_num[]" class="form-control">
-            </div>
-
-
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="form-group has-feedback radio">
-                        Permanent or Locum?
-                        <div class="radio">
-                            <label for="dentist-permanent-1">
-                                <input type="radio" name="locum[]" id="dentist-permanent-1" value="Y">
-                                Permanent
-                            </label>
-                        </div>
-                        <div class="radio">
-                            <label for="dentist-locum-1">
-                                <input type="radio" name="locum[]" id="dentist-locum-1" value="N">
-                                Locum
-                            </label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-8">
-                    <div class="form-group has-feedback has-feedback-left">
-                        <label for="dentist-start-date-1" class="control-label">When did this doctor start at your
-                            location?
-                        </label>
-                        <div class="inline-feedback input-group">
-                            <span class="input-group-addon input-group-override">
-                                <i class="fa fa-calendar"></i>
-                            </span>
-                            <input type="text" class="form-control datepicker" id="dentist-start-date-1"
-                                   name="start_date[]">
-                        </div>
-                    </div>
-
-
-                    <div class="form-group has-feedback has-feedback-left">
-                        <label for="dentist-exit-date-1" class="control-label">If the doctor is exiting, what is their
-                            last day seeing patients?
-                        </label>
-
-                        <div class="inline-feedback input-group">
-                            <span class="input-group-addon input-group-override">
-                                <i class="fa fa-calendar"></i>
-                            </span>
-                            <input type="text" class="form-control datepicker" id="dentist-exit-date-1"
-                                   name="end_date[]">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="form-group has-feedback radio">
-                        Is the doctor currently or going on leave?
-                        <div class="radio">
-                            <label for="dentist-yes-1">
-                                <input type="radio" name="leave[]" id="dentist-yes-1" value="Y">
-                                Yes
-                            </label>
-                        </div>
-                        <div class="radio">
-                            <label for="dentist-no-1">
-                                <input type="radio" name="leave[]" id="dentist-no-1" value="N">
-                                No
-                            </label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-4">
-                    <div class="form-group has-feedback has-feedback-left">
-                        <label for="dentist-leave-start-date-1" class="control-label">Leave start date:</label>
-                        <div class="inline-feedback input-group">
-                        <span class="input-group-addon input-group-override">
-                                <i class="fa fa-calendar"></i>
-                            </span>
-                            <input type="text" class="form-control datepicker" id="dentist-leave-start-date-1"
-                                   name="leave_start_date[]">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-4">
-                    <div class="form-group has-feedback has-feedback-left">
-                        <label for="dentist-leave-end-date-1" class="control-label">Leave end date:</label>
-                        <div class="inline-feedback input-group">
-                        <span class="input-group-addon input-group-override">
-                                <i class="fa fa-calendar"></i>
-                            </span>
-                            <input type="text" class="form-control datepicker" id="dentist-leave-end-date-1"
-                                   name="leave_end_date[]">
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+        <div id="dentist-div">
+            <table class="table">
+                <tbody>
+                </tbody>
+            </table>
         </div>
 
         <div class="dentist-button-row">
@@ -249,7 +244,16 @@
     {{ assets.css('css/form-widgets') | raw }}
 
     <script>
+
+
         $('.datepicker').datepicker();
+
+        $(document).ready(function () {
+            $('.datepicker').datepicker();
+            $('.datepicker').on('focus', function () {
+                console.log("test")
+            });
+        });
 
         // Collections
         $('.repeat-dentist').click(function () {
@@ -271,6 +275,18 @@
         }).on("submitError.ufForm", function (event, data, textStatus, jqXHR) {
             console.log(textStatus);
         });
+
+
+        // alias required to cRequired with new message
+        $.validator.addMethod("cRequired", $.validator.methods.required,
+            "Customer name required");
+        // alias minlength, too
+        $.validator.addMethod("cMinlength", $.validator.methods.minlength,
+            // leverage parameter replacement for minlength, {0} gets replaced with 2
+            $.validator.format("Customer name must have at least {0} characters"));
+        // combine them both, including the parameter for minlength
+        $.validator.addClassRules("customer", { cRequired: true, cMinlength: 2 });
+
     </script>
 
 {% endblock %}

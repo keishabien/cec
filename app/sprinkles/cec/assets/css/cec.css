@@ -363,6 +363,12 @@ a:hover, a:focus {
 .box.box-primary {
     border-top-color: #f8971d;
 }
+.table > thead > tr > th, .table > tbody > tr > th,
+.table > tfoot > tr > th, .table > thead > tr > td,
+.table > tbody > tr > td, .table > tfoot > tr > td {
+    border-top: none;
+    padding: 0;
+}
 
 /* paddings */
 .no-l-pad {

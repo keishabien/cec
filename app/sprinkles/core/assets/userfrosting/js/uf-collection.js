@@ -207,12 +207,14 @@
                 newRow;
 
             // Add the new row before any virgin rows in the table.
-            var virginRows = this.settings.rowContainer.find('.uf-collection-row-virgin').length;
-            if (virginRows) {
-                newRow = $(newRowTemplate).insertBefore(this.settings.rowContainer.find('.uf-collection-row-virgin:first'));
-            } else {
-                newRow = $(newRowTemplate).appendTo(this.settings.rowContainer);
-            }
+            // var virginRows = this.settings.rowContainer.find('.uf-collection-row-virgin').length;
+            // if (virginRows) {
+            //     newRow = $(newRowTemplate).insertBefore(this.settings.rowContainer.find('.uf-collection-row-virgin:first'));
+            // } else {
+            //     newRow = $(newRowTemplate).appendTo(this.settings.rowContainer);
+            // }
+            //KEISHA EDIT - Only append
+            newRow = $(newRowTemplate).appendTo(this.settings.rowContainer);
 
             this._lastRow = newRow;
 
@@ -240,6 +242,7 @@
         _deleteRow: function(row) {
             row.remove();
             this.$element.trigger('rowDelete.ufCollection', row);
+            this._rownum -= 1;
         },
          /**
          * Add delete and touch bindings for a row, increment the internal row counter, and fire the rowAdd event
