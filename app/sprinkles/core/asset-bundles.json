@@ -15,6 +15,7 @@
                 "userfrosting/js/AdminLTE.js",
                 "userfrosting/js/AdminLTE-custom.js",
                 "userfrosting/js/fortress-jqueryvalidation-methods.js",
+                "userfrosting/js/handlebars-helpers.js",
                 "userfrosting/js/uf-jqueryvalidation-config.js",
                 "userfrosting/js/uf-alerts.js",
                 "userfrosting/js/uf-form.js",
@@ -33,7 +34,8 @@
         "js/form-widgets": {
             "scripts": [
                 "vendor/speakingurl/speakingurl.min.js",
-                "userfrosting/js/uf-collection.js"
+                "userfrosting/js/uf-collection.js",
+                "userfrosting/js/handlebars-helpers.js"
             ],
             "options": {
                 "result": {

@@ -75,7 +75,8 @@
         "js/form-widgets": {
             "scripts": [
                 "vendor/speakingurl/speakingurl.min.js",
-                "userfrosting/js/uf-collection.js"
+                "userfrosting/js/uf-collection.js",
+                "userfrosting/js/handlebars-helpers.js"
             ],
             "options": {
                 "result": {

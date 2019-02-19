@@ -71,6 +71,7 @@ class PageController extends SimpleController
 
         // Validate request data
         $validator = new ServerSideValidator($schema, $this->ci->translator);
+
         if (!$validator->validate($data)) {
             $ms->addValidationErrors($validator);
             $error = true;

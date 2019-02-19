@@ -41,17 +41,18 @@
 {% verbatim %}
 <script id="member-phones-row" type="text/x-handlebars-template">
     <tr class="uf-collection-row">
-         <td>
-      <div class="row">
-            <div class="form-group has-feedback">
-                <label for="dentist-full-name-1" class="control-label">Dentist Full Name</label>
-                <input type="text" class="form-control" name="name[]" id="dentist-full-name-1" placeholder="Full Name">
+        <td>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-phone fa-fw"></i></span>
+                <input type="hidden" name="phones[{{ rownum }}][id]" value="{{id}}">
+                <input type="text" class="form-control" name="phones[{{ rownum }}][label]" value="{{label}}" placeholder="Label">
             </div>
-      </div>
-            <div class="form-group has-feedback">
-                <label for="dentist-provider-num-1" class="control-label">DentalVision Provider Number (6 digits) </label>
-                <input type="text" class="form-control" id="dentist-provider-num-1" placeholder="000000" name="provider_num[]">
-            </div>
+        </td>
+        <td>
+            <input type="text" class="form-control" name="phones[{{ rownum }}][number]" value="{{number}}" placeholder="Number">
+        </td>
+        <td>
+            <button type="button" class="btn btn-link btn-trash js-delete-row pull-right" title="Delete"> <i class="fa fa-trash"></i> </button>
         </td>
     </tr>
 </script>
@@ -245,13 +246,18 @@
         $('.datepicker').datepicker();
 
         // collection
-        $('.repeat-dentist').click(function () {
-            $('#member-phones').ufCollection('addRow');
-        });
+        // $('#member-phones').ufCollection({
+        //     useDropdown: false,
+        //     rowTemplate: $('#member-phones-row').html()
+        // });
 
         $('#member-phones').ufCollection({
+            // addRow: $('.repeat-dentist').click(function () {
+            //     console.log('test');
+            // }),
+            // addRow: true,
             useDropdown: false,
-            rowTemplate: $('#member-phones-row').html()
+            rowTemplate: $('.dentist-section').html()
         });
 
 
