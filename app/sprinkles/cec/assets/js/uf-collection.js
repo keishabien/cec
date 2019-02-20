@@ -207,13 +207,14 @@
                 newRow;
 
             // Add the new row before any virgin rows in the table.
-            var virginRows = this.settings.rowContainer.find('.uf-collection-row-virgin').length;
-            if (virginRows) {
-                newRow = $(newRowTemplate).insertBefore(this.settings.rowContainer.find('.uf-collection-row-virgin:first'));
-            } else {
-                newRow = $(newRowTemplate).appendTo(this.settings.rowContainer);
-            }
-
+            // var virginRows = this.settings.rowContainer.find('.uf-collection-row-virgin').length;
+            // if (virginRows) {
+            //     newRow = $(newRowTemplate).insertBefore(this.settings.rowContainer.find('.uf-collection-row-virgin:first'));
+            // } else {
+            //     newRow = $(newRowTemplate).appendTo(this.settings.rowContainer);
+            // }
+            //KEISHA EDIT - Only append
+            newRow = $(newRowTemplate).appendTo(this.settings.rowContainer);
 
             this._lastRow = newRow;
 
@@ -241,6 +242,9 @@
         _deleteRow: function(row) {
             row.remove();
             this.$element.trigger('rowDelete.ufCollection', row);
+            //KEISHA EDITS
+            this._rownum -= 1;
+            recountSection(this, this._rownum);
         },
          /**
          * Add delete and touch bindings for a row, increment the internal row counter, and fire the rowAdd event
@@ -266,18 +270,25 @@
          */
         _touchRow: function(row) {
             row.removeClass('uf-collection-row-virgin');
-            row.find('.js-delete-row').show();
+            // row.find('.js-delete-row').show();
+
+            // KEISHA EDIT - Maintain hidden delete row on the first row only
+            if(!row.is(':first-child')){
+                row.find('.js-delete-row').show();
+            }
+
 
             this.$element.trigger('rowTouch.ufCollection', row);
 
             // If we're not using dropdowns, assert that the table doesn't already have a virgin row.  If not, create a new virgin row.
 
-            if (!this.settings.useDropdown) {
-                var virginRows = this.settings.rowContainer.find('.uf-collection-row-virgin').length;
-                if (!virginRows) {
-                    this._createVirginRow();
-                }
-            }
+            // KEISHA EDIT - Hiding this - I don't want the touch to add row option
+            // if (!this.settings.useDropdown) {
+            //     var virginRows = this.settings.rowContainer.find('.uf-collection-row-virgin').length;
+            //     if (!virginRows) {
+            //         this._createVirginRow();
+            //     }
+            // }
         },
         /**
          * Initialize the select2 dropdown for this collection on a specified control element.

@@ -7,7 +7,7 @@ office_id:
       message: "Please select a location."
 
 
-dentist[][full-name]:
+dentist[0][full-name]:
   validators:
 #    regex:
 #      regex: ^[a-zA-Z ]*.[a-zA-Z ]*$
@@ -24,7 +24,7 @@ dentist[][full-name]:
     - escape
     - trim
 
-provider_num[]:
+dentist[0][provider_num]:
   validators:
     regex:
       regex: ^\d{6}$

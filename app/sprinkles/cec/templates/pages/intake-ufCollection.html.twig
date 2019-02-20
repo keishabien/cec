@@ -35,7 +35,7 @@
 <script id="dentist-details-row" type="text/x-handlebars-template">
     <tr class="uf-collection-row">
          <td>
-            <div class="dentist-section">
+            <div class="dentist-section" id="{{rownum}}">
                 <div class="row">
                     <div class="col-xs-10">
 
@@ -74,16 +74,16 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <div class="form-group has-feedback">
-                            <label for="dentist-called-name-1" class="control-label">How does the doctor refer to themself with
+                            <label for="dentist[{{ rownum }}][called-name]" class="control-label">How does the doctor refer to themself with
                                 patients? (i.e. Dr. Steven Smith likes patients to call him Dr. Steve)
                             </label>
-                            <input type="text" id="dentist-called-name-1" name="nickname[]" class="form-control">
+                            <input type="text" id="dentist[{{ rownum }}][called-name]" name="dentist[{{ rownum }}][called-name]" class="form-control">
                         </div>
 
                         <div class="form-group has-feedback">
-                            <label for="dentist-emer-num-1" class="control-label">Dentist Emergency Number
+                            <label for="dentist[{{ rownum }}][emer-num]" class="control-label">Dentist Emergency Number
                             </label>
-                            <input type="text" id="dentist-emer-num-1" name="emergency_num[]" class="form-control">
+                            <input type="text" id="dentist[{{ rownum }}][emer-num]" name="dentist[{{ rownum }}][emer_num]" class="form-control">
                         </div>
                     </div>
                 </div>
@@ -93,14 +93,14 @@
                         <div class="form-group has-feedback radio">
                             Permanent or Locum?
                             <div class="radio">
-                                <label for="dentist-permanent-1">
-                                    <input type="radio" name="locum[]" id="dentist-permanent-1" value="Y">
+                                <label for="dentist[{{ rownum }}][permanent]">
+                                    <input type="radio" name="dentist[{{ rownum }}][locum]" id="dentist[{{ rownum }}][permanent]" value="Y">
                                     Permanent
                                 </label>
                             </div>
                             <div class="radio">
-                                <label for="dentist-locum-1">
-                                    <input type="radio" name="locum[]" id="dentist-locum-1" value="N">
+                                <label for="dentist[{{ rownum }}][locum]">
+                                    <input type="radio" name="dentist[{{ rownum }}][locum]" id="dentist[{{ rownum }}][locum]" value="N">
                                     Locum
                                 </label>
                             </div>
@@ -109,20 +109,20 @@
 
                     <div class="col-sm-8">
                         <div class="form-group has-feedback has-feedback-left">
-                            <label for="dentist-start-date-1" class="control-label">When did this doctor start at your
+                            <label for="dentist[{{ rownum }}][start-date]" class="control-label">When did this doctor start at your
                                 location?
                             </label>
                             <div class="inline-feedback input-group">
                                 <span class="input-group-addon input-group-override">
                                     <i class="fa fa-calendar"></i>
                                 </span>
-                                <input type="text" class="form-control datepicker" id="dentist-start-date-1"
-                                       name="start_date[]">
+                                <input type="text" class="form-control datepicker" id="dentist[{{ rownum }}][start-date]"
+                                       name="dentist[{{ rownum }}][start_date]">
                             </div>
                         </div>
 
                         <div class="form-group has-feedback has-feedback-left">
-                            <label for="dentist-exit-date-1" class="control-label">If the doctor is exiting, what is their
+                            <label for="dentist[{{ rownum }}][exit-date]" class="control-label">If the doctor is exiting, what is their
                                 last day seeing patients?
                             </label>
 
@@ -130,8 +130,8 @@
                                 <span class="input-group-addon input-group-override">
                                     <i class="fa fa-calendar"></i>
                                 </span>
-                                <input type="text" class="form-control datepicker" id="dentist-exit-date-1"
-                                       name="end_date[]">
+                                <input type="text" class="form-control datepicker" id="dentist[{{ rownum }}][exit-date]"
+                                       name="dentist[{{ rownum }}][exit_date]">
                             </div>
                         </div>
                     </div>
@@ -143,14 +143,14 @@
                         <div class="form-group has-feedback radio">
                             Is the doctor currently or going on leave?
                             <div class="radio">
-                                <label for="dentist-yes-1">
-                                    <input type="radio" name="leave[]" id="dentist-yes-1" value="Y">
+                                <label for="dentist[{{ rownum }}][leave-yes]">
+                                    <input type="radio" name="dentist[{{ rownum }}][leave-yes]" id="dentist[{{ rownum }}][leave-yes]" value="Y">
                                     Yes
                                 </label>
                             </div>
                             <div class="radio">
-                                <label for="dentist-no-1">
-                                    <input type="radio" name="leave[]" id="dentist-no-1" value="N">
+                                <label for="dentist[{{ rownum }}][leave-no]">
+                                    <input type="radio" name="dentist[{{ rownum }}][leave-no]" id="dentist[{{ rownum }}][leave-no]" value="N">
                                     No
                                 </label>
                             </div>
@@ -159,26 +159,26 @@
 
                     <div class="col-sm-4">
                         <div class="form-group has-feedback has-feedback-left">
-                            <label for="dentist-leave-start-date-1" class="control-label">Leave start date:</label>
+                            <label for="dentist[{{ rownum }}][leave-start-date]" class="control-label">Leave start date:</label>
                             <div class="inline-feedback input-group">
                             <span class="input-group-addon input-group-override">
                                     <i class="fa fa-calendar"></i>
                                 </span>
-                                <intep type="text" class="form-control datepicker" id="dentist-leave-start-date-1"
-                                       name="leave_start_date[]">
+                                <input type="text" class="form-control datepicker" id="dentist[{{ rownum }}][leave-start-date]"
+                                       name="dentist[{{ rownum }}][leave-start-date]">
                             </div>
                         </div>
                     </div>
 
                     <div class="col-sm-4">
                         <div class="form-group has-feedback has-feedback-left">
-                            <label for="dentist-leave-end-date-1" class="control-label">Leave end date:</label>
+                            <label for="dentist[{{ rownum }}][leave-end-date]" class="control-label">Leave end date:</label>
                             <div class="inline-feedback input-group">
                             <span class="input-group-addon input-group-override">
                                     <i class="fa fa-calendar"></i>
                                 </span>
-                                <input type="text" class="form-control datepicker" id="dentist-leave-end-date-1"
-                                       name="leave_end_date[]">
+                                <input type="text" class="form-control datepicker" id="dentist[{{ rownum }}][leave-end-date]"
+                                       name="dentist[{{ rownum }}][leave-end-date]">
                             </div>
                         </div>
                     </div>
@@ -218,9 +218,9 @@
         {#</div>#}
 
         <div class="hygienist-button-row">
-            <a class="btn btn-default repeat-hygienist pull-right">+ Add Hygienist</a><br>
+            <a class="btn btn-default repeat-hygienist pull-right"><i class="fa fa-plus"></i> Add Hygienist</a><br>
         </div>
-        <button type="submit" class="btn btn-orange  pull-right">Next ></button>
+        <button type="submit" class="btn btn-orange  pull-right">Next <i class="fa fa-chevron-right"></i></button>
     </form>
     {#<a class="btn btn-orange  pull-right" href="{{ site.uri.public }}/intake/npie">Next ></a>#}
 
@@ -239,21 +239,45 @@
     </script>
 
     <!-- Include page-specific JS -->
-    {#{{ assets.js('js/intake') | raw }}#}
-    {{ assets.js('js/form-widgets') | raw }}
+    {{ assets.js('js/intake') | raw }}
+    {#{{ assets.js('js/form-widgets') | raw }}#}
     {{ assets.css('css/form-widgets') | raw }}
 
     <script>
 
-
         $('.datepicker').datepicker();
 
-        $(document).ready(function () {
-            $('.datepicker').datepicker();
-            $('.datepicker').on('focus', function () {
-                console.log("test")
-            });
+        $('body').on('focus', ".datepicker", function () {
+            $(this).datepicker();
         });
+
+        function recountSection(elem, rowNum) {
+            var div = $(elem).next().find("uf-collection-row");
+            console.log(div);
+                // if ($(".uf-collection-row:gt(0)")) {
+                //     $(".dentist-section").each(function (rowNum) {
+                //     r = rowNum + 1;
+                //     $(this).find('h2').attr('id', function (r, val) {
+                //         // val = val.substr(0, val.lastIndexOf('-'));
+                //         console.log("val: "+val);
+                //         val = val.substr(0, val.indexOf("["));
+                //         console.log("val2: "+val);
+                //         return val + "-" + r;
+                //     }).html("Dentist " + r + " Details");
+
+                    // $(this).find(':input').attr('id', function (j, val) {
+                    //     val = val.substr(0, val.lastIndexOf('-'));
+                    //     return val + "-" + i;
+                    // });
+                    //
+                    // $(this).find('label').attr('for', function (j, val) {
+                    //     val = val.substr(0, val.lastIndexOf('-'));
+                    //     return val + "-" + i;
+                    // });
+
+                // })
+            // }
+        }
 
         // Collections
         $('.repeat-dentist').click(function () {
@@ -285,7 +309,7 @@
             // leverage parameter replacement for minlength, {0} gets replaced with 2
             $.validator.format("Customer name must have at least {0} characters"));
         // combine them both, including the parameter for minlength
-        $.validator.addClassRules("customer", { cRequired: true, cMinlength: 2 });
+        $.validator.addClassRules("customer", {cRequired: true, cMinlength: 2});
 
     </script>
 
