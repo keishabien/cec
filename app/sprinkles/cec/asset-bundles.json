@@ -60,9 +60,9 @@
         },
         "js/intake": {
             "scripts": [
-                "js/intake-dr-hyg-details.js",
-                "js/intake-npie.js",
-                "js/intake-recall.js"
+                "vendor/speakingurl/speakingurl.min.js",
+                "js/uf-collection.js",
+                "userfrosting/js/handlebars-helpers.js"
             ],
             "options": {
                 "result": {
