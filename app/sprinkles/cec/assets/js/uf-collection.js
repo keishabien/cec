@@ -243,8 +243,8 @@
             row.remove();
             this.$element.trigger('rowDelete.ufCollection', row);
             //KEISHA EDITS
-            this._rownum -= 1;
-            recountSection(this, this._rownum);
+            // this._rownum -= 1;
+            // recountSection(this, this._rownum);
         },
          /**
          * Add delete and touch bindings for a row, increment the internal row counter, and fire the rowAdd event

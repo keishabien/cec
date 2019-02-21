@@ -259,8 +259,8 @@ function _init() {
       } else {
         var postSetWidth;
         if (window_height >= sidebar_height) {
-          console.log(window_height);
-          console.log(neg);
+          // console.log(window_height);
+          // console.log(neg);
           $(".content-wrapper, .right-side").css('min-height', window_height - neg - 30);
           postSetWidth = window_height - neg;
         } else {

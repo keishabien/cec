@@ -37,12 +37,7 @@ class PageController extends SimpleController
 //            SELECT distinct page_title, page_id FROM office_details where page_title like "% Dentist Office" ORDER BY page_title
 
         return $this->ci->view->render($response, 'pages/intake-ufCollection.html.twig', [
-            'offices' => $offices,
-            'page' => [
-                'validators' => [
-                    'intake' => $validator->rules('json', false)
-                ]
-            ]
+            'offices' => $offices
         ]);
     }
 
@@ -60,26 +55,53 @@ class PageController extends SimpleController
 
         // Get POST parameters: user_name, first_name, last_name, email, password, passwordc, captcha, spiderbro, csrf_token
         $params = $request->getParsedBody();
+        Debug::debug("var params 1");
+        Debug::debug(print_r($params, true));
 
-        $schema = new RequestSchema('schema://requests/intake-form.yaml');
-        // Whitelist and set parameter defaults
-        $transformer = new RequestDataTransformer($schema);
-        $data = $transformer->transform($params);
+        $officeSchema = new RequestSchema('schema://requests/office.yaml');
+        $officeTransformer = new RequestDataTransformer($officeSchema);
+        $location = $officeTransformer->transform($params);
 
+        Debug::debug("var location selected");
+        Debug::debug(print_r($location, true));
 
         $error = false;
 
-        // Validate request data
-        $validator = new ServerSideValidator($schema, $this->ci->translator);
+        $dentistSchema = new RequestSchema('schema://requests/dentist.yaml');
+        $dentistTransformer = new RequestDataTransformer($dentistSchema);
+        $dentistData = [];
 
-        if (!$validator->validate($data)) {
+        foreach($params['dentist'] as $dentistParams) {
+            $data = $dentistTransformer->transform($dentistParams);
+            $dentistData[] = $data;
+            Debug::debug("var dentist data");
+            Debug::debug(print_r($dentistData,true));
+
+            $dentistValidator = new ServerSideValidator($dentistSchema, $this->ci->translator);
+            if (!$dentistValidator->validate($dentistData)) {
+                $ms->addValidationErrors($dentistValidator);
+                $error = true;
+            }
+            if ($error) {
+                Debug::debug("var dentist");
+                Debug::debug(print_r($data,true));
+                return $response->withStatus(400);
+            }
+        }
+
+
+
+        // Validate request data
+        $validator = new ServerSideValidator($officeSchema, $this->ci->translator);
+
+        if (!$validator->validate($location)) {
             $ms->addValidationErrors($validator);
             $error = true;
         }
 
         if ($error) {
-            Debug::debug("var data");
-            Debug::debug(print_r($data,true));
+            Debug::debug("var data 2");
+            Debug::debug(print_r($location,true));
             return $response->withStatus(400);
         }
 // All checks passed!  log events/activities, create user, and send verification email (if required)
@@ -89,10 +111,12 @@ class PageController extends SimpleController
             //$throttler->logEvent('registration_attempt');
 
             $intake = new Intake($data);
+            Debug::debug("var intake");
+            Debug::debug(print_r($intake,true));
 
 
-
-            $intake->dentist_id = '1';
+//            $intake->office_id = $data['dentist-full-name'];
+//            $intake->dentist_id = $data['dentist-full-name'];
 //            $intake->name = $data['dentist-full-name'];
 //            $intake->nickname = $data['dentist-called-name'];
 //            $intake->provider_num = $data['dentist-provider-num'];
@@ -103,6 +127,7 @@ class PageController extends SimpleController
 //            $intake->leave = $data['leave-radio'];
 //            $intake->leave_start_date = $data['leave-start-date'];
 //            $intake->leave_end_date = $data['leave-end-date'];
+
 
 //            Debug::debug("var data");
 //            Debug::debug(print_r($data,true));
@@ -135,7 +160,7 @@ class PageController extends SimpleController
 // Whitelist and set parameter defaults
         $validator = new JqueryValidationAdapter($schema, $this->ci->translator);
 
-        $offices = Office::distinct()->where('page_title', 'like', '% Dentist Office')->orderBy('page_title', 'ASC')->get();
+        $offices = CECOffice::distinct()->where('name', 'like', '% Dentist Office')->orderBy('name', 'ASC')->get();
 //            SELECT distinct page_title, page_id FROM office_details where page_title like "% Dentist Office" ORDER BY page_title
 
         $rules = $validator->rules();
@@ -156,7 +181,7 @@ class PageController extends SimpleController
     {
         $schema = new RequestSchema('schema://requests/intake-form.yaml');
 
-        $offices = Office::distinct()->where('page_title', 'like', '% Dentist Office')->orderBy('page_title', 'ASC')->get();
+        $offices = CECOffice::distinct()->where('name', 'like', '% Dentist Office')->orderBy('name', 'ASC')->get();
 //            SELECT distinct page_title, page_id FROM office_details where page_title like "% Dentist Office" ORDER BY page_title
 
         return $this->ci->view->render($response, 'pages/intake-recall.html.twig', [
@@ -168,7 +193,7 @@ class PageController extends SimpleController
     {
         $schema = new RequestSchema('schema://requests/intake-form.yaml');
 
-        $offices = Office::distinct()->where('page_title', 'like', '% Dentist Office')->orderBy('page_title', 'ASC')->get();
+        $offices = CECOffice::distinct()->where('name', 'like', '% Dentist Office')->orderBy('name', 'ASC')->get();
 //            SELECT distinct page_title, page_id FROM office_details where page_title like "% Dentist Office" ORDER BY page_title
 
         return $this->ci->view->render($response, 'pages/intake-final.html.twig', [

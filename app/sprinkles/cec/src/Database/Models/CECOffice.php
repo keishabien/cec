@@ -13,12 +13,23 @@ class CECOffice extends Model
     protected $table = 'cec.office_details';
 
     protected $fillable = [
-        'page_title',
-        'state'
+        'dentist_id',
+        'office_id',
+        'name',
+        'nickname',
+        'provider_num',
+        'emergency_num',
+        'locum',
+        'start_date',
+        'end_date',
+        'leave',
+        'leave_start_date',
+        'leave_end_date',
+        'created_at'
     ];
     /**
      * @var bool Enable timestamps for this class.
      */
-    public $timestamps = false;
+    public $timestamps = true;
 
 }
