@@ -1,0 +1,5 @@
+office_id:
+  validators:
+    required:
+      label: Location
+      message: "Please select a location."

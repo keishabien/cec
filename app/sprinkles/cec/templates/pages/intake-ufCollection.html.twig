@@ -40,11 +40,11 @@
                     <div class="col-xs-10">
 
                     {{#ifCond rownum 0 }}
-                        <h2 id="dentist[{{ rownum }}][id]">Dentist 1 Details</h2>
+                        <h2 id="dentist[{{ rownum }}][dentist_id]">Dentist Details</h2>
                         {{else}}
-                        <h2 id="dentist[{{ rownum }}][id]">Dentist {{ math rownum "+" 1 }} Details</h2>
+                        <h2 id="dentist[{{ rownum }}][dentist_id]">Dentist {{ math rownum "+" 1 }} Details</h2>
                     {{/ifCond}}
-                        <input type="hidden" name="dentist[{{ rownum }}][id]" value="">
+                        <input type="hidden" name="dentist[{{ rownum }}][dentist_id]" value="{{ math rownum '+' 1 }}">
                     </div>
                     <div class="col-xs-2 pull-right">
                         <button type="button" class="btn btn-link btn-trash js-delete-row pull-right" title="Delete"> <i class="fa fa-times"></i> </button>
@@ -54,19 +54,19 @@
                 <div class="row">
                     <div class="col-sm-5">
                         <div class="form-group has-feedback">
-                            <label for="dentist[{{ rownum }}][full-name]" class="control-label">Dentist Full Name</label>
-                            <input type="text" class="form-control customer" name="dentist[{{ rownum }}][full-name]" id="dentist[{{ rownum }}][full-name]"
+                            <label for="dentist[{{ rownum }}][name]" class="control-label">Dentist Full Name</label>
+                            <input type="text" class="form-control customer" name="dentist[{{ rownum }}][name]" id="dentist[{{ rownum }}][name]"
                                    placeholder="Full Name">
                         </div>
                     </div>
 
                     <div class="col-sm-7">
                         <div class="form-group has-feedback">
-                            <label for="dentist[{{ rownum }}][provider-num]" class="control-label">DentalVision Provider Number (6
+                            <label for="dentist[{{ rownum }}][provider_num]" class="control-label">DentalVision Provider Number (6
                                 digits)
                             </label>
-                            <input type="text" class="form-control" id="dentist[{{ rownum }}][provider-num]" placeholder="000000"
-                                   name="dentist[{{ rownum }}][provider-num]">
+                            <input type="text" class="form-control" id="dentist[{{ rownum }}][provider_num]" placeholder="000000"
+                                   name="dentist[{{ rownum }}][provider_num]">
                         </div>
                     </div>
                 </div>
@@ -74,16 +74,16 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <div class="form-group has-feedback">
-                            <label for="dentist[{{ rownum }}][called-name]" class="control-label">How does the doctor refer to themself with
+                            <label for="dentist[{{ rownum }}][nickname]" class="control-label">How does the doctor refer to themself with
                                 patients? (i.e. Dr. Steven Smith likes patients to call him Dr. Steve)
                             </label>
-                            <input type="text" id="dentist[{{ rownum }}][called-name]" name="dentist[{{ rownum }}][called-name]" class="form-control">
+                            <input type="text" id="dentist[{{ rownum }}][nickname]" name="dentist[{{ rownum }}][nickname]" class="form-control">
                         </div>
 
                         <div class="form-group has-feedback">
-                            <label for="dentist[{{ rownum }}][emer-num]" class="control-label">Dentist Emergency Number
+                            <label for="dentist[{{ rownum }}][emergency_num]" class="control-label">Dentist Emergency Number
                             </label>
-                            <input type="text" id="dentist[{{ rownum }}][emer-num]" name="dentist[{{ rownum }}][emer_num]" class="form-control">
+                            <input type="text" id="dentist[{{ rownum }}][emergency_num]" name="dentist[{{ rownum }}][emergency_num]" class="form-control">
                         </div>
                     </div>
                 </div>
@@ -109,20 +109,20 @@
 
                     <div class="col-sm-8">
                         <div class="form-group has-feedback has-feedback-left">
-                            <label for="dentist[{{ rownum }}][start-date]" class="control-label">When did this doctor start at your
+                            <label for="dentist[{{ rownum }}][start_date]" class="control-label">When did this doctor start at your
                                 location?
                             </label>
                             <div class="inline-feedback input-group">
                                 <span class="input-group-addon input-group-override">
                                     <i class="fa fa-calendar"></i>
                                 </span>
-                                <input type="text" class="form-control datepicker" id="dentist[{{ rownum }}][start-date]"
+                                <input type="text" class="form-control datepicker" id="dentist[{{ rownum }}][start_date]"
                                        name="dentist[{{ rownum }}][start_date]">
                             </div>
                         </div>
 
                         <div class="form-group has-feedback has-feedback-left">
-                            <label for="dentist[{{ rownum }}][exit-date]" class="control-label">If the doctor is exiting, what is their
+                            <label for="dentist[{{ rownum }}][end_date]" class="control-label">If the doctor is exiting, what is their
                                 last day seeing patients?
                             </label>
 
@@ -130,8 +130,8 @@
                                 <span class="input-group-addon input-group-override">
                                     <i class="fa fa-calendar"></i>
                                 </span>
-                                <input type="text" class="form-control datepicker" id="dentist[{{ rownum }}][exit-date]"
-                                       name="dentist[{{ rownum }}][exit_date]">
+                                <input type="text" class="form-control datepicker" id="dentist[{{ rownum }}][end_date]"
+                                       name="dentist[{{ rownum }}][end_date]">
                             </div>
                         </div>
                     </div>
@@ -143,14 +143,14 @@
                         <div class="form-group has-feedback radio">
                             Is the doctor currently or going on leave?
                             <div class="radio">
-                                <label for="dentist[{{ rownum }}][leave-yes]">
-                                    <input type="radio" name="dentist[{{ rownum }}][leave-yes]" id="dentist[{{ rownum }}][leave-yes]" value="Y">
+                                <label for="dentist[{{ rownum }}][leave_yes]">
+                                    <input type="radio" name="dentist[{{ rownum }}][leave]" id="dentist[{{ rownum }}][leave_yes]" value="Y">
                                     Yes
                                 </label>
                             </div>
                             <div class="radio">
-                                <label for="dentist[{{ rownum }}][leave-no]">
-                                    <input type="radio" name="dentist[{{ rownum }}][leave-no]" id="dentist[{{ rownum }}][leave-no]" value="N">
+                                <label for="dentist[{{ rownum }}][leave_no]">
+                                    <input type="radio" name="dentist[{{ rownum }}][leave]" id="dentist[{{ rownum }}][leave_no]" value="N">
                                     No
                                 </label>
                             </div>
@@ -159,26 +159,26 @@
 
                     <div class="col-sm-4">
                         <div class="form-group has-feedback has-feedback-left">
-                            <label for="dentist[{{ rownum }}][leave-start-date]" class="control-label">Leave start date:</label>
+                            <label for="dentist[{{ rownum }}][leave_start_date]" class="control-label">Leave start date:</label>
                             <div class="inline-feedback input-group">
                             <span class="input-group-addon input-group-override">
                                     <i class="fa fa-calendar"></i>
                                 </span>
-                                <input type="text" class="form-control datepicker" id="dentist[{{ rownum }}][leave-start-date]"
-                                       name="dentist[{{ rownum }}][leave-start-date]">
+                                <input type="text" class="form-control datepicker" id="dentist[{{ rownum }}][leave_start_date]"
+                                       name="dentist[{{ rownum }}][leave_start_date]">
                             </div>
                         </div>
                     </div>
 
                     <div class="col-sm-4">
                         <div class="form-group has-feedback has-feedback-left">
-                            <label for="dentist[{{ rownum }}][leave-end-date]" class="control-label">Leave end date:</label>
+                            <label for="dentist[{{ rownum }}][leave_end_date]" class="control-label">Leave end date:</label>
                             <div class="inline-feedback input-group">
                             <span class="input-group-addon input-group-override">
                                     <i class="fa fa-calendar"></i>
                                 </span>
-                                <input type="text" class="form-control datepicker" id="dentist[{{ rownum }}][leave-end-date]"
-                                       name="dentist[{{ rownum }}][leave-end-date]">
+                                <input type="text" class="form-control datepicker" id="dentist[{{ rownum }}][leave_end_date]"
+                                       name="dentist[{{ rownum }}][leave_end_date]">
                             </div>
                         </div>
                     </div>
@@ -292,24 +292,24 @@
 
         //submit form
         $(".intake").ufForm({
-            validators: page.validators.intake,
+
             msgTarget: $("#alerts-page")
         }).on("submitSuccess.ufForm", function (event, data, textStatus, jqXHR) {
             window.location.replace(site.uri.public + "/intake/npie");
         }).on("submitError.ufForm", function (event, data, textStatus, jqXHR) {
-            console.log(textStatus);
+            console.log(data.responseText);
         });
 
 
-        // alias required to cRequired with new message
-        $.validator.addMethod("cRequired", $.validator.methods.required,
-            "Customer name required");
-        // alias minlength, too
-        $.validator.addMethod("cMinlength", $.validator.methods.minlength,
-            // leverage parameter replacement for minlength, {0} gets replaced with 2
-            $.validator.format("Customer name must have at least {0} characters"));
-        // combine them both, including the parameter for minlength
-        $.validator.addClassRules("customer", {cRequired: true, cMinlength: 2});
+        // // alias required to cRequired with new message
+        // $.validator.addMethod("cRequired", $.validator.methods.required,
+        //     "Customer name required");
+        // // alias minlength, too
+        // $.validator.addMethod("cMinlength", $.validator.methods.minlength,
+        //     // leverage parameter replacement for minlength, {0} gets replaced with 2
+        //     $.validator.format("Customer name must have at least {0} characters"));
+        // // combine them both, including the parameter for minlength
+        // $.validator.addClassRules("customer", {cRequired: true, cMinlength: 2});
 
     </script>
 
