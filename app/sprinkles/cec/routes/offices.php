@@ -7,7 +7,7 @@ $app->group('/offices', function () {
 
     $this->get('/o/{keyword}', 'UserFrosting\Sprinkle\Cec\Controller\SearchController:pageInfo');
 
-    $this->get('?keyword={keyword}', 'UserFrosting\Sprinkle\Cec\Controller\SearchController:pageSearch');
+//    $this->get('?keyword={keyword}', 'UserFrosting\Sprinkle\Cec\Controller\SearchController:pageSearch');
 
 })->add('authGuard');
 

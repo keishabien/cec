@@ -32,41 +32,41 @@ $('body').on('click', '.remove-dentist', function () {
 function recountDentist() {
     den_count--;
     console.log("recount: " + den_count);
-    $(".dentist-section").each(function (i) {
-        i = i + 1;
-        if (i === 1) {
-            $(this).find(':input').attr('id', function (j, val) {
-                val = val.substr(0, val.lastIndexOf('-'));
-                return val + "-" + i;
-            });
+        $(".dentist-section").each(function (i) {
+            i = i + 1;
+            if (i === 1) {
+                $(this).find(':input').attr('id', function (j, val) {
+                    val = val.substr(0, val.lastIndexOf('-'));
+                    return val + "-" + i;
+                });
 
-            $(this).find('label').attr('for', function (j, val) {
-                val = val.substr(0, val.lastIndexOf('-'));
-                return val + "-" + i;
-            });
+                $(this).find('label').attr('for', function (j, val) {
+                    val = val.substr(0, val.lastIndexOf('-'));
+                    return val + "-" + i;
+                });
 
-            $(this).find('h2').attr('id', function (j, val) {
-                val = val.substr(0, val.lastIndexOf('-'));
-                return val + "-" + i;
-            }).html("Dentist " + i + " Details");
+                $(this).find('h2').attr('id', function (j, val) {
+                    val = val.substr(0, val.lastIndexOf('-'));
+                    return val + "-" + i;
+                }).html("Dentist " + i + " Details");
 
-        } else {
-            $(this).find(':input').attr('id', function (j, val) {
-                val = val.substr(0, val.lastIndexOf('-'));
-                return val + "-" + i;
-            });
+            } else {
+                $(this).find(':input').attr('id', function (j, val) {
+                    val = val.substr(0, val.lastIndexOf('-'));
+                    return val + "-" + i;
+                });
 
-            $(this).find('label').attr('for', function (j, val) {
-                val = val.substr(0, val.lastIndexOf('-'));
-                return val + "-" + i;
-            });
+                $(this).find('label').attr('for', function (j, val) {
+                    val = val.substr(0, val.lastIndexOf('-'));
+                    return val + "-" + i;
+                });
 
-            $(this).find('h2').attr('id', function (j, val) {
-                val = val.substr(0, val.lastIndexOf('-'));
-                return val + "-" + i;
-            }).html("Dentist " + i + " Details <i class=\"fa fa-times pull-right remove-dentist\"></i>");
-        }
-    });
+                $(this).find('h2').attr('id', function (j, val) {
+                    val = val.substr(0, val.lastIndexOf('-'));
+                    return val + "-" + i;
+                }).html("Dentist " + i + " Details <i class=\"fa fa-times pull-right remove-dentist\"></i>");
+            }
+        });
 }
 
 
