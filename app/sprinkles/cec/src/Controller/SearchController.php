@@ -2,16 +2,18 @@
 
 namespace UserFrosting\Sprinkle\Cec\Controller;
 
+use Illuminate\Database\Capsule\Manager as Capsule;
+use UserFrosting\Sprinkle\Core\Controller\SimpleController;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Exception\NotFoundException;
 use UserFrosting\Fortress\RequestDataTransformer;
 use UserFrosting\Fortress\RequestSchema;
 use UserFrosting\Fortress\ServerSideValidator;
-use UserFrosting\Sprinkle\Core\Controller\SimpleController;
 use UserFrosting\Support\Exception\BadRequestException;
 use UserFrosting\Support\Exception\ForbiddenException;
 use UserFrosting\Support\Exception\HttpException;
+use UserFrosting\Sprinkle\Core\Facades\Debug;
 
 use UserFrosting\Sprinkle\Cec\Database\Models\Search;
 use UserFrosting\Sprinkle\Cec\Database\Models\CECOffice;
@@ -25,34 +27,83 @@ use UserFrosting\Sprinkle\Cec\Sprunje\CECOfficeSprunje;
 
 class SearchController extends SimpleController
 {
-    public function pageSearch($request, $response, $args)
-    {
-
-        $keyword = $args['keyword'];
-
-        $params = $request->getQueryParams();
-
-
-        $office = CECOffice::distinct()->where('name', 'like', '%' . $keyword . '%')
-                ->orWhere('zip', 'like', '%' . $keyword . '%')
-            ->orderBy('name', "ASC")
-            ->get();
-
-
-        return $this->ci->view->render($response, 'pages/office-all.html.twig', [
-            'results' => $results,
-            'keyword'   => $keyword,
-            'office' => $office,
-            'location' => $location,
-            'midwestLogo' => 'https://www.meritdental.com/cecdb/images/midwest-logo.png',
-            'mondoviLogo' => 'https://www.meritdental.com/cecdb/images/mondovi-logo.png',
-            'meritLogo' => 'https://www.meritdental.com/cecdb/images/merit-logo.png',
-            'mountainLogo' => 'https://www.meritdental.com/cecdb/images/mountain-logo.png',
-            "page" => [
-                'keyword'   => $keyword
-            ]
-        ]);
-    }
+//    public function pageSearch($request, $response, $args)
+//    {
+//
+////        $keyword = $args['keyword'];
+////
+////
+////        $params = $request->getQueryParams();
+//
+////        $doctor = DoctorDetails::where('name', 'like', '%' . $keyword . '%');
+//
+////        $office = CECOffice::distinct()->where('name', 'like', '%' . $keyword . '%')
+////            ->orWhere('zip', 'like', '%' . $keyword . '%')
+////            ->orderBy('name', "ASC")
+////            ->get();
+//
+//        //if is zip
+////        Debug::debug("if is zip");
+////        Debug::debug(print_r($keyword, true));
+////
+////
+////        if (preg_match('/\d{5}/', $keyword, $matches)) {
+////            $keyword = $matches[0];
+////            Debug::debug("is zip");
+////            Debug::debug(print_r($keyword, true));
+////            $office = CECOffice::distinct()->where('zip', 'like', '%' . $keyword . '%')->get();
+////
+////        } else {
+////            Debug::debug("else");
+////            Debug::debug(print_r($keyword, true));
+////            $office = CECOffice::distinct()->where('name', 'like', '%' . $keyword . '%')->get();
+////
+////        }
+//
+//
+////        if(preg_match("\d{5}", $office)){
+////            $allzips = array();
+////            $ziplat;
+////            $ziplng;
+////            $filename = "https://meritdental.com/cecdb/zipcode.csv";
+////            $file = fopen($filename, "r");
+////            while (($line = fgetcsv($file)) !== FALSE) {
+////                array_push($allzips, $line);
+////            }
+////
+////            $zip = $office;
+////
+////            Debug::debug("in zip");
+////            Debug::debug(print_r($zip, true));
+////
+////
+////
+////            for ($i = 0; $i < count($allzips); $i++) {
+////                if ($allzips[$i][0] === $zip) {
+////                    $ziplat = $allzips[$i][3];
+////                    $ziplng = $allzips[$i][4];
+////
+////                    Debug::debug("if match");
+////                    Debug::debug(print_r($ziplat, true));
+////                    Debug::debug(print_r($ziplng, true));
+////                }
+////            }
+////        }else {
+////            Debug::debug("else is zip");
+////            Debug::debug(print_r($office, true));
+////        }
+//
+//        return $this->ci->view->render($response, 'pages/office-all.html.twig', [
+//            'keyword' => $keyword,
+//            'office' => $office,
+//            'ziplat' => $ziplat,
+//            'ziplng' => $ziplng,
+//            'midwestLogo' => 'https://www.meritdental.com/cecdb/images/midwest-logo.png',
+//            'mondoviLogo' => 'https://www.meritdental.com/cecdb/images/mondovi-logo.png',
+//            'meritLogo' => 'https://www.meritdental.com/cecdb/images/merit-logo.png',
+//            'mountainLogo' => 'https://www.meritdental.com/cecdb/images/mountain-logo.png'
+//        ]);
+//    }
 
 
     /**
@@ -65,24 +116,70 @@ class SearchController extends SimpleController
      */
     public function pageList($request, $response, $args)
     {
+//        $keyword = $args['keyword'];
         $params = $request->getQueryParams();
+        $keyword = $params['keyword'];
+        Debug::debug("pageList");
 
 
-        $office = CECOffice::distinct()->where('name', 'like', '%' . $params['keyword'] . '%')
-            ->orWhere('zip', 'like', '%' . $params['keyword'] . '%')
-            ->orderBy('name', "ASC")
-            ->get();
+        Debug::debug("is text");
+        Debug::debug(print_r($keyword, true));
+        $office = CECOffice::query()
+            ->leftJoin('dentist_details', 'dentist_details.office_id', '=', 'office_details.office_id')
+            ->where('office_details.name', 'like', '%' . $keyword . '%')
+            ->orWhere('dentist_details.name', 'like', '%' . $keyword . '%')
+            ->orWhere('office_details.zip', 'like', '%' . $keyword . '%')
+            ->distinct()->get();
+
+
+        $allOffices = CECOffice::query()->get();
+
+        if (preg_match('/\d{5}/', $keyword, $matches)) {
+            $keyword = $matches[0];
+            Debug::debug("is zip");
+            Debug::debug(print_r($keyword, true));
+
+            $allzips = array();
+            $ziplat;
+            $ziplng;
+            $filename = "https://meritdental.com/cecdb/zipcode.csv";
+            $file = fopen($filename, "r");
+            while (($line = fgetcsv($file)) !== FALSE) {
+                array_push($allzips, $line);
+            }
+
+            $zip = $matches[0];
+
+            Debug::debug("in zip");
+            Debug::debug(print_r($zip, true));
+
+
+            for ($i = 0; $i < count($allzips); $i++) {
+                if ($allzips[$i][0] === $zip) {
+                    $ziplat = $allzips[$i][3];
+                    $ziplng = $allzips[$i][4];
+
+                    Debug::debug("if match");
+                    Debug::debug(print_r($ziplat, true));
+                    Debug::debug(print_r($ziplng, true));
+                }
+            }
+        }
 
 
         return $this->ci->view->render($response, 'pages/office-all.html.twig', [
-            'keyword'   => $params['keyword'],
+            'keyword' => $params['keyword'],
             'office' => $office,
+            'ziplat' => $ziplat,
+            'ziplng' => $ziplng,
             'midwestLogo' => 'https://www.meritdental.com/cecdb/images/midwest-logo.png',
             'mondoviLogo' => 'https://www.meritdental.com/cecdb/images/mondovi-logo.png',
             'meritLogo' => 'https://www.meritdental.com/cecdb/images/merit-logo.png',
             'mountainLogo' => 'https://www.meritdental.com/cecdb/images/mountain-logo.png',
-            "page" => [
-                'keyword'   => $keyword
+            'page' => [
+                'ziplat' => $ziplat,
+                'ziplng' => $ziplng,
+                'locations' => $allOffices
             ]
         ]);
     }
@@ -94,29 +191,29 @@ class SearchController extends SimpleController
 
         $office = CECOffice::distinct()->where('vanity_url', 'like', '%' . $params . '%')->first();
 
-        $doctor = DoctorDetails::distinct()->where('office_id',  $office["office_id"])->get();
+        $doctor = DoctorDetails::distinct()->where('office_id', $office["office_id"])->get();
 
         $name = $office['name'];
         $patterns = array();
-        $patterns[ 0 ] = '/Dentist/';
-        $patterns[ 1 ] = '/Office/';
+        $patterns[0] = '/Dentist/';
+        $patterns[1] = '/Office/';
         $replacements = array();
-        $replacements[ 0 ] = '';
-        $replacements[ 1 ] = '';
+        $replacements[0] = '';
+        $replacements[1] = '';
         $newName = preg_replace($patterns, $replacements, $name);
 
 
         return $this->ci->view->render($response, 'pages/office-single.html.twig', [
-            'keyword'   => $params,
+            'keyword' => $params,
             'office' => $office,
             'doctor' => $doctor,
-            'newName'  => $newName,
+            'newName' => $newName,
             'midwestLogo' => 'https://www.meritdental.com/cecdb/images/midwest-logo.png',
             'mondoviLogo' => 'https://www.meritdental.com/cecdb/images/mondovi-logo.png',
             'meritLogo' => 'https://www.meritdental.com/cecdb/images/merit-logo.png',
             'mountainLogo' => 'https://www.meritdental.com/cecdb/images/mountain-logo.png',
             "page" => [
-                'keyword'   => $keyword
+                'keyword' => $keyword
             ]
         ]);
     }
@@ -154,13 +251,18 @@ class SearchController extends SimpleController
         //check to see if input is a zip code or text
         $input = $data['input'];
 
-        if(preg_match('/\d*/', $input, $matches)){
+        if (preg_match('/\d{5}/', $input, $matches)) {
             $input = $matches[0];
-            $office = Office::distinct()->where('zip',  $input)->get();
-        }else {
-            $office = Office::distinct()->where('name', 'like', '%' .  $input . '%')->get();
-        }
+            Debug::debug("is zip");
+            Debug::debug(print_r($input, true));
+            $office = CECOffice::distinct()->where('zip', $input)->get();
 
+        } else {
+            Debug::debug("else");
+            Debug::debug(print_r($input, true));
+            $office = CECOffice::distinct()->where('name', 'like', '%' . $input . '%')->get();
+
+        }
 
 
         // If the user doesn't exist, return 404
@@ -184,7 +286,7 @@ class SearchController extends SimpleController
         $result = $office->toArray();
 
 
-        if(!$result){
+        if (!$result) {
             echo "fail";
         } else {
             // Be careful how you consume this data - it has not been escaped and contains untrusted user-supplied content.
@@ -206,7 +308,7 @@ class SearchController extends SimpleController
         // Load the request schema
 
 
-        $office = Office::distinct()->where('name', 'like', '%' .  $params['keyword'] . '%')->get();
+        $office = Office::distinct()->where('name', 'like', '%' . $params['keyword'] . '%')->get();
 
         // If the user doesn't exist, return 404
         if (!$office) {
@@ -217,12 +319,11 @@ class SearchController extends SimpleController
         $result = $office->toArray();
 
 
-            // Be careful how you consume this data - it has not been escaped and contains untrusted user-supplied content.
-            // For example, if you plan to insert it into an HTML DOM, you must escape it on the client side (or use client-side templating).
-            return $response->withJson($result, 200, JSON_PRETTY_PRINT);
+        // Be careful how you consume this data - it has not been escaped and contains untrusted user-supplied content.
+        // For example, if you plan to insert it into an HTML DOM, you must escape it on the client side (or use client-side templating).
+        return $response->withJson($result, 200, JSON_PRETTY_PRINT);
 
     }
-
 
 
     protected function getUserFromParams($params)
@@ -257,7 +358,7 @@ class SearchController extends SimpleController
 
 
 //        $office = Office::distinct()->where('page_title', $data['office_name'])->get();
-        $office = Office::distinct()->where('name', 'like', '%' .  $data['input'] . '%')->get();
+        $office = Office::distinct()->where('name', 'like', '%' . $data['input'] . '%')->get();
 //        $details = Search::distinct()->where('name', $data['keyword'])->get();
 
 //        $office = $office->merge($details);

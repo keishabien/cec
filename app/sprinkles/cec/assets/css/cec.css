@@ -412,7 +412,9 @@ a:hover, a:focus {
     text-align: center;
     width: 100%;
 }
-
+.zip {
+    display: none;
+}
 /* SINGLE OFFICE */
 #hours {
     background: #FFF;
@@ -421,6 +423,16 @@ a:hover, a:focus {
     position: absolute;
     right: 17px;
     top: 2px;
+}
+#hours-menu {
+    display: none;
+    position: absolute;
+    z-index: 5;
+    right: 0;
+    background: #FFF;
+    color: #000;
+    font-size: 14px;
+    font-weight: normal;
 }
 
 .title {

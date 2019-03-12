@@ -4,6 +4,65 @@
 {# Overrides blocks in head of base template #}
 {% block page_title %}{{ office.brand }} Dental - {{ newName }}
     <div id="hours">Hours <i class="fa fa-chevron-down"></i></div>
+    <div id="hours-menu">
+
+
+        {#<p><span>Open Today:</span>#}
+        {#<span>#}
+        {#<?php echo $day;?>#}
+        {#</span>#}
+        {#</p>#}
+        {% if office.mon_hours %}
+        <span>Mon:</span>
+        <span>
+        {{ office.mon_hours }}
+        </span>
+        {% endif %}
+        {#<?php }#}
+        {#if($tue){ ?>#}
+        {#<span>Tue:</span>#}
+        {#<span>#}
+        {#<?php echo $details[0]['tue_hours']; ?>#}
+        {#</span>#}
+        {#<?php }#}
+        {#if($wed){ ?>#}
+        {#<span>Wed:</span>#}
+        {#<span>#}
+        {#<?php echo $details[0]['wed_hours']; ?>#}
+        {#</span>#}
+        {#<?php }#}
+        {#if($thu){ ?>#}
+        {#<span>Thu:</span>#}
+        {#<span>#}
+        {#<?php echo $details[0]['thur_hours']; ?>#}
+        {#</span>#}
+        {#<?php }#}
+        {#if($fri){ ?>#}
+        {#<span>Fri:</span>#}
+        {#<span>#}
+        {#<?php echo $details[0]['fri_hours'];?>#}
+        {#</span>#}
+        {#<?php }#}
+        {#if($sat){ ?>#}
+        {#<span>Sat:</span>#}
+        {#<span>#}
+        {#<?php echo $details[0]['sat_hours']; ?>#}
+        {#</span>#}
+        {#<?php }#}
+        {#if($sun){ ?>#}
+        {#<span>Sun:</span>#}
+        {#<span>#}
+        {#<?php echo $details[0]['sun_hours']; ?>#}
+        {#</span>#}
+        {#<?php } ?>#}
+        {#<p>*Please note office hours are subject to change.</p>#}
+        {#</div>#}
+        {#</div>#}
+        {#</div>#}
+
+
+
+    </div>
 {% endblock %}
 
 

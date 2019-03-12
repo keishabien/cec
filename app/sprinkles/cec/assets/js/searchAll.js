@@ -6,6 +6,8 @@
  *
  * Target page: all - search function
  */
+
+
 $(document).ready(function () {
     /**
      * If there is a redirect parameter in the query string, redirect to that page.
@@ -43,6 +45,10 @@ $(document).ready(function () {
     }).on("submitError.ufForm", function (event, data, textStatus, jqXHR) {
         console.log(textStatus);
     });
+
+    $( '#hours' ).click( function () {
+        $( '#hours-menu' ).slideToggle();
+    } );
 
 });
 
