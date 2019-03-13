@@ -65,6 +65,11 @@ class PageController extends SimpleController
         foreach($params['dentist'] as $dentistParams) {
             $data = $dentistTransformer->transform($dentistParams);
             $dentistValidator = new ServerSideValidator($dentistSchema, $this->ci->translator);
+
+            Debug::debug("var dentist");
+            Debug::debug(print_r($data,true));
+
+
             if (!$dentistValidator->validate($data)) {
                 $ms->addValidationErrors($dentistValidator);
                 Debug::debug("var dentist");

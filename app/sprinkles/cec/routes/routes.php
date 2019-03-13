@@ -13,7 +13,7 @@ $app->group('/intake', function () {
     $this->get('/2', 'UserFrosting\Sprinkle\Cec\Controller\PageController:pageNPIE')
         ->setName('npie');
 
-    $this->post('/npie', 'UserFrosting\Sprinkle\Cec\Controller\PageController:intake')
+    $this->post('/2', 'UserFrosting\Sprinkle\Cec\Controller\PageController:intake')
         ->setName('npie');
 
 

@@ -18,7 +18,7 @@
 
     <div id="alerts-page"></div>
 
-    <form class="form-inline intake" method="post" action="{{ site.uri.public }}/intake/npie">
+    <form class="form-inline intake" method="post" action="{{ site.uri.public }}/intake/2">
 
         {% include "forms/csrf.html.twig" %}
         <div class="office-select">
@@ -289,7 +289,7 @@
 
             msgTarget: $("#alerts-page")
         }).on("submitSuccess.ufForm", function (event, data, textStatus, jqXHR) {
-            window.location.replace(site.uri.public + "/intake/npie");
+            window.location.replace(site.uri.public + "/intake/2");
         }).on("submitError.ufForm", function (event, data, textStatus, jqXHR) {
             console.log(data.responseText);
         });
