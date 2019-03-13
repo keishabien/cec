@@ -13,52 +13,27 @@
         {#</span>#}
         {#</p>#}
         {% if office.mon_hours %}
-        <span>Mon:</span>
-        <span>
-        {{ office.mon_hours }}
-        </span>
+            <p>Mon: {{ office.mon_hours }}</p>
         {% endif %}
-        {#<?php }#}
-        {#if($tue){ ?>#}
-        {#<span>Tue:</span>#}
-        {#<span>#}
-        {#<?php echo $details[0]['tue_hours']; ?>#}
-        {#</span>#}
-        {#<?php }#}
-        {#if($wed){ ?>#}
-        {#<span>Wed:</span>#}
-        {#<span>#}
-        {#<?php echo $details[0]['wed_hours']; ?>#}
-        {#</span>#}
-        {#<?php }#}
-        {#if($thu){ ?>#}
-        {#<span>Thu:</span>#}
-        {#<span>#}
-        {#<?php echo $details[0]['thur_hours']; ?>#}
-        {#</span>#}
-        {#<?php }#}
-        {#if($fri){ ?>#}
-        {#<span>Fri:</span>#}
-        {#<span>#}
-        {#<?php echo $details[0]['fri_hours'];?>#}
-        {#</span>#}
-        {#<?php }#}
-        {#if($sat){ ?>#}
-        {#<span>Sat:</span>#}
-        {#<span>#}
-        {#<?php echo $details[0]['sat_hours']; ?>#}
-        {#</span>#}
-        {#<?php }#}
-        {#if($sun){ ?>#}
-        {#<span>Sun:</span>#}
-        {#<span>#}
-        {#<?php echo $details[0]['sun_hours']; ?>#}
-        {#</span>#}
-        {#<?php } ?>#}
+        {% if office.tue_hours %}
+            <p>Tue: {{ office.tue_hours }}</p>
+        {% endif %}
+        {% if office.wed_hours %}
+            <p>Wed: {{ office.wed_hours }}</p>
+        {% endif %}
+        {% if office.thu_hours %}
+            <p>Thu: {{ office.thu_hours }}</p>
+        {% endif %}
+        {% if office.fri_hours %}
+            <p>Fri: {{ office.fri_hours }}</p>
+        {% endif %}
+        {% if office.sat_hours %}
+            <p>Sat: {{ office.Sat_hours }}</p>
+        {% endif %}
+        {% if office.Sun_hours %}
+            <p>Sun: {{ office.sun_hours }}</p>
+        {% endif %}
         {#<p>*Please note office hours are subject to change.</p>#}
-        {#</div>#}
-        {#</div>#}
-        {#</div>#}
 
 
 
@@ -348,3 +323,10 @@
 
 {% endblock %}
 
+{% block scripts_page %}
+    <script>
+        $('#hours').click(function () {
+            $('#hours-menu').slideToggle();
+        });
+    </script>
+{% endblock %}

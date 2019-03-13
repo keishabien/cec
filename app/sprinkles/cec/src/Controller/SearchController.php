@@ -27,83 +27,6 @@ use UserFrosting\Sprinkle\Cec\Sprunje\CECOfficeSprunje;
 
 class SearchController extends SimpleController
 {
-//    public function pageSearch($request, $response, $args)
-//    {
-//
-////        $keyword = $args['keyword'];
-////
-////
-////        $params = $request->getQueryParams();
-//
-////        $doctor = DoctorDetails::where('name', 'like', '%' . $keyword . '%');
-//
-////        $office = CECOffice::distinct()->where('name', 'like', '%' . $keyword . '%')
-////            ->orWhere('zip', 'like', '%' . $keyword . '%')
-////            ->orderBy('name', "ASC")
-////            ->get();
-//
-//        //if is zip
-////        Debug::debug("if is zip");
-////        Debug::debug(print_r($keyword, true));
-////
-////
-////        if (preg_match('/\d{5}/', $keyword, $matches)) {
-////            $keyword = $matches[0];
-////            Debug::debug("is zip");
-////            Debug::debug(print_r($keyword, true));
-////            $office = CECOffice::distinct()->where('zip', 'like', '%' . $keyword . '%')->get();
-////
-////        } else {
-////            Debug::debug("else");
-////            Debug::debug(print_r($keyword, true));
-////            $office = CECOffice::distinct()->where('name', 'like', '%' . $keyword . '%')->get();
-////
-////        }
-//
-//
-////        if(preg_match("\d{5}", $office)){
-////            $allzips = array();
-////            $ziplat;
-////            $ziplng;
-////            $filename = "https://meritdental.com/cecdb/zipcode.csv";
-////            $file = fopen($filename, "r");
-////            while (($line = fgetcsv($file)) !== FALSE) {
-////                array_push($allzips, $line);
-////            }
-////
-////            $zip = $office;
-////
-////            Debug::debug("in zip");
-////            Debug::debug(print_r($zip, true));
-////
-////
-////
-////            for ($i = 0; $i < count($allzips); $i++) {
-////                if ($allzips[$i][0] === $zip) {
-////                    $ziplat = $allzips[$i][3];
-////                    $ziplng = $allzips[$i][4];
-////
-////                    Debug::debug("if match");
-////                    Debug::debug(print_r($ziplat, true));
-////                    Debug::debug(print_r($ziplng, true));
-////                }
-////            }
-////        }else {
-////            Debug::debug("else is zip");
-////            Debug::debug(print_r($office, true));
-////        }
-//
-//        return $this->ci->view->render($response, 'pages/office-all.html.twig', [
-//            'keyword' => $keyword,
-//            'office' => $office,
-//            'ziplat' => $ziplat,
-//            'ziplng' => $ziplng,
-//            'midwestLogo' => 'https://www.meritdental.com/cecdb/images/midwest-logo.png',
-//            'mondoviLogo' => 'https://www.meritdental.com/cecdb/images/mondovi-logo.png',
-//            'meritLogo' => 'https://www.meritdental.com/cecdb/images/merit-logo.png',
-//            'mountainLogo' => 'https://www.meritdental.com/cecdb/images/mountain-logo.png'
-//        ]);
-//    }
 
 
     /**
@@ -122,8 +45,8 @@ class SearchController extends SimpleController
         Debug::debug("pageList");
 
 
-        Debug::debug("is text");
-        Debug::debug(print_r($keyword, true));
+//        Debug::debug("is text");
+//        Debug::debug(print_r($keyword, true));
         $office = CECOffice::query()
             ->leftJoin('dentist_details', 'dentist_details.office_id', '=', 'office_details.office_id')
             ->where('office_details.name', 'like', '%' . $keyword . '%')
@@ -135,25 +58,15 @@ class SearchController extends SimpleController
         $allOffices = CECOffice::query()->get();
 
         if (preg_match('/\d{5}/', $keyword, $matches)) {
-            $keyword = $matches[0];
-            Debug::debug("is zip");
-            Debug::debug(print_r($keyword, true));
-
-            $allzips = array();
-            $ziplat;
-            $ziplng;
             $filename = "https://meritdental.com/cecdb/zipcode.csv";
             $file = fopen($filename, "r");
             while (($line = fgetcsv($file)) !== FALSE) {
-                array_push($allzips, $line);
+                $allzips[] = $line;
             }
 
             $zip = $matches[0];
-
             Debug::debug("in zip");
             Debug::debug(print_r($zip, true));
-
-
             for ($i = 0; $i < count($allzips); $i++) {
                 if ($allzips[$i][0] === $zip) {
                     $ziplat = $allzips[$i][3];
@@ -188,10 +101,9 @@ class SearchController extends SimpleController
     {
         $params = $args["keyword"];
 
+        $office = CECOffice::where('vanity_url', 'like', '%' . $params . '%')->first();
 
-        $office = CECOffice::distinct()->where('vanity_url', 'like', '%' . $params . '%')->first();
-
-        $doctor = DoctorDetails::distinct()->where('office_id', $office["office_id"])->get();
+        $doctor = DoctorDetails::where('office_id', $office["office_id"])->get();
 
         $name = $office['name'];
         $patterns = array();
@@ -211,10 +123,7 @@ class SearchController extends SimpleController
             'midwestLogo' => 'https://www.meritdental.com/cecdb/images/midwest-logo.png',
             'mondoviLogo' => 'https://www.meritdental.com/cecdb/images/mondovi-logo.png',
             'meritLogo' => 'https://www.meritdental.com/cecdb/images/merit-logo.png',
-            'mountainLogo' => 'https://www.meritdental.com/cecdb/images/mountain-logo.png',
-            "page" => [
-                'keyword' => $keyword
-            ]
+            'mountainLogo' => 'https://www.meritdental.com/cecdb/images/mountain-logo.png'
         ]);
     }
 

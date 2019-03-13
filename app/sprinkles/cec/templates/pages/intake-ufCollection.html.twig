@@ -44,7 +44,7 @@
                         {{else}}
                         <h2 id="dentist[{{ rownum }}][dentist_id]">Dentist {{ math rownum "+" 1 }} Details</h2>
                     {{/ifCond}}
-                        <input type="hidden" name="dentist[{{ rownum }}][dentist_id]" value="{{ math rownum '+' 1 }}">
+                        <input type="hidden" name="dentist_id" value="{{ math rownum '+' 1 }}">
                     </div>
                     <div class="col-xs-2 pull-right">
                         <button type="button" class="btn btn-link btn-trash js-delete-row pull-right" title="Delete"> <i class="fa fa-times"></i> </button>
@@ -55,7 +55,7 @@
                     <div class="col-sm-5">
                         <div class="form-group has-feedback">
                             <label for="dentist[{{ rownum }}][name]" class="control-label">Dentist Full Name</label>
-                            <input type="text" class="form-control customer" name="dentist[{{ rownum }}][name]" id="dentist[{{ rownum }}][name]"
+                            <input type="text" class="form-control customer" name="name" id="dentist[{{ rownum }}][name]"
                                    placeholder="Full Name">
                         </div>
                     </div>
