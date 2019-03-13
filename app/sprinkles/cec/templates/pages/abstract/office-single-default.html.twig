@@ -4,7 +4,7 @@
 {% endblock %}
 
 {% block body_attributes %}
-    class="hold-transition layout-top-nav"
+    class="hold-transition layout-top-nav office-page"
 {% endblock %}
 
 {% block content %}
@@ -23,7 +23,9 @@
                     <section class="row">
                         <div class="col-sm-12">
                             <div id="alerts-page"></div>
-                            <h1 class="page-title">{% block header_title %}{{ block('page_title') }}{% endblock %}</h1>
+                        </div>
+                        <div class="col-sm-12">
+                            <h1 class="page-title fixed-title">{% block header_title %}{{ block('page_title') }}{% endblock %}</h1>
                             {#{% if block('page_description') is not empty %}#}
                             {#<h1>#}
                             {#<small>{% block header_description %}{{ block('page_description') }}{% endblock %}</small>#}
@@ -35,7 +37,7 @@
                         </div>
                     </section>
                 {% endblock %}
-                <section class="row">
+                <section class="row fixed-margin">
                     {% block body_matter %}{% endblock %}
                 </section>
             </div>

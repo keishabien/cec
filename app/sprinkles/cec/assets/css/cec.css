@@ -6,6 +6,11 @@ body {
     color: #575757;
     padding-top: 65px;
 }
+
+body.office-page {
+    padding-top: 50px;
+}
+
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
     font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
@@ -148,8 +153,21 @@ a:hover, a:focus {
     padding: 20px;
     margin-top: 0;
     margin-bottom: 0;
+    position: relative;
+    height: 83px;
 }
-
+.fixed-title {
+    border-top: 15px solid #FFF;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    max-width: 1140px;
+    right: 0;
+    margin: 0 auto;
+}
+.fixed-margin{
+    margin-top: 82px;
+}
 /* bootstrap overrides */
 .form-control {
     border-color: #bbbcbc;
@@ -419,20 +437,30 @@ a:hover, a:focus {
 #hours {
     background: #FFF;
     color: #006a52;
-    padding: 18px;
+    padding: 22px;
+    height: 64px;
     position: absolute;
-    right: 17px;
+    z-index: 6;
+    right: 2px;
     top: 2px;
+    font-size: 18px;
+    letter-spacing: .03em;
+}
+#hours .fa {
+    margin-left: 5px;
 }
 #hours-menu {
     display: none;
     position: absolute;
     z-index: 5;
-    right: 0;
+    top: 96%;
+    right: 2px;
     background: #FFF;
     color: #000;
     font-size: 14px;
     font-weight: normal;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.2);
 }
 
 .title {
