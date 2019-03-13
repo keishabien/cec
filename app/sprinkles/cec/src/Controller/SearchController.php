@@ -58,15 +58,27 @@ class SearchController extends SimpleController
         $allOffices = CECOffice::query()->get();
 
         if (preg_match('/\d{5}/', $keyword, $matches)) {
+//            $keyword = $matches[0];
+//            Debug::debug("is zip");
+//            Debug::debug(print_r($keyword, true));
+//
+//
+//            $ziplat;
+//            $ziplng;
             $filename = "https://meritdental.com/cecdb/zipcode.csv";
             $file = fopen($filename, "r");
             while (($line = fgetcsv($file)) !== FALSE) {
-                $allzips[] = $line;
+                array_push($allzips, $line);
             }
 
+            Debug::debug(print_r($allzips, true));
+
             $zip = $matches[0];
+
             Debug::debug("in zip");
             Debug::debug(print_r($zip, true));
+
+
             for ($i = 0; $i < count($allzips); $i++) {
                 if ($allzips[$i][0] === $zip) {
                     $ziplat = $allzips[$i][3];

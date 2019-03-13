@@ -80,30 +80,23 @@ class PageController extends SimpleController
 //        }
 
 
-
-
         $dentistSchema = new RequestSchema('schema://requests/dentist.yaml');
         $dentistTransformer = new RequestDataTransformer($dentistSchema);
 
 
+        $data = $dentistTransformer->transform($params);
+        Debug::debug("transformed data");
+        Debug::debug(print_r($data, true));
 
-            $data = $dentistTransformer->transform($params);
-            $dentistData[] = $data;
-            Debug::debug("var dentist data");
-            Debug::debug(print_r($dentistData,true));
-
-            $dentistValidator = new ServerSideValidator($dentistSchema, $this->ci->translator);
-            // Add error messages and halt if validation failed
-            if (!$dentistValidator->validate($dentistData)) {
-                $ms->addValidationErrors($dentistValidator);
-                Debug::debug("var dentist");
-                Debug::debug(print_r($data,true));
-                Debug::debug(print_r($dentistValidator->errors()));
-                return $response->withStatus(400);
-            }
-
-
-
+        $dentistValidator = new ServerSideValidator($dentistSchema, $this->ci->translator);
+        // Add error messages and halt if validation failed
+        if (!$dentistValidator->validate($data)) {
+            $ms->addValidationErrors($dentistValidator);
+            Debug::debug("var data");
+            Debug::debug(print_r($data, true));
+            Debug::debug(print_r($dentistValidator->errors()));
+            return $response->withStatus(400);
+        }
 
 
 // All checks passed!
@@ -114,7 +107,7 @@ class PageController extends SimpleController
 
             $intake = new Intake($data);
             Debug::debug("var intake");
-            Debug::debug(print_r($intake,true));
+            Debug::debug(print_r($intake, true));
 
 
 //            $intake->office_id = $data['dentist-full-name'];
@@ -134,7 +127,7 @@ class PageController extends SimpleController
 //            Debug::debug("var data");
 //            Debug::debug(print_r($data,true));
             Debug::debug("var intake");
-            Debug::debug(print_r($intake,true));
+            Debug::debug(print_r($intake, true));
             // Store new user to database
             $intake->save();
 
