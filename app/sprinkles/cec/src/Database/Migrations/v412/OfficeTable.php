@@ -6,7 +6,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Schema\Builder;
 use UserFrosting\System\Bakery\Migration;
 
-class DentistTable extends Migration
+class OfficeTable extends Migration
 {
     public function up()
     {
