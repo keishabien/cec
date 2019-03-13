@@ -130,21 +130,28 @@
                     }
                     return 0;
                 });
-                $(document).ready(function () {
 
-                    for (i = 0; i < 5; i++) {
-                        var valueo = locs[i]['name'];
-                        var office_name = valueo.replace("Dentist Office", " ");
-                        // $('.zip').show().text(locs[i]['distance']+" miles away");
-                        $('.spacing').append('<li>' +
-                            '<div class="col expand">' +
-                            '<img src="https://www.meritdental.com/wp-content/themes/midwest-2016/images/MidwestDental_logo_cec.png">' +
-                            '<p style="padding-bottom: 0; height: 35px;"><strong>' + office_name + '</strong></p>' +
-                            '<p style="padding-bottom: 22px; margin:0; height: 20px;">' + locs[i]['distance'] + ' miles away</p>' +
-                            '<a href="/cec-display/?pageid=' + locs[i]['page_id'] + '&pagetitle=' + locs[i]['page_title'] + '">Office Info</a></div></li>');
+                if(page.ziplat && page.ziplng){
+                    $(document).ready(function () {
+                        $('.zip').show().text(locs[i]['distance']+" miles away");
+                    });
+                }
 
-                    }
-                });
+                // $(document).ready(function () {
+                //
+                //     for (i = 0; i < 5; i++) {
+                //         var valueo = locs[i]['name'];
+                //         var office_name = valueo.replace("Dentist Office", " ");
+                //         // $('.zip').show().text(locs[i]['distance']+" miles away");
+                //         $('.spacing').append('<li>' +
+                //             '<div class="col expand">' +
+                //             '<img src="https://www.meritdental.com/wp-content/themes/midwest-2016/images/MidwestDental_logo_cec.png">' +
+                //             '<p style="padding-bottom: 0; height: 35px;"><strong>' + office_name + '</strong></p>' +
+                //             '<p style="padding-bottom: 22px; margin:0; height: 20px;">' + locs[i]['distance'] + ' miles away</p>' +
+                //             '<a href="/cec-display/?pageid=' + locs[i]['page_id'] + '&pagetitle=' + locs[i]['page_title'] + '">Office Info</a></div></li>');
+                //
+                //     }
+                // });
             });
     </script>
 {% endblock %}
