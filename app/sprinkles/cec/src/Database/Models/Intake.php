@@ -13,7 +13,6 @@ class Intake extends Model
     protected $table = 'cec.dentist_details';
 
     protected $fillable = [
-        'dentist_id',
         'office_id',
         'name',
         'nickname',
@@ -31,6 +30,6 @@ class Intake extends Model
     /**
      * @var bool Enable timestamps for this class.
      */
-    public $timestamps = false;
+    public $timestamps = true;
 
 }
