@@ -38,13 +38,7 @@
             <div class="dentist-section" id="{{rownum}}">
                 <div class="row">
                     <div class="col-xs-10">
-
-                    {{#ifCond rownum 0 }}
-                        <h2 id="dentist[{{ rownum }}][dentist_id]">Dentist Details</h2>
-                        {{else}}
-                        <h2 id="dentist[{{ rownum }}][dentist_id]">Dentist {{ math rownum "+" 1 }} Details</h2>
-                    {{/ifCond}}
-                        <input type="hidden" name="dentist_id" value="{{ math rownum '+' 1 }}">
+                        <h2>Dentist Details</h2>
                     </div>
                     <div class="col-xs-2 pull-right">
                         <button type="button" class="btn btn-link btn-trash js-delete-row pull-right" title="Delete"> <i class="fa fa-times"></i> </button>

@@ -1,10 +1,5 @@
 # Request schema for the intake form
 
-dentist_id:
-  transformations:
-    - escape
-    - trim
-
 name:
   validators:
     required:

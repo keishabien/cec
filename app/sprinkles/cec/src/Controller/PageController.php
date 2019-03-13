@@ -43,14 +43,8 @@ class PageController extends SimpleController
 
     public function intake($request, $response, $args)
     {
-
-        /** @var \UserFrosting\Sprinkle\Core\Alert\AlertStream $ms */
         $ms = $this->ci->alerts;
-
-        /** @var \UserFrosting\Sprinkle\Core\Util\ClassMapper $classMapper */
         $classMapper = $this->ci->classMapper;
-
-        /** @var \UserFrosting\Support\Repository\Repository $config */
         $config = $this->ci->config;
 
         // Get POST parameters: user_name, first_name, last_name, email, password, passwordc, captcha, spiderbro, csrf_token
@@ -65,13 +59,8 @@ class PageController extends SimpleController
         Debug::debug("var location selected");
         Debug::debug(print_r($location, true));
 
-
-
-
         $dentistSchema = new RequestSchema('schema://requests/dentist.yaml');
         $dentistTransformer = new RequestDataTransformer($dentistSchema);
-        $dentistData = [];
-
 
         foreach($params['dentist'] as $dentistParams) {
             $data = $dentistTransformer->transform($dentistParams);
@@ -84,8 +73,6 @@ class PageController extends SimpleController
             }
         }
 
-
-
         // Validate request data
         $validator = new ServerSideValidator($officeSchema, $this->ci->translator);
 
@@ -93,7 +80,7 @@ class PageController extends SimpleController
             $ms->addValidationErrors($validator);
             Debug::debug("var location");
             Debug::debug(print_r($location,true));
-            Debug::debug(print_r($validator->errors()));
+//            Debug::debug(print_r($validator->errors()));
             return $response->withStatus(400);
         }
 
@@ -105,11 +92,6 @@ class PageController extends SimpleController
             //$throttler->logEvent('registration_attempt');
 
             $intake = new Intake($data);
-            Debug::debug("var intake");
-            Debug::debug(print_r($intake, true));
-
-
-//            $intake->office_id = $data['dentist-full-name'];
 //            $intake->dentist_id = $data['dentist-full-name'];
 //            $intake->name = $data['dentist-full-name'];
 //            $intake->nickname = $data['dentist-called-name'];
@@ -122,9 +104,6 @@ class PageController extends SimpleController
 //            $intake->leave_start_date = $data['leave-start-date'];
 //            $intake->leave_end_date = $data['leave-end-date'];
 
-
-//            Debug::debug("var data");
-//            Debug::debug(print_r($data,true));
             Debug::debug("var intake");
             Debug::debug(print_r($intake, true));
             // Store new user to database
