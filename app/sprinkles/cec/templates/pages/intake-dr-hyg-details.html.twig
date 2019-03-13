@@ -30,33 +30,6 @@
             </select>
         </div>
 
-        <div id="member-phones">
-            <label>Phone numbers</label>
-            <table class="table table-striped">
-                <tbody>
-                </tbody>
-            </table>
-        </div>
-
-{% verbatim %}
-<script id="member-phones-row" type="text/x-handlebars-template">
-    <tr class="uf-collection-row">
-        <td>
-            <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-phone fa-fw"></i></span>
-                <input type="hidden" name="phones[{{ rownum }}][id]" value="{{id}}">
-                <input type="text" class="form-control" name="phones[{{ rownum }}][label]" value="{{label}}" placeholder="Label">
-            </div>
-        </td>
-        <td>
-            <input type="text" class="form-control" name="phones[{{ rownum }}][number]" value="{{number}}" placeholder="Number">
-        </td>
-        <td>
-            <button type="button" class="btn btn-link btn-trash js-delete-row pull-right" title="Delete"> <i class="fa fa-trash"></i> </button>
-        </td>
-    </tr>
-</script>
-{% endverbatim %}
 
         <div class="dentist-section">
 
@@ -238,32 +211,21 @@
     </script>
 
     <!-- Include page-specific JS -->
-    {#{{ assets.js('js/intake') | raw }}#}
-    {{ assets.js('js/form-widgets') | raw }}
+    {{ assets.js('js/intake') | raw }}
+    {#{{ assets.js('js/form-widgets') | raw }}#}
     {{ assets.css('css/form-widgets') | raw }}
 
     <script>
         $('.datepicker').datepicker();
-
-        // collection
-        // $('#member-phones').ufCollection({
-        //     useDropdown: false,
-        //     rowTemplate: $('#member-phones-row').html()
-        // });
-
-        $('#member-phones').ufCollection({
-            // addRow: $('.repeat-dentist').click(function () {
-            //     console.log('test');
-            // }),
-            // addRow: true,
-            useDropdown: false,
-            rowTemplate: $('.dentist-section').html()
+        $('body').on('focus', ".datepicker", function () {
+            $(this).datepicker();
         });
+
 
 
         //submit form
         $(".intake").ufForm({
-            validators: page.validators.intake,
+            // validators: page.validators.intake,
             msgTarget: $("#alerts-page")
         }).on("submitSuccess.ufForm", function (event, data, textStatus, jqXHR) {
             window.location.replace(site.uri.public + "/intake/npie");

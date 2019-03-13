@@ -46,9 +46,7 @@ $(document).ready(function () {
         console.log(textStatus);
     });
 
-    $( '#hours' ).click( function () {
-        $( '#hours-menu' ).slideToggle();
-    } );
+
 
 });
 
