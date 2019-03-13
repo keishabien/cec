@@ -6,21 +6,21 @@ $app->get('/', 'UserFrosting\Sprinkle\Cec\Controller\PageController:pageIndex')
 
 // INTAKE FORM
 $app->group('/intake', function () {
-    $this->get('', 'UserFrosting\Sprinkle\Cec\Controller\PageController:pageIntake')
+    $this->get('/1', 'UserFrosting\Sprinkle\Cec\Controller\PageController:pageIntake')
         ->setName('intake');
 
 
-    $this->get('/npie', 'UserFrosting\Sprinkle\Cec\Controller\PageController:pageNPIE')
+    $this->get('/2', 'UserFrosting\Sprinkle\Cec\Controller\PageController:pageNPIE')
         ->setName('npie');
 
     $this->post('/npie', 'UserFrosting\Sprinkle\Cec\Controller\PageController:intake')
         ->setName('npie');
 
 
-    $this->get('/recall', 'UserFrosting\Sprinkle\Cec\Controller\PageController:pageRecall')
+    $this->get('/3', 'UserFrosting\Sprinkle\Cec\Controller\PageController:pageRecall')
         ->setName('npie');
 
 
-    $this->get('/final', 'UserFrosting\Sprinkle\Cec\Controller\PageController:pageFinal')
+    $this->get('/4', 'UserFrosting\Sprinkle\Cec\Controller\PageController:pageFinal')
         ->setName('final');
 });
