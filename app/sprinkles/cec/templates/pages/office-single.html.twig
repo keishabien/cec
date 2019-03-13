@@ -325,8 +325,15 @@
 
 {% block scripts_page %}
     <script>
-        $('#hours').click(function () {
-            $('#hours-menu').slideToggle();
+        $menu = $('#hours-menu');
+        $('#hours').click(function (e) {
+            e.stopPropagation();
+            $($menu).slideToggle();
+        });
+        $('body').click(function () {
+            if($($menu).is(":visible")){
+                $($menu).slideUp();
+            }
         });
     </script>
 {% endblock %}
