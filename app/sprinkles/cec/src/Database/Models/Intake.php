@@ -23,7 +23,9 @@ class Intake extends Model
         'end_date',
         'leave',
         'leave_start_date',
-        'leave_end_date'
+        'leave_end_date',
+        'created_at',
+        'updated_at'
     ];
 
 
@@ -31,5 +33,10 @@ class Intake extends Model
      * @var bool Enable timestamps for this class.
      */
     public $timestamps = true;
+
+    public function offices()
+    {
+        return $this->belongsToMany('App\Office');
+    }
 
 }

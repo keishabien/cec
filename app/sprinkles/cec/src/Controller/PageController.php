@@ -59,70 +59,47 @@ class PageController extends SimpleController
         Debug::debug("var location selected");
         Debug::debug(print_r($location, true));
 
+        // Validate request data
+        $validator = new ServerSideValidator($officeSchema, $this->ci->translator);
+        if (!$validator->validate($location)) {
+            $ms->addValidationErrors($validator);
+            return $response->withStatus(400);
+        }
+
         $dentistSchema = new RequestSchema('schema://requests/dentist.yaml');
         $dentistTransformer = new RequestDataTransformer($dentistSchema);
 
-        foreach($params['dentist'] as $dentistParams) {
+        foreach ($params['dentist'] as $dentistParams) {
             $data = $dentistTransformer->transform($dentistParams);
             $dentistValidator = new ServerSideValidator($dentistSchema, $this->ci->translator);
 
             Debug::debug("var dentist");
-            Debug::debug(print_r($data,true));
+            Debug::debug(print_r($data, true));
 
-
+            $dentistData = [];
             if (!$dentistValidator->validate($data)) {
                 $ms->addValidationErrors($dentistValidator);
-                Debug::debug("var dentist");
-                Debug::debug(print_r($data,true));
+                Debug::debug("no validation");
+                Debug::debug(print_r($data, true));
                 return $response->withStatus(400);
+            }else {
+                $dentistData[] = $data;
             }
         }
-
-        // Validate request data
-        $validator = new ServerSideValidator($officeSchema, $this->ci->translator);
-
-        if (!$validator->validate($location)) {
-            $ms->addValidationErrors($validator);
-            Debug::debug("var location");
-            Debug::debug(print_r($location,true));
-//            Debug::debug(print_r($validator->errors()));
-            return $response->withStatus(400);
-        }
-
-
-// All checks passed!
+        Debug::debug("var dentist");
+        Debug::debug("var dentistData");
+        Debug::debug(print_r($dentistData, true));
+        // All checks passed!
         // Begin transaction - DB will be rolled back if an exception occurs
-        Capsule::transaction(function () use ($classMapper, $data, $ms, $config) {
-            // Log throttleable event
-            //$throttler->logEvent('registration_attempt');
+        Capsule::transaction(function () use ($classMapper, $dentistData, $ms, $config) {
 
-            $intake = new Intake($data);
-//            $intake->dentist_id = $data['dentist-full-name'];
-//            $intake->name = $data['dentist-full-name'];
-//            $intake->nickname = $data['dentist-called-name'];
-//            $intake->provider_num = $data['dentist-provider-num'];
-//            $intake->emergency_num = $data['dentist-emer-num'];
-//            $intake->locum = $data['locum-radio'];
-//            $intake->start_date = $data['dentist-start-date'];
-//            $intake->end_date = $data['dentist-end-date'];
-//            $intake->leave = $data['leave-radio'];
-//            $intake->leave_start_date = $data['leave-start-date'];
-//            $intake->leave_end_date = $data['leave-end-date'];
+            $intake = new Intake($dentistData);
 
             Debug::debug("var intake");
             Debug::debug(print_r($intake, true));
             // Store new user to database
             $intake->save();
-
-            // Create activity record
-//            $this->ci->userActivityLogger->info("User {$user->user_name} registered for a new account.", [
-//                'type' => 'sign_up',
-//                'user_id' => $user->id
-//            ]);
-//            $ms->addMessageTranslated('success', 'OFFICE.COMPLETE');
-
         });
-
         return $response->withStatus(200);
     }
 
