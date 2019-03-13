@@ -68,37 +68,56 @@ class PageController extends SimpleController
 
         $dentistSchema = new RequestSchema('schema://requests/dentist.yaml');
         $dentistTransformer = new RequestDataTransformer($dentistSchema);
+        $dentistData = [];
 
-        foreach ($params['dentist'] as $dentistParams) {
+//        foreach ($params['dentist'] as $dentistParams) {
+//            $data = $dentistTransformer->transform($dentistParams);
+//            $dentistValidator = new ServerSideValidator($dentistSchema, $this->ci->translator);
+//
+//            Debug::debug("var dentist");
+//            Debug::debug(print_r($data, true));
+//
+//
+//            if (!$dentistValidator->validate($data)) {
+//                $ms->addValidationErrors($dentistValidator);
+//                Debug::debug("no validation");
+//                Debug::debug(print_r($data, true));
+//                return $response->withStatus(400);
+//            }else {
+//                $dentistData[] = $data;
+//            }
+//        }
+
+        foreach($params['dentist'] as $dentistParams) {
             $data = $dentistTransformer->transform($dentistParams);
             $dentistValidator = new ServerSideValidator($dentistSchema, $this->ci->translator);
-
             Debug::debug("var dentist");
-            Debug::debug(print_r($data, true));
-
-            $dentistData = [];
+            Debug::debug(print_r($data,true));
             if (!$dentistValidator->validate($data)) {
                 $ms->addValidationErrors($dentistValidator);
-                Debug::debug("no validation");
-                Debug::debug(print_r($data, true));
+                Debug::debug("not valid");
+                Debug::debug(print_r($data,true));
                 return $response->withStatus(400);
-            }else {
-                $dentistData[] = $data;
             }
+            $data["office_id"] = $location["office_id"];
+            $dentistData[] = $data;
         }
-        Debug::debug("var dentist");
+        // Validate request data
+
         Debug::debug("var dentistData");
         Debug::debug(print_r($dentistData, true));
         // All checks passed!
         // Begin transaction - DB will be rolled back if an exception occurs
         Capsule::transaction(function () use ($classMapper, $dentistData, $ms, $config) {
 
-            $intake = new Intake($dentistData);
+            foreach($dentistData as $dentist){
+                $intake = new Intake($dentist);
+                Debug::debug("var intake");
+                Debug::debug(print_r($intake, true));
+                // Store new user to database
+                $intake->save();
+            }
 
-            Debug::debug("var intake");
-            Debug::debug(print_r($intake, true));
-            // Store new user to database
-            $intake->save();
         });
         return $response->withStatus(200);
     }

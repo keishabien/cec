@@ -23,9 +23,7 @@ class Intake extends Model
         'end_date',
         'leave',
         'leave_start_date',
-        'leave_end_date',
-        'created_at',
-        'updated_at'
+        'leave_end_date'
     ];
 
 
