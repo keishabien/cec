@@ -36,7 +36,7 @@ class PageController extends SimpleController
         $offices = CECOffice::distinct()->where('name', 'like', '% Dentist Office')->orderBy('name', 'ASC')->get();
 //            SELECT distinct page_title, page_id FROM office_details where page_title like "% Dentist Office" ORDER BY page_title
 
-        return $this->ci->view->render($response, 'pages/intake-dr-hyg-details.html.twig', [
+        return $this->ci->view->render($response, 'pages/intake-ufCollection.html.twig', [
             'offices' => $offices
         ]);
     }
@@ -58,43 +58,42 @@ class PageController extends SimpleController
         Debug::debug("var params 1");
         Debug::debug(print_r($params, true));
 
-        $error = false;
+        $officeSchema = new RequestSchema('schema://requests/office.yaml');
+        $officeTransformer = new RequestDataTransformer($officeSchema);
+        $location = $officeTransformer->transform($params);
 
-//        $officeSchema = new RequestSchema('schema://requests/office.yaml');
-//        $officeTransformer = new RequestDataTransformer($officeSchema);
-//        $location = $officeTransformer->transform($params);
-//
-//        Debug::debug("var location selected");
-//        Debug::debug(print_r($location, true));
+        Debug::debug("var location selected");
+        Debug::debug(print_r($location, true));
 
 
-        // Validate request data
-//        $validator = new ServerSideValidator($officeSchema, $this->ci->translator);
-//
-//        if (!$validator->validate($location)) {
-//            $ms->addValidationErrors($validator);
-//            Debug::debug("var location");
-//            Debug::debug(print_r($location,true));
-//            Debug::debug(print_r($validator->errors()));
-//            return $response->withStatus(400);
-//        }
 
 
         $dentistSchema = new RequestSchema('schema://requests/dentist.yaml');
         $dentistTransformer = new RequestDataTransformer($dentistSchema);
+        $dentistData = [];
 
 
-        $data = $dentistTransformer->transform($params);
-        Debug::debug("transformed data");
-        Debug::debug(print_r($data, true));
+        foreach($params['dentist'] as $dentistParams) {
+            $data = $dentistTransformer->transform($dentistParams);
+            $dentistValidator = new ServerSideValidator($dentistSchema, $this->ci->translator);
+            if (!$dentistValidator->validate($data)) {
+                $ms->addValidationErrors($dentistValidator);
+                Debug::debug("var dentist");
+                Debug::debug(print_r($data,true));
+                return $response->withStatus(400);
+            }
+        }
 
-        $dentistValidator = new ServerSideValidator($dentistSchema, $this->ci->translator);
-        // Add error messages and halt if validation failed
-        if (!$dentistValidator->validate($data)) {
-            $ms->addValidationErrors($dentistValidator);
-            Debug::debug("var data");
-            Debug::debug(print_r($data, true));
-            Debug::debug(print_r($dentistValidator->errors()));
+
+
+        // Validate request data
+        $validator = new ServerSideValidator($officeSchema, $this->ci->translator);
+
+        if (!$validator->validate($location)) {
+            $ms->addValidationErrors($validator);
+            Debug::debug("var location");
+            Debug::debug(print_r($location,true));
+            Debug::debug(print_r($validator->errors()));
             return $response->withStatus(400);
         }
 
