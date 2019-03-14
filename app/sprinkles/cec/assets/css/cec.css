@@ -154,7 +154,6 @@ a:hover, a:focus {
     margin-top: 0;
     margin-bottom: 0;
     position: relative;
-    height: 83px;
 }
 .fixed-title {
     border-top: 15px solid #FFF;
@@ -164,6 +163,7 @@ a:hover, a:focus {
     max-width: 1140px;
     right: 0;
     margin: 0 auto;
+    height: 83px;
 }
 .fixed-margin{
     margin-top: 82px;
@@ -366,7 +366,7 @@ a:hover, a:focus {
     border-radius: 0 !important;
 }
 .office-select {
-    margin: 5px 0 15px;
+    margin: 15px 0 15px;
 }
 
 
