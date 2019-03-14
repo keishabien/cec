@@ -9,12 +9,12 @@ $app->group('/intake', function () {
     $this->get('/1', 'UserFrosting\Sprinkle\Cec\Controller\PageController:pageIntake')
         ->setName('intake');
 
-
+    $this->post('/2', 'UserFrosting\Sprinkle\Cec\Controller\PageController:intake')
+        ->setName('npie');
     $this->get('/2', 'UserFrosting\Sprinkle\Cec\Controller\PageController:pageNPIE')
         ->setName('npie');
 
-    $this->post('/2', 'UserFrosting\Sprinkle\Cec\Controller\PageController:intake')
-        ->setName('npie');
+
 
 
     $this->get('/3', 'UserFrosting\Sprinkle\Cec\Controller\PageController:pageRecall')
