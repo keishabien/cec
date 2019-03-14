@@ -295,7 +295,9 @@
             validator: page.validators.office
         }).on("submitSuccess.ufForm", function (event, data, textStatus, jqXHR) {
             // window.location.replace(site.uri.public + "/intake/2");
+            console.log("success. jqXHR: " + JSON.stringify(jqXHR));
             console.log("success. data: " + JSON.stringify(data));
+            console.log("success. textStatus: " + JSON.stringify(textStatus));
         }).on("submitError.ufForm", function (event, data, textStatus, jqXHR) {
             console.log(data.responseText);
         });

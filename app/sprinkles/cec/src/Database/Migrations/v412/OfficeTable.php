@@ -16,8 +16,8 @@ class OfficeTable extends Migration
                 $table->string('page_id', 25)->nullable();
                 $table->string('name', 512)->nullable();
                 $table->string('phone', 255)->nullable();
-                $table->string('fax', 2)->nullable();
-                $table->string('masking_number', 250)->nullable();
+                $table->string('fax', 255)->nullable();
+                $table->string('masking_number', 255)->nullable();
                 $table->string('extension', 50)->nullable();
                 $table->string('address', 255)->nullable();
                 $table->string('city', 255)->nullable();

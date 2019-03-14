@@ -13,7 +13,7 @@ class CNPIETable extends Migration
         if (!$this->schema->hasTable('cnpie_details')) {
             $this->schema->create('cnpie_details', function (Blueprint $table) {
                 $table->increments('id');
-                $table->integer('office_id')->unsigned()->unique();
+                $table->integer('office_id')->unsigned();
                 $table->string('age_range', 255)->nullable();
                 $table->string('chair', 255)->nullable();
                 $table->string('dr_units', 255)->nullable();

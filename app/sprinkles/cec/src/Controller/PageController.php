@@ -136,11 +136,7 @@ class PageController extends SimpleController
             }
 
         });
-//        return $response->withStatus(200);
-        return $this->ci->view->render($response->withStatus(200), 'pages/intake/page1.html.twig', [
-            'dData' => $dentistData
-        ]);
-
+        return $response->withStatus(200);
     }
 
     public function pageNPIE($request, $response, $args)
