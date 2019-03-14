@@ -16,9 +16,8 @@ use UserFrosting\Support\Exception\HttpException;
 use UserFrosting\Sprinkle\Core\Facades\Debug;
 
 use UserFrosting\Sprinkle\Cec\Database\Models\Search;
-use UserFrosting\Sprinkle\Cec\Database\Models\CECOffice;
 use UserFrosting\Sprinkle\Cec\Database\Models\Office;
-use UserFrosting\Sprinkle\Cec\Database\Models\Intake;
+use UserFrosting\Sprinkle\Cec\Database\Models\DentistDetails;
 use UserFrosting\Sprinkle\Cec\Sprunje\OfficeSprunje;
 use UserFrosting\Sprinkle\Cec\Sprunje\SearchSprunje;
 
@@ -47,7 +46,7 @@ class SearchController extends SimpleController
 
 //        Debug::debug("is text");
 //        Debug::debug(print_r($keyword, true));
-        $office = CECOffice::query()
+        $office = Office::query()
             ->leftJoin('dentist_details', 'dentist_details.office_id', '=', 'office_details.office_id')
             ->where('office_details.name', 'like', '%' . $keyword . '%')
             ->orWhere('dentist_details.name', 'like', '%' . $keyword . '%')
@@ -55,7 +54,7 @@ class SearchController extends SimpleController
             ->distinct()->get();
 
 
-        $allOffices = CECOffice::query()->get();
+        $allOffices = Office::query()->get();
 
         if (preg_match('/\d{5}/', $keyword, $matches)) {
 //            $keyword = $matches[0];
@@ -113,9 +112,9 @@ class SearchController extends SimpleController
     {
         $params = $args["keyword"];
 
-        $office = CECOffice::where('vanity_url', 'like', '%' . $params . '%')->first();
+        $office = Office::where('vanity_url', 'like', '%' . $params . '%')->first();
 
-        $doctor = Intake::where('office_id', $office["office_id"])->get();
+        $doctor = DentistDetails::where('office_id', $office["office_id"])->get();
 
         $name = $office['name'];
         $patterns = array();
@@ -176,12 +175,12 @@ class SearchController extends SimpleController
             $input = $matches[0];
             Debug::debug("is zip");
             Debug::debug(print_r($input, true));
-            $office = CECOffice::distinct()->where('zip', $input)->get();
+            $office = Office::distinct()->where('zip', $input)->get();
 
         } else {
             Debug::debug("else");
             Debug::debug(print_r($input, true));
-            $office = CECOffice::distinct()->where('name', 'like', '%' . $input . '%')->get();
+            $office = Office::distinct()->where('name', 'like', '%' . $input . '%')->get();
 
         }
 
@@ -274,7 +273,7 @@ class SearchController extends SimpleController
 //        $classMapper = $this->ci->classMapper;
 
         // Get the user to delete
-//        $office = $classMapper->staticMethod('CECOffice', 'where', 'name', $data['input'])
+//        $office = $classMapper->staticMethod('Office', 'where', 'name', $data['input'])
 //            ->first();
 
 

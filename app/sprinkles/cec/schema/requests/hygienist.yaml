@@ -1,0 +1,23 @@
+# Request schema for the intake form
+
+name:
+  validators:
+    required:
+      message: Please enter a hygienist name.
+    length:
+      label: Hygienist Full Name
+      min: 1
+      max: 50
+      message: "Hygienist name must be between {{min}} and {{max}} characters."
+  transformations:
+    - purge
+    - trim
+
+provider_num:
+  validators:
+    regex:
+      regex: ^\d{6}$
+      message: "Please enter only 6 numbers."
+    required:
+      label: Hygienist Provider Number
+      message: "Please provide a hygienist provider number."
