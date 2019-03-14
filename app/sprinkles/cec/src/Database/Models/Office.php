@@ -10,16 +10,26 @@ class Office extends Model
     /**
      * @var string The name of the table for the current model.
      */
-//    protected $table = 'midwest_wrdp1.office_details';
     protected $table = 'cec.office_details';
 
-//    protected $fillable = [
-//        'page_title',
-//        'state'
-//    ];
+    protected $fillable = [
+        'dentist_id',
+        'office_id',
+        'name',
+        'nickname',
+        'provider_num',
+        'emergency_num',
+        'locum',
+        'start_date',
+        'end_date',
+        'leave',
+        'leave_start_date',
+        'leave_end_date',
+        'created_at'
+    ];
     /**
      * @var bool Enable timestamps for this class.
      */
-    public $timestamps = false;
+    public $timestamps = true;
 
 }

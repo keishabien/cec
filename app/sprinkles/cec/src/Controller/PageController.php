@@ -3,11 +3,11 @@
 namespace UserFrosting\Sprinkle\Cec\Controller;
 
 use Illuminate\Database\Capsule\Manager as Capsule;
+use UserFrosting\Sprinkle\Cec\Database\Models\HygienistDetails;
 use UserFrosting\Sprinkle\Core\Controller\SimpleController;
 use UserFrosting\Fortress\RequestSchema;
 use UserFrosting\Sprinkle\Cec\Database\Models\Office;
-use UserFrosting\Sprinkle\Cec\Database\Models\CECOffice;
-use UserFrosting\Sprinkle\Cec\Database\Models\Intake;
+use UserFrosting\Sprinkle\Cec\Database\Models\DentistDetails;
 use UserFrosting\Fortress\Adapter\JqueryValidationAdapter;
 use UserFrosting\Fortress\RequestDataTransformer;
 use UserFrosting\Fortress\ServerSideValidator;
@@ -33,7 +33,7 @@ class PageController extends SimpleController
         $schema = new RequestSchema('schema://requests/intake-form.yaml');
         $validator = new JqueryValidationAdapter($schema, $this->ci->translator);
 
-        $offices = CECOffice::distinct()->where('name', 'like', '% Dentist Office')->orderBy('name', 'ASC')->get();
+        $offices = Office::distinct()->where('name', 'like', '% Dentist Office')->orderBy('name', 'ASC')->get();
 //            SELECT distinct page_title, page_id FROM office_details where page_title like "% Dentist Office" ORDER BY page_title
 
         return $this->ci->view->render($response, 'pages/intake-ufCollection.html.twig', [
@@ -55,11 +55,9 @@ class PageController extends SimpleController
         $officeSchema = new RequestSchema('schema://requests/office.yaml');
         $officeTransformer = new RequestDataTransformer($officeSchema);
         $location = $officeTransformer->transform($params);
-
         Debug::debug("var location selected");
         Debug::debug(print_r($location, true));
 
-        // Validate request data
         $validator = new ServerSideValidator($officeSchema, $this->ci->translator);
         if (!$validator->validate($location)) {
             $ms->addValidationErrors($validator);
@@ -70,48 +68,60 @@ class PageController extends SimpleController
         $dentistTransformer = new RequestDataTransformer($dentistSchema);
         $dentistData = [];
 
-//        foreach ($params['dentist'] as $dentistParams) {
-//            $data = $dentistTransformer->transform($dentistParams);
-//            $dentistValidator = new ServerSideValidator($dentistSchema, $this->ci->translator);
-//
-//            Debug::debug("var dentist");
-//            Debug::debug(print_r($data, true));
-//
-//
-//            if (!$dentistValidator->validate($data)) {
-//                $ms->addValidationErrors($dentistValidator);
-//                Debug::debug("no validation");
-//                Debug::debug(print_r($data, true));
-//                return $response->withStatus(400);
-//            }else {
-//                $dentistData[] = $data;
-//            }
-//        }
-
         foreach($params['dentist'] as $dentistParams) {
-            $data = $dentistTransformer->transform($dentistParams);
+            $dData = $dentistTransformer->transform($dentistParams);
             $dentistValidator = new ServerSideValidator($dentistSchema, $this->ci->translator);
             Debug::debug("var dentist");
-            Debug::debug(print_r($data,true));
-            if (!$dentistValidator->validate($data)) {
+            Debug::debug(print_r($dData,true));
+            if (!$dentistValidator->validate($dData)) {
                 $ms->addValidationErrors($dentistValidator);
                 Debug::debug("not valid");
-                Debug::debug(print_r($data,true));
+                Debug::debug(print_r($dData,true));
                 return $response->withStatus(400);
             }
-            $data["office_id"] = $location["office_id"];
-            $dentistData[] = $data;
+            $dData["office_id"] = $location["office_id"];
+            $dentistData[] = $dData;
         }
-        // Validate request data
-
         Debug::debug("var dentistData");
         Debug::debug(print_r($dentistData, true));
+
+
+        $hygienistSchema = new RequestSchema('schema://requests/hygienist.yaml');
+        $hygienistTransformer = new RequestDataTransformer($hygienistSchema);
+        $hygienistData = [];
+
+        foreach($params['hygienist'] as $hygienistParams) {
+            $hData = $hygienistTransformer->transform($hygienistParams);
+            $hygienistValidator = new ServerSideValidator($hygienistSchema, $this->ci->translator);
+            Debug::debug("var hygienist");
+            Debug::debug(print_r($hData,true));
+            if (!$hygienistValidator->validate($hData)) {
+                $ms->addValidationErrors($hygienistValidator);
+                Debug::debug("not valid");
+                Debug::debug(print_r($hData,true));
+                return $response->withStatus(400);
+            }
+            $hData["office_id"] = $location["office_id"];
+            $hygienistData[] = $hData;
+        }
+        Debug::debug("var hygienistData");
+        Debug::debug(print_r($hygienistData, true));
+
+
         // All checks passed!
         // Begin transaction - DB will be rolled back if an exception occurs
-        Capsule::transaction(function () use ($classMapper, $dentistData, $ms, $config) {
+        Capsule::transaction(function () use ($classMapper, $dentistData, $hygienistData, $ms, $config) {
 
             foreach($dentistData as $dentist){
-                $intake = new Intake($dentist);
+                $intake = new DentistDetails($dentist);
+                Debug::debug("var intake");
+                Debug::debug(print_r($intake, true));
+                // Store new user to database
+                $intake->save();
+            }
+
+            foreach($hygienistData as $hygienist){
+                $intake = new HygienistDetails($hygienist);
                 Debug::debug("var intake");
                 Debug::debug(print_r($intake, true));
                 // Store new user to database
@@ -134,7 +144,7 @@ class PageController extends SimpleController
 // Whitelist and set parameter defaults
         $validator = new JqueryValidationAdapter($schema, $this->ci->translator);
 
-        $offices = CECOffice::distinct()->where('name', 'like', '% Dentist Office')->orderBy('name', 'ASC')->get();
+        $offices = Office::distinct()->where('name', 'like', '% Dentist Office')->orderBy('name', 'ASC')->get();
 //            SELECT distinct page_title, page_id FROM office_details where page_title like "% Dentist Office" ORDER BY page_title
 
         $rules = $validator->rules();
@@ -155,7 +165,7 @@ class PageController extends SimpleController
     {
         $schema = new RequestSchema('schema://requests/intake-form.yaml');
 
-        $offices = CECOffice::distinct()->where('name', 'like', '% Dentist Office')->orderBy('name', 'ASC')->get();
+        $offices = Office::distinct()->where('name', 'like', '% Dentist Office')->orderBy('name', 'ASC')->get();
 //            SELECT distinct page_title, page_id FROM office_details where page_title like "% Dentist Office" ORDER BY page_title
 
         return $this->ci->view->render($response, 'pages/intake-recall.html.twig', [
@@ -167,7 +177,7 @@ class PageController extends SimpleController
     {
         $schema = new RequestSchema('schema://requests/intake-form.yaml');
 
-        $offices = CECOffice::distinct()->where('name', 'like', '% Dentist Office')->orderBy('name', 'ASC')->get();
+        $offices = Office::distinct()->where('name', 'like', '% Dentist Office')->orderBy('name', 'ASC')->get();
 //            SELECT distinct page_title, page_id FROM office_details where page_title like "% Dentist Office" ORDER BY page_title
 
         return $this->ci->view->render($response, 'pages/intake-final.html.twig', [

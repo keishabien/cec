@@ -192,7 +192,7 @@
         </div>
 
         <div class="dentist-button-row">
-            <a class="btn btn-default repeat-dentist pull-right"><i class="fa fa-plus"></i> Add Dentist</a><br>
+            <a class="btn btn-default repeat-div pull-right"><i class="fa fa-plus"></i> Add Dentist</a><br>
         </div>
 
         {#<div class="hygienist-section">#}
@@ -211,8 +211,55 @@
 
         {#</div>#}
 
+        {% verbatim %}
+<script id="hygienist-details-row" type="text/x-handlebars-template">
+    <tr class="uf-collection-row">
+         <td>
+            <div class="hygienist-section" id="{{rownum}}">
+                <div class="row">
+                    <div class="col-xs-10">
+                        <h2>Hygienist Details</h2>
+                    </div>
+                    <div class="col-xs-2 pull-right">
+                        <button type="button" class="btn btn-link btn-trash js-delete-row pull-right" title="Delete"> <i class="fa fa-times"></i> </button>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-5">
+                        <div class="form-group has-feedback">
+                            <label for="hygienist[{{ rownum }}][name]" class="control-label">Hygienist Full Name</label>
+                            <input type="text" class="form-control customer" name="hygienist[{{ rownum }}][name]" id="hygienist[{{ rownum }}][name]"
+                                   placeholder="Full Name">
+                        </div>
+                    </div>
+
+                    <div class="col-sm-7">
+                        <div class="form-group has-feedback">
+                            <label for="hygienist[{{ rownum }}][provider_num]" class="control-label">DentalVision Provider Number (6
+                                digits)
+                            </label>
+                            <input type="text" class="form-control" id="hygienist[{{ rownum }}][provider_num]" placeholder="000000"
+                                   name="hygienist[{{ rownum }}][provider_num]">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </td>
+    </tr>
+</script>
+{% endverbatim %}
+
+        <div id="hygienist-div">
+            <table class="table">
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+
         <div class="hygienist-button-row">
-            <a class="btn btn-default repeat-hygienist pull-right"><i class="fa fa-plus"></i> Add Hygienist</a><br>
+            <a class="btn btn-default repeat-div pull-right"><i class="fa fa-plus"></i> Add Hygienist</a><br>
         </div>
         <button type="submit" class="btn btn-orange  pull-right">Next <i class="fa fa-chevron-right"></i></button>
     </form>
@@ -245,42 +292,19 @@
             $(this).datepicker();
         });
 
-        function recountSection(elem, rowNum) {
-            var div = $(elem).next().find("uf-collection-row");
-            console.log(div);
-                // if ($(".uf-collection-row:gt(0)")) {
-                //     $(".dentist-section").each(function (rowNum) {
-                //     r = rowNum + 1;
-                //     $(this).find('h2').attr('id', function (r, val) {
-                //         // val = val.substr(0, val.lastIndexOf('-'));
-                //         console.log("val: "+val);
-                //         val = val.substr(0, val.indexOf("["));
-                //         console.log("val2: "+val);
-                //         return val + "-" + r;
-                //     }).html("Dentist " + r + " Details");
-
-                    // $(this).find(':input').attr('id', function (j, val) {
-                    //     val = val.substr(0, val.lastIndexOf('-'));
-                    //     return val + "-" + i;
-                    // });
-                    //
-                    // $(this).find('label').attr('for', function (j, val) {
-                    //     val = val.substr(0, val.lastIndexOf('-'));
-                    //     return val + "-" + i;
-                    // });
-
-                // })
-            // }
-        }
 
         // Collections
-        $('.repeat-dentist').click(function () {
-            $('#dentist-div').ufCollection('addRow');
+        $('.repeat-div').click(function () {
+            $(this).parent().prev().ufCollection('addRow');
         });
 
         $('#dentist-div').ufCollection({
             useDropdown: false,
             rowTemplate: $('#dentist-details-row').html()
+        });
+        $('#hygienist-div').ufCollection({
+            useDropdown: false,
+            rowTemplate: $('#hygienist-details-row').html()
         });
 
 
