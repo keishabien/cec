@@ -312,7 +312,8 @@
         $(".intake").ufForm({
             msgTarget: $("#alerts-page")
         }).on("submitSuccess.ufForm", function (event, data, textStatus, jqXHR) {
-            window.location.replace(site.uri.public + "/intake/2");
+            // window.location.replace(site.uri.public + "/intake/2");
+            console.log("success. data: " + JSON.stringify(data));
         }).on("submitError.ufForm", function (event, data, textStatus, jqXHR) {
             console.log(data.responseText);
         });

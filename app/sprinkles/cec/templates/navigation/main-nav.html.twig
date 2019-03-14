@@ -34,8 +34,10 @@
             <!-- Navbar Right Menu -->
             <div class="navbar-custom-menu navbar-right">
                 <ul class="nav navbar-nav">
+                    {% if checkAuthenticated() %}
                     <li><a href="{{ site.uri.public }}">Home</a></li>
                     <li><a href="{{ site.uri.public }}/offices">Offices</a></li>
+                    {% endif %}
                     <li><a href="{{ site.uri.public }}/intake/1">Intake Form</a></li>
 
                     {% block secondary_nav %}
