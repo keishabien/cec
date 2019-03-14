@@ -13,7 +13,7 @@ class HygienistTable extends Migration
         if (!$this->schema->hasTable('hygienist_details')) {
             $this->schema->create('hygienist_details', function (Blueprint $table) {
                 $table->increments('id');
-                $table->integer('office_id')->unsigned()->unique();
+                $table->integer('office_id')->unsigned();
                 $table->string('name', 255)->nullable();
                 $table->string('provider_num', 255)->nullable();
                 $table->timestamps();

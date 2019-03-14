@@ -13,7 +13,7 @@ class ARecallTable extends Migration
         if (!$this->schema->hasTable('arecall_details')) {
             $this->schema->create('arecall_details', function (Blueprint $table) {
                 $table->increments('id');
-                $table->integer('office_id')->unsigned()->unique();
+                $table->integer('office_id')->unsigned();
                 $table->string('no_plan_units', 255)->nullable();
                 $table->string('record_duration', 255)->nullable();
                 $table->string('srp_cleaning', 255)->nullable();
