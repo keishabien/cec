@@ -18,7 +18,7 @@ use UserFrosting\Sprinkle\Core\Facades\Debug;
 use UserFrosting\Sprinkle\Cec\Database\Models\Search;
 use UserFrosting\Sprinkle\Cec\Database\Models\CECOffice;
 use UserFrosting\Sprinkle\Cec\Database\Models\Office;
-use UserFrosting\Sprinkle\Cec\Database\Models\DoctorDetails;
+use UserFrosting\Sprinkle\Cec\Database\Models\Intake;
 use UserFrosting\Sprinkle\Cec\Sprunje\OfficeSprunje;
 use UserFrosting\Sprinkle\Cec\Sprunje\SearchSprunje;
 
@@ -115,7 +115,7 @@ class SearchController extends SimpleController
 
         $office = CECOffice::where('vanity_url', 'like', '%' . $params . '%')->first();
 
-        $doctor = DoctorDetails::where('office_id', $office["office_id"])->get();
+        $doctor = Intake::where('office_id', $office["office_id"])->get();
 
         $name = $office['name'];
         $patterns = array();
