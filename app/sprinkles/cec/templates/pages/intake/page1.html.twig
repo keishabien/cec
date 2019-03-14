@@ -14,9 +14,7 @@
 {% endblock %}
 
 {% block body_matter %}
-    {#<h1>Welcome to the CEC Support App</h1>#}
-
-    <div id="alerts-page"></div>
+<div id="alerts-page"></div>
 
     <form class="form-inline intake" method="post" action="{{ site.uri.public }}/intake/2">
 
@@ -195,22 +193,6 @@
             <a class="btn btn-default repeat-div pull-right"><i class="fa fa-plus"></i> Add Dentist</a><br>
         </div>
 
-        {#<div class="hygienist-section">#}
-        {#<h2 id="hygienist-details">Hygienist 1 Details</h2>#}
-        {#<div class="row">#}
-        {#<div class="form-group col-sm-5">#}
-        {#<label for="hygienist-name" class="control-label">Hygienist Full Name</label>#}
-        {#<input type="text" class="form-control" id="hygienist-name" name="hygienist-name" placeholder="Full Name">#}
-        {#</div>#}
-
-        {#<div class="form-group col-sm-7">#}
-        {#<label for="hygienist-provider-num" class="control-label">DentalVision Provider Number (6 digits)</label>#}
-        {#<input type="text" class="form-control" id="hygienist-provider-num" name="hygienist-provider-num" placeholder="000000">#}
-        {#</div>#}
-        {#</div>#}
-
-        {#</div>#}
-
         {% verbatim %}
 <script id="hygienist-details-row" type="text/x-handlebars-template">
     <tr class="uf-collection-row">
@@ -263,7 +245,6 @@
         </div>
         <button type="submit" class="btn btn-orange  pull-right">Next <i class="fa fa-chevron-right"></i></button>
     </form>
-    {#<a class="btn btn-orange  pull-right" href="{{ site.uri.public }}/intake/npie">Next ></a>#}
 
 
 {% endblock %}
@@ -310,7 +291,8 @@
 
         //submit form
         $(".intake").ufForm({
-            msgTarget: $("#alerts-page")
+            msgTarget: $("#alerts-page"),
+            validator: page.validators.office
         }).on("submitSuccess.ufForm", function (event, data, textStatus, jqXHR) {
             // window.location.replace(site.uri.public + "/intake/2");
             console.log("success. data: " + JSON.stringify(data));
