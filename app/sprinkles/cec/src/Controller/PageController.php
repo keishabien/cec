@@ -3,15 +3,16 @@
 namespace UserFrosting\Sprinkle\Cec\Controller;
 
 use Illuminate\Database\Capsule\Manager as Capsule;
-use UserFrosting\Sprinkle\Cec\Database\Models\HygienistDetails;
 use UserFrosting\Sprinkle\Core\Controller\SimpleController;
-use UserFrosting\Fortress\RequestSchema;
+use UserFrosting\Sprinkle\Core\Facades\Debug;
 use UserFrosting\Sprinkle\Cec\Database\Models\Office;
 use UserFrosting\Sprinkle\Cec\Database\Models\DentistDetails;
+use UserFrosting\Sprinkle\Cec\Database\Models\HygienistDetails;
 use UserFrosting\Fortress\Adapter\JqueryValidationAdapter;
+use UserFrosting\Fortress\RequestSchema;
 use UserFrosting\Fortress\RequestDataTransformer;
 use UserFrosting\Fortress\ServerSideValidator;
-use UserFrosting\Sprinkle\Core\Facades\Debug;
+
 
 class PageController extends SimpleController
 {
@@ -30,14 +31,20 @@ class PageController extends SimpleController
 
     public function pageIntake($request, $response, $args)
     {
-        $schema = new RequestSchema('schema://requests/intake-form.yaml');
+        $schema = new RequestSchema('schema://requests/office.yaml');
         $validator = new JqueryValidationAdapter($schema, $this->ci->translator);
+        $rules = $validator->rules();
 
         $offices = Office::distinct()->where('name', 'like', '% Dentist Office')->orderBy('name', 'ASC')->get();
 //            SELECT distinct page_title, page_id FROM office_details where page_title like "% Dentist Office" ORDER BY page_title
 
-        return $this->ci->view->render($response, 'pages/intake-ufCollection.html.twig', [
-            'offices' => $offices
+        return $this->ci->view->render($response, 'pages/intake/page1.html.twig', [
+            'offices' => $offices,
+            'page' => [
+                'validators' => [
+                    'office' => $rules
+                ]
+            ]
         ]);
     }
 
@@ -129,7 +136,11 @@ class PageController extends SimpleController
             }
 
         });
-        return $response->withStatus(200);
+//        return $response->withStatus(200);
+        return $this->ci->view->render($response->withStatus(200), 'pages/intake/page1.html.twig', [
+            'dData' => $dentistData
+        ]);
+
     }
 
     public function pageNPIE($request, $response, $args)
@@ -150,7 +161,7 @@ class PageController extends SimpleController
         $rules = $validator->rules();
 
 
-        return $this->ci->view->render($response, 'pages/intake-npie.html.twig', [
+        return $this->ci->view->render($response, 'pages/intake/page2.html.twig', [
             'offices' => $offices,
             'data' => $data,
             'page' => [
@@ -168,7 +179,7 @@ class PageController extends SimpleController
         $offices = Office::distinct()->where('name', 'like', '% Dentist Office')->orderBy('name', 'ASC')->get();
 //            SELECT distinct page_title, page_id FROM office_details where page_title like "% Dentist Office" ORDER BY page_title
 
-        return $this->ci->view->render($response, 'pages/intake-recall.html.twig', [
+        return $this->ci->view->render($response, 'pages/intake/page3.html.twig', [
             'offices' => $offices
         ]);
     }
@@ -180,7 +191,7 @@ class PageController extends SimpleController
         $offices = Office::distinct()->where('name', 'like', '% Dentist Office')->orderBy('name', 'ASC')->get();
 //            SELECT distinct page_title, page_id FROM office_details where page_title like "% Dentist Office" ORDER BY page_title
 
-        return $this->ci->view->render($response, 'pages/intake-final.html.twig', [
+        return $this->ci->view->render($response, 'pages/intake/page4.html.twig', [
             'offices' => $offices
         ]);
     }

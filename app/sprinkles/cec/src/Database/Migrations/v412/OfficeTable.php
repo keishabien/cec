@@ -1,6 +1,6 @@
 <?php
 
-namespace UserFrosting\Sprinkle\Cec\Database\Migrations\v100;
+namespace UserFrosting\Sprinkle\Cec\Database\Migrations\v412;
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Schema\Builder;
