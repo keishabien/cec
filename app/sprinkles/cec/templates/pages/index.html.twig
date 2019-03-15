@@ -1,0 +1,51 @@
+{% extends "pages/abstract/default.html.twig" %}
+
+{% set page_active = "index" %}
+
+{# Overrides blocks in head of base template #}
+{% block page_title %}{{ translate("HOME") }}{% endblock %}
+
+{% block page_description %}
+    {{ translate("WELCOME_TO", {'title': site.title}) }}
+{% endblock %}
+
+{% block body_matter %}
+    <h1>Welcome to the CEC Support App</h1>
+
+    <div class="row">
+        <div class="col-xs-6">
+            <h2>New Features</h2>
+
+            <ul>
+                <li>
+                    User management system including admins, moderators, and users
+                </li>
+                <li>
+                    Edit office records in the application
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-xs-6">
+            <h2>How to Use</h2>
+
+            <ul>
+                <li>
+                    Search by office name, doctor name, or zip code in the navigation bar
+                </li>
+
+            </ul>
+        </div>
+    </div>
+{% endblock %}
+
+
+
+{% block scripts_page %}
+    <!-- Script to Activate the Carousel -->
+    <script>
+        $('.carousel').carousel({
+            interval: false // set to false to prevent auto-advance
+        })
+    </script>
+{% endblock %}

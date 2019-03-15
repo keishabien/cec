@@ -1,0 +1,601 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
+
+body {
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #575757;
+    padding-top: 65px;
+}
+
+body.office-page {
+    padding-top: 50px;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h2 {
+    margin-top: 0px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+a, a:visited {
+    color: #f8971d;
+}
+
+a:hover, a:focus {
+    color: #ffbb65;
+}
+
+.login-page,
+.register-page {
+    background-color: #FFF;
+    margin: 7% auto;
+}
+
+.login-box, .register-box {
+    width: 360px;
+    margin: 0 auto;
+    border: 1px solid #bbbcbc;
+}
+
+.content-wrapper, .right-side {
+    background-color: #FFF;
+}
+
+.skin-red .content-wrapper {
+    padding: 10px 5px;
+}
+
+.main-footer {
+    text-align: center;
+    font-size: 12px;
+    padding-top: 10px;
+    padding-bottom: 0;
+    margin-bottom: 10px;
+    border-top: none;
+}
+
+/* navigaiton */
+
+.skin-red .main-header {
+    margin: 0
+}
+
+.navbar-header {
+    padding: 8px 15px 0;
+}
+.navbar-header .logo {
+    height: 30px;
+    width: auto;
+    padding: 0 15px 0 0;
+    display: inline-block;
+}
+
+.navbar-default {
+    background-color: #FFF;
+    border-color: #FFF;
+    box-shadow: 0px 0px 3px #757575;
+}
+
+
+
+.navbar .form {
+    float: left;
+    margin-top: 8px;
+    padding: 5px 0;
+}
+
+.search {
+    width: 100%;
+    height: 30px;
+}
+
+.navbar-toggle {
+    padding: 8px;
+}
+
+.input-group-addon {
+    padding: 0;
+    border: none;
+}
+
+.navbar-custom-menu > .navbar-nav {
+    float: left;
+    width: 100%;
+}
+
+
+/* user card */
+.navbar-nav > .user-menu > .dropdown-menu {
+    width: 230px;
+    border-top-width: 1px;
+}
+
+.navbar-nav > .user-menu > .dropdown-menu > li.user-header {
+    height: 75px;
+    padding: 10px;
+    text-align: center;
+}
+
+.navbar-nav > .user-menu > .dropdown-menu > li.user-header > p {
+    color: #75787b;
+}
+
+
+/* breadcrumb */
+.breadcrumb {
+    padding: 0;
+    margin-bottom: 10px;
+    list-style: none;
+    background-color: transparent;
+    border-radius: 0;
+    font-size: 12px;
+}
+
+.breadcrumb > li > a {
+    color: #444;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.page-title {
+    font-size: 26px;
+    font-weight: 700;
+    background-color: #006a52;
+    color: #FFF;
+    padding: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+    position: relative;
+}
+.fixed-title {
+    border-top: 15px solid #FFF;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    max-width: 1140px;
+    right: 0;
+    margin: 0 auto;
+    height: 83px;
+}
+.fixed-margin{
+    margin-top: 82px;
+}
+/* bootstrap overrides */
+.form-control {
+    border-color: #bbbcbc;
+}
+
+.form-control:focus {
+    color: #575757;
+    background-color: #fff;
+    border-color: #034638;
+    outline: 0;
+    box-shadow: 0 0 2px 0.1rem rgba(0, 105, 83, .25);
+}
+
+
+/* BRAND BUTTONS */
+.btn-orange-outline {
+    color: #575757;
+    background-color: transparent;
+    background-image: none;
+    border-color: #bbbcbc;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
+.btn-orange-outline:hover {
+    color: #fff;
+    background-color: #f8971d;
+    border-color: #f8971d;
+}
+
+.btn-orange-outline[type="submit"] {
+    margin-left: -1px;
+    padding: 4px 10px;
+}
+
+.btn-orange {
+    background-color: #f8971d;
+    color: #FFF;
+}
+
+.btn-orange:hover {
+    background-color: #ffbb65;
+    color: #FFF;
+}
+
+.btn-orange-round,
+.btn-orange-round:visited,
+.btn-orange-round:link {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: none;
+    text-align: center;
+    border-color: #f8971d;
+    padding: 10px 35px;
+    background: #f8971d;
+    border-radius: 12px;
+}
+.btn-orange-round:hover {
+    background-color: #ffbb65;
+    border-color: #ffbb65;
+    color: #FFF;
+}
+
+
+.nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+
+/* intake form */
+.dentist-section,
+.hygienist-section,
+.adult-npie-section,
+.child-npie-section,
+.adult-recall-section,
+.child-recall-section,
+.final-section{
+    background-color: #f4f2f1;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+.dentist-section:first-of-type h2 i{
+    display: none;
+}
+.form-inline .form-group {
+    margin-bottom: 10px;
+}
+.dentist-button-row,
+.hygienist-button-row,
+.adult-button-row,
+.child-button-row{
+    width: 100%;
+    margin: 20px 0;
+    height: 35px;
+}
+.input-group.calendar .input-group-addon {
+    border: 1px solid #bbbcbc;
+    padding: 0 7px;
+}
+.input-group.calendar .form-control{
+    border-left:0;
+}
+
+.radio .form-control-feedback{
+    position: relative;
+}
+
+/* dashboard override */
+.skin-red .main-header .logo {
+    width: 230px;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 15px;
+}
+
+.main-sidebar, .left-side {
+    padding-top: 50px;
+}
+
+.main-header .sidebar-toggle {
+    padding: 15px 19px;
+}
+
+.skin-red .main-header li.user-header {
+    background-color: #FFF;
+}
+
+.skin-red .main-header .logo {
+    background-color: #006a52;
+    color: #ffffff;
+    border-bottom: 0 solid transparent;
+}
+
+.skin-red .main-header .navbar {
+    background-color: #006a52;
+}
+
+.skin-red .sidebar-menu > li:hover > a, .skin-red .sidebar-menu > li.active > a {
+    border-left-color: #006a52;
+}
+
+.skin-red .main-header .navbar .sidebar-toggle:hover,
+.skin-red .main-header .logo:hover {
+    background-color: #034638;
+}
+
+.office-user-img {
+    margin: 0 auto;
+}
+
+
+
+
+/* form group icon realign */
+#searchAll .form-group {
+    position: relative;
+    margin: 0;
+}
+
+.form-control-icon,
+.form-control-feedback,
+.input-group-override{
+    right: 5px;
+}
+.has-feedback-left .form-control {
+    padding-right: 12px;
+    padding-left: 34px;
+}
+.has-feedback-left .form-control-feedback{
+    right: 0;
+}
+.has-feedback-left .input-group-override {
+    left: 0;
+}
+.form-control-feedback,
+.input-group-override,
+.form-inline .input-group .input-group-override{
+    position: absolute;
+    top: 0;
+    right: 5px;
+    z-index: 5;
+    display: block;
+    width: 34px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    pointer-events: none;
+}
+.input-group .input-group-override {
+    background-color: transparent;
+}
+.datepicker {
+    border-radius: 0 !important;
+}
+.office-select {
+    margin: 15px 0 15px;
+}
+
+
+
+/* other overrides */
+.content-header {
+    padding: 0;
+}
+.form-group.has-success .form-control, .form-group.has-success .input-group-addon {
+    border-color: #006a52;
+}
+.box.box-primary {
+    border-top-color: #f8971d;
+}
+.table > thead > tr > th, .table > tbody > tr > th,
+.table > tfoot > tr > th, .table > thead > tr > td,
+.table > tbody > tr > td, .table > tfoot > tr > td {
+    border-top: none;
+    padding: 0;
+}
+
+/* paddings */
+.no-l-pad {
+    padding-left: 0;
+}
+.space-20 {
+    margin-bottom: 20px;
+}
+
+
+.clear:nth-of-type(4n + 1) {
+    clear: both;
+}
+.clear {
+    clear: both;
+}
+
+.single {
+    background-color: #F7F5F5;
+    padding: 15px 15px;
+    margin: 15px 0;
+}
+
+.single img {
+    /*margin: 0 auto;*/
+    display: block;
+
+}
+
+.single p {
+    color: #474747;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+    padding: 20px 0;
+    margin: 0;
+}
+
+.single a {
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+}
+.zip {
+    display: none;
+}
+/* SINGLE OFFICE */
+#hours {
+    background: #FFF;
+    color: #006a52;
+    padding: 22px;
+    height: 64px;
+    position: absolute;
+    z-index: 6;
+    right: 2px;
+    top: 2px;
+    font-size: 18px;
+    letter-spacing: .03em;
+}
+#hours .fa {
+    margin-left: 5px;
+}
+#hours-menu {
+    display: none;
+    position: absolute;
+    z-index: 5;
+    top: 96%;
+    right: 2px;
+    background: #FFF;
+    color: #000;
+    font-size: 14px;
+    font-weight: normal;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.2);
+}
+
+.title {
+    background-color: #eae6e4;
+}
+.title p {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.info {
+    background-color: #f7f5f5;
+}
+.info p {
+    min-height: 20px;
+    margin-bottom: 15px;
+}
+.adult {
+    background-color: #006a52;
+    padding: 20px;
+}
+.child {
+    background-color: #f8971d;
+    padding: 20px;
+}
+
+.adult h3,
+.child h3 {
+    color: #FFF;
+    margin-top: 0;
+    font-weight: bold;
+}
+
+
+
+.notes h3 {
+    background-color: #eae6e4;
+    color: #474747;
+    font-weight: bold;
+    padding: 20px;
+    margin: 0;
+}
+.notes p {
+    background-color: #f7f5f5;
+    padding: 20px;
+    margin: 0;
+}
+
+.offers {
+    background-color: #f7f5f5;
+    padding: 20px;
+}
+.offers h3 {
+    margin: 0;
+    font-weight: bold;
+    color: #474747;
+}
+
+.office {
+    background-color: #f7f5f5;
+    padding: 20px;
+    float: left;
+    width: 100%;
+}
+
+.office img {
+    /*margin: 0 auto 25px;*/
+    border: 5px solid #fff;
+    box-shadow: 0 0 5px #999;
+}
+
+@media screen and (max-width: 767px) {
+
+    .main-header .navbar-custom-menu {
+        width: 100%;
+    }
+
+    .navbar-custom-menu .navbar-nav > li {
+        width: 100%;
+    }
+
+    .navbar-default .navbar-collapse,
+    .navbar-default .navbar-form {
+        padding-right: 0;
+        padding-left: 1px;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-top: none;
+        box-shadow: 0px 5px 12px 1px rgba(0,0,0,.15);
+    }
+}
+
+
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .search {
+        min-width: 250px;
+    }
+    .title,
+    .info {
+        padding: 20px 20px 0;
+    }
+
+    .navbar-header{
+        padding: 8px 0 0;
+    }
+    .navbar .form {
+        padding: 0;
+    }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .navbar-custom-menu > .navbar-nav {
+        float: left;
+        width: 100%
+    }
+
+    .navbar-custom-menu > .navbar-nav > li > .dropdown-menu {
+        right: 0;
+        width: 100%;
+    }
+
+    .search {
+        min-width: 450px;
+    }
+    .title, .info {
+        min-height: 380px;
+    }
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+}

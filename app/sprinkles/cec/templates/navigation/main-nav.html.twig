@@ -1,0 +1,136 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+
+
+
+
+
+
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="{{ site.uri.public }}">
+                <img src="https://www.meritdental.com/wp-content/themes/midwest-2016/images/MidwestDental_logo.png"
+                     alt="logo" class="logo">
+            </a>
+        </div>
+
+        {% if checkAuthenticated() %}
+            {% include 'navigation/search.html.twig' %}
+        {% endif %}
+
+        <div class="visible-xs-block clear"></div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+            <!-- /.navbar-collapse -->
+            <!-- Navbar Right Menu -->
+            <div class="navbar-custom-menu navbar-right">
+                <ul class="nav navbar-nav">
+                    {% if checkAuthenticated() %}
+                    <li><a href="{{ site.uri.public }}">Home</a></li>
+                    <li><a href="{{ site.uri.public }}/offices">Offices</a></li>
+                    {% endif %}
+                    <li><a href="{{ site.uri.public }}/intake/1">Intake Form</a></li>
+
+                    {% block secondary_nav %}
+                        {% if not checkAuthenticated() %}
+                            <li>
+                                <a href="{{ site.uri.public }}/account/sign-in"
+                                   class="nav-highlight">{{ translate("SIGNIN") }}</a>
+                            </li>
+                        {% else %}
+                            {% include "navigation/user-card.html.twig" %}
+                        {% endif %}
+                    {% endblock %}
+                </ul>
+            </div>
+            <!-- /.navbar-custom-menu -->
+
+        </div><!-- /.navbar-collapse -->
+    </div>
+</nav>
+
+
+{#<div class="container">#}
+    {#<div class="row nav">#}
+        {#<div class="col-sm-1 no-l-pad">#}
+            {#<a href="{{ site.uri.public }}">#}
+                {#<img src="https://www.meritdental.com/wp-content/themes/midwest-2016/images/MidwestDental_logo.png"#}
+                     {#alt="logo" class="logo">#}
+            {#</a>#}
+        {#</div>#}
+        {#<div class="col-sm-6">#}
+            {#<form id="searchAll" action="{{ site.uri.public }}/search/" method="get" class="navbar-form">#}
+                {#<div class="form-group">#}
+                    {#<input type="text" class="search form-control" placeholder="search by zip, office name or doctor"#}
+                           {#aria-label="search by zip, office name or doctor" aria-describedby="button-addon2">#}
+                    {#<button class="btn btn-outline-orange" type="submit" id="button-addon2">#}
+                        {#<i class="fa fa-search"></i>#}
+                    {#</button>#}
+                {#</div>#}
+            {#</form>#}
+        {#</div>#}
+        {#<div class="col-sm-2">#}
+            {#<ul class="menu nav navbar-nav">#}
+                {#<li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>#}
+                {#<li><a href="#">Link</a></li>#}
+
+                {#<li class="dropdown">#}
+                    {#<a href="#" id="forms" class="dropdown-toggle btn btn-default btn-flat" data-toggle="dropdown"#}
+                       {#role="button"#}
+                       {#aria-haspopup="true" aria-expanded="false">Forms <i class="fa fa-angle-down"></i></a>#}
+                    {#<ul class="dropdown-menu">#}
+                        {#<li>#}
+                            {#<a href="https://meritdental.com/wp-content/uploads/2017/04/Common-Treatment-Plan-Codes-01-30-2018.pdf"#}
+                               {#target="_blank">#}
+                                {#Common Treatment Plan Codes <i class="fa fa-external-link-alt"></i></a>#}
+                        {#</li>#}
+                        {#<li>#}
+                            {#<a href="https://meritdental.com/wp-content/uploads/2017/04/CEC-QA-Form-04-25-2017.pdf"#}
+                               {#target="_blank">#}
+                                {#CEC QA Form <i class="fa fa-external-link-alt"></i></a>#}
+                        {#</li>#}
+                        {#<li>#}
+                            {#<a href="https://meritdental.com/wp-content/uploads/2017/04/Meeting-Agendas.docx"#}
+                               {#target="_blank">#}
+                                {#Meeting Agendas <i class="fa fa-external-link-alt"></i></a>#}
+                        {#</li>#}
+                        {#<li>#}
+                            {#<a href="/update/" target="_blank">CEC UPDATE <i class="fa fa-external-link-alt"></i></a>#}
+                        {#</li>#}
+                    {#</ul>#}
+                {#</li>#}
+            {#</ul>#}
+
+        {#</div>#}
+
+
+
+        {#<!-- /.navbar-collapse -->#}
+        {#<!-- Navbar Right Menu -->#}
+        {#<div class="navbar-custom-menu">#}
+            {#<ul class="nav navbar-nav">#}
+                {#{% block secondary_nav %}#}
+                    {#{% if not checkAuthenticated() %}#}
+                        {#<li>#}
+                            {#<a href="{{ site.uri.public }}/account/sign-in"#}
+                               {#class="nav-highlight">{{ translate("SIGNIN") }}</a>#}
+                        {#</li>#}
+                    {#{% else %}#}
+                        {#{% include "navigation/user-card.html.twig" %}#}
+                    {#{% endif %}#}
+                {#{% endblock %}#}
+            {#</ul>#}
+        {#</div>#}
+        {#<!-- /.navbar-custom-menu -->#}
+
+    {#</div>#}
+{#</div>#}
