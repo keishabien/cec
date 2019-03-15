@@ -1,0 +1,296 @@
+{% extends "pages/abstract/default.html.twig" %}
+
+{% set page_active = "npie" %}
+
+{# Overrides blocks in head of base template #}
+
+{% block page_title %}Practice Information Form{% endblock %}
+
+
+{% block body_matter %}
+    <div id="alerts-page"></div>
+
+    <form class="form-inline npie">
+        <input type="text" hidden value="{{ office }}">
+
+        <div class="adult-npie-section">
+            <h2 id="adult-npie-1">Adult NPIE 1</h2>
+
+            <div class="row">
+
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback radio">
+                        New patient can be scheduled in Doctor or Hygiene chair?
+                        <div class="radio">
+                            <label for="adult-npie-scheduled-1">
+                                <input type="radio" name="scheduled-radio" id="adult-npie-scheduled-1" value="Yes">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label for="adult-npie-scheduled-1">
+                                <input type="radio" name="scheduled-radio" id="adult-npie-scheduled-1" value="No">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="adult-chair-1" class="control-label">Which chair do you schedule new adult patients
+                            in?
+                        </label>
+                        <select class="form-control" name="adult-chair" id="adult-chair-1">
+                            <option value="">Please select</option>
+                            <option value="hygiene">Hygiene</option>
+                            <option value="doctor">Doctor</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="adult-hygiene-units-1" class="control-label">Hygiene Units</label>
+                        <select class="form-control" name="adult-hygiene-units" id="adult-hygiene-units-1">
+                            <option value="">Please select</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="adult-doctor-units-1" class="control-label">Doctor Units</label>
+                        <select class="form-control" name="adult-doctor-units" id="adult-doctor-units-1">
+                            <option value="">Please select</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback radio">
+                        Is the first visit exam and x-rays only?
+                        <div class="radio">
+                            <label for="adult-first-y-1" class="control-label">
+                                <input type="radio" name="first-radio" id="adult-first-y-1" value="Yes">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label for="adult-first-n-1" class="control-label">
+                                <input type="radio" name="first-radio" id="adult-first-n-1" value="No">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback radio">
+                        Does the patient get a cleaning the same day?
+                        <div class="radio">
+                            <label for="adult-clean-y-1" class="control-label">
+                                <input type="radio" name="clean-radio" id="adult-clean-y-1" value="Yes">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label for="adult-clean-n-1" class="control-label">
+                                <input type="radio" name="clean-radio" id="adult-clean-n-1" value="No">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="adult-button-row">
+            <a class="btn btn-default repeat-adult pull-right"><i class="fa fa-plus"></i> Add Adult NPIE</a><br>
+        </div>
+
+        <div class="child-npie-section">
+
+            <h2 id="child-npie-1">Child NPIE 1</h2>
+
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback radio">
+                        New patient can be scheduled in Doctor or Hygiene chair?
+                        <div class="radio">
+                            <label for="child-npie-scheduled-1">
+                                <input type="radio" name="scheduled-radio" id="child-npie-scheduled-1" value="Yes">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label for="child-npie-scheduled-1">
+                                <input type="radio" name="scheduled-radio" id="child-npie-scheduled-1" value="No">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="child-chair-1" class="control-label">Which chair do you schedule new child patients
+                            in?
+                        </label>
+                        <select class="form-control" name="child-chair" id="child-chair-1">
+                            <option value="">Please select</option>
+                            <option value="hygiene">Hygiene</option>
+                            <option value="doctor">Doctor</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="child-hygiene-units-1" class="control-label">Hygiene Units</label>
+                        <select class="form-control" name="child-hygiene-units" id="child-hygiene-units-1">
+                            <option value="">Please select</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="child-doctor-units-1" class="control-label">Doctor Units</label>
+                        <select class="form-control" name="child-doctor-units" id="child-doctor-units-1">
+                            <option value="">Please select</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback radio">
+                        Is the first visit exam and x-rays only?
+                        <div class="radio">
+                            <label for="child-first-y-1" class="control-label">
+                                <input type="radio" name="first-radio" id="child-first-y-1" value="Yes">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label for="child-first-n-1" class="control-label">
+                                <input type="radio" name="first-radio" id="child-first-n-1" value="No">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback radio">
+                        Does the patient get a cleaning the same day?
+                        <div class="radio">
+                            <label for="child-clean-y-1" class="control-label">
+                                <input type="radio" name="clean-radio" id="child-clean-y-1" value="Yes">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label for="child-clean-n-1" class="control-label">
+                                <input type="radio" name="clean-radio" id="child-clean-n-1" value="No">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="child-button-row">
+            <a class="btn btn-default repeat-child pull-right">+ Add Child NPIE</a><br>
+        </div>
+        <button type="submit" class="btn btn-orange  pull-right">Next ></button>
+    </form>
+    {#<a class="btn btn-orange  pull-right" href="{{ site.uri.public }}/intake/recall">Next ></a>#}
+
+
+{% endblock %}
+
+
+
+{% block scripts_page %}
+    <!-- Include validation rules -->
+    <script>
+        {% include "pages/partials/page.js.twig" %}
+    </script>
+
+    <!-- Include page-specific JS -->
+    {{ assets.js('js/intake') | raw }}
+
+    <script>
+
+        //submit form
+        $(".npie").ufForm({
+            validators: page.validators.npie,
+            msgTarget: $("#alerts-page")
+        }).on("submitSuccess.ufForm", function (event, data, textStatus, jqXHR) {
+            window.location.replace(site.uri.public + "/intake/recall");
+        });
+    </script>
+
+{% endblock %}

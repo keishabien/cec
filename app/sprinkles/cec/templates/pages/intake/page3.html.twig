@@ -1,0 +1,310 @@
+{% extends "pages/abstract/default.html.twig" %}
+
+{% set page_active = "recall" %}
+
+{# Overrides blocks in head of base template #}
+
+{% block page_title %}Practice Information Form{% endblock %}
+
+
+{% block body_matter %}
+    {#<h1>Welcome to the CEC Support App</h1>#}
+
+
+
+    <form class="form-inline">
+
+        <div class="adult-recall-section">
+            <h2 id="adult-recall-1">Adult Recall 1</h2>
+
+            <h3>Prophy</h3>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="adult-hygiene-units-1" class="control-label">For an adult patient with no treatment
+                            plan, how many units
+                            is that
+                            patient scheduled in hygiene?
+                        </label>
+                        <select class="form-control" name="hygiene-units" id="adult-hygiene-units-1">
+                            <option value="">Please select</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="adult-doctor-units-1" class="control-label">After how many years since their last
+                            visit do you consider the
+                            patient "new" and schedule them as a new patient?
+                        </label>
+                        <select class="form-control" name="doctor-units" id="adult-doctor-units-1">
+                            <option value="">Please select</option>
+                            <option value="<1 year">Less than 1 year</option>
+                            <option value="1 year">1 year</option>
+                            <option value="2 years">2 years</option>
+                            <option value="3 years">3 years</option>
+                            <option value="4 years">4 years</option>
+                            <option value="5 years">5 years</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <h3>SRP</h3>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback radio">
+                        Is it okay if a patient is treatment planned for SRP, and only wants a regular cleaning?
+                        <div class="radio">
+                            <label for="srp-y-1">
+                                <input type="radio" name="srp-radio" id="srp-y-1" value="Yes">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label for="srp-n-1">
+                                <input type="radio" name="srp-radio" id="srp-n-1" value="No">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback radio">
+                        If no, should we transfer the call to the practice?
+                        <div class="radio">
+                            <label for="transfer-y-1">
+                                <input type="radio" name="transfer-radio" id="transfer-y-1" value="Yes">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label for="transfer-n-1">
+                                <input type="radio" name="transfer-radio" id="transfer-n-1" value="No">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="adult-hygiene-units" class="control-label">If yes, how many units should we schedule
+                            for a regular
+                            cleaning?
+                        </label>
+                        <select class="form-control" name="adult-hygiene-units" id="adult-hygiene-units">
+                            <option>Please select</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback radio">
+                        Should we also schedule them for an exam or consultation with the doctor?
+                        <div class="radio">
+                            <label for="exam-y-1">
+                                <input type="radio" name="exam-radio" id="exam-y-1" value="Yes">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label for="exam-n-1">
+                                <input type="radio" name="exam-radio" id="exam-n-1" value="No">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Perio Maintenance</h3>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="adult-perio-units-1" class="control-label">If a patient is treatment planned for
+                            perio
+                            maintenance and no
+                            units are attached, how many units do you schedule?
+                        </label>
+                        <select class="form-control" name="adult-perio-units" id="adult-perio-units-1">
+                            <option>Please select</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="adult-button-row">
+            <a class="btn btn-default repeat-adult pull-right"><i class="fa fa-plus"></i> Add Adult NPIE</a><br>
+        </div>
+
+        <div class="child-recall-section">
+
+            <h2 id="child-recall-1">Child Recall 1</h2>
+
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback radio">
+                        Child Age Range
+                        <div class="radio">
+                            <label for="age-0-3">
+                                <input type="radio" name="age-radio" id="age-0-3" value="Yes">
+                                Age 0-3
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label for="age-4-10">
+                                <input type="radio" name="age-radio" id="age-4-10" value="No">
+                                Age 4-10
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label for="age-11-17">
+                                <input type="radio" name="age-radio" id="age-11-17" value="No">
+                                Age 11-17
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback radio">
+                        If the patient got braces since their last visit, do you add a unit?
+
+                        <div class="radio">
+                            <label for="braces-y-1">
+                                <input type="radio" name="braces-radio" id="braces-y-1" value="Yes">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label for="braces-n-1">
+                                <input type="radio" name="braces-radio" id="braces-n-1" value="No">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="child-hygiene-units-1" class="control-label">Hygiene Units</label>
+                        <select class="form-control" name="child-hygiene-units" id="child-hygiene-units-1">
+                            <option>Please select</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="child-doctor-units-1" class="control-label">Doctor Units</label>
+                        <select class="form-control" name="child-doctor-units" id="child-doctor-units-1">
+                            <option>Please select</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="child-button-row">
+            <a class="btn btn-default repeat-child pull-right">+ Add Child NPIE</a><br>
+        </div>
+        <button type="submit" class="btn btn-orange  pull-right">Next ></button>
+    </form>
+
+
+
+{% endblock %}
+
+
+
+
+
+{% block scripts_page %}
+    <!-- Include validation rules -->
+    <script>
+        {% include "pages/partials/page.js.twig" %}
+    </script>
+
+    <!-- Include page-specific JS -->
+    {{ assets.js('js/intake') | raw }}
+
+    <script>
+        //submit form
+        $(".intake").ufForm({
+            validators: page.validators.intake
+        }).on("submitSuccess.ufForm", function (event, data, textStatus, jqXHR) {
+            window.location.replace(site.uri.public + "/intake/npie");
+        });
+    </script>
+
+{% endblock %}

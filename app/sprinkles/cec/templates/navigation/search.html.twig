@@ -1,0 +1,16 @@
+<form class="form form-inline" id="searchAll" action="{{ site.uri.public }}/offices?keyword={{ keyword }}" method="get">
+    {#{% include "forms/csrf.html.twig" %}#}
+    <div class="form-group">
+        <div class="input-group">
+            <input type="text" class="search form-control"
+                   placeholder="search by zip, office name or doctor"
+                   aria-label="search by zip, office name or doctor"
+                   name="keyword" id="keyword">
+            <div class="input-group-addon">
+                <button type="submit" class="btn btn-orange-outline">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</form>
