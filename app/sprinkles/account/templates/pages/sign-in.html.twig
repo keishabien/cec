@@ -13,7 +13,9 @@
 <div class="login-box">
     {% block loginLogo %}
     <div class="login-logo">
-        <a href="{{site.uri.public}}">{{site.title}}</a>
+        <a href="{{site.uri.public}}">
+            <img src="{{assets.url('assets://images/login_cec.jpg')}}">
+        </a>
     </div>
     <!-- /.login-logo -->
     {% endblock %}
