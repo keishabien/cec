@@ -10,7 +10,9 @@ class HygienistDetails extends Model
     /**
      * @var string The name of the table for the current model.
      */
+
     protected $table = 'userfrosting.hygienist_details';
+
 
     protected $fillable = [
         'office_id',

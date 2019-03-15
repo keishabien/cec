@@ -10,6 +10,7 @@ class DentistDetails extends Model
     /**
      * @var string The name of the table for the current model.
      */
+
     protected $table = 'userfrosting.dentist_details';
 
     protected $fillable = [

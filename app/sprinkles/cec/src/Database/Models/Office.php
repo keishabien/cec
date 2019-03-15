@@ -10,7 +10,9 @@ class Office extends Model
     /**
      * @var string The name of the table for the current model.
      */
+
     protected $table = 'userfrosting.office_details';
+
 
     protected $fillable = [
         'dentist_id',
