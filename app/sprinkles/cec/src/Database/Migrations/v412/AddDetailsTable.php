@@ -31,6 +31,9 @@ class AddDetailsTable extends Migration
 
                 $table->foreign('office_id')->references('office_id')->on('office_details');
                 $table->index('office_id');
+                $table->engine = 'InnoDB';
+                $table->collation = 'utf8_unicode_ci';
+                $table->charset = 'utf8';
             });
         }
     }
