@@ -3,8 +3,8 @@
 namespace UserFrosting\Sprinkle\Cec\Database\Migrations\v412;
 
 use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Database\Schema\Builder;
 use UserFrosting\System\Bakery\Migration;
+
 
 class ARecallTable extends Migration
 {
@@ -25,6 +25,9 @@ class ARecallTable extends Migration
 
                 $table->foreign('office_id')->references('office_id')->on('office_details');
                 $table->index('office_id');
+                $table->engine = 'InnoDB';
+                $table->collation = 'utf8_unicode_ci';
+                $table->charset = 'utf8';
             });
         }
     }
