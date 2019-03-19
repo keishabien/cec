@@ -55,6 +55,8 @@ class SearchController extends SimpleController
 
 
         $allOffices = Office::query()->get();
+                    Debug::debug("all offices");
+            Debug::debug(print_r($allOffices, true));
 
         if (preg_match('/\d{5}/', $keyword, $matches)) {
 //            $keyword = $matches[0];

@@ -1,0 +1,26 @@
+# Request schema for the intake form
+
+chair:
+  validators:
+    required:
+      message: "Please select a chair."
+
+hyg_units:
+  validators:
+    required:
+      message: "Please select hygiene units."
+
+dr_units:
+  validators:
+    required:
+      message: "Please select doctor units."
+
+first_visit:
+  validators:
+    required:
+      message: "Please select an option for the first visit."
+
+cleaning:
+  validators:
+    required:
+      message: "Please select an option for the first visit cleaning."

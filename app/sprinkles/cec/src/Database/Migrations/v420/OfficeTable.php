@@ -19,6 +19,7 @@ class OfficeTable extends Migration
                 $table->string('fax', 255)->nullable();
                 $table->string('masking_number', 255)->nullable();
                 $table->string('extension', 50)->nullable();
+                $table->string('email', 255)->nullable();
                 $table->string('address', 255)->nullable();
                 $table->string('city', 255)->nullable();
                 $table->string('state', 255)->nullable();
@@ -38,7 +39,7 @@ class OfficeTable extends Migration
                 $table->string('df_reviews_url', 255)->nullable();
                 $table->string('img_url', 255)->nullable();
                 $table->string('news_category', 255)->nullable();
-                $table->string('latitue', 20)->nullable();
+                $table->string('latitude', 20)->nullable();
                 $table->string('longitude', 20)->nullable();
                 $table->string('directions', 10000)->nullable();
                 $table->string('brand', 50)->nullable();

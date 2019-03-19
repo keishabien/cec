@@ -86,13 +86,13 @@
                             Permanent or Locum?
                             <div class="radio">
                                 <label for="dentist[{{ rownum }}][permanent]">
-                                    <input type="radio" name="dentist[{{ rownum }}][locum]" id="dentist[{{ rownum }}][permanent]" value="Y">
+                                    <input type="radio" name="dentist[{{ rownum }}][locum]" id="dentist[{{ rownum }}][permanent]" value="Yes">
                                     Permanent
                                 </label>
                             </div>
                             <div class="radio">
                                 <label for="dentist[{{ rownum }}][locum]">
-                                    <input type="radio" name="dentist[{{ rownum }}][locum]" id="dentist[{{ rownum }}][locum]" value="N">
+                                    <input type="radio" name="dentist[{{ rownum }}][locum]" id="dentist[{{ rownum }}][locum]" value="No">
                                     Locum
                                 </label>
                             </div>
@@ -262,8 +262,6 @@
 
     <!-- Include page-specific JS -->
     {{ assets.js('js/intake') | raw }}
-    {#{{ assets.js('js/form-widgets') | raw }}#}
-    {{ assets.css('css/form-widgets') | raw }}
 
     <script>
 
@@ -273,31 +271,14 @@
             $(this).datepicker();
         });
 
-
-        // Collections
-        $('.repeat-div').click(function () {
-            $(this).parent().prev().ufCollection('addRow');
-        });
-
-        $('#dentist-div').ufCollection({
-            useDropdown: false,
-            rowTemplate: $('#dentist-details-row').html()
-        });
-        $('#hygienist-div').ufCollection({
-            useDropdown: false,
-            rowTemplate: $('#hygienist-details-row').html()
-        });
-
-
         //submit form
         $(".intake").ufForm({
             msgTarget: $("#alerts-page"),
             validator: page.validators.office
         }).on("submitSuccess.ufForm", function (event, data, textStatus, jqXHR) {
-            // window.location.replace(site.uri.public + "/intake/2");
-            console.log("success. jqXHR: " + JSON.stringify(jqXHR));
-            console.log("success. data: " + JSON.stringify(data));
-            console.log("success. textStatus: " + JSON.stringify(textStatus));
+            var id = $('select[name="office_id"]').val();
+            // console.log(id);
+            window.location.replace(site.uri.public + "/intake/2?id="+id);
         }).on("submitError.ufForm", function (event, data, textStatus, jqXHR) {
             console.log(data.responseText);
         });
