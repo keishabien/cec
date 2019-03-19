@@ -243,10 +243,8 @@ a:hover, a:focus {
 /* intake form */
 .dentist-section,
 .hygienist-section,
-.adult-npie-section,
-.child-npie-section,
-.adult-recall-section,
-.child-recall-section,
+.adult-section,
+.child-section,
 .final-section{
     background-color: #f4f2f1;
     padding: 15px;

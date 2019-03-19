@@ -62,7 +62,8 @@
             "scripts": [
                 "vendor/speakingurl/speakingurl.min.js",
                 "js/uf-collection.js",
-                "userfrosting/js/handlebars-helpers.js"
+                "userfrosting/js/handlebars-helpers.js",
+                "js/intake.js"
             ],
             "options": {
                 "result": {

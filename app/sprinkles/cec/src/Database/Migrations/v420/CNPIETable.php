@@ -18,7 +18,6 @@ class CNPIETable extends Migration
             $this->schema->create('cnpie_details', function (Blueprint $table) {
                 $table->increments('id');
                 $table->integer('office_id')->unsigned();
-                $table->string('age_range', 255)->nullable();
                 $table->string('chair', 255)->nullable();
                 $table->string('dr_units', 255)->nullable();
                 $table->string('hyg_units', 255)->nullable();
