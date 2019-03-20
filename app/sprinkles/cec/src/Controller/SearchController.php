@@ -129,7 +129,7 @@ class SearchController extends SimpleController
         $cNPIE = ChildNPIE::where('office_id', $office["office_id"])->get();
         $aRecall = AdultRecall::where('office_id', $office["office_id"])->get();
         $cRecall = ChildRecall::where('office_id', $office["office_id"])->get();
-        $addDetails = AddDetails::where('office_id', $office["office_id"])->get();
+        $addDetails = AddDetails::where('office_id', $office["office_id"])->first();
 
         $name = $office['name'];
         $patterns = array();
@@ -140,6 +140,49 @@ class SearchController extends SimpleController
         $replacements[1] = '';
         $newName = preg_replace($patterns, $replacements, $name);
 
+        //set closed hours stuff
+        $day;
+        date_default_timezone_set( 'America/New_York' );
+        $today = date( "N" );
+
+        if ( $today == 0 ) {
+            $day = $office['sun_hours'];
+            if ( !$day ) {
+                $day = 'Closed';
+            }
+        } elseif ( $today == 1 ) {
+            $day = $office['mon_hours'];
+            if ( !$day ) {
+                $day = 'Closed';
+            }
+        } elseif ( $today == 2 ) {
+            $day = $office['tue_hours'];
+            if ( !$day ) {
+                $day = 'Closed';
+            }
+        } elseif ( $today == 3 ) {
+            $day = $office['wed_hours'];
+            if ( !$day ) {
+                $day = 'Closed';
+            }
+        } elseif ( $today == 4 ) {
+            $day = $office['thu_hours'];
+            if ( !$day ) {
+                $day = 'Closed';
+            }
+        } elseif ( $today == 5 ) {
+            $day = $office['fri_hours'];
+            if ( !$day ) {
+                $day = 'Closed';
+            }
+        } elseif ( $today == 6 ) {
+            $day = $office['sat_hours'];
+            if ( !$day ) {
+                $day = 'Closed';
+            }
+        } else {
+            $day = 'Closed';
+        }
 
         return $this->ci->view->render($response, 'pages/office-single.html.twig', [
             'keyword' => $params,
@@ -152,6 +195,8 @@ class SearchController extends SimpleController
             'cRecall' => $cRecall,
             'additional' => $addDetails,
             'newName' => $newName,
+            'day' => $day,
+            'icon' => 'https://www.meritdental.com/wp-content/themes/midwest-2016/images/css/loc.png',
             'midwestLogo' => 'https://www.meritdental.com/cecdb/images/midwest-logo.png',
             'mondoviLogo' => 'https://www.meritdental.com/cecdb/images/mondovi-logo.png',
             'meritLogo' => 'https://www.meritdental.com/cecdb/images/merit-logo.png',

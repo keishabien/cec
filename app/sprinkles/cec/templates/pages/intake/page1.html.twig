@@ -277,7 +277,6 @@
             validator: page.validators.office
         }).on("submitSuccess.ufForm", function (event, data, textStatus, jqXHR) {
             var id = $('select[name="office_id"]').val();
-            // console.log(id);
             window.location.replace(site.uri.public + "/intake/2?id="+id);
         }).on("submitError.ufForm", function (event, data, textStatus, jqXHR) {
             console.log(data.responseText);
