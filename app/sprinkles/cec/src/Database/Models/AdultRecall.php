@@ -11,7 +11,7 @@ class AdultRecall extends Model
      * @var string The name of the table for the current model.
      */
 
-    protected $table = 'userfrosting.arecall_details';
+    protected $table = 'cec.arecall_details';
 
     protected $fillable = [
         'office_id',
