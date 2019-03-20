@@ -1,0 +1,15 @@
+# Request schema for the intake form
+
+age_range:
+  validators:
+    required:
+      message: "Please select an age range."
+
+braces_units:
+  validators:
+    required:
+      message: "Please select an option for braces units."
+
+hyg_units:
+
+dr_units:

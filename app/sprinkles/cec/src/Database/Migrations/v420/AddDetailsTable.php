@@ -30,6 +30,7 @@ class AddDetailsTable extends Migration
                 $table->string('NPIE_blocks_new', 255)->nullable();
                 $table->string('NPIE_blocks_request', 255)->nullable();
                 $table->string('NPIE_daily_limit', 255)->nullable();
+                $table->string('adult_hyg_units', 255)->nullable();
                 $table->string('directions', 5000)->nullable();
                 $table->string('other', 5000)->nullable();
                 $table->timestamps();
