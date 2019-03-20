@@ -4,159 +4,72 @@
 {# Overrides blocks in head of base template #}
 {% block page_title %}{{ office.brand }} Dental - {{ newName }}
     <div id="hours">Hours <i class="fa fa-chevron-down"></i></div>
+
+
     <div id="hours-menu">
-
-
-        {#<p><span>Open Today:</span>#}
-        {#<span>#}
-        {#<?php echo $day;?>#}
-        {#</span>#}
-        {#</p>#}
+        {% if day %}
+            <div class="open">
+                <p><b>Open Today:</b>
+                    <span><b>{{ day }}</b></span>
+                </p>
+            </div>
+            <div class="divide"></div>
+        {% endif %}
         {% if office.mon_hours %}
-            <p>Mon: {{ office.mon_hours }}</p>
+            <p>Mon:
+                <span>{{ office.mon_hours }}</span>
+            </p>
         {% endif %}
         {% if office.tue_hours %}
-            <p>Tue: {{ office.tue_hours }}</p>
+            <p>Tue:
+                <span>{{ office.tue_hours }}</span>
+            </p>
         {% endif %}
         {% if office.wed_hours %}
-            <p>Wed: {{ office.wed_hours }}</p>
+            <p>Wed:
+                <span>{{ office.wed_hours }}</span>
+            </p>
         {% endif %}
         {% if office.thu_hours %}
-            <p>Thu: {{ office.thu_hours }}</p>
+            <p>Thu:
+                <span> {{ office.thu_hours }}</span>
+            </p>
         {% endif %}
         {% if office.fri_hours %}
-            <p>Fri: {{ office.fri_hours }}</p>
+            <p>Fri:
+                <span> {{ office.fri_hours }}</span>
+            </p>
         {% endif %}
         {% if office.sat_hours %}
-            <p>Sat: {{ office.Sat_hours }}</p>
+            <p>Sat:
+                <span> {{ office.sat_hours }}</span>
+            </p>
         {% endif %}
         {% if office.Sun_hours %}
-            <p>Sun: {{ office.sun_hours }}</p>
-        {% endif %}
-        {#<p>*Please note office hours are subject to change.</p>#}
-
+        <p>Sun:
+            <span> {{ office.sun_hours }}</span>
+            {% endif %}
+            <small>*Please note office hours are subject to change.</small>
 
 
     </div>
 {% endblock %}
 
 
+
 {% block body_matter %}
-
-
-    {#<div class="row">#}
-
-    {#{% if keyword is defined %}#}
-    {#<div class="col-12 col-md-3 clear">#}
-    {#<div class="single">#}
-    {#{% if office.brand == "Midwest" %}#}
-    {#<img src="{{ midwestLogo }}" alt="">#}
-    {#{% elseif office.brand == "Mondovi" %}#}
-    {#<img src="{{ mondoviLogo }}" alt="">#}
-    {#{% elseif office.brand == "Mountain" %}#}
-    {#<img src="{{ mountainLogo }}" alt="">#}
-    {#{% elseif office.brand == "Merit" %}#}
-    {#<img src="{{ meritLogo }}" alt="">#}
-    {#{% endif %}#}
-
-    {#<p>{{ office.city }}, {{ office.state }}</p>#}
-
-
-    {#<a href="{{ site.uri.public }}/office/{{ off.page_id }}/{{ off.city }}"#}
-    {#class="btn btn-outline-orange">#}
-    {#<a href="{{ site.uri.public }}/offices/" class="btn btn-orange-round">#}
-    {#View Office Information#}
-    {#</a>#}
-    {#</div>#}
-    {#</div>#}
-
-    {#{% endif %}#}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    {#<div class="desktop" id="hours-btn">Hours#}
-    {#<div id="hours-drop">#}
-    {#<p><span>Open Today:</span>#}
-    {#<span>#}
-    {#<?php echo $day;?>#}
-    {#</span>#}
-    {#</p>#}
-    {#<?php#}
-    {#if($mon){ ?>#}
-    {#<span>Mon:</span>#}
-    {#<span>#}
-    {#<?php echo $details[0]['mon_hours']; ?>#}
-    {#</span>#}
-    {#<?php }#}
-    {#if($tue){ ?>#}
-    {#<span>Tue:</span>#}
-    {#<span>#}
-    {#<?php echo $details[0]['tue_hours']; ?>#}
-    {#</span>#}
-    {#<?php }#}
-    {#if($wed){ ?>#}
-    {#<span>Wed:</span>#}
-    {#<span>#}
-    {#<?php echo $details[0]['wed_hours']; ?>#}
-    {#</span>#}
-    {#<?php }#}
-    {#if($thu){ ?>#}
-    {#<span>Thu:</span>#}
-    {#<span>#}
-    {#<?php echo $details[0]['thur_hours']; ?>#}
-    {#</span>#}
-    {#<?php }#}
-    {#if($fri){ ?>#}
-    {#<span>Fri:</span>#}
-    {#<span>#}
-    {#<?php echo $details[0]['fri_hours'];?>#}
-    {#</span>#}
-    {#<?php }#}
-    {#if($sat){ ?>#}
-    {#<span>Sat:</span>#}
-    {#<span>#}
-    {#<?php echo $details[0]['sat_hours']; ?>#}
-    {#</span>#}
-    {#<?php }#}
-    {#if($sun){ ?>#}
-    {#<span>Sun:</span>#}
-    {#<span>#}
-    {#<?php echo $details[0]['sun_hours']; ?>#}
-    {#</span>#}
-    {#<?php } ?>#}
-    {#<p>*Please note office hours are subject to change.</p>#}
-    {#</div>#}
-    {#</div>#}
-    {#</div>#}
-
     <div class="visible-xs-block">
         <div class="col-sm-6 left">
 
-            <div class="col-xs-6 col-sm-4 title">
-                <p>Masking #:</p>
-            </div>
-            <div class="col-xs-6 col-sm-8 info">
-                {{ office.masking_number }}
-            </div>
-            <div class="clear"></div>
+            {% if office.masking_number %}
+                <div class="col-xs-6 col-sm-4 title">
+                    <p>Masking #:</p>
+                </div>
+                <div class="col-xs-6 col-sm-8 info">
+                    {{ office.masking_number }}
+                </div>
+                <div class="clear"></div>
+            {% endif %}
 
             <div class="col-xs-6 col-sm-4 title">
                 <p>Office Extension:</p>
@@ -316,11 +229,15 @@
     <section class="row">
         <div class="col-xs-12">
             <div class="office">
-                <div class="col-sm-4">
-                    <img src="https://midwest-dental.com/wp-content/uploads/2016/07/Elkhorn_NEW_web.jpg" alt="">
+                <div class="col-sm-4 office-img">
+                    <img src="{{ office.img_url }}" alt="">
                 </div>
-                <div class="col-sm-4">Google Map</div>
-                <div class="col-sm-4">{{ additional[0].directions }}</div>
+                <div class="col-sm-4" id="google-map">
+
+                </div>
+                <div class="col-sm-4">
+                    <h2>Directions</h2>
+                    {{ additional.directions }}</div>
             </div>
         </div>
     </section>
@@ -329,15 +246,38 @@
 
 {% block scripts_page %}
     <script>
-        $menu = $('#hours-menu');
-        $('#hours').click(function (e) {
-            e.stopPropagation();
-            $($menu).slideToggle();
-        });
-        $('body').click(function () {
-            if($($menu).is(":visible")){
-                $($menu).slideUp();
-            }
-        });
+        {% include "pages/partials/key.js.twig" %}
+
+        var key = api.key;
+        var script = document.createElement('script');
+        script.src = 'https://maps.googleapis.com/maps/api/js?v=3&key=' + key + '&callback=initMap';
+        document.getElementsByTagName('script')[0].parentNode.appendChild(script);
+
+        //Google Map
+        var map;
+
+        function initMap() {
+            var isDraggable = $(document).width() > 480 ? true : false; /* If document (your website) is wider than 480px, isDraggable = true, else isDraggable = false*/
+            var myLatlng = new google.maps.LatLng( {{ office.latitude }}, {{ office.longitude }});
+
+            var mapDiv = document.getElementById('google-map');
+            map = new google.maps.Map(mapDiv, {
+                center: myLatlng,
+                scrollwheel: false,
+                mapTypeControl: false,
+                draggable: false,
+                zoom: 15
+            });
+            var marker = new google.maps.Marker({
+                position: myLatlng,
+                map: map,
+                title: '{{ newName }}',
+                icon: '{{ icon }}'
+            });
+        }
+
     </script>
+    <!-- Include page-specific JS -->
+    {{ assets.js('js/office') | raw }}
+
 {% endblock %}

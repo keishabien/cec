@@ -11,7 +11,7 @@ body.office-page {
     padding-top: 50px;
 }
 
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -71,6 +71,7 @@ a:hover, a:focus {
 .navbar-header {
     padding: 8px 15px 0;
 }
+
 .navbar-header .logo {
     height: 30px;
     width: auto;
@@ -83,7 +84,6 @@ a:hover, a:focus {
     border-color: #FFF;
     box-shadow: 0px 0px 3px #757575;
 }
-
 
 
 .navbar .form {
@@ -155,6 +155,7 @@ a:hover, a:focus {
     margin-bottom: 0;
     position: relative;
 }
+
 .fixed-title {
     border-top: 15px solid #FFF;
     position: fixed;
@@ -165,9 +166,11 @@ a:hover, a:focus {
     margin: 0 auto;
     height: 83px;
 }
-.fixed-margin{
+
+.fixed-margin {
     margin-top: 82px;
 }
+
 /* bootstrap overrides */
 .form-control {
     border-color: #bbbcbc;
@@ -227,6 +230,7 @@ a:hover, a:focus {
     background: #f8971d;
     border-radius: 12px;
 }
+
 .btn-orange-round:hover {
     background-color: #ffbb65;
     border-color: #ffbb65;
@@ -245,34 +249,39 @@ a:hover, a:focus {
 .hygienist-section,
 .adult-section,
 .child-section,
-.final-section{
+.final-section {
     background-color: #f4f2f1;
     padding: 15px;
     margin-bottom: 20px;
 }
-.dentist-section:first-of-type h2 i{
+
+.dentist-section:first-of-type h2 i {
     display: none;
 }
+
 .form-inline .form-group {
     margin-bottom: 10px;
 }
+
 .dentist-button-row,
 .hygienist-button-row,
 .adult-button-row,
-.child-button-row{
+.child-button-row {
     width: 100%;
     margin: 20px 0;
     height: 35px;
 }
+
 .input-group.calendar .input-group-addon {
     border: 1px solid #bbbcbc;
     padding: 0 7px;
 }
-.input-group.calendar .form-control{
-    border-left:0;
+
+.input-group.calendar .form-control {
+    border-left: 0;
 }
 
-.radio .form-control-feedback{
+.radio .form-control-feedback {
     position: relative;
 }
 
@@ -320,8 +329,6 @@ a:hover, a:focus {
 }
 
 
-
-
 /* form group icon realign */
 #searchAll .form-group {
     position: relative;
@@ -330,22 +337,26 @@ a:hover, a:focus {
 
 .form-control-icon,
 .form-control-feedback,
-.input-group-override{
+.input-group-override {
     right: 5px;
 }
+
 .has-feedback-left .form-control {
     padding-right: 12px;
     padding-left: 34px;
 }
-.has-feedback-left .form-control-feedback{
+
+.has-feedback-left .form-control-feedback {
     right: 0;
 }
+
 .has-feedback-left .input-group-override {
     left: 0;
 }
+
 .form-control-feedback,
 .input-group-override,
-.form-inline .input-group .input-group-override{
+.form-inline .input-group .input-group-override {
     position: absolute;
     top: 0;
     right: 5px;
@@ -357,28 +368,33 @@ a:hover, a:focus {
     text-align: center;
     pointer-events: none;
 }
+
 .input-group .input-group-override {
     background-color: transparent;
 }
+
 .datepicker {
     border-radius: 0 !important;
 }
+
 .office-select {
     margin: 15px 0 15px;
 }
-
 
 
 /* other overrides */
 .content-header {
     padding: 0;
 }
+
 .form-group.has-success .form-control, .form-group.has-success .input-group-addon {
     border-color: #006a52;
 }
+
 .box.box-primary {
     border-top-color: #f8971d;
 }
+
 .table > thead > tr > th, .table > tbody > tr > th,
 .table > tfoot > tr > th, .table > thead > tr > td,
 .table > tbody > tr > td, .table > tfoot > tr > td {
@@ -390,6 +406,7 @@ a:hover, a:focus {
 .no-l-pad {
     padding-left: 0;
 }
+
 .space-20 {
     margin-bottom: 20px;
 }
@@ -398,6 +415,7 @@ a:hover, a:focus {
 .clear:nth-of-type(4n + 1) {
     clear: both;
 }
+
 .clear {
     clear: both;
 }
@@ -428,9 +446,11 @@ a:hover, a:focus {
     text-align: center;
     width: 100%;
 }
+
 .zip {
     display: none;
 }
+
 /* SINGLE OFFICE */
 #hours {
     background: #FFF;
@@ -444,9 +464,11 @@ a:hover, a:focus {
     font-size: 18px;
     letter-spacing: .03em;
 }
+
 #hours .fa {
     margin-left: 5px;
 }
+
 #hours-menu {
     display: none;
     position: absolute;
@@ -454,31 +476,58 @@ a:hover, a:focus {
     top: 96%;
     right: 2px;
     background: #FFF;
-    color: #000;
+    color: #006a52;
     font-size: 14px;
     font-weight: normal;
     padding: 15px;
-    box-shadow: 0 2px 8px rgba(0,0,0,.2);
+    width: 100%;
+    max-width: 240px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .2);
+}
+
+#hours-menu .divide {
+    height: 1px;
+    border-bottom: 1px solid #006a52;
+    width: 100%;
+    float: left;
+    margin-bottom: 10px;
+}
+#hours-menu p {
+    float: left;
+    width: 100%;
+}
+#hours-menu p>span{
+    float: right;
+}
+#hours-menu small {
+    clear: both;
+    display: block;
+    font-size: 10px;
 }
 
 .title {
     background-color: #eae6e4;
 }
+
 .title p {
     font-weight: bold;
     margin-bottom: 15px;
 }
+
 .info {
     background-color: #f7f5f5;
 }
+
 .info p {
     min-height: 20px;
     margin-bottom: 15px;
 }
+
 .adult {
     background-color: #006a52;
     padding: 20px;
 }
+
 .child {
     background-color: #f8971d;
     padding: 20px;
@@ -492,7 +541,6 @@ a:hover, a:focus {
 }
 
 
-
 .notes h3 {
     background-color: #eae6e4;
     color: #474747;
@@ -500,6 +548,7 @@ a:hover, a:focus {
     padding: 20px;
     margin: 0;
 }
+
 .notes p {
     background-color: #f7f5f5;
     padding: 20px;
@@ -510,6 +559,7 @@ a:hover, a:focus {
     background-color: #f7f5f5;
     padding: 20px;
 }
+
 .offers h3 {
     margin: 0;
     font-weight: bold;
@@ -523,8 +573,15 @@ a:hover, a:focus {
     width: 100%;
 }
 
-.office img {
+.office-img img {
     /*margin: 0 auto 25px;*/
+    border: 5px solid #fff;
+    box-shadow: 0 0 5px #999;
+}
+
+#google-map {
+    /*width: 268px;*/
+    height: 220px;
     border: 5px solid #fff;
     box-shadow: 0 0 5px #999;
 }
@@ -546,7 +603,7 @@ a:hover, a:focus {
         border-bottom-width: 1px;
         border-bottom-style: solid;
         border-top: none;
-        box-shadow: 0px 5px 12px 1px rgba(0,0,0,.15);
+        box-shadow: 0px 5px 12px 1px rgba(0, 0, 0, .15);
     }
 }
 
@@ -559,14 +616,16 @@ a:hover, a:focus {
     .search {
         min-width: 250px;
     }
+
     .title,
     .info {
         padding: 20px 20px 0;
     }
 
-    .navbar-header{
+    .navbar-header {
         padding: 8px 0 0;
     }
+
     .navbar .form {
         padding: 0;
     }
@@ -587,6 +646,7 @@ a:hover, a:focus {
     .search {
         min-width: 450px;
     }
+
     .title, .info {
         min-height: 380px;
     }
