@@ -21,9 +21,9 @@ class ARecallTable extends Migration
                 $table->string('no_plan_units', 255)->nullable();
                 $table->string('record_duration', 255)->nullable();
                 $table->string('srp_cleaning', 255)->nullable();
+                $table->string('srp_transfer', 255)->nullable();
                 $table->string('srp_cleaning_units', 255)->nullable();
                 $table->string('srp_dr_exam', 255)->nullable();
-                $table->string('srp_no', 255)->nullable();
                 $table->string('perio_units', 255)->nullable();
                 $table->timestamps();
 

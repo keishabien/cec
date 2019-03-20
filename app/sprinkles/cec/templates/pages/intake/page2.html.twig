@@ -330,7 +330,8 @@
             msgTarget: $("#alerts-page"),
             validators: page.validators.npie
         }).on("submitSuccess.ufForm", function (event, data, textStatus, jqXHR) {
-            window.location.replace(site.uri.public + "/intake/3");
+            var id = $('input[name="office_id"]').val();
+            window.location.replace(site.uri.public + "/intake/3?id="+id);
         }).on("submitError.ufForm", function (event, data, textStatus, jqXHR) {
             console.log(data.responseText);
         });

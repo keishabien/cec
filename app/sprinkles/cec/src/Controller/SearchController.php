@@ -3,6 +3,7 @@
 namespace UserFrosting\Sprinkle\Cec\Controller;
 
 use Illuminate\Database\Capsule\Manager as Capsule;
+
 use UserFrosting\Sprinkle\Core\Controller\SimpleController;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
@@ -18,9 +19,15 @@ use UserFrosting\Sprinkle\Core\Facades\Debug;
 use UserFrosting\Sprinkle\Cec\Database\Models\Search;
 use UserFrosting\Sprinkle\Cec\Database\Models\Office;
 use UserFrosting\Sprinkle\Cec\Database\Models\DentistDetails;
+use UserFrosting\Sprinkle\Cec\Database\Models\HygienistDetails;
+use UserFrosting\Sprinkle\Cec\Database\Models\AddDetails;
+use UserFrosting\Sprinkle\Cec\Database\Models\AdultNPIE;
+use UserFrosting\Sprinkle\Cec\Database\Models\AdultRecall;
+use UserFrosting\Sprinkle\Cec\Database\Models\ChildNPIE;
+use UserFrosting\Sprinkle\Cec\Database\Models\ChildRecall;
+
 use UserFrosting\Sprinkle\Cec\Sprunje\OfficeSprunje;
 use UserFrosting\Sprinkle\Cec\Sprunje\SearchSprunje;
-
 use UserFrosting\Sprinkle\Cec\Sprunje\CECOfficeSprunje;
 
 
@@ -117,6 +124,12 @@ class SearchController extends SimpleController
         $office = Office::where('vanity_url', 'like', '%' . $params . '%')->first();
 
         $doctor = DentistDetails::where('office_id', $office["office_id"])->get();
+        $hygienist = HygienistDetails::where('office_id', $office["office_id"])->get();
+        $aNPIE = AdultNPIE::where('office_id', $office["office_id"])->get();
+        $cNPIE = ChildNPIE::where('office_id', $office["office_id"])->get();
+        $aRecall = AdultRecall::where('office_id', $office["office_id"])->get();
+        $cRecall = ChildRecall::where('office_id', $office["office_id"])->get();
+        $addDetails = AddDetails::where('office_id', $office["office_id"])->get();
 
         $name = $office['name'];
         $patterns = array();
@@ -132,6 +145,12 @@ class SearchController extends SimpleController
             'keyword' => $params,
             'office' => $office,
             'doctor' => $doctor,
+            'hygienist' => $hygienist,
+            'aNPIE' => $aNPIE,
+            'cNPIE' => $cNPIE,
+            'aRecall' => $aRecall,
+            'cRecall' => $cRecall,
+            'additional' => $addDetails,
             'newName' => $newName,
             'midwestLogo' => 'https://www.meritdental.com/cecdb/images/midwest-logo.png',
             'mondoviLogo' => 'https://www.meritdental.com/cecdb/images/mondovi-logo.png',

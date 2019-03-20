@@ -42,6 +42,8 @@
 
 
 {% block body_matter %}
+
+
     {#<div class="row">#}
 
     {#{% if keyword is defined %}#}
@@ -203,7 +205,9 @@
             <div class="col-xs-6 col-sm-4 title">
                 <p>BOM:</p>
             </div>
-            <div class="col-xs-6 col-sm-8 info"></div>
+            <div class="col-xs-6 col-sm-8 info">
+                {{ additional[0].bom_name }}
+            </div>
             <div class="clear"></div>
 
             <div class="col-xs-6 col-sm-4 title">
@@ -316,7 +320,7 @@
                     <img src="https://midwest-dental.com/wp-content/uploads/2016/07/Elkhorn_NEW_web.jpg" alt="">
                 </div>
                 <div class="col-sm-4">Google Map</div>
-                <div class="col-sm-4">Directions</div>
+                <div class="col-sm-4">{{ additional[0].directions }}</div>
             </div>
         </div>
     </section>
