@@ -11,7 +11,7 @@ class AddDetails extends Model
      * @var string The name of the table for the current model.
      */
 
-    protected $table = 'userfrosting.additional_details';
+    protected $table = 'cec.additional_details';
 
     protected $fillable = [
         'office_id',
