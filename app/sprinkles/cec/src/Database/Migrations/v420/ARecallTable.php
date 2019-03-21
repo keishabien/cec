@@ -3,7 +3,6 @@
 namespace UserFrosting\Sprinkle\Cec\Database\Migrations\v420;
 
 use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Database\Schema\Builder;
 use UserFrosting\Sprinkle\Core\Database\Migration;
 
 class ARecallTable extends Migration
