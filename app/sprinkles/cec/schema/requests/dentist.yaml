@@ -16,7 +16,7 @@ name:
 provider_num:
   validators:
     regex:
-      regex: ^\d{6}$
+      regex: "^\d{6}$"
       message: "Please enter only 6 numbers."
     required:
       label: Dentist Provider Number
@@ -25,7 +25,7 @@ provider_num:
 nickname:
   validators:
     regex:
-      regex: ^[a-zA-Z ]*.[a-zA-Z ]*$
+      regex: "^[a-zA-Z ]*.[a-zA-Z ]*$"
       message: "Please provide only letters."
     length:
       label: Dentist Called Name
@@ -39,7 +39,7 @@ nickname:
 emergency_num:
   validators:
     regex:
-      regex: ^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})\s*$
+      regex: "^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})\s*$"
       message: "Please provide a valid dentist phone number."
 
 locum:
@@ -50,7 +50,7 @@ locum:
 start_date:
   validators:
     regex:
-      regex: ^(0[1-9]|1[0-2])\/(0[1-9]|[12]\d|3[01])\/[12]\d{3}$
+      regex: "^(0[1-9]|1[0-2])\/(0[1-9]|[12]\d|3[01])\/[12]\d{3}$"
       message: "The date you provided is not valid."
     required:
       label: Dentist Start Date
@@ -59,7 +59,7 @@ start_date:
 end_date:
   validators:
     regex:
-      regex: ^(0[1-9]|1[0-2])\/(0[1-9]|[12]\d|3[01])\/[12]\d{3}$
+      regex: "^(0[1-9]|1[0-2])\/(0[1-9]|[12]\d|3[01])\/[12]\d{3}$"
       message: "The end date you provided is not valid."
 
 leave:
@@ -70,12 +70,12 @@ leave:
 leave_start_date:
   validators:
     regex:
-      regex: ^(0[1-9]|1[0-2])\/(0[1-9]|[12]\d|3[01])\/[12]\d{3}$
+      regex: "^(0[1-9]|1[0-2])\/(0[1-9]|[12]\d|3[01])\/[12]\d{3}$"
       message: "The leave start date you provided is not valid."
 
 leave_end_date:
   validators:
     regex:
-      regex: ^(0[1-9]|1[0-2])\/(0[1-9]|[12]\d|3[01])\/[12]\d{3}$
+      regex: "^(0[1-9]|1[0-2])\/(0[1-9]|[12]\d|3[01])\/[12]\d{3}$"
       message: "The leave end date you provided is not valid."
 

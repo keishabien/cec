@@ -16,7 +16,7 @@ name:
 provider_num:
   validators:
     regex:
-      regex: ^\d{6}$
+      regex: "^\d{6}$"
       message: "Please enter only 6 numbers."
     required:
       label: Hygienist Provider Number

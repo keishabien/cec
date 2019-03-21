@@ -10,11 +10,6 @@ return [
             'name' => 'Keisha'
         ]
     ],
-    'debug' => [
-        'smtp' => true,
-        'queries' => true,
-        'ajax'  => true
-    ],
     'site' => [
         'author' => 'Keisha Bien',
         'title' => 'CEC',
@@ -27,6 +22,6 @@ return [
         ]
     ],
     'php' => [
-    'timezone' => 'America/Chicago'
-]
+        'timezone' => 'America/Chicago'
+    ]
 ];

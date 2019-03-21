@@ -14,7 +14,7 @@ bom_number:
       label: Dentist Provider Number
       message: "Please select for new patient consideration."
     regex:
-      regex: ^(\+0?1\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$
+      regex: "^(\+0?1\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$"
       message: "Please enter a valid phone number, including hyphens."
 
 dr_hyg_plan:
