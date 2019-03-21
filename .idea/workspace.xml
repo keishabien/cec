@@ -2,9 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e08026d2-db7b-46d1-bd10-bc3bd748330c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/userfrosting2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/userfrosting2.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.env" beforeDir="false" afterPath="$PROJECT_DIR$/app/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/asset-bundles.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/cec/asset-bundles.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/assets/js/intake.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/cec/assets/js/intake.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/assets/js/office.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/cec/assets/js/office.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/assets/js/offices.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/cec/assets/js/offices.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/assets/js/searchAll.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/cec/assets/js/searchAll.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/assets/js/uf-collection.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/cec/assets/js/uf-collection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/assets/js/widgets/office.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/cec/assets/js/widgets/office.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/templates/pages/office-single.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/cec/templates/pages/office-single.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,40 +27,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/asset-bundles.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Desktop/cec/asset-bundles.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="89" selection-start-line="89" selection-end-line="101" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/assets/js/widgets/office.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="13" column="45" lean-forward="true" selection-end-line="209" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/assets/js/intake.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="21" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
+            <state relative-caret-position="230">
+              <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -59,11 +38,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/assets/js/office.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="19" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
+            <state relative-caret-position="253">
+              <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -71,49 +47,63 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/assets/js/offices.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="24" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
+            <state relative-caret-position="207">
+              <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/assets/js/searchAll.js">
+        <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/assets/js/widgets/office.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="52" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
+            <state relative-caret-position="276">
+              <caret line="12" column="45" selection-end-line="209" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/asset-bundles.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="115">
+              <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Desktop/cec/asset-bundles.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1518">
+              <caret line="96" column="29" selection-start-line="96" selection-start-column="29" selection-end-line="96" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/templates/pages/abstract/base.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="347">
+              <caret line="88" column="54" selection-start-line="88" selection-start-column="20" selection-end-line="88" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/templates/pages/office-single.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="568">
+              <caret line="281" selection-start-line="281" selection-end-line="281" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/assets/js/uf-collection.js">
+        <entry file="file://$PROJECT_DIR$/app/.env">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret selection-end-line="358" />
+              <caret column="20" selection-start-column="20" selection-end-column="20" />
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/assets/vendor/handlebars/handlebars.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="8" column="41" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Temp/scp38456/home/webupload/.npm/_logs/2019-03-21T17_29_02_836Z-debug.log">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-401" />
           </provider>
         </entry>
       </file>
@@ -170,7 +160,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/sprinkles/cec/assets/js/intake-dr-hyg-details.js" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Controller/PageController.php" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_14.html" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/schema/requests/adult-npie.yaml" />
@@ -188,7 +177,6 @@
         <option value="$PROJECT_DIR$/app/sprinkles/cec/schema/requests/additional.yaml" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/templates/pages/intake/page1.html.twig" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Controller/SearchController.php" />
-        <option value="$PROJECT_DIR$/app/sprinkles/cec/templates/pages/office-single.html.twig" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/package.json" />
         <option value="$PROJECT_DIR$/app/sprinkles/admin/templates/pages/abstract/dashboard.html.twig" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/assets/css/cec.css" />
@@ -203,7 +191,6 @@
         <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Models/AdultNPIE.php" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Models/Office.php" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/OfficeTable.php" />
-        <option value="$PROJECT_DIR$/app/.env" />
         <option value="$PROJECT_DIR$/webserver-configs/cec.conf" />
         <option value="$USER_HOME$/AppData/Local/Temp/scp59218/var/www/midwest/cec/app/sprinkles.json" />
         <option value="$PROJECT_DIR$/.gitignore" />
@@ -214,13 +201,16 @@
         <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/ARecallTable.php" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/ANPIETable.php" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/AddDetailsTable.php" />
-        <option value="$PROJECT_DIR$/app/sprinkles/cec/asset-bundles.json" />
-        <option value="$PROJECT_DIR$/app/sprinkles/cec/assets/js/widgets/office.js" />
-        <option value="$PROJECT_DIR$/app/sprinkles/cec/assets/js/intake.js" />
-        <option value="$PROJECT_DIR$/app/sprinkles/cec/assets/js/office.js" />
-        <option value="$PROJECT_DIR$/app/sprinkles/cec/assets/js/offices.js" />
+        <option value="$PROJECT_DIR$/app/sprinkles/cec/templates/pages/office-single.html.twig" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/assets/js/searchAll.js" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/assets/js/uf-collection.js" />
+        <option value="$PROJECT_DIR$/app/sprinkles/cec/assets/js/widgets/office.js" />
+        <option value="$PROJECT_DIR$/app/sprinkles/cec/assets/js/office.js" />
+        <option value="$PROJECT_DIR$/app/sprinkles/cec/assets/js/intake.js" />
+        <option value="$PROJECT_DIR$/app/sprinkles/cec/assets/js/offices.js" />
+        <option value="$PROJECT_DIR$/app/sprinkles/cec/asset-bundles.json" />
+        <option value="$PROJECT_DIR$/app/sprinkles/cec/templates/pages/abstract/base.html.twig" />
+        <option value="$PROJECT_DIR$/app/.env" />
       </list>
     </option>
   </component>
@@ -339,6 +329,7 @@
       <path value="$PROJECT_DIR$/app/vendor/illuminate/redis" />
       <path value="$PROJECT_DIR$/app/vendor/illuminate/filesystem" />
       <path value="$PROJECT_DIR$/app/vendor/illuminate/events" />
+      <path value="$PROJECT_DIR$/app/vendor/urijs/src" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
@@ -395,37 +386,37 @@
               <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
               <item name="cec" type="462c0819:PsiDirectoryNode" />
               <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="userfrosting2" type="b2602c69:ProjectViewProjectNode" />
               <item name="userfrosting2" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
-              <item name="cec" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="widgets" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="userfrosting2" type="b2602c69:ProjectViewProjectNode" />
               <item name="userfrosting2" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="urijs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="userfrosting2" type="b2602c69:ProjectViewProjectNode" />
               <item name="userfrosting2" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="urijs" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="userfrosting2" type="b2602c69:ProjectViewProjectNode" />
               <item name="userfrosting2" type="462c0819:PsiDirectoryNode" />
-              <item name="webserver-configs" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="urijs" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="URI.js" type="620a8d5e:NestingTreeNode" />
             </path>
           </expand>
           <select />
@@ -442,11 +433,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\userfrosting2\app\vendor" />
       <recent name="C:\wamp64\www\userfrosting2\app\sprinkles\cec\assets" />
       <recent name="C:\wamp64\www\userfrosting2\webserver-configs" />
       <recent name="C:\wamp64\www\userfrosting2\app\sprinkles\cec\src\Database\Models" />
       <recent name="C:\wamp64\www\userfrosting2\app\sprinkles\cec\schema\requests" />
-      <recent name="C:\wamp64\www\userfrosting2\app\sprinkles" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -484,7 +475,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44141000" />
+    <option name="totallyTimeSpent" value="46120000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -503,7 +494,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.29144096" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.28277355" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="1.0" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -516,30 +507,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/build/node_modules/@userfrosting/merge-package-dependencies/lib/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="307" column="4" selection-start-line="307" selection-start-column="4" selection-end-line="307" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/core/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="7" column="15" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/core/routes/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-192" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/core/templates/pages/abstract/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1872" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/sprinkles/admin/templates/pages/abstract/dashboard.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -679,13 +646,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="15" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
@@ -777,13 +737,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../logs/php_error.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="5306" column="247" lean-forward="true" selection-start-line="5306" selection-start-column="39" selection-end-line="5306" selection-end-column="247" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/AddDetailsTable.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
@@ -823,54 +776,10 @@
         <state relative-caret-position="-401" />
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Desktop/cec/asset-bundles.json">
+    <entry file="file://$PROJECT_DIR$/app/vendor/userfrosting/assets/src/AssetBundles/GulpBundleAssetsBundles.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="89" selection-start-line="89" selection-end-line="101" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/asset-bundles.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/assets/js/widgets/office.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="13" column="45" lean-forward="true" selection-end-line="209" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/assets/js/intake.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="21" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/assets/js/office.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="19" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/assets/js/offices.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="24" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+        <state relative-caret-position="391">
+          <caret line="38" column="74" selection-start-line="38" selection-start-column="74" selection-end-line="38" selection-end-column="74" />
         </state>
       </provider>
     </entry>
@@ -878,9 +787,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-line="52" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -888,6 +794,79 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-line="358" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/assets/js/office.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/assets/js/offices.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/assets/js/intake.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/templates/pages/office-single.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="568">
+          <caret line="281" selection-start-line="281" selection-end-line="281" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../logs/php_error.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="472">
+          <caret line="5334" selection-start-line="5334" selection-end-line="5334" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/assets/js/widgets/office.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="12" column="45" selection-end-line="209" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/vendor/urijs/src/URI.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/cec/asset-bundles.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1518">
+          <caret line="96" column="29" selection-start-line="96" selection-start-column="29" selection-end-line="96" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/asset-bundles.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/templates/pages/abstract/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="88" column="54" selection-start-line="88" selection-start-column="20" selection-end-line="88" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="20" selection-start-column="20" selection-end-column="20" />
         </state>
       </provider>
     </entry>

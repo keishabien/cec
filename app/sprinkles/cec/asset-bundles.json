@@ -1,5 +1,18 @@
 {
     "bundle": {
+        "js/search": {
+            "scripts": [
+                "vendor/urijs/src/URI.js",
+                "js/searchAll.js"
+            ],
+            "options": {
+                "result": {
+                    "type": {
+                        "scripts": "plain"
+                    }
+                }
+            }
+        },
         "css/main": {
             "styles": [
                 "vendor/font-awesome/css/font-awesome.css",
