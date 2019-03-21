@@ -120,6 +120,7 @@
       <path value="$PROJECT_DIR$/app/vendor/illuminate/redis" />
       <path value="$PROJECT_DIR$/app/vendor/illuminate/filesystem" />
       <path value="$PROJECT_DIR$/app/vendor/illuminate/events" />
+      <path value="$PROJECT_DIR$/app/vendor/urijs/src" />
     </include_path>
   </component>
   <component name="PhpUnit">
