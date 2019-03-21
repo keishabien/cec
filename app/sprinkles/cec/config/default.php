@@ -22,6 +22,7 @@ return [
         ]
     ],
     'php' => [
-        'timezone' => 'America/Chicago'
+        'timezone' => 'America/Chicago',
+        'log_errors' => true
     ]
 ];
