@@ -3,6 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="e08026d2-db7b-46d1-bd10-bc3bd748330c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/asset-bundles.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/cec/asset-bundles.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/assets/js/intake.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/assets/js/office.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/assets/js/offices.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/assets/js/searchAll.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/assets/js/uf-collection.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/assets/js/widgets/office.js" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -93,11 +100,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/sprinkles.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="253">
               <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/asset-bundles.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-391">
+              <caret line="47" column="8" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -156,7 +172,6 @@
         <option value="$PROJECT_DIR$/app/sprinkles/cec/templates/pages/partials/key.js.twig" />
         <option value="$PROJECT_DIR$/app/logs/userfrosting.log" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/assets/js/intake-dr-hyg-details.js" />
-        <option value="$PROJECT_DIR$/app/sprinkles/cec/asset-bundles.json" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Controller/PageController.php" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/assets/js/intake.js" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_14.html" />
@@ -193,6 +208,7 @@
         <option value="$PROJECT_DIR$/app/sprinkles/admin/templates/pages/abstract/dashboard.html.twig" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/assets/css/cec.css" />
         <option value="$PROJECT_DIR$/app/sprinkles.json" />
+        <option value="$PROJECT_DIR$/app/sprinkles/cec/asset-bundles.json" />
       </list>
     </option>
   </component>
@@ -313,7 +329,7 @@
       <path value="$PROJECT_DIR$/app/vendor/illuminate/events" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
@@ -338,6 +354,27 @@
               <item name="userfrosting2" type="b2602c69:ProjectViewProjectNode" />
               <item name="userfrosting2" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="userfrosting2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="userfrosting2" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="userfrosting2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="userfrosting2" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
+              <item name="cec" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="userfrosting2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="userfrosting2" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
+              <item name="cec" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -394,13 +431,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32451000" />
+    <option name="totallyTimeSpent" value="33303000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17004265" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17004265" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -413,7 +450,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.42795232" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.42795232" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="1.0" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -526,11 +563,6 @@
             <element signature="e#70#111#0#PHP" expanded="true" />
           </folding>
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/asset-bundles.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1104" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/routes/routes.php">
@@ -683,6 +715,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
           <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/asset-bundles.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-391">
+          <caret line="47" column="8" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
         </state>
       </provider>
     </entry>
