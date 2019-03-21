@@ -9,8 +9,8 @@ class OfficeTable extends Migration
 {
     public function up()
     {
-        if (!$this->schema->hasTable('uf_office_details')) {
-            $this->schema->create('uf_office_details', function (Blueprint $table) {
+        if (!$this->schema->hasTable('office_details')) {
+            $this->schema->create('office_details', function (Blueprint $table) {
                 $table->increments('office_id');
                 $table->string('page_id', 25)->nullable();
                 $table->string('name', 512)->nullable();
@@ -53,6 +53,6 @@ class OfficeTable extends Migration
 
     public function down()
     {
-        $this->schema->drop('uf_office_details');
+        $this->schema->drop('office_details');
     }
 }
