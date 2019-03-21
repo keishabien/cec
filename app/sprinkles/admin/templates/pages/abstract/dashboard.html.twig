@@ -7,9 +7,9 @@
 
 {% block body_attributes %}
     {% if current_user.isMaster() %}
-        class="hold-transition skin-red sidebar-mini"
+        class="hold-transition skin-red sidebar-mini dash"
     {% else %}
-        class="hold-transition skin-{{site.AdminLTE.skin}} sidebar-mini"
+        class="hold-transition skin-{{site.AdminLTE.skin}} sidebar-mini dash"
     {% endif %}
 {% endblock %}
 
