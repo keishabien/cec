@@ -11,7 +11,7 @@ class ChildNPIE extends Model
      * @var string The name of the table for the current model.
      */
 
-    protected $table = 'cec.cnpie_details';
+    protected $table = 'support_wrdp1.cnpie_details';
 
     protected $fillable = [
         'office_id',
