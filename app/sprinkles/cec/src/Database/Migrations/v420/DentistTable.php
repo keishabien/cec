@@ -29,7 +29,7 @@ class DentistTable extends Migration
                 $table->string('leave_end_date', 25)->nullable();
                 $table->timestamps();
 
-                $table->foreign('office_id')->references('office_id')->on('uf_office_details');
+                $table->foreign('office_id')->references('office_id')->on('office_details');
                 $table->index('office_id');
                 $table->engine = 'InnoDB';
                 $table->collation = 'utf8_unicode_ci';

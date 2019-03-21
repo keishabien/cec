@@ -11,7 +11,7 @@ class Office extends Model
      * @var string The name of the table for the current model.
      */
 
-    protected $table = 'midwest_wrdp1.uf_office_details';
+    protected $table = 'cec.office_details';
 
 
     protected $fillable = [

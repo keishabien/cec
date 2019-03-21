@@ -2,7 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e08026d2-db7b-46d1-bd10-bc3bd748330c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/asset-bundles.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/cec/asset-bundles.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/ANPIETable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/ANPIETable.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/ARecallTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/ARecallTable.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/AddDetailsTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/AddDetailsTable.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/CNPIETable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/CNPIETable.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/CRecallTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/CRecallTable.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/DentistTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/DentistTable.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/HygienistTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/HygienistTable.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/OfficeTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/OfficeTable.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Models/AddDetails.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Models/AddDetails.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Models/AdultNPIE.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Models/AdultNPIE.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Models/AdultRecall.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Models/AdultRecall.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Models/ChildNPIE.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Models/ChildNPIE.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Models/ChildRecall.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Models/ChildRecall.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Models/DentistDetails.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Models/DentistDetails.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Models/HygienistDetails.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Models/HygienistDetails.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Models/Office.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Models/Office.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Models/Search.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Models/Search.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,55 +32,95 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/assets/js/intake.js">
+        <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Models/AddDetails.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+            <state relative-caret-position="276">
+              <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/assets/js/office.js">
+        <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/AddDetailsTable.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+            <state relative-caret-position="368">
+              <caret line="36" column="89" selection-start-line="36" selection-start-column="89" selection-end-line="36" selection-end-column="89" />
+              <folding>
+                <element signature="e#70#111#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/assets/js/offices.js">
+        <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/ANPIETable.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+            <state relative-caret-position="322">
+              <caret line="26" column="89" selection-start-line="26" selection-start-column="89" selection-end-line="26" selection-end-column="89" />
+              <folding>
+                <element signature="e#69#110#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/assets/js/searchAll.js">
+        <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/ARecallTable.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="52" />
+            <state relative-caret-position="621">
+              <caret line="28" column="89" selection-start-line="28" selection-start-column="89" selection-end-line="28" selection-end-column="89" />
+              <folding>
+                <element signature="e#70#111#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/assets/js/uf-collection.js">
+        <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/CNPIETable.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="358" />
+            <state relative-caret-position="-7">
+              <caret line="27" column="89" selection-start-line="27" selection-start-column="89" selection-end-line="27" selection-end-column="89" />
+              <folding>
+                <element signature="e#70#111#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/CRecallTable.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/DentistTable.php">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/asset-bundles.json">
+        <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/HygienistTable.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="1" column="15" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
+            <state relative-caret-position="253">
+              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/OfficeTable.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="322">
+              <caret line="51" column="5" lean-forward="true" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Models/AdultNPIE.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="276">
+              <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -94,6 +150,7 @@
       <find>col-sm-6</find>
       <find>UF_MODE</find>
       <find>&quot;js/main&quot;</find>
+      <find>uf_office_details</find>
     </findStrings>
     <replaceStrings>
       <replace>child</replace>
@@ -111,6 +168,7 @@
       <replace>family_same_dr</replace>
       <replace>col-sm-6</replace>
       <replace>col-xs-6</replace>
+      <replace>office_details</replace>
     </replaceStrings>
     <dirStrings>
       <dir>C:\wamp64\www\userfrosting2\app</dir>
@@ -136,16 +194,6 @@
         <option value="$PROJECT_DIR$/app/sprinkles/admin/templates/pages/abstract/dashboard.html.twig" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/assets/css/cec.css" />
         <option value="$PROJECT_DIR$/app/sprinkles.json" />
-        <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Models/Search.php" />
-        <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Models/HygienistDetails.php" />
-        <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Models/DentistDetails.php" />
-        <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Models/ChildRecall.php" />
-        <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Models/ChildNPIE.php" />
-        <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Models/AdultRecall.php" />
-        <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Models/AddDetails.php" />
-        <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Models/AdultNPIE.php" />
-        <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Models/Office.php" />
-        <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/OfficeTable.php" />
         <option value="$PROJECT_DIR$/webserver-configs/cec.conf" />
         <option value="$USER_HOME$/AppData/Local/Temp/scp59218/var/www/midwest/cec/app/sprinkles.json" />
         <option value="$PROJECT_DIR$/.gitignore" />
@@ -173,6 +221,16 @@
         <option value="$USER_HOME$/AppData/Local/Temp/scp14818/var/www/midwest/cec/public/index.php" />
         <option value="$PROJECT_DIR$/app/.env" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/asset-bundles.json" />
+        <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Models/Search.php" />
+        <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Models/Office.php" />
+        <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Models/HygienistDetails.php" />
+        <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Models/DentistDetails.php" />
+        <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Models/ChildRecall.php" />
+        <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Models/ChildNPIE.php" />
+        <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Models/AdultRecall.php" />
+        <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Models/AdultNPIE.php" />
+        <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Models/AddDetails.php" />
+        <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/OfficeTable.php" />
       </list>
     </option>
   </component>
@@ -347,8 +405,47 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
               <item name="cec" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="userfrosting2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="userfrosting2" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
+              <item name="cec" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Database" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="userfrosting2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="userfrosting2" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
+              <item name="cec" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Database" type="462c0819:PsiDirectoryNode" />
+              <item name="Migrations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="userfrosting2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="userfrosting2" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
+              <item name="cec" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Database" type="462c0819:PsiDirectoryNode" />
+              <item name="Migrations" type="462c0819:PsiDirectoryNode" />
+              <item name="v420" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="userfrosting2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="userfrosting2" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
+              <item name="cec" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Database" type="462c0819:PsiDirectoryNode" />
+              <item name="Models" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -407,7 +504,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52490000" />
+    <option name="totallyTimeSpent" value="52702000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -439,141 +536,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Models/Office.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="13" column="40" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/TestOfficeTable.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webserver-configs/cec.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/scp59218/var/www/midwest/cec/app/sprinkles.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/OfficeTable.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="50" lean-forward="true" selection-start-line="5" selection-start-column="50" selection-end-line="5" selection-end-column="50" />
-          <folding>
-            <element signature="e#70#111#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/HygienistTable.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="23" column="92" selection-start-line="23" selection-start-column="75" selection-end-line="23" selection-end-column="92" />
-          <folding>
-            <element signature="e#70#111#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/DentistTable.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="31" column="92" selection-start-line="31" selection-start-column="92" selection-end-line="31" selection-end-column="92" />
-          <folding>
-            <element signature="e#70#111#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/CRecallTable.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="25" column="92" selection-start-line="25" selection-start-column="92" selection-end-line="25" selection-end-column="92" />
-          <folding>
-            <element signature="e#70#111#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/CNPIETable.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="27" column="92" selection-start-line="27" selection-start-column="92" selection-end-line="27" selection-end-column="92" />
-          <folding>
-            <element signature="e#70#111#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/ARecallTable.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="28" column="92" selection-start-line="28" selection-start-column="92" selection-end-line="28" selection-end-column="92" />
-          <folding>
-            <element signature="e#70#111#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/ANPIETable.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="26" column="92" selection-start-line="26" selection-start-column="92" selection-end-line="26" selection-end-column="92" />
-          <folding>
-            <element signature="e#69#110#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/AddDetailsTable.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="36" column="92" selection-start-line="36" selection-start-column="92" selection-end-line="36" selection-end-column="92" />
-          <folding>
-            <element signature="e#70#111#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="514">
-          <caret line="30" column="25" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="33" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/scp31475/var/www/midwest/cec/build/package.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/assets/vendor/handlebars/handlebars.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="41" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Temp/scp38456/home/webupload/.npm/_logs/2019-03-21T17_29_02_836Z-debug.log">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-401" />
@@ -781,6 +743,129 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret line="1" column="15" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Models/Search.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Models/Office.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="13" column="28" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Models/HygienistDetails.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Models/DentistDetails.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Models/ChildRecall.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Models/ChildNPIE.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Models/AdultRecall.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Models/AdultNPIE.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Models/AddDetails.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/AddDetailsTable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="36" column="89" selection-start-line="36" selection-start-column="89" selection-end-line="36" selection-end-column="89" />
+          <folding>
+            <element signature="e#70#111#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/ANPIETable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="26" column="89" selection-start-line="26" selection-start-column="89" selection-end-line="26" selection-end-column="89" />
+          <folding>
+            <element signature="e#69#110#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/ARecallTable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="28" column="89" selection-start-line="28" selection-start-column="89" selection-end-line="28" selection-end-column="89" />
+          <folding>
+            <element signature="e#70#111#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/CNPIETable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7">
+          <caret line="27" column="89" selection-start-line="27" selection-start-column="89" selection-end-line="27" selection-end-column="89" />
+          <folding>
+            <element signature="e#70#111#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/CRecallTable.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/DentistTable.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/OfficeTable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="51" column="5" lean-forward="true" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/HygienistTable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>
