@@ -10,6 +10,9 @@ body {
 body.office-page {
     padding-top: 50px;
 }
+body.dash {
+    padding-top: 0;
+}
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
