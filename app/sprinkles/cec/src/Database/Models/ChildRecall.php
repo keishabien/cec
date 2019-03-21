@@ -11,7 +11,7 @@ class ChildRecall extends Model
      * @var string The name of the table for the current model.
      */
 
-    protected $table = 'support_wrdp1.crecall_details';
+    protected $table = 'midwest_wrdp1.crecall_details';
 
     protected $fillable = [
         'office_id',

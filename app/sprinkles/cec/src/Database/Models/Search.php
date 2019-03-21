@@ -12,7 +12,7 @@ class Search extends Model
      */
 //    protected $table = 'midwest_wrdp1.cec_update';
 
-    protected $table = 'support_wrdp1.office_details';
+    protected $table = 'midwest_wrdp1.office_details';
 
 
     /**
