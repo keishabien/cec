@@ -28,7 +28,7 @@ app/storage/*
 !app/storage/.gitkeep
 
 # Ignore bower vendor assets
-/app/sprinkles/*/assets/vendor/
+#/app/sprinkles/*/assets/vendor/
 
 
 # Ignore sample site sprinkle

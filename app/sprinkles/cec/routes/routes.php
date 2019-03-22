@@ -1,8 +1,6 @@
 <?php
 
-$app->get('/', 'UserFrosting\Sprinkle\Cec\Controller\PageController:pageIndex')
-    ->add('authGuard')
-    ->setName('index');
+$app->get('/', 'UserFrosting\Sprinkle\Cec\Controller\PageController:pageIndex')->add('authGuard')->setName('index');
 
 // INTAKE FORM
 $app->group('/intake', function () {
