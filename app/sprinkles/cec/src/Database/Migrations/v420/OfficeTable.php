@@ -32,7 +32,7 @@ class OfficeTable extends Migration
                 $table->string('sun_hours', 255)->nullable();
                 $table->string('page_url', 255)->nullable();
                 $table->string('vanity_url', 255)->nullable();
-                $table->string('map_url', 255)->nullable();
+                $table->string('map_url', 500)->nullable();
                 $table->string('credit_url', 255)->nullable();
                 $table->string('google_review_url', 255)->nullable();
                 $table->string('df_reviews_url', 255)->nullable();
