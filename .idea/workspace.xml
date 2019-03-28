@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e08026d2-db7b-46d1-bd10-bc3bd748330c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/userfrosting2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/userfrosting2.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/OfficeTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/OfficeTable.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,7 +21,7 @@
         <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Sprunje/CECOfficeSprunje.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="276">
-              <caret line="14" column="28" lean-forward="true" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
+              <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -32,9 +33,7 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Controller/OfficeController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4769" />
-          </provider>
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -42,11 +41,20 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/OfficeTable.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="130">
               <caret line="34" column="45" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_7.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="9" selection-start-line="9" selection-end-line="12" selection-end-column="95" />
             </state>
           </provider>
         </entry>
@@ -114,7 +122,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/sprinkles/cec/templates/pages/intake/page1.html.twig" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Controller/SearchController.php" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/package.json" />
         <option value="$PROJECT_DIR$/app/sprinkles/admin/templates/pages/abstract/dashboard.html.twig" />
@@ -165,8 +172,126 @@
         <option value="$USER_HOME$/AppData/Local/Temp/scp22414/var/www/midwest/cec/app/.env" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_2.txt" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/OfficeTable.php" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_7.sql" />
       </list>
     </option>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/app/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/app/vendor/filp/whoops" />
+      <path value="$PROJECT_DIR$/app/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/app/vendor/pimple/pimple" />
+      <path value="$PROJECT_DIR$/app/vendor/userfrosting/support" />
+      <path value="$PROJECT_DIR$/app/vendor/userfrosting/assets" />
+      <path value="$PROJECT_DIR$/app/vendor/userfrosting/session" />
+      <path value="$PROJECT_DIR$/app/vendor/league/flysystem-aws-s3-v3" />
+      <path value="$PROJECT_DIR$/app/vendor/league/csv" />
+      <path value="$PROJECT_DIR$/app/vendor/composer" />
+      <path value="$PROJECT_DIR$/app/vendor/league/flysystem" />
+      <path value="$PROJECT_DIR$/app/vendor/mtdowling/jmespath.php" />
+      <path value="$PROJECT_DIR$/app/vendor/illuminate/container" />
+      <path value="$PROJECT_DIR$/app/vendor/illuminate/cache" />
+      <path value="$PROJECT_DIR$/app/vendor/illuminate/database" />
+      <path value="$PROJECT_DIR$/app/vendor/illuminate/session" />
+      <path value="$PROJECT_DIR$/app/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/app/vendor/illuminate/events" />
+      <path value="$PROJECT_DIR$/app/vendor/illuminate/config" />
+      <path value="$PROJECT_DIR$/app/vendor/userfrosting/cache" />
+      <path value="$PROJECT_DIR$/app/vendor/userfrosting/config" />
+      <path value="$PROJECT_DIR$/app/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/app/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/app/vendor/doctrine/common" />
+      <path value="$PROJECT_DIR$/app/vendor/doctrine/collections" />
+      <path value="$PROJECT_DIR$/app/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/app/vendor/rockettheme/toolbox" />
+      <path value="$PROJECT_DIR$/app/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/app/vendor/illuminate/redis" />
+      <path value="$PROJECT_DIR$/app/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/app/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/app/vendor/illuminate/filesystem" />
+      <path value="$PROJECT_DIR$/app/vendor/guzzle/guzzle" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/app/vendor/doctrine/annotations" />
+      <path value="$PROJECT_DIR$/app/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/app/vendor/league/flysystem-cached-adapter" />
+      <path value="$PROJECT_DIR$/app/vendor/hamcrest/hamcrest-php" />
+      <path value="$PROJECT_DIR$/app/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/app/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/app/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/stopwatch" />
+      <path value="$PROJECT_DIR$/app/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/app/vendor/ezyang/htmlpurifier" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/app/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/debug" />
+      <path value="$PROJECT_DIR$/app/vendor/fzaninotto/faker" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/options-resolver" />
+      <path value="$PROJECT_DIR$/app/vendor/mockery/mockery" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/polyfill-php70" />
+      <path value="$PROJECT_DIR$/app/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/app/vendor/container-interop/container-interop" />
+      <path value="$PROJECT_DIR$/app/vendor/birke/rememberme" />
+      <path value="$PROJECT_DIR$/app/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/app/vendor/jackiedo/dotenv-editor" />
+      <path value="$PROJECT_DIR$/app/vendor/league/flysystem-sftp" />
+      <path value="$PROJECT_DIR$/app/vendor/wikimedia/composer-merge-plugin" />
+      <path value="$PROJECT_DIR$/app/vendor/league/flysystem-rackspace" />
+      <path value="$PROJECT_DIR$/app/vendor/vlucas/valitron" />
+      <path value="$PROJECT_DIR$/app/vendor/slim/slim" />
+      <path value="$PROJECT_DIR$/app/vendor/slim/csrf" />
+      <path value="$PROJECT_DIR$/app/vendor/nikic/fast-route" />
+      <path value="$PROJECT_DIR$/app/vendor/phpseclib/phpseclib" />
+      <path value="$PROJECT_DIR$/app/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/app/vendor/userfrosting/i18n" />
+      <path value="$PROJECT_DIR$/app/vendor/slim/twig-view" />
+      <path value="$PROJECT_DIR$/app/vendor/userfrosting/fortress" />
+      <path value="$PROJECT_DIR$/app/vendor/phpunit/phpunit-mock-objects" />
+      <path value="$PROJECT_DIR$/app/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/app/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/app/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/app/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/app/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/app/vendor/php-cs-fixer/diff" />
+      <path value="$PROJECT_DIR$/app/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/app/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/app/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/app/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/app/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/app/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/app/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/app/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/app/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/app/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/app/vendor/phpunit/php-token-stream" />
+      <path value="$PROJECT_DIR$/app/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/app/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/app/vendor/predis/predis" />
+      <path value="$PROJECT_DIR$/app/vendor/phpmailer/phpmailer" />
+      <path value="$PROJECT_DIR$/app/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/app/vendor/friendsofphp/php-cs-fixer" />
+      <path value="$PROJECT_DIR$/app/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/app/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/app/vendor/rackspace/php-opencloud" />
+      <path value="$PROJECT_DIR$/app/vendor/mikemccabe/json-patch-php" />
+      <path value="$PROJECT_DIR$/app/vendor/userfrosting/uniformresourcelocator" />
+      <path value="$PROJECT_DIR$/app/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/app/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/app/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/app/vendor/illuminate/contracts" />
+      <path value="$PROJECT_DIR$/app/vendor/illuminate/support" />
+      <path value="$PROJECT_DIR$/app/vendor/league/factory-muffin" />
+      <path value="$PROJECT_DIR$/app/vendor/league/factory-muffin-faker" />
+      <path value="$PROJECT_DIR$/app/vendor/aws/aws-sdk-php" />
+    </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
@@ -272,6 +397,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="SQL" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -320,17 +446,20 @@
       <workItem from="1552674505820" duration="1443000" />
       <workItem from="1552704617299" duration="1791000" />
       <workItem from="1552706433581" duration="3467000" />
-      <workItem from="1553267614544" duration="8151000" />
+      <workItem from="1553267614544" duration="8186000" />
+      <workItem from="1553522889619" duration="623000" />
+      <workItem from="1553797885890" duration="3832000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69835000" />
+    <option name="totallyTimeSpent" value="74325000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1716418" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1748401" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -343,7 +472,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" x="22" y="389" width="1876" height="261" id="Terminal" order="10" sideWeight="0.49946696" visible="true" weight="0.43336946" />
+      <window_info active="true" anchor="bottom" x="22" y="389" width="1876" height="261" id="Terminal" order="10" sideWeight="0.49946696" visible="true" weight="0.43336946" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50053304" side_tool="true" weight="0.43336946" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -356,13 +485,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/assets/js/office.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/assets/js/offices.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
@@ -515,13 +637,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/scp54311/var/www/midwest/cec/public/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="16" selection-start-line="16" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/scp54311/var/www/midwest/cec/public/index.php" />
     <entry file="file://$PROJECT_DIR$/app/vendor/symfony/yaml/Parser.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -643,9 +759,7 @@
     <entry file="file://$PROJECT_DIR$/app/sprinkles/core/assets/userfrosting/js/uf-jqueryvalidation-config.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/scp21003/var/www/midwest/cec/app/logs/userfrosting.log">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/scp21003/var/www/midwest/cec/app/logs/userfrosting.log" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_2.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
@@ -653,35 +767,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/scp22414/var/www/midwest/cec/app/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/scp22414/var/www/midwest/cec/app/.env" />
     <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Sprunje/CECOfficeSprunje.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
-          <caret line="14" column="28" lean-forward="true" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
+          <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Sprunje/SearchSprunje.php">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Sprunje/OfficeSprunje.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Controller/OfficeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4769" />
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Sprunje/SearchSprunje.php">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/OfficeTable.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="130">
           <caret line="34" column="45" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_7.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" selection-start-line="9" selection-end-line="12" selection-end-column="95" />
         </state>
       </provider>
     </entry>
