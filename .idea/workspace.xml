@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e08026d2-db7b-46d1-bd10-bc3bd748330c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/templates/pages/office-all.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/cec/templates/pages/office-all.html.twig" afterDir="false" />
-    </list>
+    <list default="true" id="e08026d2-db7b-46d1-bd10-bc3bd748330c" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,8 +43,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/templates/pages/office-all.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="57" column="20" selection-start-line="57" selection-start-column="20" selection-end-line="57" selection-end-column="20" />
+            <state relative-caret-position="184">
+              <caret line="56" column="25" selection-start-line="56" selection-start-column="20" selection-end-line="56" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -500,12 +497,12 @@
       <workItem from="1553267614544" duration="8186000" />
       <workItem from="1553522889619" duration="623000" />
       <workItem from="1553797885890" duration="5437000" />
-      <workItem from="1553868793121" duration="47000" />
+      <workItem from="1553868793121" duration="495000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75977000" />
+    <option name="totallyTimeSpent" value="76425000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -843,8 +840,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/templates/pages/office-all.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="57" column="20" selection-start-line="57" selection-start-column="20" selection-end-line="57" selection-end-column="20" />
+        <state relative-caret-position="184">
+          <caret line="56" column="25" selection-start-line="56" selection-start-column="20" selection-end-line="56" selection-end-column="25" />
         </state>
       </provider>
     </entry>
