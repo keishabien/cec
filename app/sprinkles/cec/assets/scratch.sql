@@ -19,4 +19,5 @@ WHERE c.page_id = m.page_id AND m.dentist_name != "" AND m.office_name LIKE "%De
 SELECT distinct c.office_id, c.page_id, c.name, m.page_id, m.office_name, m.hygienist
 FROM cec.office_details c, midwest_wrdp1.cec_update m
 WHERE c.page_id = m.page_id AND m.dentist_name != "" AND m.office_name LIKE "%Dentist Office%";
+
 -- ADD HYGIENIST --
