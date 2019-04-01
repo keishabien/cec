@@ -18,6 +18,7 @@ use UserFrosting\Sprinkle\Core\Facades\Debug;
 
 use UserFrosting\Sprinkle\Cec\Database\Models\Search;
 use UserFrosting\Sprinkle\Cec\Database\Models\Office;
+use UserFrosting\Sprinkle\Cec\Database\Models\ZipCodes;
 use UserFrosting\Sprinkle\Cec\Database\Models\DentistDetails;
 use UserFrosting\Sprinkle\Cec\Database\Models\HygienistDetails;
 use UserFrosting\Sprinkle\Cec\Database\Models\AddDetails;
@@ -45,58 +46,54 @@ class SearchController extends SimpleController
      */
     public function pageList($request, $response, $args)
     {
-//        $keyword = $args['keyword'];
         $params = $request->getQueryParams();
         $keyword = $params['keyword'];
         Debug::debug("pageList");
 
-
-//        Debug::debug("is text");
-//        Debug::debug(print_r($keyword, true));
-        $office = Office::query()
-            ->leftJoin('dentist_details', 'dentist_details.office_id', '=', 'office_details.office_id')
-            ->where('office_details.name', 'like', '%' . $keyword . '%')
-            ->orWhere('dentist_details.name', 'like', '%' . $keyword . '%')
-            ->orWhere('office_details.zip', 'like', '%' . $keyword . '%')
-            ->distinct()->get();
-
-
         $allOffices = Office::query()->get();
-                    Debug::debug("all offices");
-            Debug::debug(print_r($allOffices, true));
+        $allzips = ZipCodes::query()->get();
 
         if (preg_match('/\d{5}/', $keyword, $matches)) {
-//            $keyword = $matches[0];
-//            Debug::debug("is zip");
-//            Debug::debug(print_r($keyword, true));
-//
-//
-//            $ziplat;
-//            $ziplng;
-            $filename = "https://meritdental.com/cecdb/zipcode.csv";
-            $file = fopen($filename, "r");
-            while (($line = fgetcsv($file)) !== FALSE) {
-                array_push($allzips, $line);
-            }
+            $keyword = $matches[0];
+            $office = Office::query()
+                ->leftJoin('zipcodes', 'zipcodes.zip', '=', 'office_details.zip')
+                ->orWhere('office_details.zip', 'like', '%' . $keyword . '%')
+                ->distinct()->get();
 
-            Debug::debug(print_r($allzips, true));
+            $zipLength = count($allzips);
 
-            $zip = $matches[0];
+            for ($i = 0; $i < $zipLength; $i++) {
+                if ($allzips[$i]['zip'] === $keyword) {
+                    $ziplat = $allzips[$i]['latitude'];
+                    $ziplng = $allzips[$i]['longitude'];
 
-            Debug::debug("in zip");
-            Debug::debug(print_r($zip, true));
-
-
-            for ($i = 0; $i < count($allzips); $i++) {
-                if ($allzips[$i][0] === $zip) {
-                    $ziplat = $allzips[$i][3];
-                    $ziplng = $allzips[$i][4];
-
-                    Debug::debug("if match");
-                    Debug::debug(print_r($ziplat, true));
-                    Debug::debug(print_r($ziplng, true));
+                    return $this->ci->view->render($response, 'pages/office-all.html.twig', [
+                        'keyword' => $params['keyword'],
+                        'page' => [
+                            'lookupfound' => true,
+                            'ziplat' => $ziplat,
+                            'ziplng' => $ziplng,
+                            'office' => $office,
+                            'locations' => $allOffices
+                        ]
+                    ]);
+                } else {
+                    return $this->ci->view->render($response, 'pages/office-all.html.twig', [
+                        'page' => [
+                            'lookupfound' => false,
+                            'keyword' => $params['keyword'],
+                            'locations' => $allOffices,
+                        ]
+                    ]);
                 }
             }
+
+        } else {
+            $office = Office::query()
+                ->leftJoin('dentist_details', 'dentist_details.office_id', '=', 'office_details.office_id')
+                ->where('office_details.name', 'like', '%' . $keyword . '%')
+                ->orWhere('dentist_details.name', 'like', '%' . $keyword . '%')
+                ->distinct()->get();
         }
 
 
@@ -105,6 +102,7 @@ class SearchController extends SimpleController
             'office' => $office,
             'ziplat' => $ziplat,
             'ziplng' => $ziplng,
+            'locations' => $allOffices,
             'midwestLogo' => 'https://www.meritdental.com/cecdb/images/midwest-logo.png',
             'mondoviLogo' => 'https://www.meritdental.com/cecdb/images/mondovi-logo.png',
             'meritLogo' => 'https://www.meritdental.com/cecdb/images/merit-logo.png',
@@ -112,7 +110,9 @@ class SearchController extends SimpleController
             'page' => [
                 'ziplat' => $ziplat,
                 'ziplng' => $ziplng,
-                'locations' => $allOffices
+                'office' => $office,
+                'locations' => $allOffices,
+                'keyword' => $params['keyword']
             ]
         ]);
     }
@@ -142,42 +142,42 @@ class SearchController extends SimpleController
 
         //set closed hours stuff
         $day;
-        date_default_timezone_set( 'America/New_York' );
-        $today = date( "N" );
+        date_default_timezone_set('America/New_York');
+        $today = date("N");
 
-        if ( $today == 0 ) {
+        if ($today == 0) {
             $day = $office['sun_hours'];
-            if ( !$day ) {
+            if (!$day) {
                 $day = 'Closed';
             }
-        } elseif ( $today == 1 ) {
+        } elseif ($today == 1) {
             $day = $office['mon_hours'];
-            if ( !$day ) {
+            if (!$day) {
                 $day = 'Closed';
             }
-        } elseif ( $today == 2 ) {
+        } elseif ($today == 2) {
             $day = $office['tue_hours'];
-            if ( !$day ) {
+            if (!$day) {
                 $day = 'Closed';
             }
-        } elseif ( $today == 3 ) {
+        } elseif ($today == 3) {
             $day = $office['wed_hours'];
-            if ( !$day ) {
+            if (!$day) {
                 $day = 'Closed';
             }
-        } elseif ( $today == 4 ) {
+        } elseif ($today == 4) {
             $day = $office['thu_hours'];
-            if ( !$day ) {
+            if (!$day) {
                 $day = 'Closed';
             }
-        } elseif ( $today == 5 ) {
+        } elseif ($today == 5) {
             $day = $office['fri_hours'];
-            if ( !$day ) {
+            if (!$day) {
                 $day = 'Closed';
             }
-        } elseif ( $today == 6 ) {
+        } elseif ($today == 6) {
             $day = $office['sat_hours'];
-            if ( !$day ) {
+            if (!$day) {
                 $day = 'Closed';
             }
         } else {
