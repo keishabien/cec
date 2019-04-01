@@ -82,7 +82,7 @@ class SearchController extends SimpleController
                         'page' => [
                             'lookupfound' => false,
                             'keyword' => $params['keyword'],
-                            'locations' => $allOffices,
+                            'locations' => $allOffices
                         ]
                     ]);
                 }
