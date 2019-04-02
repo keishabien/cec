@@ -58,58 +58,68 @@
 
 
 {% block body_matter %}
+    {#MOBILE#}
     <div class="visible-xs-block">
         <div class="col-sm-6 left">
 
             {#{% if office.masking_number %}#}
-                {#<div class="col-xs-6 col-sm-4 title">#}
-                    {#<p>Masking #:</p>#}
-                {#</div>#}
-                {#<div class="col-xs-6 col-sm-8 info">#}
-                    {#{{ office.masking_number }}#}
-                {#</div>#}
-                {#<div class="clear"></div>#}
+            {#<div class="col-xs-6 col-sm-4 title">#}
+            {#<p>Masking #:</p>#}
+            {#</div>#}
+            {#<div class="col-xs-6 col-sm-8 info">#}
+            {#{{ office.masking_number }}#}
+            {#</div>#}
+            {#<div class="clear"></div>#}
             {#{% endif %}#}
 
             {#<div class="col-xs-6 col-sm-4 title">#}
-                {#<p>Office Extension:</p>#}
+            {#<p>Office Extension:</p>#}
             {#</div>#}
             {#<div class="col-xs-6 col-sm-8 info">#}
-                {#{{ office.extension }}#}
+            {#{{ office.extension }}#}
             {#</div>#}
             {#<div class="clear"></div>#}
 
-            <div class="col-xs-6 col-sm-4 title">
-                <p>Office #:</p>
-            </div>
-            <div class="col-xs-6 col-sm-8 info">
-                {{ office.phone }}
-            </div>
-            <div class="clear"></div>
+            {% if office.phone %}
+                <div class="col-xs-6 col-sm-4 title">
+                    <p>Office #:</p>
+                </div>
+                <div class="col-xs-6 col-sm-8 info">
+                    {{ office.phone }}
+                </div>
+                <div class="clear"></div>
+            {% endif %}
 
-            <div class="col-xs-6 col-sm-4 title">
-                <p>Email Address:</p>
-            </div>
-            <div class="col-xs-6 col-sm-8 info">
-                {{ office.email }}
-            </div>
-            <div class="clear"></div>
+            {% if office.email %}
+                <div class="col-xs-6 col-sm-4 title">
+                    <p>Email Address:</p>
+                </div>
+                <div class="col-xs-6 col-sm-8 info">
+                    {{ office.email }}
+                </div>
+                <div class="clear"></div>
+            {% endif %}
 
-            <div class="col-xs-6 col-sm-4 title">
-                <p>Office Address:</p>
-            </div>
-            <div class="col-xs-6 col-sm-8 info">
-                {{ office.address }}
-            </div>
-            <div class="clear"></div>
+            {% if office.address %}
+                <div class="col-xs-6 col-sm-4 title">
+                    <p>Office Address:</p>
+                </div>
+                <div class="col-xs-6 col-sm-8 info">
+                    {{ office.address }}
+                </div>
+                <div class="clear"></div>
+            {% endif %}
 
+            {#{% if page.doctor %}#}
             <div class="col-xs-6 col-sm-4 title">
                 <p>Doctors:</p>
             </div>
             <div class="col-xs-6 col-sm-8 info">
-                {{ doctor[0].name }}
+
+
             </div>
             <div class="clear"></div>
+            {#{% endif %}#}
 
         </div>
         <div class="col-sm-6 right">
@@ -139,7 +149,7 @@
     </div>
 
 
-
+    {#TABLET+#}
     <div class="visible-sm-block visible-md-block visible-lg-block">
         <div class="col-md-6 left">
             <div class="col-sm-4 title">
@@ -156,7 +166,29 @@
                 <p>{{ office.phone }}</p>
                 <p>{{ office.email }}</p>
                 <p>{{ office.address }}</p>
-                <p>{{ doctor[0].name }}</p>
+
+                {% for dr in doctor %}
+                    <p class="dr-name">{{ dr.name }} - {{ dr.provider_num }}</p>
+                    <div class="dr-div">
+                        <p><strong>Name:</strong> <span>{{ dr.name }}</span></p>
+                        <p><strong>Provider Number:</strong> <span>{{ dr.provider_num }}</span></p>
+                        <p><strong>Nickname:</strong> <span>{{ dr.nickname }}</span></p>
+                        <p><strong>Emergency Number:</strong> <span>{{ dr.emergency_num }}</span></p>
+                        <p><strong>Locum:</strong> <span>{{ dr.locum }}</span></p>
+
+                        <p><strong>Permanent/Locum:</strong>
+                            <span>
+                                {% if  dr.locum  == "N" %}
+                                    Permanent
+                                    {% else %}
+                                    Locum
+                                {% endif %}
+                            </span>
+                        </p>
+                    </div>
+                {% endfor %}
+
+
             </div>
         </div>
         <div class="col-md-6 right">
@@ -246,6 +278,7 @@
 
 {% block scripts_page %}
     <script>
+        {% include "pages/partials/page.js.twig" %}
         {% include "pages/partials/key.js.twig" %}
 
         var key = api.key;
