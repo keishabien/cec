@@ -50,11 +50,11 @@ class SearchController extends SimpleController
         $keyword = $params['keyword'];
         Debug::debug("pageList");
 
-        $allOffices = Office::query()->get();
         $allzips = ZipCodes::query()->get();
 
         if (preg_match('/\d{5}/', $keyword, $matches)) {
             $keyword = $matches[0];
+            $allOffices = Office::query()->get();
             $office = Office::query()
                 ->leftJoin('zipcodes', 'zipcodes.zip', '=', 'office_details.zip')
                 ->orWhere('office_details.zip', 'like', '%' . $keyword . '%')
@@ -88,12 +88,14 @@ class SearchController extends SimpleController
                 }
             }
 
-        } else {
+        } else if($keyword) {
             $office = Office::query()
-                ->leftJoin('dentist_details', 'dentist_details.office_id', '=', 'office_details.office_id')
+                ->join('dentist_details', 'dentist_details.office_id', '=', 'office_details.office_id')
                 ->where('office_details.name', 'like', '%' . $keyword . '%')
                 ->orWhere('dentist_details.name', 'like', '%' . $keyword . '%')
                 ->distinct()->get();
+        } else {
+            $office = Office::query()->get();
         }
 
 
@@ -102,7 +104,6 @@ class SearchController extends SimpleController
             'office' => $office,
             'ziplat' => $ziplat,
             'ziplng' => $ziplng,
-            'locations' => $allOffices,
             'midwestLogo' => 'https://www.meritdental.com/cecdb/images/midwest-logo.png',
             'mondoviLogo' => 'https://www.meritdental.com/cecdb/images/mondovi-logo.png',
             'meritLogo' => 'https://www.meritdental.com/cecdb/images/merit-logo.png',
@@ -111,7 +112,6 @@ class SearchController extends SimpleController
                 'ziplat' => $ziplat,
                 'ziplng' => $ziplng,
                 'office' => $office,
-                'locations' => $allOffices,
                 'keyword' => $params['keyword']
             ]
         ]);
