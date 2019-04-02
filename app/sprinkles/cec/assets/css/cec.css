@@ -508,6 +508,33 @@ a:hover, a:focus {
     font-size: 10px;
 }
 
+.info p.dr-name{
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+.dr-div {
+    display: none;
+    position: absolute;
+    z-index: 5;
+    right: 0;
+    background: #FFF;
+    color: #006a52;
+    font-size: 14px;
+    font-weight: normal;
+    padding: 15px;
+    width: 100%;
+    max-width: 250px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .2);
+}
+.dr-div p {
+    float: left;
+    width: 100%;
+}
+.dr-div p>span{
+    float: right;
+}
+
 .title {
     background-color: #eae6e4;
 }

@@ -120,10 +120,12 @@ class SearchController extends SimpleController
     public function pageInfo($request, $response, $args)
     {
         $params = $args["keyword"];
-
+        Debug::debug("pageInfo");
         $office = Office::where('vanity_url', 'like', '%' . $params . '%')->first();
 
         $doctor = DentistDetails::where('office_id', $office["office_id"])->get();
+        Debug::debug("dr");
+        Debug::debug(print_r($doctor, true));
         $hygienist = HygienistDetails::where('office_id', $office["office_id"])->get();
         $aNPIE = AdultNPIE::where('office_id', $office["office_id"])->get();
         $cNPIE = ChildNPIE::where('office_id', $office["office_id"])->get();
@@ -200,7 +202,10 @@ class SearchController extends SimpleController
             'midwestLogo' => 'https://www.meritdental.com/cecdb/images/midwest-logo.png',
             'mondoviLogo' => 'https://www.meritdental.com/cecdb/images/mondovi-logo.png',
             'meritLogo' => 'https://www.meritdental.com/cecdb/images/merit-logo.png',
-            'mountainLogo' => 'https://www.meritdental.com/cecdb/images/mountain-logo.png'
+            'mountainLogo' => 'https://www.meritdental.com/cecdb/images/mountain-logo.png',
+            'page' => [
+                'doctor' => $doctor
+            ]
         ]);
     }
 
