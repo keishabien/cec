@@ -1,0 +1,31 @@
+{% extends "pages/abstract/default.html.twig" %}
+
+{% set page_active = "additional" %}
+
+{# Overrides blocks in head of base template #}
+
+{% block page_title %}Practice Information Form{% endblock %}
+
+
+{% block body_matter %}
+
+    <div id="alerts-page"></div>
+
+
+    <h2 id="final">Thank You</h2>
+
+    <p>Your record has been received.</p>
+
+{% endblock %}
+
+
+
+
+
+{% block scripts_page %}
+    <!-- Include validation rules -->
+    <script>
+        {% include "pages/partials/page.js.twig" %}
+    </script>
+
+{% endblock %}

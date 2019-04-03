@@ -62,23 +62,23 @@
     <div class="visible-xs-block">
         <div class="col-sm-6 left">
 
-            {#{% if office.masking_number %}#}
-            {#<div class="col-xs-6 col-sm-4 title">#}
-            {#<p>Masking #:</p>#}
-            {#</div>#}
-            {#<div class="col-xs-6 col-sm-8 info">#}
-            {#{{ office.masking_number }}#}
-            {#</div>#}
-            {#<div class="clear"></div>#}
-            {#{% endif %}#}
+            {% if office.masking_number %}
+                <div class="col-xs-6 col-sm-4 title">
+                    <p>Masking #:</p>
+                </div>
+                <div class="col-xs-6 col-sm-8 info">
+                    {{ office.masking_number }}
+                </div>
+                <div class="clear"></div>
+            {% endif %}
 
-            {#<div class="col-xs-6 col-sm-4 title">#}
-            {#<p>Office Extension:</p>#}
-            {#</div>#}
-            {#<div class="col-xs-6 col-sm-8 info">#}
-            {#{{ office.extension }}#}
-            {#</div>#}
-            {#<div class="clear"></div>#}
+            <div class="col-xs-6 col-sm-4 title">
+                <p>Office Extension:</p>
+            </div>
+            <div class="col-xs-6 col-sm-8 info">
+                {{ office.extension }}
+            </div>
+            <div class="clear"></div>
 
             {% if office.phone %}
                 <div class="col-xs-6 col-sm-4 title">
@@ -95,7 +95,7 @@
                     <p>Email Address:</p>
                 </div>
                 <div class="col-xs-6 col-sm-8 info">
-                    {{ office.email }}
+                    <a href="mailto:{{ office.email }}">{{ office.email }}</a>
                 </div>
                 <div class="clear"></div>
             {% endif %}
@@ -164,27 +164,46 @@
                 <p>{{ office.masking_number }}</p>
                 <p>{{ office.extension }}</p>
                 <p>{{ office.phone }}</p>
-                <p>{{ office.email }}</p>
+                <p><a href="mailto:{{ office.email }}">{{ office.email }}</a></p>
                 <p>{{ office.address }}</p>
 
                 {% for dr in doctor %}
-                    <p class="dr-name">{{ dr.name }} - {{ dr.provider_num }}</p>
+                    <p class="dr-name">{{ dr.name }} {% if dr.provider_num %}- {{ dr.provider_num }}{% endif %}</p>
                     <div class="dr-div">
                         <p><strong>Name:</strong> <span>{{ dr.name }}</span></p>
+                        {% if dr.provider_num %}
                         <p><strong>Provider Number:</strong> <span>{{ dr.provider_num }}</span></p>
-                        <p><strong>Nickname:</strong> <span>{{ dr.nickname }}</span></p>
-                        <p><strong>Emergency Number:</strong> <span>{{ dr.emergency_num }}</span></p>
-                        <p><strong>Locum:</strong> <span>{{ dr.locum }}</span></p>
+                        {% endif %}
 
+                        {% if dr.nickname %}
+                        <p><strong>Nickname:</strong> <span>{{ dr.nickname }}</span></p>
+                        {% endif %}
+
+                        {% if dr.emergency_num %}
+                        <p><strong>Phone Number:</strong> <span>{{ dr.emergency_num }}</span></p>
+                        {% endif %}
+
+                        {% if dr.locum %}
                         <p><strong>Permanent/Locum:</strong>
                             <span>
                                 {% if  dr.locum  == "N" %}
                                     Permanent
-                                    {% else %}
+                                {% else %}
                                     Locum
                                 {% endif %}
                             </span>
                         </p>
+                        {% endif %}
+
+                        {% if dr.start_date %}
+                            <p><strong>Start Date:</strong> <span>{{ dr.start_date }}</span></p>
+                        {% endif %}
+
+                        {% if dr.end_date %}
+                            <p><strong>End Date:</strong> <span>{{ dr.end_date }}</span></p>
+                        {% endif %}
+
+                        {% if dr.leave is same as("N") %}{% endif %}
                     </div>
                 {% endfor %}
 
@@ -197,7 +216,34 @@
                 <p>BOM #:</p>
                 <p>Hygienists:</p>
             </div>
-            <div class="col-sm-8 info"></div>
+            <div class="col-sm-8 info">
+                <p>{{ add.bom_name }}</p>
+                <p>{{ add.bom_number }}</p>
+                {% for hyg in hygienist %}
+
+                    <p class="dr-name">{{ hyg.name }} {% if hyg.provider_num %}- {{ hyg.provider_num }}{% endif %}</p>
+                    <div class="dr-div">
+                        <p><strong>Name:</strong> <span>{{ hyg.name }}</span></p>
+                        {% if hyg.provider_num %}
+                        <p><strong>Provider Number:</strong> <span>{{ hyg.provider_num }}</span></p>
+                        {% endif %}
+                        {% if hyg.nickname %}
+                        <p><strong>Nickname:</strong> <span>{{ hyg.nickname }}</span></p>
+                        {% endif %}
+                        {% if hyg.notes %}
+                            <p><strong>Notes:</strong> <span>{{ hyg.notes }}</span></p>
+                        {% endif %}
+                        {% if hyg.start_date %}
+                            <p><strong>Start Date:</strong> <span>{{ dhygr.start_date }}</span></p>
+                        {% endif %}
+
+                        {% if hyg.end_date %}
+                            <p><strong>End Date:</strong> <span>{{ hyg.end_date }}</span></p>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+
+            </div>
         </div>
     </div>
     </section>

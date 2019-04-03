@@ -392,4 +392,9 @@ class IntakeController extends SimpleController
         });
         return $response->withStatus(200);
     }
+
+    public function pageComplete($request, $response, $args)
+    {
+        return $this->ci->view->render($response, 'pages/intake/page5.html.twig');
+    }
 }
