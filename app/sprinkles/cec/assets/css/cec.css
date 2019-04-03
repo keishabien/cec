@@ -466,6 +466,7 @@ a:hover, a:focus {
     top: 2px;
     font-size: 18px;
     letter-spacing: .03em;
+    cursor: pointer;
 }
 
 #hours .fa {
