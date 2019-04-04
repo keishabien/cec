@@ -16,15 +16,15 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="{{ site.uri.public }}">
+            <a href="{{ site.uri.public }}" class="logo-link">
                 <img src="https://www.meritdental.com/wp-content/themes/midwest-2016/images/MidwestDental_logo.png"
                      alt="logo" class="logo">
             </a>
-        </div>
 
-        {% if checkAuthenticated() %}
-            {% include 'navigation/search.html.twig' %}
-        {% endif %}
+            {% if checkAuthenticated() %}
+                {% include 'navigation/search.html.twig' %}
+            {% endif %}
+        </div>
 
         <div class="visible-xs-block clear"></div>
         <!-- Collect the nav links, forms, and other content for toggling -->

@@ -88,6 +88,18 @@
                     {{ assets.js() | raw }}
                     {{ assets.js('js/search') | raw }}
 
+                    <script>
+                        // Add slideDown animation to Bootstrap dropdown when expanding.
+                        $('.dropdown').on('show.bs.dropdown', function() {
+                            $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
+                        });
+
+                        // Add slideUp animation to Bootstrap dropdown when collapsing.
+                        $('.dropdown').on('hide.bs.dropdown', function() {
+                            $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
+                        });
+                    </script>
+
                 {% endblock %}
 
                 {# Override this block in a child layout template or page template to specify or override scripts for groups of similar pages. #}

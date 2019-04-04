@@ -6,21 +6,32 @@
  * Target page: /offices/o/{office_name}
  */
 
-$menu = $('#hours-menu');
+var $menu = $('#hours-menu');
+var $drDiv = $('.dr-div');
+
 $('#hours').click(function (e) {
     e.stopPropagation();
     $($menu).slideToggle();
+
+    if ($drDiv.is(":visible")) {
+        $drDiv.slideUp();
+    }
 });
 
-$drDiv = $('.dr-div');
+
 $('.dr-name').click(function (e) {
     e.stopPropagation();
     var $drDiv = $(this).next('.dr-div');
     $(".dr-div").not($drDiv).slideUp();
+
     if ($drDiv.is(":visible")) {
         $drDiv.slideUp();
     }  else {
         $drDiv.slideDown();
+    }
+
+    if ($menu.is(":visible")) {
+        $menu.slideUp();
     }
 });
 
@@ -32,4 +43,6 @@ $('body').click(function () {
         $($drDiv).slideUp();
     }
 });
+
+
 
