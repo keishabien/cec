@@ -7,7 +7,7 @@
  * @license   https://github.com/userfrosting/UserFrosting/blob/master/LICENSE.md (MIT License)
  */
 
-namespace UserFrosting\Sprinkle\Account\Database\Seeds;
+namespace UserFrosting\Sprinkle\Cec\Database\Seeds;
 
 use UserFrosting\Sprinkle\Core\Database\Seeder\BaseSeed;
 use UserFrosting\Sprinkle\Account\Database\Models\Group;
@@ -15,7 +15,7 @@ use UserFrosting\Sprinkle\Account\Database\Models\Group;
 /**
  * Seeder for the default groups
  */
-class DefaultGroups extends BaseSeed
+class MidwestGroup extends BaseSeed
 {
     /**
      * {@inheritdoc}
