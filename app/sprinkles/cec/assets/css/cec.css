@@ -75,10 +75,14 @@ a:hover, a:focus {
     padding: 8px 15px 0;
 }
 
+.navbar-header .logo-link{
+    float: left;
+}
+
 .navbar-header .logo {
     height: 30px;
     width: auto;
-    padding: 0 15px 0 0;
+    padding: 0 8px 0 0;
     display: inline-block;
 }
 
@@ -89,10 +93,9 @@ a:hover, a:focus {
 }
 
 
-.navbar .form {
+#searchAll{
     float: left;
-    margin-top: 8px;
-    padding: 5px 0;
+    width: 69%;
 }
 
 .search {
@@ -153,21 +156,20 @@ a:hover, a:focus {
     font-weight: 700;
     background-color: #006a52;
     color: #FFF;
-    padding: 20px;
+    padding: 10px 20px;
     margin-top: 0;
     margin-bottom: 0;
     position: relative;
 }
 
 .fixed-title {
-    border-top: 15px solid #FFF;
     position: fixed;
     z-index: 10;
     left: 0;
     max-width: 1140px;
     right: 0;
     margin: 0 auto;
-    height: 83px;
+    height: 76px;
 }
 
 .fixed-margin {
@@ -468,6 +470,10 @@ a:hover, a:focus {
     letter-spacing: .03em;
     cursor: pointer;
 }
+/*padding: 5px 10px;*/
+/*height: auto;*/
+/*bottom: 2px;*/
+/*top: auto;*/
 
 #hours .fa {
     margin-left: 5px;
@@ -642,6 +648,18 @@ a:hover, a:focus {
 /* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */
 
+@media (min-width: 500px) {
+    .fixed-title {
+        border-top: 15px solid #FFF;
+        height: 83px;
+        max-width: 720px;
+    }
+
+    .page-title {
+        padding: 20px;
+    }
+}
+
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
     .search {
@@ -653,13 +671,19 @@ a:hover, a:focus {
         padding: 20px 20px 0;
     }
 
+    .navbar-header .logo {
+        padding: 0 15px 0 0;
+    }
+
     .navbar-header {
         padding: 8px 0 0;
     }
 
-    .navbar .form {
+    #searchAll{
         padding: 0;
     }
+
+
 }
 
 /* Medium devices (desktops, 992px and up) */
@@ -682,9 +706,15 @@ a:hover, a:focus {
         min-height: 380px;
     }
 
+    .fixed-title {
+        max-width: 940px;
+    }
+
 }
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-
+    .fixed-title {
+        max-width: 1140px;
+    }
 }

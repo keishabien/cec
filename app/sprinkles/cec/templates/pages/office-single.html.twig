@@ -2,361 +2,365 @@
 {% set page_active = "single office" %}
 
 {# Overrides blocks in head of base template #}
-{% block page_title %}{{ office.brand }} Dental - {{ newName }}
-    <div id="hours">Hours <i class="fa fa-chevron-down"></i></div>
+
+{% block page_title %}
+
+        {{ office.brand }} Dental - {{ newName }}
+        <div id="hours">Hours <i class="fa fa-chevron-down"></i></div>
 
 
-    <div id="hours-menu">
-        {% if day %}
-            <div class="open">
-                <p><b>Open Today:</b>
-                    <span><b>{{ day }}</b></span>
-                </p>
-            </div>
-            <div class="divide"></div>
-        {% endif %}
-        {% if office.mon_hours %}
-            <p>Mon:
-                <span>{{ office.mon_hours }}</span>
-            </p>
-        {% endif %}
-        {% if office.tue_hours %}
-            <p>Tue:
-                <span>{{ office.tue_hours }}</span>
-            </p>
-        {% endif %}
-        {% if office.wed_hours %}
-            <p>Wed:
-                <span>{{ office.wed_hours }}</span>
-            </p>
-        {% endif %}
-        {% if office.thu_hours %}
-            <p>Thu:
-                <span> {{ office.thu_hours }}</span>
-            </p>
-        {% endif %}
-        {% if office.fri_hours %}
-            <p>Fri:
-                <span> {{ office.fri_hours }}</span>
-            </p>
-        {% endif %}
-        {% if office.sat_hours %}
-            <p>Sat:
-                <span> {{ office.sat_hours }}</span>
-            </p>
-        {% endif %}
-        {% if office.Sun_hours %}
-        <p>Sun:
-            <span> {{ office.sun_hours }}</span>
+        <div id="hours-menu">
+            {% if day %}
+                <div class="open">
+                    <p><b>Open Today:</b>
+                        <span><b>{{ day }}</b></span>
+                    </p>
+                </div>
+                <div class="divide"></div>
             {% endif %}
-            <small>*Please note office hours are subject to change.</small>
+            {% if office.mon_hours %}
+                <p>Mon:
+                    <span>{{ office.mon_hours }}</span>
+                </p>
+            {% endif %}
+            {% if office.tue_hours %}
+                <p>Tue:
+                    <span>{{ office.tue_hours }}</span>
+                </p>
+            {% endif %}
+            {% if office.wed_hours %}
+                <p>Wed:
+                    <span>{{ office.wed_hours }}</span>
+                </p>
+            {% endif %}
+            {% if office.thu_hours %}
+                <p>Thu:
+                    <span> {{ office.thu_hours }}</span>
+                </p>
+            {% endif %}
+            {% if office.fri_hours %}
+                <p>Fri:
+                    <span> {{ office.fri_hours }}</span>
+                </p>
+            {% endif %}
+            {% if office.sat_hours %}
+                <p>Sat:
+                    <span> {{ office.sat_hours }}</span>
+                </p>
+            {% endif %}
+            {% if office.Sun_hours %}
+            <p>Sun:
+                <span> {{ office.sun_hours }}</span>
+                {% endif %}
+                <small>*Please note office hours are subject to change.</small>
 
 
-    </div>
+        </div>
+
 {% endblock %}
 
 
 
-{% block body_matter %}
-    {#MOBILE#}
-    <div class="visible-xs-block">
-        <div class="col-sm-6 left">
+    {% block body_matter %}
+        {#MOBILE#}
+        <div class="visible-xs-block">
+            <div class="col-sm-6 left">
 
-            {% if office.masking_number %}
+                {% if office.masking_number %}
+                    <div class="col-xs-6 col-sm-4 title">
+                        <p>Masking #:</p>
+                    </div>
+                    <div class="col-xs-6 col-sm-8 info">
+                        {{ office.masking_number }}
+                    </div>
+                    <div class="clear"></div>
+                {% endif %}
+
                 <div class="col-xs-6 col-sm-4 title">
+                    <p>Office Extension:</p>
+                </div>
+                <div class="col-xs-6 col-sm-8 info">
+                    {{ office.extension }}
+                </div>
+                <div class="clear"></div>
+
+                {% if office.phone %}
+                    <div class="col-xs-6 col-sm-4 title">
+                        <p>Office #:</p>
+                    </div>
+                    <div class="col-xs-6 col-sm-8 info">
+                        {{ office.phone }}
+                    </div>
+                    <div class="clear"></div>
+                {% endif %}
+
+                {% if office.email %}
+                    <div class="col-xs-6 col-sm-4 title">
+                        <p>Email Address:</p>
+                    </div>
+                    <div class="col-xs-6 col-sm-8 info">
+                        <a href="mailto:{{ office.email }}">{{ office.email }}</a>
+                    </div>
+                    <div class="clear"></div>
+                {% endif %}
+
+                {% if office.address %}
+                    <div class="col-xs-6 col-sm-4 title">
+                        <p>Office Address:</p>
+                    </div>
+                    <div class="col-xs-6 col-sm-8 info">
+                        {{ office.address }}
+                    </div>
+                    <div class="clear"></div>
+                {% endif %}
+
+                {#{% if page.doctor %}#}
+                <div class="col-xs-6 col-sm-4 title">
+                    <p>Doctors:</p>
+                </div>
+                <div class="col-xs-6 col-sm-8 info">
+
+
+                </div>
+                <div class="clear"></div>
+                {#{% endif %}#}
+
+            </div>
+            <div class="col-sm-6 right">
+
+
+                <div class="col-xs-6 col-sm-4 title">
+                    <p>BOM:</p>
+                </div>
+                <div class="col-xs-6 col-sm-8 info">
+                    {{ additional[0].bom_name }}
+                </div>
+                <div class="clear"></div>
+
+                <div class="col-xs-6 col-sm-4 title">
+                    <p>BOM #:</p>
+                </div>
+                <div class="col-xs-6 col-sm-8 info"></div>
+                <div class="clear"></div>
+
+                <div class="col-xs-6 ol-sm-4 title">
+                    <p>Hygienists:</p>
+                </div>
+                <div class="col-xs-6 col-sm-8 info"></div>
+                <div class="clear"></div>
+
+            </div>
+        </div>
+
+
+        {#TABLET+#}
+        <div class="visible-sm-block visible-md-block visible-lg-block">
+            <div class="col-md-6 left">
+                <div class="col-sm-4 title">
                     <p>Masking #:</p>
-                </div>
-                <div class="col-xs-6 col-sm-8 info">
-                    {{ office.masking_number }}
-                </div>
-                <div class="clear"></div>
-            {% endif %}
-
-            <div class="col-xs-6 col-sm-4 title">
-                <p>Office Extension:</p>
-            </div>
-            <div class="col-xs-6 col-sm-8 info">
-                {{ office.extension }}
-            </div>
-            <div class="clear"></div>
-
-            {% if office.phone %}
-                <div class="col-xs-6 col-sm-4 title">
+                    <p>Office Extension:</p>
                     <p>Office #:</p>
-                </div>
-                <div class="col-xs-6 col-sm-8 info">
-                    {{ office.phone }}
-                </div>
-                <div class="clear"></div>
-            {% endif %}
-
-            {% if office.email %}
-                <div class="col-xs-6 col-sm-4 title">
                     <p>Email Address:</p>
-                </div>
-                <div class="col-xs-6 col-sm-8 info">
-                    <a href="mailto:{{ office.email }}">{{ office.email }}</a>
-                </div>
-                <div class="clear"></div>
-            {% endif %}
-
-            {% if office.address %}
-                <div class="col-xs-6 col-sm-4 title">
                     <p>Office Address:</p>
+                    <p>Doctors:</p>
                 </div>
-                <div class="col-xs-6 col-sm-8 info">
-                    {{ office.address }}
-                </div>
-                <div class="clear"></div>
-            {% endif %}
+                <div class="col-sm-8 info">
+                    <p>{{ office.masking_number }}</p>
+                    <p>{{ office.extension }}</p>
+                    <p>{{ office.phone }}</p>
+                    <p><a href="mailto:{{ office.email }}">{{ office.email }}</a></p>
+                    <p>{{ office.address }}</p>
 
-            {#{% if page.doctor %}#}
-            <div class="col-xs-6 col-sm-4 title">
-                <p>Doctors:</p>
-            </div>
-            <div class="col-xs-6 col-sm-8 info">
+                    {% for dr in doctor %}
+                        <p class="dr-name">{{ dr.name }} {% if dr.provider_num %}- {{ dr.provider_num }}{% endif %}</p>
+                        <div class="dr-div">
+                            <p><strong>Name:</strong> <span>{{ dr.name }}</span></p>
+                            {% if dr.provider_num %}
+                                <p><strong>Provider Number:</strong> <span>{{ dr.provider_num }}</span></p>
+                            {% endif %}
 
+                            {% if dr.nickname %}
+                                <p><strong>Nickname:</strong> <span>{{ dr.nickname }}</span></p>
+                            {% endif %}
 
-            </div>
-            <div class="clear"></div>
-            {#{% endif %}#}
+                            {% if dr.emergency_num %}
+                                <p><strong>Phone Number:</strong> <span>{{ dr.emergency_num }}</span></p>
+                            {% endif %}
 
-        </div>
-        <div class="col-sm-6 right">
-
-
-            <div class="col-xs-6 col-sm-4 title">
-                <p>BOM:</p>
-            </div>
-            <div class="col-xs-6 col-sm-8 info">
-                {{ additional[0].bom_name }}
-            </div>
-            <div class="clear"></div>
-
-            <div class="col-xs-6 col-sm-4 title">
-                <p>BOM #:</p>
-            </div>
-            <div class="col-xs-6 col-sm-8 info"></div>
-            <div class="clear"></div>
-
-            <div class="col-xs-6 ol-sm-4 title">
-                <p>Hygienists:</p>
-            </div>
-            <div class="col-xs-6 col-sm-8 info"></div>
-            <div class="clear"></div>
-
-        </div>
-    </div>
-
-
-    {#TABLET+#}
-    <div class="visible-sm-block visible-md-block visible-lg-block">
-        <div class="col-md-6 left">
-            <div class="col-sm-4 title">
-                <p>Masking #:</p>
-                <p>Office Extension:</p>
-                <p>Office #:</p>
-                <p>Email Address:</p>
-                <p>Office Address:</p>
-                <p>Doctors:</p>
-            </div>
-            <div class="col-sm-8 info">
-                <p>{{ office.masking_number }}</p>
-                <p>{{ office.extension }}</p>
-                <p>{{ office.phone }}</p>
-                <p><a href="mailto:{{ office.email }}">{{ office.email }}</a></p>
-                <p>{{ office.address }}</p>
-
-                {% for dr in doctor %}
-                    <p class="dr-name">{{ dr.name }} {% if dr.provider_num %}- {{ dr.provider_num }}{% endif %}</p>
-                    <div class="dr-div">
-                        <p><strong>Name:</strong> <span>{{ dr.name }}</span></p>
-                        {% if dr.provider_num %}
-                        <p><strong>Provider Number:</strong> <span>{{ dr.provider_num }}</span></p>
-                        {% endif %}
-
-                        {% if dr.nickname %}
-                        <p><strong>Nickname:</strong> <span>{{ dr.nickname }}</span></p>
-                        {% endif %}
-
-                        {% if dr.emergency_num %}
-                        <p><strong>Phone Number:</strong> <span>{{ dr.emergency_num }}</span></p>
-                        {% endif %}
-
-                        {% if dr.locum %}
-                        <p><strong>Permanent/Locum:</strong>
-                            <span>
+                            {% if dr.locum %}
+                                <p><strong>Permanent/Locum:</strong>
+                                    <span>
                                 {% if  dr.locum  == "N" %}
                                     Permanent
                                 {% else %}
                                     Locum
                                 {% endif %}
                             </span>
-                        </p>
-                        {% endif %}
+                                </p>
+                            {% endif %}
 
-                        {% if dr.start_date %}
-                            <p><strong>Start Date:</strong> <span>{{ dr.start_date }}</span></p>
-                        {% endif %}
+                            {% if dr.start_date %}
+                                <p><strong>Start Date:</strong> <span>{{ dr.start_date }}</span></p>
+                            {% endif %}
 
-                        {% if dr.end_date %}
-                            <p><strong>End Date:</strong> <span>{{ dr.end_date }}</span></p>
-                        {% endif %}
+                            {% if dr.end_date %}
+                                <p><strong>End Date:</strong> <span>{{ dr.end_date }}</span></p>
+                            {% endif %}
 
-                        {% if dr.leave is same as("N") %}{% endif %}
-                    </div>
-                {% endfor %}
+                            {% if dr.leave is same as("N") %}{% endif %}
+                        </div>
+                    {% endfor %}
 
-
-            </div>
-        </div>
-        <div class="col-md-6 right">
-            <div class="col-sm-4 title">
-                <p>BOM:</p>
-                <p>BOM #:</p>
-                <p>Hygienists:</p>
-            </div>
-            <div class="col-sm-8 info">
-                <p>{{ add.bom_name }}</p>
-                <p>{{ add.bom_number }}</p>
-                {% for hyg in hygienist %}
-
-                    <p class="dr-name">{{ hyg.name }} {% if hyg.provider_num %}- {{ hyg.provider_num }}{% endif %}</p>
-                    <div class="dr-div">
-                        <p><strong>Name:</strong> <span>{{ hyg.name }}</span></p>
-                        {% if hyg.provider_num %}
-                        <p><strong>Provider Number:</strong> <span>{{ hyg.provider_num }}</span></p>
-                        {% endif %}
-                        {% if hyg.nickname %}
-                        <p><strong>Nickname:</strong> <span>{{ hyg.nickname }}</span></p>
-                        {% endif %}
-                        {% if hyg.notes %}
-                            <p><strong>Notes:</strong> <span>{{ hyg.notes }}</span></p>
-                        {% endif %}
-                        {% if hyg.start_date %}
-                            <p><strong>Start Date:</strong> <span>{{ dhygr.start_date }}</span></p>
-                        {% endif %}
-
-                        {% if hyg.end_date %}
-                            <p><strong>End Date:</strong> <span>{{ hyg.end_date }}</span></p>
-                        {% endif %}
-                    </div>
-                {% endfor %}
-
-            </div>
-        </div>
-    </div>
-    </section>
-    {# closes opening section from base template #}
-    <div class="clear space-20"></div>
-
-
-    <section class="row">
-        <div class="col-sm-3">
-            <div class="adult">
-                <h3>NPIE Adult</h3>
-            </div>
-        </div>
-        <div class="col-sm-3">
-            <div class="child">
-                <h3>NPIE Child</h3>
-            </div>
-        </div>
-        <div class="col-sm-3">
-            <div class="adult">
-                <h3>Recall Adult</h3>
-            </div>
-        </div>
-        <div class="col-sm-3">
-            <div class="child">
-                <h3>Recall Child</h3>
-            </div>
-        </div>
-    </section>
-    <div class="clear space-20"></div>
-
-
-    <section class="row">
-        <div class="col-sm-6">
-            <div class="notes">
-                <h3>NPIE Notes</h3>
-                <p>&nbsp;</p>
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="notes">
-                <h3>Recall Notes</h3>
-                <p>&nbsp;</p>
-            </div>
-        </div>
-    </section>
-    <div class="clear space-20"></div>
-
-    <section class="row">
-        <div class="col-sm-12">
-            <div class="offers">
-                <h3>Offers</h3>
-                <p>&nbsp;</p>
-            </div>
-        </div>
-    </section>
-    <div class="clear space-20"></div>
-
-
-
-    <section class="row">
-        <div class="col-xs-12">
-            <div class="office">
-                <div class="col-sm-4 office-img">
-                    <img src="{{ office.img_url }}" alt="">
-                </div>
-                <div class="col-sm-4" id="google-map">
 
                 </div>
-                <div class="col-sm-4">
-                    <h2>Directions</h2>
-                    {{ additional.directions }}</div>
+            </div>
+            <div class="col-md-6 right">
+                <div class="col-sm-4 title">
+                    <p>BOM:</p>
+                    <p>BOM #:</p>
+                    <p>Hygienists:</p>
+                </div>
+                <div class="col-sm-8 info">
+                    <p>{{ add.bom_name }}</p>
+                    <p>{{ add.bom_number }}</p>
+                    {% for hyg in hygienist %}
+
+                        <p class="dr-name">{{ hyg.name }} {% if hyg.provider_num %}- {{ hyg.provider_num }}{% endif %}</p>
+                        <div class="dr-div">
+                            <p><strong>Name:</strong> <span>{{ hyg.name }}</span></p>
+                            {% if hyg.provider_num %}
+                                <p><strong>Provider Number:</strong> <span>{{ hyg.provider_num }}</span></p>
+                            {% endif %}
+                            {% if hyg.nickname %}
+                                <p><strong>Nickname:</strong> <span>{{ hyg.nickname }}</span></p>
+                            {% endif %}
+                            {% if hyg.notes %}
+                                <p><strong>Notes:</strong> <span>{{ hyg.notes }}</span></p>
+                            {% endif %}
+                            {% if hyg.start_date %}
+                                <p><strong>Start Date:</strong> <span>{{ dhygr.start_date }}</span></p>
+                            {% endif %}
+
+                            {% if hyg.end_date %}
+                                <p><strong>End Date:</strong> <span>{{ hyg.end_date }}</span></p>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+
+                </div>
             </div>
         </div>
-    </section>
+        </section>
+        {# closes opening section from base template #}
+        <div class="clear space-20"></div>
 
-{% endblock %}
 
-{% block scripts_page %}
-    <script>
-        {% include "pages/partials/page.js.twig" %}
-        {% include "pages/partials/key.js.twig" %}
+        <section class="row">
+            <div class="col-sm-3">
+                <div class="adult">
+                    <h3>NPIE Adult</h3>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="child">
+                    <h3>NPIE Child</h3>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="adult">
+                    <h3>Recall Adult</h3>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="child">
+                    <h3>Recall Child</h3>
+                </div>
+            </div>
+        </section>
+        <div class="clear space-20"></div>
 
-        var key = api.key;
-        var script = document.createElement('script');
-        script.src = 'https://maps.googleapis.com/maps/api/js?v=3&key=' + key + '&callback=initMap';
-        document.getElementsByTagName('script')[0].parentNode.appendChild(script);
 
-        //Google Map
-        var map;
+        <section class="row">
+            <div class="col-sm-6">
+                <div class="notes">
+                    <h3>NPIE Notes</h3>
+                    <p>&nbsp;</p>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="notes">
+                    <h3>Recall Notes</h3>
+                    <p>&nbsp;</p>
+                </div>
+            </div>
+        </section>
+        <div class="clear space-20"></div>
 
-        function initMap() {
-            var isDraggable = $(document).width() > 480 ? true : false; /* If document (your website) is wider than 480px, isDraggable = true, else isDraggable = false*/
-            var myLatlng = new google.maps.LatLng( {{ office.latitude }}, {{ office.longitude }});
+        <section class="row">
+            <div class="col-sm-12">
+                <div class="offers">
+                    <h3>Offers</h3>
+                    <p>&nbsp;</p>
+                </div>
+            </div>
+        </section>
+        <div class="clear space-20"></div>
 
-            var mapDiv = document.getElementById('google-map');
-            map = new google.maps.Map(mapDiv, {
-                center: myLatlng,
-                scrollwheel: false,
-                mapTypeControl: false,
-                draggable: false,
-                zoom: 15
-            });
-            var marker = new google.maps.Marker({
-                position: myLatlng,
-                map: map,
-                title: '{{ newName }}',
-                icon: '{{ icon }}'
-            });
-        }
 
-    </script>
-    <!-- Include page-specific JS -->
-    {{ assets.js('js/office') | raw }}
 
-{% endblock %}
+        <section class="row">
+            <div class="col-xs-12">
+                <div class="office">
+                    <div class="col-sm-4 office-img">
+                        <img src="{{ office.img_url }}" alt="">
+                    </div>
+                    <div class="col-sm-4" id="google-map">
+
+                    </div>
+                    <div class="col-sm-4">
+                        <h2>Directions</h2>
+                        {{ additional.directions }}</div>
+                </div>
+            </div>
+        </section>
+
+    {% endblock %}
+
+    {% block scripts_page %}
+        <script>
+            {% include "pages/partials/page.js.twig" %}
+            {% include "pages/partials/key.js.twig" %}
+
+            var key = api.key;
+            var script = document.createElement('script');
+            script.src = 'https://maps.googleapis.com/maps/api/js?v=3&key=' + key + '&callback=initMap';
+            document.getElementsByTagName('script')[0].parentNode.appendChild(script);
+
+            //Google Map
+            var map;
+
+            function initMap() {
+                var isDraggable = $(document).width() > 480 ? true : false; /* If document (your website) is wider than 480px, isDraggable = true, else isDraggable = false*/
+                var myLatlng = new google.maps.LatLng( {{ office.latitude }}, {{ office.longitude }});
+
+                var mapDiv = document.getElementById('google-map');
+                map = new google.maps.Map(mapDiv, {
+                    center: myLatlng,
+                    scrollwheel: false,
+                    mapTypeControl: false,
+                    draggable: false,
+                    zoom: 15
+                });
+                var marker = new google.maps.Marker({
+                    position: myLatlng,
+                    map: map,
+                    title: '{{ newName }}',
+                    icon: '{{ icon }}'
+                });
+            }
+
+        </script>
+        <!-- Include page-specific JS -->
+        {{ assets.js('js/office') | raw }}
+
+    {% endblock %}
