@@ -27,6 +27,7 @@ class DentistTable extends Migration
                 $table->string('leave', 2)->nullable();
                 $table->string('leave_start_date', 25)->nullable();
                 $table->string('leave_end_date', 25)->nullable();
+                $table->string('notes', 1000)->nullable();
                 $table->timestamps();
 
                 $table->foreign('office_id')->references('office_id')->on('office_details');
