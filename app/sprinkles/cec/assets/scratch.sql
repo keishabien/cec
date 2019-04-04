@@ -1,3 +1,6 @@
+SELECT * FROM midwest_wrdp1.cec_update where dentist_name != "" and office_name != "";
+
+
 -- select dentist --
 SELECT distinct c.office_id, c.page_id, c.name, m.page_id, m.office_name, m.is_locum_dentist, m.dentist_name, m.dentist_strt_dt, m.dentist_end_dt,
                 m.dentist_status, m.provider_no, m.is_in_leave, m.leave_strt_dt, m.leave_end_dt, m.emergency_number
@@ -21,3 +24,11 @@ FROM cec.office_details c, midwest_wrdp1.cec_update m
 WHERE c.page_id = m.page_id AND m.dentist_name != "" AND m.office_name LIKE "%Dentist Office%";
 
 -- ADD HYGIENIST --
+
+c.bom, c.bom_number, c.npie_adult, c.npie_child, c.npie_notes, c.recall_adult, c.recall_child, c.recall_notes
+
+
+-- SELECT FROM CEC UPDATE OFFICE DETAILS DENTIST DETAILS --
+SELECT distinct o.office_id, o.`name`, d.`name`, d.id, c.bom, c.bom_number, c.npie_adult, c.npie_child, c.npie_notes, c.recall_adult, c.recall_child, c.recall_notes
+FROM midwest_wrdp1.cec_update c, cec.office_details o, cec.dentist_details d
+where c.dentist_name != "" and c.office_name != "" and c.page_id = o.page_id and o.office_id = d.office_id;
