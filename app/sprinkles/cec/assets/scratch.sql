@@ -32,3 +32,23 @@ c.bom, c.bom_number, c.npie_adult, c.npie_child, c.npie_notes, c.recall_adult, c
 SELECT distinct o.office_id, o.`name`, d.`name`, d.id, c.bom, c.bom_number, c.npie_adult, c.npie_child, c.npie_notes, c.recall_adult, c.recall_child, c.recall_notes
 FROM midwest_wrdp1.cec_update c, cec.office_details o, cec.dentist_details d
 where c.dentist_name != "" and c.office_name != "" and c.page_id = o.page_id and o.office_id = d.office_id;
+
+
+-- SELECT DISTANCE AND CLOSEST 5 --
+SELECT * FROM (
+  SELECT *, (FLOOR(
+    (
+      (
+        (
+          ACOS(
+            SIN((@latitude * PI() / 180)) * SIN((office_details.latitude * PI() / 180)) + COS((@latitude * PI() / 180)) * COS((office_details.latitude * PI() / 180)) * COS(((@longitude - office_details.longitude) * PI() / 180))
+          )
+        ) * 180 / PI()
+      ) * 60 * 1.1515
+    ) * 1.609344
+  )) AS distance
+  FROM  office_details
+) office_details
+WHERE distance <= 50
+ORDER BY distance ASC
+LIMIT 5

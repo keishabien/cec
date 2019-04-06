@@ -94,8 +94,9 @@
                 for (i = 0; i < locs.length; i++) {
                     unit = "K";
                     var radlat1 = Math.PI * lat / 180;
-                    var radlat2 = Math.PI * locs[i]['latitude'] / 180;
                     var radlon1 = Math.PI * lng / 180;
+
+                    var radlat2 = Math.PI * locs[i]['latitude'] / 180;
                     var radlon2 = Math.PI * locs[i]['longitude'] / 180;
                     var theta = lng - locs[i]['longitude'];
                     var radtheta = Math.PI * theta / 180;
@@ -103,6 +104,7 @@
                     dist = Math.acos(dist);
                     dist = dist * 180 / Math.PI;
                     dist = dist * 60 * 1.1515;
+
                     if (unit == "K") {
                         dist = dist * 1.609344
                     }
