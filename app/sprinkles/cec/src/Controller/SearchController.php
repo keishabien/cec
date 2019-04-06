@@ -55,40 +55,44 @@ class SearchController extends SimpleController
         if (preg_match('/\d{5}/', $keyword, $matches)) {
             $keyword = $matches[0];
             $allOffices = Office::query()->get();
-            $office = Office::query()
-                ->leftJoin('zipcodes', 'zipcodes.zip', '=', 'office_details.zip')
-                ->orWhere('office_details.zip', 'like', '%' . $keyword . '%')
-                ->distinct()->get();
 
-            $zipLength = count($allzips);
+            $coords = ZipCodes::query()
+                ->select('latitude', 'longitude')
+                ->where('zip','=',$keyword)
+                ->get();
+            Debug::debug("coords");
+            Debug::debug(print_r($coords, true));
 
-            for ($i = 0; $i < $zipLength; $i++) {
-                if ($allzips[$i]['zip'] === $keyword) {
-                    $ziplat = $allzips[$i]['latitude'];
-                    $ziplng = $allzips[$i]['longitude'];
+            $nearest = Office::query()
 
-                    return $this->ci->view->render($response, 'pages/office-all.html.twig', [
-                        'keyword' => $params['keyword'],
-                        'page' => [
-                            'lookupfound' => true,
-                            'ziplat' => $ziplat,
-                            'ziplng' => $ziplng,
-                            'office' => $office,
-                            'locations' => $allOffices
-                        ]
-                    ]);
-                } else {
-                    return $this->ci->view->render($response, 'pages/office-all.html.twig', [
-                        'page' => [
-                            'lookupfound' => false,
-                            'keyword' => $params['keyword'],
-                            'locations' => $allOffices
-                        ]
-                    ]);
-                }
-            }
+                    ->selectRaw('*, (FLOOR((((ACOS(
+                            SIN((@latitude * PI() / 180)) * 
+                            SIN((office_details.latitude * PI() / 180)) + 
+                            COS((@latitude * PI() / 180)) * COS((office_details.latitude * PI() / 180)) * 
+                            COS(((@longitude - office_details.longitude) * PI() / 180))
+                        )
+                        ) * 180 / PI()) * 60 * 1.1515) * 1.609344)) AS distance)'
+                    )
 
-        } else if($keyword) {
+                ->get();
+
+            Debug::debug("nearest");
+            Debug::debug(print_r($nearest, true));
+
+
+            return $this->ci->view->render($response, 'pages/office-all.html.twig', [
+                'keyword' => $params['keyword'],
+                'page' => [
+                    'lookupfound' => true,
+                    'ziplat' => $ziplat,
+                    'ziplng' => $ziplng,
+                    'office' => $office,
+                    'locations' => $allOffices
+                ]
+            ]);
+
+
+        } else if ($keyword) {
             $office = Office::query()
                 ->join('dentist_details', 'dentist_details.office_id', '=', 'office_details.office_id')
                 ->where('office_details.name', 'like', '%' . $keyword . '%')
