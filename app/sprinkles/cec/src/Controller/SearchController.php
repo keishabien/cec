@@ -58,35 +58,40 @@ class SearchController extends SimpleController
 
             $coords = ZipCodes::query()
                 ->select('latitude', 'longitude')
-                ->where('zip','=',$keyword)
+                ->where('zip', '=', $keyword)
                 ->get();
-            Debug::debug("coords");
-            Debug::debug(print_r($coords, true));
+
+            $lat = $coords[0]['latitude'];
+            $lng = $coords[0]['longitude'];
+
+            $forumla = "*, (FLOOR((
+            ((ACOS(
+            SIN((" . $lat . "* PI() / 180))
+            * SIN((office_details.latitude * PI() / 180))
+            + COS((" . $lat . " * PI() / 180))
+            * COS((office_details.latitude * PI() / 180))
+            * COS(((" . $lng . " - office_details.longitude) * PI() / 180))
+            ))
+            * 180 / PI())
+            * 60 * 1.1515) * 1.609344)) AS distance";
 
             $nearest = Office::query()
-
-                    ->selectRaw('*, (FLOOR((((ACOS(
-                            SIN((@latitude * PI() / 180)) * 
-                            SIN((office_details.latitude * PI() / 180)) + 
-                            COS((@latitude * PI() / 180)) * COS((office_details.latitude * PI() / 180)) * 
-                            COS(((@longitude - office_details.longitude) * PI() / 180))
-                        )
-                        ) * 180 / PI()) * 60 * 1.1515) * 1.609344)) AS distance)'
-                    )
-
+                ->selectRaw($forumla)
+                ->orderBy('distance', 'asc')
+                ->limit(5)
                 ->get();
-
-            Debug::debug("nearest");
-            Debug::debug(print_r($nearest, true));
 
 
             return $this->ci->view->render($response, 'pages/office-all.html.twig', [
                 'keyword' => $params['keyword'],
+                'office' => $nearest,
+                'midwestLogo' => 'https://www.meritdental.com/cecdb/images/midwest-logo.png',
+                'mondoviLogo' => 'https://www.meritdental.com/cecdb/images/mondovi-logo.png',
+                'meritLogo' => 'https://www.meritdental.com/cecdb/images/merit-logo.png',
+                'mountainLogo' => 'https://www.meritdental.com/cecdb/images/mountain-logo.png',
                 'page' => [
                     'lookupfound' => true,
-                    'ziplat' => $ziplat,
-                    'ziplng' => $ziplng,
-                    'office' => $office,
+                    'office' => $nearest,
                     'locations' => $allOffices
                 ]
             ]);

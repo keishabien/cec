@@ -41,7 +41,11 @@ SELECT * FROM (
       (
         (
           ACOS(
-            SIN((@latitude * PI() / 180)) * SIN((office_details.latitude * PI() / 180)) + COS((@latitude * PI() / 180)) * COS((office_details.latitude * PI() / 180)) * COS(((@longitude - office_details.longitude) * PI() / 180))
+            SIN((@latitude * PI() / 180))
+            * SIN((office_details.latitude * PI() / 180))
+            + COS((@latitude * PI() / 180))
+            * COS((office_details.latitude * PI() / 180))
+             * COS(((@longitude - office_details.longitude) * PI() / 180))
           )
         ) * 180 / PI()
       ) * 60 * 1.1515
