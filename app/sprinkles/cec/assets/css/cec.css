@@ -446,6 +446,10 @@ a:hover, a:focus {
     margin: 0;
 }
 
+.single p.distance {
+    padding: 0 0 20px;
+}
+
 .single a {
     margin: 0 auto;
     text-align: center;
