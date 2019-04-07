@@ -41,7 +41,7 @@
         <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/templates/pages/office-all.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="155">
-              <caret line="32" column="45" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
+              <caret line="32" column="33" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -779,12 +779,12 @@
       <workItem from="1552704617299" duration="1791000" />
       <workItem from="1552706433581" duration="4565000" />
       <workItem from="1554062089902" duration="1720000" />
-      <workItem from="1554522363762" duration="13846000" />
+      <workItem from="1554522363762" duration="13894000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="155734000" />
+    <option name="totallyTimeSpent" value="155782000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1041" y="-1088" width="1936" height="1056" extended-state="6" />
@@ -1171,7 +1171,7 @@
     <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/templates/pages/office-all.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="155">
-          <caret line="32" column="45" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
+          <caret line="32" column="33" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
         </state>
       </provider>
     </entry>
