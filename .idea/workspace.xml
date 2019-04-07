@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e08026d2-db7b-46d1-bd10-bc3bd748330c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/templates/pages/office-all.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/cec/templates/pages/office-all.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/assets/css/cec.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/cec/assets/css/cec.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,7 +29,7 @@
         <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Controller/SearchController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
-              <caret line="54" column="43" lean-forward="true" selection-start-line="54" selection-start-column="43" selection-end-line="54" selection-end-column="43" />
+              <caret line="54" column="43" selection-start-line="54" selection-start-column="43" selection-end-line="54" selection-end-column="43" />
               <folding>
                 <element signature="e#56#107#0#PHP" expanded="true" />
               </folding>
@@ -37,11 +37,46 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="office-all.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="office-all.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/templates/pages/office-all.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="155">
               <caret line="32" column="33" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cec.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/assets/css/cec.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="149">
+              <caret line="441" column="20" selection-start-line="441" selection-start-column="20" selection-end-line="441" selection-end-column="20" />
+              <folding>
+                <element signature="e#79#219#0" />
+                <element signature="e#238#264#0" />
+                <element signature="e#275#298#0" />
+                <element signature="e#353#429#0" />
+                <element signature="e#434#502#0" />
+                <element signature="e#507#531#0" />
+                <element signature="e#546#569#0" />
+                <element signature="e#588#611#0" />
+                <element signature="e#641#693#0" />
+                <element signature="e#721#793#0" />
+                <element signature="e#825#856#0" />
+                <element signature="e#885#911#0" />
+                <element signature="e#926#1067#0" />
+                <element signature="e#1110#1127#0" />
+                <element signature="e#1144#1172#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="office-single.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/templates/pages/office-single.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="284">
+              <caret line="12" column="24" lean-forward="true" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -186,7 +221,6 @@
         <option value="$PROJECT_DIR$/app/sprinkles/cec/templates/pages/intake/page5.html.twig" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/templates/navigation/main-nav.html.twig" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/templates/pages/office-single.html.twig" />
-        <option value="$PROJECT_DIR$/app/sprinkles/cec/assets/css/cec.css" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/assets/js/office.js" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/templates/pages/abstract/base.html.twig" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/DentistTable.php" />
@@ -209,6 +243,7 @@
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_2.sql" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Controller/SearchController.php" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/templates/pages/office-all.html.twig" />
+        <option value="$PROJECT_DIR$/app/sprinkles/cec/assets/css/cec.css" />
       </list>
     </option>
   </component>
@@ -590,10 +625,10 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1041" />
-    <option name="y" value="-1088" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="-15" />
+    <option name="y" value="-15" />
+    <option name="width" value="3873" />
+    <option name="height" value="2193" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -641,6 +676,15 @@
               <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
               <item name="cec" type="462c0819:PsiDirectoryNode" />
               <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
+              <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
+              <item name="cec" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
@@ -779,18 +823,18 @@
       <workItem from="1552704617299" duration="1791000" />
       <workItem from="1552706433581" duration="4565000" />
       <workItem from="1554062089902" duration="1720000" />
-      <workItem from="1554522363762" duration="13894000" />
+      <workItem from="1554522363762" duration="15231000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="155782000" />
+    <option name="totallyTimeSpent" value="157119000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1041" y="-1088" width="1936" height="1056" extended-state="6" />
+    <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.19829424" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24949698" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="1.0" />
@@ -799,7 +843,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.21005587" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.2764706" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -902,46 +946,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/templates/pages/office-single.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/templates/pages/abstract/office-single-default.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
           <caret line="25" column="53" selection-start-line="25" selection-start-column="53" selection-end-line="25" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/assets/css/cec.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="472" column="12" lean-forward="true" selection-start-line="472" selection-start-column="12" selection-end-line="475" selection-end-column="12" />
-          <folding>
-            <element signature="e#79#219#0" />
-            <element signature="e#238#264#0" />
-            <element signature="e#275#298#0" />
-            <element signature="e#353#429#0" />
-            <element signature="e#434#502#0" />
-            <element signature="e#507#531#0" />
-            <element signature="e#546#569#0" />
-            <element signature="e#588#611#0" />
-            <element signature="e#641#693#0" />
-            <element signature="e#721#793#0" />
-            <element signature="e#825#856#0" />
-            <element signature="e#885#911#0" />
-            <element signature="e#926#1067#0" />
-            <element signature="e#1110#1127#0" />
-            <element signature="e#1144#1172#0" />
-            <element signature="e#1303#1395#0" />
-            <element signature="e#10645#10693#0" />
-            <element signature="e#10755#10801#0" />
-            <element signature="e#10815#10848#0" />
-            <element signature="e#10868#10902#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1161,7 +1169,7 @@
     <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Controller/SearchController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="54" column="43" lean-forward="true" selection-start-line="54" selection-start-column="43" selection-end-line="54" selection-end-column="43" />
+          <caret line="54" column="43" selection-start-line="54" selection-start-column="43" selection-end-line="54" selection-end-column="43" />
           <folding>
             <element signature="e#56#107#0#PHP" expanded="true" />
           </folding>
@@ -1172,6 +1180,37 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="155">
           <caret line="32" column="33" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/assets/css/cec.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="441" column="20" selection-start-line="441" selection-start-column="20" selection-end-line="441" selection-end-column="20" />
+          <folding>
+            <element signature="e#79#219#0" />
+            <element signature="e#238#264#0" />
+            <element signature="e#275#298#0" />
+            <element signature="e#353#429#0" />
+            <element signature="e#434#502#0" />
+            <element signature="e#507#531#0" />
+            <element signature="e#546#569#0" />
+            <element signature="e#588#611#0" />
+            <element signature="e#641#693#0" />
+            <element signature="e#721#793#0" />
+            <element signature="e#825#856#0" />
+            <element signature="e#885#911#0" />
+            <element signature="e#926#1067#0" />
+            <element signature="e#1110#1127#0" />
+            <element signature="e#1144#1172#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/templates/pages/office-single.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="12" column="24" lean-forward="true" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
         </state>
       </provider>
     </entry>
