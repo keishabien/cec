@@ -26,9 +26,13 @@
                         {% endif %}
 
                         {#<p>{{ off.city }}, {{ off.state }}</p>#}
-                        <p>{{ off.name }}</p>
+                        <p>{{ off.name }}
 
-                        {#<p class="zip">{{ page.ziplat }}, {{ page.ziplng }}</p>#}
+                        </p>
+
+                        {% if office %}
+                        <p class="distance">{{ off.distance }} miles away</p>
+                        {% endif %}
 
                         <a href="{{ site.uri.public }}/offices/o/{{ off.vanity_url }}" class="btn btn-orange-round">
                             View Office Information
@@ -42,9 +46,6 @@
             </div>
         {% endif %}
 
-        {{ page.lookupfound }}
-
-
     </div>
 {% endblock %}
 
@@ -53,97 +54,6 @@
     <!-- Include page-specific variables -->
     <script>
         {% include "pages/partials/page.js.twig" %}
-        {% include "pages/partials/key.js.twig" %}
 
-        var key = api.key;
-
-        //zip code
-        Array.prototype.sortOn = function (key) {
-            this.sort(function (a, b) {
-                if (a[key] < b[key]) {
-                    return -1;
-                } else if (a[key] > b[key]) {
-                    return 1;
-                }
-                return 0;
-            });
-        };
-
-        // magic.js
-
-        // process the form
-        $.ajax({
-            type: 'POST', // define the type of HTTP verb we want to use (POST for our form)
-            url: 'https://www.googleapis.com/geolocation/v1/geolocate?key=' + key, // the url where we want to POST
-            dataType: 'json', // what type of data do we expect back from the server
-            encode: true
-        })
-        // using the done promise callback
-            .done(function (data) {
-
-                // log data to the console so we can see
-                console.log(JSON.stringify(data));
-                var JSONObject = JSON.parse(JSON.stringify(data));
-                lat = page.ziplat;
-                lng = page.ziplng;
-                var locs = page.locations;
-
-
-                console.log(locs);
-
-                for (i = 0; i < locs.length; i++) {
-                    unit = "K";
-                    var radlat1 = Math.PI * lat / 180;
-                    var radlon1 = Math.PI * lng / 180;
-
-                    var radlat2 = Math.PI * locs[i]['latitude'] / 180;
-                    var radlon2 = Math.PI * locs[i]['longitude'] / 180;
-                    var theta = lng - locs[i]['longitude'];
-                    var radtheta = Math.PI * theta / 180;
-                    var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
-                    dist = Math.acos(dist);
-                    dist = dist * 180 / Math.PI;
-                    dist = dist * 60 * 1.1515;
-
-                    if (unit == "K") {
-                        dist = dist * 1.609344
-                    }
-                    if (unit == "N") {
-                        dist = dist * 0.8684
-                    }
-                    locs[i]['distance'] = Math.floor(dist);
-                }
-
-
-                locs.sort(function (a, b) {
-                    var valueA, valueB;
-
-                    valueA = a['distance']; // Where 1 is your index, from your example
-                    valueB = b['distance'];
-                    if (valueA < valueB) {
-                        return -1;
-                    } else if (valueA > valueB) {
-                        return 1;
-                    }
-                    return 0;
-                });
-
-
-                if (page.ziplat && page.ziplng) {
-                    $(document).ready(function () {
-                        for (i = 0; i < 5; i++) {
-                            page = $.extend(
-                                true,               // deep extend
-                                {
-                                    "office": locs[i]
-                                },
-                                page);
-
-                            console.log(locs[i]);
-                            $('.zip').show().text(locs[i]['distance'] + " miles away");
-                        }
-                    });
-                }
-            });
     </script>
 {% endblock %}

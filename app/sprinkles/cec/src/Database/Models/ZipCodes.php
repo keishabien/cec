@@ -13,6 +13,14 @@ class ZipCodes extends Model
 
     protected $table = 'cec.zipcodes';
 
+    protected $fillable = [
+        'zip',
+        'city',
+        'state',
+        'latitude',
+        'longitude'
+    ];
+
     /**
      * @var bool Enable timestamps for this class.
      */
