@@ -27,10 +27,6 @@ app/storage/*
 !app/sessions/.gitkeep
 !app/storage/.gitkeep
 
-# Ignore bower vendor assets
-/app/sprinkles/*/assets/vendor/
-
-
 # Ignore sample site sprinkle
 app/sprinkles/site-dev
 
@@ -76,3 +72,6 @@ build/package.lock
 
 # Ignore api key
 app/sprinkles/cec/templates/pages/partials/key.js.twig
+
+# Ignore phpstorm workspace
+.idea/workspace.xml
