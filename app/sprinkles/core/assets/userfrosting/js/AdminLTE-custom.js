@@ -99,8 +99,8 @@ $(function() {
 
     // Apply iCheck to all js-icheck elements
     $('.js-icheck').iCheck({
-      checkboxClass: 'icheckbox_square-mwd_orange',
-      radioClass: 'iradio_square-mwd_orange',
+      checkboxClass: 'icheckbox_square-purple',
+      radioClass: 'iradio_square-purple',
       increaseArea: '20%' // optional
     });
 
