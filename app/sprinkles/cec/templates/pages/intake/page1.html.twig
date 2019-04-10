@@ -1,0 +1,298 @@
+{% extends "pages/abstract/default.html.twig" %}
+
+{% set page_active = "intake" %}
+
+{# Overrides blocks in head of base template #}
+
+{% block page_title %}Practice Information Form{% endblock %}
+
+{% block stylesheets_page %}
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker3.css">
+{% endblock %}
+
+{% block body_matter %}
+<div id="alerts-page"></div>
+
+    <form class="form-inline intake" method="post" action="{{ site.uri.public }}/intake/2">
+
+        {% include "forms/csrf.html.twig" %}
+        <div class="office-select">
+            <select class="form-control" name="office_id" id="offices">
+                <option value="">Please Select Your Office</option>
+                {% for office in offices %}
+                    <option value="{{ office.office_id }}">{{ office.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+
+        {% verbatim %}
+<script id="dentist-details-row" type="text/x-handlebars-template">
+    <tr class="uf-collection-row">
+         <td>
+            <div class="dentist-section" id="{{rownum}}">
+                <div class="row">
+                    <div class="col-xs-10">
+                        <h2>Dentist Details</h2>
+                    </div>
+                    <div class="col-xs-2 pull-right">
+                        <button type="button" class="btn btn-link btn-trash js-delete-row pull-right" title="Delete"> <i class="fa fa-times"></i> </button>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-5">
+                        <div class="form-group has-feedback">
+                            <label for="dentist[{{ rownum }}][name]" class="control-label">Dentist Full Name</label>
+                            <input type="text" class="form-control customer" name="dentist[{{ rownum }}][name]" id="dentist[{{ rownum }}][name]"
+                                   placeholder="Full Name">
+                        </div>
+                    </div>
+
+                    <div class="col-sm-7">
+                        <div class="form-group has-feedback">
+                            <label for="dentist[{{ rownum }}][provider_num]" class="control-label">DentalVision Provider Number (6
+                                digits)
+                            </label>
+                            <input type="text" class="form-control" id="dentist[{{ rownum }}][provider_num]" placeholder="000000"
+                                   name="dentist[{{ rownum }}][provider_num]">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="form-group has-feedback">
+                            <label for="dentist[{{ rownum }}][nickname]" class="control-label">How does the doctor refer to themself with
+                                patients? (i.e. Dr. Steven Smith likes patients to call him Dr. Steve)
+                            </label>
+                            <input type="text" id="dentist[{{ rownum }}][nickname]" name="dentist[{{ rownum }}][nickname]" class="form-control">
+                        </div>
+
+                        <div class="form-group has-feedback">
+                            <label for="dentist[{{ rownum }}][emergency_num]" class="control-label">Dentist Emergency Number
+                            </label>
+                            <input type="text" id="dentist[{{ rownum }}][emergency_num]" name="dentist[{{ rownum }}][emergency_num]" class="form-control">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group has-feedback radio">
+                            Permanent or Locum?
+                            <div class="radio">
+                                <label for="dentist[{{ rownum }}][permanent]">
+                                    <input type="radio" name="dentist[{{ rownum }}][locum]" id="dentist[{{ rownum }}][permanent]" value="Yes">
+                                    Permanent
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label for="dentist[{{ rownum }}][locum]">
+                                    <input type="radio" name="dentist[{{ rownum }}][locum]" id="dentist[{{ rownum }}][locum]" value="No">
+                                    Locum
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-8">
+                        <div class="form-group has-feedback has-feedback-left">
+                            <label for="dentist[{{ rownum }}][start_date]" class="control-label">When did this doctor start at your
+                                location?
+                            </label>
+                            <div class="inline-feedback input-group">
+                                <span class="input-group-addon input-group-override">
+                                    <i class="fa fa-calendar"></i>
+                                </span>
+                                <input type="text" class="form-control datepicker" id="dentist[{{ rownum }}][start_date]"
+                                       name="dentist[{{ rownum }}][start_date]">
+                            </div>
+                        </div>
+
+                        <div class="form-group has-feedback has-feedback-left">
+                            <label for="dentist[{{ rownum }}][end_date]" class="control-label">If the doctor is exiting, what is their
+                                last day seeing patients?
+                            </label>
+
+                            <div class="inline-feedback input-group">
+                                <span class="input-group-addon input-group-override">
+                                    <i class="fa fa-calendar"></i>
+                                </span>
+                                <input type="text" class="form-control datepicker" id="dentist[{{ rownum }}][end_date]"
+                                       name="dentist[{{ rownum }}][end_date]">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group has-feedback radio">
+                            Is the doctor currently or going on leave?
+                            <div class="radio">
+                                <label for="dentist[{{ rownum }}][leave_yes]">
+                                    <input type="radio" name="dentist[{{ rownum }}][leave]" id="dentist[{{ rownum }}][leave_yes]" value="Y">
+                                    Yes
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label for="dentist[{{ rownum }}][leave_no]">
+                                    <input type="radio" name="dentist[{{ rownum }}][leave]" id="dentist[{{ rownum }}][leave_no]" value="N">
+                                    No
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="form-group has-feedback has-feedback-left">
+                            <label for="dentist[{{ rownum }}][leave_start_date]" class="control-label">Leave start date:</label>
+                            <div class="inline-feedback input-group">
+                            <span class="input-group-addon input-group-override">
+                                    <i class="fa fa-calendar"></i>
+                                </span>
+                                <input type="text" class="form-control datepicker" id="dentist[{{ rownum }}][leave_start_date]"
+                                       name="dentist[{{ rownum }}][leave_start_date]">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="form-group has-feedback has-feedback-left">
+                            <label for="dentist[{{ rownum }}][leave_end_date]" class="control-label">Leave end date:</label>
+                            <div class="inline-feedback input-group">
+                            <span class="input-group-addon input-group-override">
+                                    <i class="fa fa-calendar"></i>
+                                </span>
+                                <input type="text" class="form-control datepicker" id="dentist[{{ rownum }}][leave_end_date]"
+                                       name="dentist[{{ rownum }}][leave_end_date]">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+</script>
+{% endverbatim %}
+
+
+        <div id="dentist-div">
+            <table class="table">
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="dentist-button-row">
+            <a class="btn btn-default repeat-div pull-right"><i class="fa fa-plus"></i> Add Dentist</a><br>
+        </div>
+
+        {% verbatim %}
+<script id="hygienist-details-row" type="text/x-handlebars-template">
+    <tr class="uf-collection-row">
+         <td>
+            <div class="hygienist-section" id="{{rownum}}">
+                <div class="row">
+                    <div class="col-xs-10">
+                        <h2>Hygienist Details</h2>
+                    </div>
+                    <div class="col-xs-2 pull-right">
+                        <button type="button" class="btn btn-link btn-trash js-delete-row pull-right" title="Delete"> <i class="fa fa-times"></i> </button>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-5">
+                        <div class="form-group has-feedback">
+                            <label for="hygienist[{{ rownum }}][name]" class="control-label">Hygienist Full Name</label>
+                            <input type="text" class="form-control customer" name="hygienist[{{ rownum }}][name]" id="hygienist[{{ rownum }}][name]"
+                                   placeholder="Full Name">
+                        </div>
+                    </div>
+
+                    <div class="col-sm-7">
+                        <div class="form-group has-feedback">
+                            <label for="hygienist[{{ rownum }}][provider_num]" class="control-label">DentalVision Provider Number (6
+                                digits)
+                            </label>
+                            <input type="text" class="form-control" id="hygienist[{{ rownum }}][provider_num]" placeholder="000000"
+                                   name="hygienist[{{ rownum }}][provider_num]">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </td>
+    </tr>
+</script>
+{% endverbatim %}
+
+        <div id="hygienist-div">
+            <table class="table">
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="hygienist-button-row">
+            <a class="btn btn-default repeat-div pull-right"><i class="fa fa-plus"></i> Add Hygienist</a><br>
+        </div>
+        <button type="submit" class="btn btn-orange  pull-right">Next <i class="fa fa-chevron-right"></i></button>
+    </form>
+
+
+{% endblock %}
+
+
+
+{% block scripts_page %}
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.js"></script>
+
+    <!-- Include validation rules -->
+    <script>
+        {% include "pages/partials/page.js.twig" %}
+    </script>
+
+    <!-- Include page-specific JS -->
+    {{ assets.js('js/intake') | raw }}
+
+    <script>
+
+        $('.datepicker').datepicker();
+
+        $('body').on('focus', ".datepicker", function () {
+            $(this).datepicker();
+        });
+
+        //submit form
+        $(".intake").ufForm({
+            msgTarget: $("#alerts-page"),
+            validator: page.validators.office
+        }).on("submitSuccess.ufForm", function (event, data, textStatus, jqXHR) {
+            var id = $('select[name="office_id"]').val();
+            window.location.replace(site.uri.public + "/intake/2?id="+id);
+        }).on("submitError.ufForm", function (event, data, textStatus, jqXHR) {
+            console.log(data.responseText);
+        });
+
+
+        // // alias required to cRequired with new message
+        // $.validator.addMethod("cRequired", $.validator.methods.required,
+        //     "Customer name required");
+        // // alias minlength, too
+        // $.validator.addMethod("cMinlength", $.validator.methods.minlength,
+        //     // leverage parameter replacement for minlength, {0} gets replaced with 2
+        //     $.validator.format("Customer name must have at least {0} characters"));
+        // // combine them both, including the parameter for minlength
+        // $.validator.addClassRules("customer", {cRequired: true, cMinlength: 2});
+
+    </script>
+
+{% endblock %}

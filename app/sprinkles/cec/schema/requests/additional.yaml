@@ -1,0 +1,50 @@
+# Request schema for the intake form
+
+bom_name:
+  validators:
+    required:
+      message: Please tell the BOM name.
+  transformations:
+    - purge
+    - trim
+
+bom_number:
+  validators:
+    required:
+      label: Dentist Provider Number
+      message: "Please select for new patient consideration."
+    regex:
+      regex: ^(\+0?1\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$
+      message: "Please enter a valid phone number, including hyphens."
+
+dr_hyg_plan:
+
+family_same_dr:
+
+allow_diff_provider:
+
+allow_diff_transfer:
+
+int_transfer_NPIE:
+
+int_transfer_plan:
+
+NPIE_blocks:
+
+NPIE_blocks_new:
+
+NPIE_blocks_request:
+
+NPIE_daily_limit:
+
+adult_hyg_units:
+
+directions:
+  transformations:
+    - purify
+    - trim
+
+other:
+  transformations:
+    - purify
+    - trim

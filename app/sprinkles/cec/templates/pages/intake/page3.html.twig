@@ -1,0 +1,359 @@
+{% extends "pages/abstract/default.html.twig" %}
+
+{% set page_active = "recall" %}
+
+{# Overrides blocks in head of base template #}
+
+{% block page_title %}Practice Information Form{% endblock %}
+
+
+{% block body_matter %}
+    <div id="alerts-page"></div>
+
+
+    <form class="form-inline recall" method="post" action="{{ site.uri.public }}/intake/4">
+        {% include "forms/csrf.html.twig" %}
+        <input type="text" hidden name="office_id" value="{{ office_id }}">
+
+{% verbatim %}
+<script id="adult-row" type="text/x-handlebars-template">
+    <tr class="uf-collection-row">
+         <td>
+            <div class="adult-section" id="{{rownum}}">
+                <div class="row">
+                    <div class="col-xs-10">
+                        <h2>Adult Recall Details</h2>
+                    </div>
+                    <div class="col-xs-2 pull-right">
+                        <button type="button" class="btn btn-link btn-trash js-delete-row pull-right" title="Delete"> <i class="fa fa-times"></i> </button>
+                    </div>
+                </div>
+
+            <h3>Prophy</h3>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="adult[{{rownum}}][no_plan_units]" class="control-label">For an adult patient with no treatment
+                            plan, how many units
+                            is that
+                            patient scheduled in hygiene?
+                        </label>
+                        <select class="form-control" name="adult[{{rownum}}][no_plan_units]" id="adult[{{rownum}}][no_plan_units]">
+                            <option value="">Please select</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="adult[{{rownum}}][record_duration]" class="control-label">After how many years since their last
+                            visit do you consider the
+                            patient "new" and schedule them as a new patient?
+                        </label>
+                        <select class="form-control" name="adult[{{rownum}}][record_duration]" id="adult[{{rownum}}][record_duration]">
+                            <option value="">Please select</option>
+                            <option value="<1 year">Less than 1 year</option>
+                            <option value="1 year">1 year</option>
+                            <option value="2 years">2 years</option>
+                            <option value="3 years">3 years</option>
+                            <option value="4 years">4 years</option>
+                            <option value="5 years">5 years</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <h3>SRP</h3>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback radio">
+                        Is it okay if a patient is treatment planned for SRP, and only wants a regular cleaning?
+                        <div class="radio">
+                            <label for="adult[{{rownum}}][srp_cleaning]">
+                                <input type="radio" name="adult[{{rownum}}][srp_cleaning]" id="adult[{{rownum}}][srp_cleaning]" value="Yes">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label for="srp-n-1">
+                                <input type="radio" name="adult[{{rownum}}][srp_cleaning]" id="adult[{{rownum}}][srp_cleaning]" value="No">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback radio">
+                        If no, should we transfer the call to the practice?
+                        <div class="radio">
+                            <label for="adult[{{rownum}}][srp_transfer]">
+                                <input type="radio" name="adult[{{rownum}}][srp_transfer]" id="adult[{{rownum}}][srp_transfer]" value="Yes">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label for="adult[{{rownum}}][srp_transfer]">
+                                <input type="radio" name="adult[{{rownum}}][srp_transfer]" id="adult[{{rownum}}][srp_transfer]" value="No">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="adult[{{rownum}}][srp_cleaning_units]" class="control-label">If yes, how many units should we schedule
+                            for a regular
+                            cleaning?
+                        </label>
+                        <select class="form-control" name="adult[{{rownum}}][srp_cleaning_units]" id="adult[{{rownum}}][srp_cleaning_units]">
+                            <option>Please select</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback radio">
+                        Should we also schedule them for an exam or consultation with the doctor?
+                        <div class="radio">
+                            <label for="adult[{{rownum}}][srp_dr_exam]">
+                                <input type="radio" name="adult[{{rownum}}][srp_dr_exam]" id="adult[{{rownum}}][srp_dr_exam]" value="Yes">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label for="adult[{{rownum}}][srp_dr_exam]">
+                                <input type="radio" name="adult[{{rownum}}][srp_dr_exam]" id="adult[{{rownum}}][srp_dr_exam]" value="No">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Perio Maintenance</h3>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="adult[{{rownum}}][perio_units]" class="control-label">If a patient is treatment planned for
+                            perio
+                            maintenance and no
+                            units are attached, how many units do you schedule?
+                        </label>
+                        <select class="form-control" name="adult[{{rownum}}][perio_units]" id="adult[{{rownum}}][perio_units]">
+                            <option>Please select</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </td>
+    </tr>
+</script>
+{% endverbatim %}
+
+        <div id="adult-div">
+            <table class="table">
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="adult-button-row">
+            <a class="btn btn-default repeat-div pull-right"><i class="fa fa-plus"></i> Add Adult NPIE</a><br>
+        </div>
+
+
+{% verbatim %}
+<script id="child-row" type="text/x-handlebars-template">
+    <tr class="uf-collection-row">
+         <td>
+
+            <div class="child-section" id="{{rownum}}">
+                <div class="row">
+                    <div class="col-xs-10">
+                        <h2>Child Recall Details</h2>
+                    </div>
+                    <div class="col-xs-2 pull-right">
+                        <button type="button" class="btn btn-link btn-trash js-delete-row pull-right" title="Delete"> <i class="fa fa-times"></i> </button>
+                    </div>
+                </div>
+
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback radio">
+                        Child Age Range
+                        <div class="radio">
+                            <label for="child[{{rownum}}][age_range]">
+                                <input type="radio" name="child[{{rownum}}][age_range]" id="child[{{rownum}}][age_range]" value="0-3">
+                                Age 0-3
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label for="child[{{rownum}}][age_range]">
+                                <input type="radio" name="child[{{rownum}}][age_range]" id="child[{{rownum}}][age_range]" value="4-10">
+                                Age 4-10
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label for="child[{{rownum}}][age_range]">
+                                <input type="radio" name="child[{{rownum}}][age_range]" id="child[{{rownum}}][age_range]" value="11-17">
+                                Age 11-17
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback radio">
+                        If the patient got braces since their last visit, do you add a unit?
+
+                        <div class="radio">
+                            <label for="child[{{rownum}}][braces_units]">
+                                <input type="radio" name="child[{{rownum}}][braces_units]" id="child[{{rownum}}][braces_units]" value="Yes">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label for="braces-n-1">
+                                <input type="radio" name="child[{{rownum}}][braces_units]" id="child[{{rownum}}][braces_units]" value="No">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="child[{{rownum}}][hyg_units]" class="control-label">Hygiene Units</label>
+                        <select class="form-control" name="child[{{rownum}}][hyg_units]" id="child[{{rownum}}][hyg_units]">
+                            <option>Please select</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="child[{{rownum}}][dr_units]" class="control-label">Doctor Units</label>
+                        <select class="form-control" name="child[{{rownum}}][dr_units]" id="child[{{rownum}}][dr_units]">
+                            <option>Please select</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </td>
+    </tr>
+</script>
+{% endverbatim %}
+
+        <div id="child-div">
+            <table class="table">
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="child-button-row">
+            <a class="btn btn-default repeat-div pull-right"><i class="fa fa-plus"></i> Add Child NPIE</a><br>
+        </div>
+        <button type="submit" class="btn btn-orange  pull-right">Next ></button>
+    </form>
+
+
+
+{% endblock %}
+
+
+
+
+
+{% block scripts_page %}
+    <!-- Include validation rules -->
+    <script>
+        {% include "pages/partials/page.js.twig" %}
+    </script>
+
+    <!-- Include page-specific JS -->
+    {{ assets.js('js/intake') | raw }}
+
+    <script>
+        //submit form
+        $(".recall").ufForm({
+            msgTarget: $("#alerts-page"),
+            validators: page.validators.recall
+        }).on("submitSuccess.ufForm", function (event, data, textStatus, jqXHR) {
+            var id = $('input[name="office_id"]').val();
+            window.location.replace(site.uri.public + "/intake/4?id="+id);
+        }).on("submitError.ufForm", function (event, data, textStatus, jqXHR) {
+            console.log(data.responseText);
+        });
+    </script>
+
+{% endblock %}
