@@ -33,9 +33,9 @@ return [
     'mail' => [
         'mailer' => 'smtp', // Set to one of 'smtp', 'mail', 'qmail', 'sendmail'
         'host' => getenv('SMTP_HOST') ?: null,
-        'port' => 587,
-        'auth' => true,
-        'secure' => 'tls',
+        'port' => 25,
+        'auth' => false,
+        'secure' => false,
         'username' => getenv('SMTP_USER') ?: null,
         'password' => getenv('SMTP_PASSWORD') ?: null,
         'smtp_debug' => 4,
