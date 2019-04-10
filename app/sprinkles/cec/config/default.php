@@ -31,11 +31,11 @@ return [
         'ajax' => true
     ],
     'mail' => [
-        'mailer' => 'smtp', // Set to one of 'smtp', 'mail', 'qmail', 'sendmail'
+        'mailer' => 'smtp',
         'host' => getenv('SMTP_HOST') ?: null,
         'port' => 25,
         'auth' => false,
-        'secure' => false,
+        'secure' => 'none',
         'username' => getenv('SMTP_USER') ?: null,
         'password' => getenv('SMTP_PASSWORD') ?: null,
         'smtp_debug' => 4,
