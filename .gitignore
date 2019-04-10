@@ -74,4 +74,4 @@ build/package.lock
 app/sprinkles/cec/templates/pages/partials/key.js.twig
 
 # Ignore phpstorm workspace
-.idea/workspace.xml
+.idea/
