@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e08026d2-db7b-46d1-bd10-bc3bd748330c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/sprinkles/account/locale/en_US/messages.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/account/locale/en_US/messages.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/sprinkles/account/templates/navigation/user-card.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/account/templates/navigation/user-card.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/sprinkles/account/templates/pages/sign-in.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/account/templates/pages/sign-in.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/sprinkles/admin/templates/pages/abstract/dashboard.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/admin/templates/pages/abstract/dashboard.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/sprinkles/core/asset-bundles.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/core/asset-bundles.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/sprinkles/core/assets/userfrosting/js/AdminLTE-custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/core/assets/userfrosting/js/AdminLTE-custom.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/sprinkles/core/assets/userfrosting/js/AdminLTE.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/core/assets/userfrosting/js/AdminLTE.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/sprinkles/core/assets/userfrosting/js/handlebars-helpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/core/assets/userfrosting/js/handlebars-helpers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/sprinkles/core/assets/userfrosting/js/uf-collection.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/core/assets/userfrosting/js/uf-collection.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/sprinkles/core/assets/userfrosting/js/uf-jqueryvalidation-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/core/assets/userfrosting/js/uf-jqueryvalidation-config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/src/Controller/PageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/cec/src/Controller/PageController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,11 +15,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/sprinkles.json">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/asset-bundles.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+            <state relative-caret-position="93">
+              <caret line="73" column="23" lean-forward="true" selection-start-line="73" selection-start-column="23" selection-end-line="73" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Controller/PageController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="262">
+              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
             </state>
           </provider>
         </entry>
@@ -38,7 +37,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>userfrosting/favicons/</find>
       <find>office_details</find>
       <find>user_defaults</find>
       <find>7.</find>
@@ -68,6 +66,7 @@
       <find>/* iCheck plugin Square skin</find>
       <find>js/pages/sign-in</find>
       <find>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</find>
+      <find>ACCOUNT.REQUIRED</find>
     </findStrings>
     <replaceStrings>
       <replace>child</replace>
@@ -101,7 +100,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/sprinkles/cec/templates/pages/abstract/office-single-default.html.twig" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Models/Zips.php" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/templates/navigation/search.html.twig" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_3.txt" />
@@ -152,6 +150,7 @@
         <option value="$PROJECT_DIR$/app/sprinkles/cec/asset-bundles.json" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/app/sprinkles.json" />
+        <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Controller/PageController.php" />
       </list>
     </option>
   </component>
@@ -403,17 +402,18 @@
       <workItem from="1554744140173" duration="3590000" />
       <workItem from="1554818172905" duration="595000" />
       <workItem from="1554906377700" duration="5088000" />
-      <workItem from="1554912371686" duration="2921000" />
+      <workItem from="1554912371686" duration="3212000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="162223000" />
+    <option name="totallyTimeSpent" value="162514000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18176973" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18176973" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -426,7 +426,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" x="22" y="389" width="1876" height="261" id="Terminal" order="10" sideWeight="0.49946696" visible="true" weight="0.37703142" />
+      <window_info anchor="bottom" x="22" y="389" width="1876" height="261" id="Terminal" order="10" sideWeight="0.49946696" visible="true" weight="0.34561214" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50053304" side_tool="true" weight="0.43336946" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -464,13 +464,6 @@
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.log" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/core/assets/vendor/icheck/skins/flat/red.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="22" column="34" lean-forward="true" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/sprinkles/core/assets/vendor/icheck/icheck.jquery.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-367" />
@@ -686,13 +679,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/asset-bundles.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="75" column="58" lean-forward="true" selection-start-line="75" selection-start-column="58" selection-end-line="75" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/sprinkles/account/src/Database/Models/Interfaces/UserInterface.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="582">
@@ -722,8 +708,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/sprinkles.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+        <state relative-caret-position="253">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/asset-bundles.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="73" column="23" lean-forward="true" selection-start-line="73" selection-start-column="23" selection-end-line="73" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Controller/PageController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
         </state>
       </provider>
     </entry>
