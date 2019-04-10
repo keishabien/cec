@@ -33,7 +33,7 @@ return [
     'mail' => [
         'mailer' => 'smtp', // Set to one of 'smtp', 'mail', 'qmail', 'sendmail'
         'host' => getenv('SMTP_HOST') ?: null,
-        'port' => 25,
+        'port' => 465,
         'auth' => false,
         'secure' => false,
         'username' => getenv('SMTP_USER') ?: null,
