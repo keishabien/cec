@@ -39,11 +39,16 @@ a:hover, a:focus {
 .login-page,
 .register-page {
     background-color: #FFF;
-    margin: 7% auto;
+    margin: 0 auto;
 }
-
+.login-logo img {
+    width: 100%;
+    max-width: 600px;
+    padding-left: 10px;
+    margin: 0 auto;
+}
 .login-box, .register-box {
-    width: 360px;
+    max-width: 360px;
     margin: 0 auto;
     border: 1px solid #bbbcbc;
 }
