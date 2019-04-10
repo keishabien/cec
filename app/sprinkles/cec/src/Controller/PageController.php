@@ -18,9 +18,15 @@ class PageController extends SimpleController
 {
     public function pageIndex($request, $response, $args)
     {
+<<<<<<< HEAD
         $ms = $this->ci->alerts;
 
         $ms->addMessageTranslated('success', 'ACCOUNT.REQUIRED');
+=======
+//        $ms = $this->ci->alerts;
+//
+//        $ms->addMessageTranslated('success', 'ACCOUNT.REQUIRED');
+>>>>>>> a0ba5f67
         return $this->ci->view->render($response, 'pages/index.html.twig');
     }
 
