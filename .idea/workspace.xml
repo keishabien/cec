@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e08026d2-db7b-46d1-bd10-bc3bd748330c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/src/Controller/PageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/cec/src/Controller/PageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/templates/pages/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/cec/templates/pages/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/config/default.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/cec/config/default.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,19 +17,28 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/templates/pages/index.html.twig">
+        <entry file="file://$PROJECT_DIR$/app/sprinkles/core/config/default.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+            <state relative-caret-position="204">
+              <caret line="207" selection-start-line="207" selection-end-line="220" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Controller/PageController.php">
+        <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/config/default.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+            <state relative-caret-position="345">
+              <caret line="39" column="54" lean-forward="true" selection-start-line="39" selection-start-column="54" selection-end-line="39" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/config/dev.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="161">
+              <caret line="7" selection-start-line="7" selection-end-line="11" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -39,9 +47,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>office_details</find>
-      <find>user_defaults</find>
-      <find>7.</find>
       <find>php7</find>
       <find>,</find>
       <find>key=</find>
@@ -69,6 +74,9 @@
       <find>js/pages/sign-in</find>
       <find>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</find>
       <find>ACCOUNT.REQUIRED</find>
+      <find>ERROR.MAIL</find>
+      <find>determineUserMessages</find>
+      <find>'mail'</find>
     </findStrings>
     <replaceStrings>
       <replace>child</replace>
@@ -94,16 +102,20 @@
     </replaceStrings>
     <dirStrings>
       <dir>C:\wamp64\www\userfrosting2\app</dir>
+      <dir>C:\wamp64\www\userfrosting2\</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/sprinkles/cec/templates/navigation/search.html.twig" />
-        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_3.txt" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/assets/js/searchAll.js" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/config/debug.php" />
         <option value="$USER_HOME$/AppData/Local/Temp/scp11650/var/www/midwest/cec/app/.env" />
@@ -153,6 +165,8 @@
         <option value="$PROJECT_DIR$/app/sprinkles.json" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/templates/pages/index.html.twig" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Controller/PageController.php" />
+        <option value="$USER_HOME$/AppData/Local/Temp/scp26263/var/www/midwest/cec/app/.env" />
+        <option value="$PROJECT_DIR$/app/sprinkles/cec/config/default.php" />
       </list>
     </option>
   </component>
@@ -341,6 +355,14 @@
               <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="sprinkles" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="cec" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="config" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="userfrosting2" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="sprinkles" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="cec" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
@@ -440,18 +462,18 @@
       <workItem from="1554818172905" duration="595000" />
       <workItem from="1554906377700" duration="5088000" />
       <workItem from="1554912371686" duration="4345000" />
-      <workItem from="1554919526953" duration="691000" />
+      <workItem from="1554919526953" duration="3351000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="164338000" />
+    <option name="totallyTimeSpent" value="166998000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18336888" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18336888" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -464,7 +486,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" x="22" y="389" width="1876" height="261" id="Terminal" order="10" sideWeight="0.49946696" visible="true" weight="0.6641387" />
+      <window_info anchor="bottom" x="22" y="389" width="1876" height="261" id="Terminal" order="10" sideWeight="0.49946696" visible="true" weight="0.30769232" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50053304" side_tool="true" weight="0.43336946" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -502,36 +524,6 @@
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.log" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/assets/browser_modules/icheck/icheck.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1758">
-          <caret line="491" column="5" lean-forward="true" selection-start-line="491" selection-start-column="5" selection-end-line="491" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/core/assets/vendor/icheck/bower.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/core/assets/vendor/icheck/.bower.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-413" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/.env">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/package.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/assets/vendor/icheck/skins/square/mwd.css" />
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/assets/vendor/icheck/.bower.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/assets/vendor/icheck/bower.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-138" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/assets/vendor/icheck/icheck.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="173">
@@ -764,15 +756,71 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/templates/pages/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
+        <state relative-caret-position="253">
           <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/scp25081/var/www/midwest/cec/app/logs/userfrosting.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="3758" lean-forward="true" selection-start-line="3758" selection-end-line="3758" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Controller/PageController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
+        <state relative-caret-position="150">
           <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/config/debug.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="21" selection-start-line="21" selection-end-line="24" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/scp20769/var/www/cec/app/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/scp26263/var/www/midwest/cec/app/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="24" lean-forward="true" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/core/assets/vendor/phpmailer/phpmailer/class.phpmailer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="161" column="21" selection-start-line="161" selection-start-column="21" selection-end-line="161" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/core/config/default.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="207" selection-start-line="207" selection-end-line="220" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/config/dev.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" selection-start-line="7" selection-end-line="11" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/config/default.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="39" column="54" lean-forward="true" selection-start-line="39" selection-start-column="54" selection-end-line="39" selection-end-column="54" />
         </state>
       </provider>
     </entry>
