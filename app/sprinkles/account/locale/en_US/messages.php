@@ -52,7 +52,9 @@ return [
             'PAGE'              => 'Resend the verification email for your new account.',
             'SEND'              => 'Email the verification link for my account',
             'TOKEN_NOT_FOUND'   => 'Verification token does not exist / Account is already verified',
-        ]
+        ],
+
+        'REQUIRED'  => 'Please log in.'
     ],
 
     'EMAIL' => [
