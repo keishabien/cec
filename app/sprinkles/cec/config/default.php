@@ -35,7 +35,7 @@ return [
         'host' => getenv('SMTP_HOST') ?: null,
         'port' => 25,
         'auth' => false,
-        'secure' => 'none',
+        'secure' => '',
         'username' => getenv('SMTP_USER') ?: null,
         'password' => getenv('SMTP_PASSWORD') ?: null,
         'smtp_debug' => 4,
