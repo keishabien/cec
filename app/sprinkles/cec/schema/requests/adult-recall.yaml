@@ -1,0 +1,31 @@
+# Request schema for the intake form
+
+no_plan_units:
+  validators:
+    required:
+      message: "Please select units."
+
+record_duration:
+  validators:
+    required:
+      label: Dentist Provider Number
+      message: "Please select for new patient consideration."
+
+srp_cleaning:
+  validators:
+    required:
+      message: "Please select an option for SRP cleaning."
+
+srp_transfer:
+
+srp_cleaning_units:
+
+srp_dr_exam:
+  validators:
+    required:
+      message: "Please select an option for scheduling with a doctor."
+
+perio_units:
+  validators:
+    required:
+      message: "Please select an option for perio units."

@@ -1,0 +1,314 @@
+{% extends "pages/abstract/default.html.twig" %}
+
+{% set page_active = "additional" %}
+
+{# Overrides blocks in head of base template #}
+
+{% block page_title %}Practice Information Form{% endblock %}
+
+
+{% block body_matter %}
+
+    <div id="alerts-page"></div>
+
+    <form class="form-inline additional" method="post" action="{{ site.uri.public }}/intake/5">
+        {% include "forms/csrf.html.twig" %}
+        <input type="text" hidden name="office_id" value="{{ office_id }}">
+
+        <div class="final-section">
+            <h2 id="final">Additional Recall Information</h2>
+
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback radio">
+                        Do patients have to see the hygienist and/or dentist who treatment planned the appointment?
+                        <div class="radio">
+                            <label for="dr_hyg_plan">
+                                <input type="radio" name="dr_hyg_plan" id="dr_hyg_plan" value="Yes">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label for="dr_hyg_plan">
+                                <input type="radio" name="dr_hyg_plan" id="dr_hyg_plan" value="No">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback radio">
+                        Do all family members have to have the same dentist?
+                        <div class="radio">
+                            <label for="family_same_dr">
+                                <input type="radio" name="family_same_dr" id="family_same_dr" value="Yes">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label for="family_same_dr">
+                                <input type="radio" name="family_same_dr" id="family_same_dr" value="No">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback radio">
+                        If the patient would like to get in sooner or wants to see a different provider, should we
+                        schedule them with another provider?
+                        <div class="radio">
+                            <label for="allow_diff_provider">
+                                <input type="radio" name="allow_diff_provider" id="allow_diff_provider" value="Yes">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label for="allow_diff_provider">
+                                <input type="radio" name="allow_diff_provider" id="allow_diff_provider" value="No">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback radio">
+                        If no, should we transfer the patient to the practice?
+                        (If the patient would like to get in sooner or wants to see a different provider)
+                        <div class="radio">
+                            <label for="allow_diff_transfer">
+                                <input type="radio" name="allow_diff_transfer" id="allow_diff_transfer" value="Yes">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label for="allow_diff_transfer">
+                                <input type="radio" name="allow_diff_transfer" id="allow_diff_transfer" value="No">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback radio">
+                        For a patient transferring from another Midwest Dental location do you schedule them as a NPIE?
+                        <div class="radio">
+                            <label for="int_transfer_NPIE">
+                                <input type="radio" name="int_transfer_NPIE" id="int_transfer_NPIE" value="Yes">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label for="int_transfer_NPIE">
+                                <input type="radio" name="int_transfer_NPIE" id="int_transfer_NPIE" value="No">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback radio">
+                        Do you schedule them off the treatment plan from the other MWD office?
+                        For a patient transferring from another Midwest Dental location
+                        <div class="radio">
+                            <label for="int_transfer_plan">
+                                <input type="radio" name="int_transfer_plan" id="int_transfer_plan" value="Yes">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label for="int_transfer_plan">
+                                <input type="radio" name="int_transfer_plan" id="int_transfer_plan" value="No">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback radio">
+                        Do you use NPIE blocks in your schedule?
+                        <div class="radio">
+                            <label for="NPIE_blocks">
+                                <input type="radio" name="NPIE_blocks" id="NPIE_blocks" value="Yes">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label for="NPIE_blocks">
+                                <input type="radio" name="NPIE_blocks" id="NPIE_blocks" value="No">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback radio">
+                        If yes, do you only schedule New Patients in the NPIE blocks?
+                        <div class="radio">
+                            <label for="NPIE_blocks_new">
+                                <input type="radio" name="NPIE_blocks_new" id="NPIE_blocks_new" value="Yes">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label for="NPIE_blocks_new">
+                                <input type="radio" name="NPIE_blocks_new" id="NPIE_blocks_new" value="No">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback radio">
+                        If no, can you request to have them added?
+                        If you don't schedule New Patients in the NPIE blocks
+                        <div class="radio">
+                            <label for="NPIE_blocks_request">
+                                <input type="radio" name="NPIE_blocks_request" id="NPIE_blocks_request" value="Yes">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label for="NPIE_blocks_request">
+                                <input type="radio" name="NPIE_blocks_request" id="NPIE_blocks_request" value="No">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback radio">
+                        Do you limit the number of NPIE's per day?
+                        <div class="radio">
+                            <label for="NPIE_daily_limit">
+                                <input type="radio" name="NPIE_daily_limit" id="NPIE_daily_limit" value="Yes">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label for="NPIE_daily_limit">
+                                <input type="radio" name="NPIE_daily_limit" id="NPIE_daily_limit" value="No">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="adult_hyg_units" class="control-label">For an adult patient with no treatment
+                            plan, how many units
+                            is that
+                            patient scheduled in hygiene?
+                        </label>
+                        <select class="form-control" name="adult_hyg_units" id="adult_hyg_units">
+                            <option value="">Please select</option>
+                            <option value="N/A">N/A</option>
+                            <option value="1 NP per day">1 NP per day</option>
+                            <option value="2 NP per day">2 NP per day</option>
+                            <option value="3 NP per day">3 NP per day</option>
+                            <option value="4 NP per day">4 NP per day</option>
+                            <option value="5 NP per day">5 NP per day</option>
+                            <option value="6 NP per day">6 NP per day</option>
+                            <option value="7 NP per day">7 NP per day</option>
+                            <option value="8 NP per day">8 NP per day</option>
+                            <option value="9 NP per day">9 NP per day</option>
+                            <option value="10 NP per day">10 NP per day</option>
+                            <option value="11 NP per day">11 NP per day</option>
+                            <option value="12 NP per day">12 NP per day</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="form-group col-sm-6">
+                    <label for="bom_name" class="control-label">BOM Full Name</label>
+                    <input type="text" class="form-control" id="bom_name" name="bom_name"
+                           placeholder="BOM Full Name">
+                </div>
+                <div class="form-group col-sm-6">
+                    <label for="bom_number" class="control-label">BOM Phone Number</label>
+                    <input type="text" class="form-control" id="bom_number" name="bom_number"
+                           placeholder="BOM Phone Number">
+                </div>
+
+
+            </div>
+
+            <div class="row">
+                <div class="form-group col-sm-12">
+                    <label for="directions" class="control-label">Clinic Directions: How do you tell
+                        patients how to find you?
+                    </label>
+                    {#<input type="textarea" class="form-control" id="hygienist-provider-num" name="hygienist-provider-num" placeholder="000000">#}
+                    <textarea class="form-control" rows="3" id="directions" name="directions"></textarea>
+                </div>
+                <div class="form-group col-sm-12">
+                    <label for="other" class="control-label">Is there anything you think we need to know about
+                        your practice that we didn't ask?
+                    </label>
+                    {#<input type="textarea" class="form-control" id="hygienist-name" name="hygienist-name" placeholder="Full Name">#}
+                    <textarea class="form-control" rows="3" id="other" name="other"></textarea>
+                </div>
+            </div>
+
+        </div>
+
+        <button type="submit" class="btn btn-orange pull-right">Submit <i class="fa fa-chevron-right"></i></button>
+    </form>
+
+
+
+{% endblock %}
+
+
+
+
+
+{% block scripts_page %}
+    <!-- Include validation rules -->
+    <script>
+        {% include "pages/partials/page.js.twig" %}
+    </script>
+
+    <!-- Include page-specific JS -->
+    {{ assets.js('js/intake') | raw }}
+
+    <script>
+        //submit form
+        $(".intake").ufForm({
+            validators: page.validators.additional,
+            msgTarget: $("#alerts-page")
+        }).on("submitSuccess.ufForm", function (event, data, textStatus, jqXHR) {
+            window.location.replace(site.uri.public + "/intake/5");
+        }).on("submitError.ufForm", function (event, data, textStatus, jqXHR) {
+            console.log(data.responseText);
+        });
+    </script>
+
+{% endblock %}

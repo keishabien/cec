@@ -1,0 +1,59 @@
+{% extends "pages/abstract/default.html.twig" %}
+{% set page_active = "search" %}
+
+{# Overrides blocks in head of base template #}
+{% block page_title %}{{ translate("Offices") }}{% endblock %}
+
+
+{% block body_matter %}
+    <div class="row">
+
+        {% if office %}
+
+            <div class="spacing"></div>
+
+            {% for off in office %}
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="single">
+                        {% if off.brand == "Midwest" %}
+                            <img src="{{ midwestLogo }}" alt="">
+                        {% elseif off.brand == "Mondovi" %}
+                            <img src="{{ mondoviLogo }}" alt="">
+                        {% elseif off.brand == "Mountain" %}
+                            <img src="{{ mountainLogo }}" alt="">
+                        {% elseif off.brand == "Merit" %}
+                            <img src="{{ meritLogo }}" alt="">
+                        {% endif %}
+
+                        {#<p>{{ off.city }}, {{ off.state }}</p>#}
+                        <p>{{ off.name }}
+
+                        </p>
+
+                        {% if off.distance %}
+                        <p class="distance">{{ off.distance }} miles away</p>
+                        {% endif %}
+
+                        <a href="{{ site.uri.public }}/offices/o/{{ off.vanity_url }}" class="btn btn-orange-round">
+                            View Office Information
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="col-xs-12">
+                <p>Please try your search again.</p>
+            </div>
+        {% endif %}
+
+    </div>
+{% endblock %}
+
+
+{% block scripts_page %}
+    <!-- Include page-specific variables -->
+    <script>
+        {% include "pages/partials/page.js.twig" %}
+
+    </script>
+{% endblock %}
