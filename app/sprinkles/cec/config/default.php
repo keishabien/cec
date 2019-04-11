@@ -7,6 +7,7 @@
 return [
     'address_book' => [
         'admin' => [
+            'email' => 'webhost@midwest-dental.com',
             'name' => 'Keisha'
         ]
     ],
@@ -31,14 +32,15 @@ return [
         'ajax' => true
     ],
     'mail' => [
-        'mailer' => 'smtp',
-        'host' => getenv('SMTP_HOST') ?: null,
+        'mailer' => 'mail',
+        'host' => 'localhost',
         'port' => 25,
         'auth' => false,
-        'secure' => '',
-        'username' => getenv('SMTP_USER') ?: null,
-        'password' => getenv('SMTP_PASSWORD') ?: null,
-        'smtp_debug' => 4,
+        /**        'secure' => '',
+         * 'username' => getenv('SMTP_USER') ?: null,
+         * 'password' => getenv('SMTP_PASSWORD') ?: null,
+         */
+        'smtp_debug' => 3,
         'message_options' => [
             'CharSet' => 'UTF-8',
             'isHtml' => true
