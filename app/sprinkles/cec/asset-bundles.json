@@ -72,7 +72,16 @@
         },
         "css/main": {
             "styles": [
-
+                "vendor/font-awesome/css/font-awesome.css",
+                "vendor/bootstrap/dist/css/bootstrap.css",
+                "vendor/select2/dist/css/select2.css",
+                "vendor/icheck/skins/square/_all.css",
+                "vendor/ionicons/css/ionicons.css",
+                "userfrosting/css/uf-jqueryvalidation.css",
+                "userfrosting/css/uf-alerts.css",
+                "userfrosting/css/AdminLTE.css",
+                "userfrosting/css/AdminLTE-skins-all.css",
+                "userfrosting/css/userfrosting.css",
                 "css/cec.css"
             ],
             "options": {
