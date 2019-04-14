@@ -71,4 +71,4 @@ build/package-lock.json
 build/package.lock
 
 # Ignore phpstorm workspace
-.idea/workspace.xml
+.idea/

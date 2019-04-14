@@ -76,6 +76,7 @@
                 "vendor/bootstrap/dist/css/bootstrap.css",
                 "vendor/select2/dist/css/select2.css",
                 "vendor/icheck/skins/square/_all.css",
+                "css/icheck/skins/square/_all.css",
                 "vendor/ionicons/css/ionicons.css",
                 "userfrosting/css/uf-jqueryvalidation.css",
                 "userfrosting/css/uf-alerts.css",
