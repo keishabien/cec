@@ -70,5 +70,8 @@ vagrant/Homestead/
 build/package-lock.json
 build/package.lock
 
+# Ignore api key
+app/sprinkles/cec/templates/pages/partials/key.js.twig
+
 # Ignore phpstorm workspace
 .idea/
