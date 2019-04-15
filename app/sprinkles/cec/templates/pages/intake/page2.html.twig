@@ -12,7 +12,19 @@
 
     <form class="form-inline npie" method="post" action="{{ site.uri.public }}/intake/3">
         {% include "forms/csrf.html.twig" %}
+
+        {%  if office_id %}
         <input type="text" hidden name="office_id" value="{{ office_id }}">
+        {% else %}
+        <div class="office-select">
+            <select class="form-control" name="office_id" id="offices">
+                <option value="">Please Select Your Office</option>
+                {% for office in offices %}
+                    <option value="{{ office.office_id }}">{{ office.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        {% endif %}
 
         {% verbatim %}
 <script id="adult-row" type="text/x-handlebars-template">
