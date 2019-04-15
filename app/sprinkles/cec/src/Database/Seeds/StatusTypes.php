@@ -10,19 +10,19 @@
 namespace UserFrosting\Sprinkle\Cec\Database\Seeds;
 
 use UserFrosting\Sprinkle\Core\Database\Seeder\BaseSeed;
-use UserFrosting\Sprinkle\Account\Database\Models\Group;
+use UserFrosting\Sprinkle\Account\Database\Models\Status;
 
 /**
  * Seeder for the default groups
  */
-class MidwestGroup extends BaseSeed
+class StatusTypes extends BaseSeed
 {
     /**
      * {@inheritdoc}
      */
     public function run()
     {
-        $status = $this->getGroups();
+        $status = $this->getStatus();
 
         foreach ($status as $sts) {
             // Don't save if already exist
@@ -35,7 +35,7 @@ class MidwestGroup extends BaseSeed
     /**
      * @return array Groups to seed
      */
-    protected function getGroups()
+    protected function getStatus()
     {
         return [
             new Status([

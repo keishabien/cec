@@ -5,33 +5,36 @@ namespace UserFrosting\Sprinkle\Cec\Database\Migrations\v420;
 use Illuminate\Database\Schema\Blueprint;
 use UserFrosting\Sprinkle\Core\Database\Migration;
 
-class CNPIETable extends Migration
+class DrCnpieTable extends Migration
 {
     public static $dependencies = [
         '\UserFrosting\Sprinkle\Cec\Database\Migrations\v420\OfficeTable',
-        '\UserFrosting\Sprinkle\Cec\Database\Migrations\v420\DentistTable'
+        '\UserFrosting\Sprinkle\Cec\Database\Migrations\v420\DrOfficeTable',
+        '\UserFrosting\Sprinkle\Cec\Database\Migrations\v420\StatusTable'
     ];
 
     public function up()
     {
-        if (!$this->schema->hasTable('cnpie_details')) {
-            $this->schema->create('cnpie_details', function (Blueprint $table) {
-                $table->increments('id');
+        if (!$this->schema->hasTable('dr_cnpie')) {
+            $this->schema->create('dr_cnpie', function (Blueprint $table) {
+                $table->increments('id')->primary();
                 $table->integer('office_id')->unsigned();
                 $table->integer('dentist_id')->unsigned();
-                $table->string('chair', 255)->nullable();
                 $table->string('age_range', 255)->nullable();
-                $table->string('dr_units', 255)->nullable();
-                $table->string('hyg_units', 255)->nullable();
+                $table->string('units', 255)->nullable();
                 $table->string('first_visit', 255)->nullable();
                 $table->string('cleaning', 255)->nullable();
                 $table->string('notes', 1000)->nullable();
+
+                $table->integer('status_id')->unsigned();
                 $table->timestamps();
 
-                $table->foreign('office_id')->references('office_id')->on('office_details');
-                $table->index('office_id');
-                $table->foreign('dentist_id')->references('id')->on('dentist_details');
-                $table->index('dentist_id');
+                $table->unique('id');
+                $table->index(['id','office_id','doctor_id','status']);
+
+                $table->foreign('office_id')->references('id')->on('office_details');
+                $table->foreign('doctor_id')->references('id')->on('doctor_details');
+                $table->foreign('status_id')->references('id')->on('status');
                 $table->engine = 'InnoDB';
                 $table->collation = 'utf8_unicode_ci';
                 $table->charset = 'utf8';
@@ -41,6 +44,6 @@ class CNPIETable extends Migration
 
     public function down()
     {
-        $this->schema->drop('cnpie_details');
+        $this->schema->drop('dr_cnpie');
     }
 }
