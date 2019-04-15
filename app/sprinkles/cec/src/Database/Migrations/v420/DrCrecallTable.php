@@ -5,23 +5,25 @@ namespace UserFrosting\Sprinkle\Cec\Database\Migrations\v420;
 use Illuminate\Database\Schema\Blueprint;
 use UserFrosting\Sprinkle\Core\Database\Migration;
 
-class HygienistTable extends Migration
+class DrCrecallTable extends Migration
 {
     public static $dependencies = [
         '\UserFrosting\Sprinkle\Cec\Database\Migrations\v420\OfficeTable',
+        '\UserFrosting\Sprinkle\Cec\Database\Migrations\v420\DrOfficeTable',
         '\UserFrosting\Sprinkle\Cec\Database\Migrations\v420\StatusTable'
     ];
 
     public function up()
     {
-        if (!$this->schema->hasTable('hygienist_details')) {
-            $this->schema->create('hygienist_details', function (Blueprint $table) {
+        if (!$this->schema->hasTable('dr_crecall')) {
+            $this->schema->create('dr_crecall', function (Blueprint $table) {
                 $table->increments('id')->primary();
-                $table->string('name', 255)->nullable();
-                $table->string('nickname', 255)->nullable();
-                $table->string('provider_num', 255)->nullable();
-                $table->string('start_date', 25)->nullable();
-                $table->string('end_date', 25)->nullable();
+                $table->integer('office_id')->unsigned();
+                $table->integer('dentist_id')->unsigned();
+
+                $table->string('units', 255)->nullable();
+                $table->string('age_range', 255)->nullable();
+                $table->string('braces_units', 255)->nullable();
                 $table->string('notes', 1000)->nullable();
 
                 $table->integer('status_id')->unsigned();
@@ -29,8 +31,11 @@ class HygienistTable extends Migration
 
                 $table->unique('id');
 
+                $table->index(['id','office_id','doctor_id','status']);
+
+                $table->foreign('office_id')->references('id')->on('office_details');
+                $table->foreign('doctor_id')->references('id')->on('doctor_details');
                 $table->foreign('status_id')->references('id')->on('status');
-                $table->index(['id','status']);
 
                 $table->engine = 'InnoDB';
                 $table->collation = 'utf8_unicode_ci';
@@ -41,6 +46,6 @@ class HygienistTable extends Migration
 
     public function down()
     {
-        $this->schema->drop('hygienist_details');
+        $this->schema->drop('dr_crecall');
     }
 }

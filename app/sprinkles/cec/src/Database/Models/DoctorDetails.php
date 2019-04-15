@@ -5,16 +5,15 @@ namespace UserFrosting\Sprinkle\Cec\Database\Models;
 use Illuminate\Database\Capsule\Manager as Capsule;
 use UserFrosting\Sprinkle\Core\Database\Models\Model;
 
-class DentistDetails extends Model
+class DoctorDetails extends Model
 {
     /**
      * @var string The name of the table for the current model.
      */
 
-    protected $table = 'cec.dentist_details';
+    protected $table = 'cec.doctor_details';
 
     protected $fillable = [
-        'office_id',
         'name',
         'nickname',
         'provider_num',
@@ -24,7 +23,8 @@ class DentistDetails extends Model
         'end_date',
         'leave',
         'leave_start_date',
-        'leave_end_date'
+        'leave_end_date',
+        'notes'
     ];
 
 

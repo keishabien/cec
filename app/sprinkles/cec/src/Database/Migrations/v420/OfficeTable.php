@@ -11,7 +11,7 @@ class OfficeTable extends Migration
     {
         if (!$this->schema->hasTable('office_details')) {
             $this->schema->create('office_details', function (Blueprint $table) {
-                $table->increments('office_id');
+                $table->increments('id')->primary();
                 $table->string('page_id', 25)->nullable();
                 $table->string('name', 512)->nullable();
                 $table->string('phone', 255)->nullable();
@@ -43,10 +43,12 @@ class OfficeTable extends Migration
                 $table->string('directions', 10000)->nullable();
                 $table->string('brand', 50)->nullable();
 
+                $table->unique('id');
+
                 $table->engine = 'InnoDB';
                 $table->collation = 'utf8_unicode_ci';
                 $table->charset = 'utf8';
-                $table->index('office_id');
+
             });
         }
     }
