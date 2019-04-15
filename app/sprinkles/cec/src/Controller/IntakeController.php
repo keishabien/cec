@@ -138,9 +138,11 @@ class IntakeController extends SimpleController
         $schema = new RequestSchema('schema://requests/npie.yaml');
         $validator = new JqueryValidationAdapter($schema, $this->ci->translator);
         $rules = $validator->rules();
+        $offices = Office::query()->orderBy('name', 'ASC')->get();
 
         return $this->ci->view->render($response, 'pages/intake/page2.html.twig', [
             'office_id' => $id,
+            'offices' => $offices,
             'page' => [
                 'validators' => [
                     'npie' => $rules
@@ -159,6 +161,18 @@ class IntakeController extends SimpleController
         $params = $request->getParsedBody();
         Debug::debug("var params 1");
         Debug::debug(print_r($params, true));
+
+        $officeSchema = new RequestSchema('schema://requests/office.yaml');
+        $officeTransformer = new RequestDataTransformer($officeSchema);
+        $location = $officeTransformer->transform($params);
+        Debug::debug("var location selected");
+        Debug::debug(print_r($location, true));
+
+        $validator = new ServerSideValidator($officeSchema, $this->ci->translator);
+        if (!$validator->validate($location)) {
+            $ms->addValidationErrors($validator);
+            return $response->withStatus(400);
+        }
 
         $npieSchema = new RequestSchema('schema://requests/npie.yaml');
         $npieTransformer = new RequestDataTransformer($npieSchema);
@@ -234,8 +248,11 @@ class IntakeController extends SimpleController
         $cValidator = new JqueryValidationAdapter($cSchema, $this->ci->translator);
         $cRules = $cValidator->rules();
 
+        $offices = Office::query()->orderBy('name', 'ASC')->get();
+
         return $this->ci->view->render($response, 'pages/intake/page3.html.twig', [
             'office_id' => $id,
+            'offices' => $offices,
             'page' => [
                 'validators' => [
                     'recall' => [
@@ -334,8 +351,10 @@ class IntakeController extends SimpleController
         $validator = new JqueryValidationAdapter($schema, $this->ci->translator);
         $rules = $validator->rules();
 
+        $offices = Office::query()->orderBy('name', 'ASC')->get();
         return $this->ci->view->render($response, 'pages/intake/page4.html.twig', [
             'office_id' => $id,
+            'offices' => $offices,
             'page' => [
                 'validators' => [
                     'rules' => $rules
