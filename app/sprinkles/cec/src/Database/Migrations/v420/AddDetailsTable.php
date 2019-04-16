@@ -17,8 +17,10 @@ class AddDetailsTable extends Migration
     {
         if (!$this->schema->hasTable('additional_details')) {
             $this->schema->create('additional_details', function (Blueprint $table) {
-                $table->increments('id');
+
+                $table->increments('id')->unique();
                 $table->integer('office_id')->unsigned();
+
                 $table->string('bom_name', 255)->nullable();
                 $table->string('bom_number', 255)->nullable();
                 $table->string('dr_hyg_plan', 255)->nullable();
@@ -33,11 +35,12 @@ class AddDetailsTable extends Migration
                 $table->string('adult_hyg_units', 255)->nullable();
                 $table->string('directions', 5000)->nullable();
                 $table->string('notes', 5000)->nullable();
+
                 $table->integer('status_id')->unsigned();
                 $table->timestamps();
 
-                $table->foreign('office_id')->references('office_id')->on('office_details');
-                $table->index('office_id');
+                $table->foreign('office_id')->references('id')->on('office_details');
+                $table->foreign('status_id')->references('id')->on('status');
 
                 $table->engine = 'InnoDB';
                 $table->collation = 'utf8_unicode_ci';

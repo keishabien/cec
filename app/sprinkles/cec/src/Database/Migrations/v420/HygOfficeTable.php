@@ -17,14 +17,11 @@ class HygOfficeTable extends Migration
     {
         if (!$this->schema->hasTable('hyg_off')) {
             $this->schema->create('hyg_off', function (Blueprint $table) {
-                $table->increments('id')->primary();
+                $table->increments('id')->unique();
                 $table->integer('office_details_id')->unsigned();
                 $table->integer('hygienist_details_id')->unsigned();
                 $table->timestamps();
 
-                $table->unique('id');
-
-                $table->index(['id','office_details_id','hygienist_details_id']);
                 $table->foreign('office_details_id')->references('id')->on('office_details');
                 $table->foreign('hygienist_details_id')->references('id')->on('hygienist_details');
 

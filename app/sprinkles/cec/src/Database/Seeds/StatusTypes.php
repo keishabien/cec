@@ -10,7 +10,8 @@
 namespace UserFrosting\Sprinkle\Cec\Database\Seeds;
 
 use UserFrosting\Sprinkle\Core\Database\Seeder\BaseSeed;
-use UserFrosting\Sprinkle\Account\Database\Models\Status;
+use UserFrosting\Sprinkle\Cec\Database\Models\Status;
+use UserFrosting\Sprinkle\Core\Facades\Debug;
 
 /**
  * Seeder for the default groups
@@ -22,14 +23,43 @@ class StatusTypes extends BaseSeed
      */
     public function run()
     {
-        $status = $this->getStatus();
+        Debug::debug("run seed");
+
+        $status = array(new Status([
+            'record' => 'approved'
+            ]),
+            new Status([
+                'record' => 'pending'
+            ]),
+            new Status([
+                'record' => 'denied'
+            ]));
+
+        Debug::debug("var status");
+        Debug::debug(print_r($status, true));
 
         foreach ($status as $sts) {
             // Don't save if already exist
-            if (Status::where('slug', $sts->slug)->first() == null) {
+            if (Status::where('record', $sts->record)->first() == null) {
+                Debug::debug("var sts");
+                Debug::debug(print_r($sts, true));
                 $sts->save();
             }
         }
+
+
+//        $newStatus = Status::where('record', 'approved')->first();
+
+
+
+//        if (!$newStatus) {
+//            $newGroup = new Status([
+//                'record'        => 'approved'
+//            ]);
+//
+//            $newGroup->save();
+//        }
+
     }
 
     /**
@@ -37,15 +67,16 @@ class StatusTypes extends BaseSeed
      */
     protected function getStatus()
     {
+
         return [
             new Status([
-                'type'        => 'approved'
+                'record' => 'approved'
             ]),
             new Status([
-                'type'        => 'pending'
+                'record' => 'pending'
             ]),
             new Status([
-                'type'        => 'denied'
+                'record' => 'denied'
             ])
         ];
     }

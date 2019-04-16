@@ -17,7 +17,7 @@ class HygCrecallTable extends Migration
     {
         if (!$this->schema->hasTable('hyg_crecall')) {
             $this->schema->create('hyg_crecall', function (Blueprint $table) {
-                $table->increments('id')->primary();
+                $table->increments('id')->unique();
                 $table->integer('office_id')->unsigned();
                 $table->integer('hygienist_id')->unsigned();
 
@@ -29,9 +29,6 @@ class HygCrecallTable extends Migration
                 $table->integer('status_id')->unsigned();
                 $table->timestamps();
 
-                $table->unique('id');
-
-                $table->index(['id','office_id','hygienist_id','status']);
 
                 $table->foreign('office_id')->references('id')->on('office_details');
                 $table->foreign('hygienist_id')->references('id')->on('hygienist_details');

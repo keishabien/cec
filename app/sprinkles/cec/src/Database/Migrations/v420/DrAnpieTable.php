@@ -16,7 +16,7 @@ class DrAnpieTable extends Migration
     {
         if (!$this->schema->hasTable('dr_anpie')) {
             $this->schema->create('dr_anpie', function (Blueprint $table) {
-                $table->increments('id')->primary();
+                $table->increments('id')->unique();
                 $table->integer('office_id')->unsigned();
                 $table->integer('doctor_id')->unsigned();
 
@@ -24,13 +24,10 @@ class DrAnpieTable extends Migration
                 $table->string('first_visit', 255)->nullable();
                 $table->string('cleaning', 255)->nullable();
                 $table->string('notes', 1000)->nullable();
+
                 $table->integer('status_id')->unsigned();
                 $table->timestamps();
 
-
-                $table->unique('id');
-
-                $table->index(['id','office_id','doctor_id','status']);
 
                 $table->foreign('office_id')->references('id')->on('office_details');
                 $table->foreign('doctor_id')->references('id')->on('doctor_details');
