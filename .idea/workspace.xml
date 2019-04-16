@@ -33,10 +33,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/offices.sql">
+        <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/DrAnpieTable.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="216" column="34" selection-start-line="216" selection-start-column="34" selection-end-line="216" selection-end-column="34" />
+            <state relative-caret-position="351">
+              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
             </state>
           </provider>
         </entry>
@@ -45,7 +45,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>$('.js-icheck').iCheck({</find>
       <find>/* iCheck plugin Square skin</find>
       <find>js/pages/sign-in</find>
       <find>ACCOUNT.REQUIRED</find>
@@ -75,6 +74,7 @@
       <find>$table-&gt;foreign('office_details_id')-&gt;references('office_id')-&gt;on('office_details');</find>
       <find>`</find>
       <find>dentist_id</find>
+      <find>office_id</find>
     </findStrings>
     <replaceStrings>
       <replace>child</replace>
@@ -106,6 +106,7 @@
       <replace>$table-&gt;increments('id')-&gt;unique();</replace>
       <replace>$table-&gt;foreign('office_id')-&gt;references('id')-&gt;on('office_details');</replace>
       <replace>doctor_id</replace>
+      <replace>id</replace>
     </replaceStrings>
     <dirStrings>
       <dir>C:\wamp64\www\userfrosting2\app</dir>
@@ -473,12 +474,12 @@
       <workItem from="1555011183925" duration="4165000" />
       <workItem from="1555016884134" duration="1674000" />
       <workItem from="1555337297116" duration="14038000" />
-      <workItem from="1555431649547" duration="9526000" />
+      <workItem from="1555431649547" duration="11413000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="204755000" />
+    <option name="totallyTimeSpent" value="206642000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -535,16 +536,6 @@
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.log" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/vendor/illuminate/session/FileSessionHandler.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-897">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-          <folding>
-            <element signature="e#38#56#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/index.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -788,13 +779,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/DrAnpieTable.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/DrCnpieTable.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
@@ -896,6 +880,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="216" column="34" selection-start-line="216" selection-start-column="34" selection-end-line="216" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cec-office-details.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/DrAnpieTable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
         </state>
       </provider>
     </entry>
