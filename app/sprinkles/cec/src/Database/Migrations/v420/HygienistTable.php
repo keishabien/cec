@@ -16,7 +16,7 @@ class HygienistTable extends Migration
     {
         if (!$this->schema->hasTable('hygienist_details')) {
             $this->schema->create('hygienist_details', function (Blueprint $table) {
-                $table->increments('id')->primary();
+                $table->increments('id')->unique();
                 $table->string('name', 255)->nullable();
                 $table->string('nickname', 255)->nullable();
                 $table->string('provider_num', 255)->nullable();
@@ -27,10 +27,8 @@ class HygienistTable extends Migration
                 $table->integer('status_id')->unsigned();
                 $table->timestamps();
 
-                $table->unique('id');
-
                 $table->foreign('status_id')->references('id')->on('status');
-                $table->index(['id','status']);
+
 
                 $table->engine = 'InnoDB';
                 $table->collation = 'utf8_unicode_ci';

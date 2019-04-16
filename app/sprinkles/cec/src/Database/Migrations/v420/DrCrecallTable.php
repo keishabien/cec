@@ -17,9 +17,9 @@ class DrCrecallTable extends Migration
     {
         if (!$this->schema->hasTable('dr_crecall')) {
             $this->schema->create('dr_crecall', function (Blueprint $table) {
-                $table->increments('id')->primary();
+                $table->increments('id')->unique();
                 $table->integer('office_id')->unsigned();
-                $table->integer('dentist_id')->unsigned();
+                $table->integer('doctor_id')->unsigned();
 
                 $table->string('units', 255)->nullable();
                 $table->string('age_range', 255)->nullable();
@@ -29,9 +29,6 @@ class DrCrecallTable extends Migration
                 $table->integer('status_id')->unsigned();
                 $table->timestamps();
 
-                $table->unique('id');
-
-                $table->index(['id','office_id','doctor_id','status']);
 
                 $table->foreign('office_id')->references('id')->on('office_details');
                 $table->foreign('doctor_id')->references('id')->on('doctor_details');

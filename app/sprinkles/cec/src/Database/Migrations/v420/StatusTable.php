@@ -11,10 +11,8 @@ class StatusTable extends Migration
     {
         if (!$this->schema->hasTable('status')) {
             $this->schema->create('status', function (Blueprint $table) {
-                $table->increments('id')->primary();
-                $table->string('type', 50);
-
-                $table->unique('id');
+                $table->increments('id')->unique();
+                $table->string('record', 50);
 
                 $table->engine = 'InnoDB';
                 $table->collation = 'utf8_unicode_ci';

@@ -13,6 +13,9 @@ class Status extends Model
 
     protected $table = 'cec.status';
 
+    protected $fillable = [
+        'record'
+    ];
     /**
      * @var bool Enable timestamps for this class.
      */

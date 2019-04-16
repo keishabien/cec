@@ -17,14 +17,11 @@ class DrOfficeTable extends Migration
     {
         if (!$this->schema->hasTable('dr_off')) {
             $this->schema->create('dr_off', function (Blueprint $table) {
-                $table->increments('id')->primary();
+                $table->increments('id')->unique();
                 $table->integer('office_details_id')->unsigned();
                 $table->integer('doctor_details_id')->unsigned();
                 $table->timestamps();
 
-                $table->unique('id');
-
-                $table->index(['id','office_details_id','doctor_details_id']);
                 $table->foreign('office_details_id')->references('id')->on('office_details');
                 $table->foreign('doctor_details_id')->references('id')->on('doctor_details');
 
