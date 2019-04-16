@@ -22,30 +22,23 @@ class MidwestGroup extends BaseSeed
      */
     public function run()
     {
-        $status = $this->getGroups();
-
-        foreach ($status as $sts) {
+        $groups = $this->getGroups();
+        foreach ($groups as $group) {
             // Don't save if already exist
-            if (Status::where('slug', $sts->slug)->first() == null) {
-                $sts->save();
+            if (Group::where('slug', $group->slug)->first() == null) {
+                $group->save();
             }
         }
     }
-
     /**
      * @return array Groups to seed
      */
     protected function getGroups()
     {
         return [
-            new Status([
-                'type'        => 'approved'
-            ]),
-            new Status([
-                'type'        => 'pending'
-            ]),
-            new Status([
-                'type'        => 'denied'
+            new Group([
+                'slug'        => 'midwest',
+                'name'        => 'Midwest'
             ])
         ];
     }
