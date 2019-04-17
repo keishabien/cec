@@ -171,6 +171,7 @@
                     <p><a href="mailto:{{ office.email }}">{{ office.email }}</a></p>
                     <p>{{ office.address }}</p>
 
+                    {% if doctor %}
                     {% for dr in doctor %}
                         <p class="dr-name">{{ dr.name }} {% if dr.provider_num %}- {{ dr.provider_num }}{% endif %}</p>
                         <div class="dr-div">
@@ -210,6 +211,7 @@
                             {% if dr.leave is same as("N") %}{% endif %}
                         </div>
                     {% endfor %}
+                    {% endif %}
 
 
                 </div>
