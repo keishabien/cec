@@ -19,8 +19,10 @@ use UserFrosting\Sprinkle\Core\Facades\Debug;
 use UserFrosting\Sprinkle\Cec\Database\Models\Search;
 use UserFrosting\Sprinkle\Cec\Database\Models\Office;
 use UserFrosting\Sprinkle\Cec\Database\Models\ZipCodes;
-use UserFrosting\Sprinkle\Cec\Database\Models\DentistDetails;
+use UserFrosting\Sprinkle\Cec\Database\Models\DoctorDetails;
+use UserFrosting\Sprinkle\Cec\Database\Models\DrOff;
 use UserFrosting\Sprinkle\Cec\Database\Models\HygienistDetails;
+use UserFrosting\Sprinkle\Cec\Database\Models\HygOff;
 use UserFrosting\Sprinkle\Cec\Database\Models\AddDetails;
 use UserFrosting\Sprinkle\Cec\Database\Models\AdultNPIE;
 use UserFrosting\Sprinkle\Cec\Database\Models\AdultRecall;
@@ -99,10 +101,10 @@ class SearchController extends SimpleController
 
         } else if ($keyword) {
             $office = Office::query()
-                ->join('dentist_details', 'dentist_details.office_id', '=', 'office_details.office_id')
+                ->join('doctor_details', 'doctor_details.id', '=', 'dr_off.doctor_details_id')
                 ->where('office_details.name', 'like', '%' . $keyword . '%')
-                ->orWhere('dentist_details.name', 'like', '%' . $keyword . '%')
-                ->distinct()->groupBy('dentist_details.office_id')->get();
+                ->orWhere('doctor_details.name', 'like', '%' . $keyword . '%')
+                ->distinct()->groupBy('doctor_details.id')->get();
         } else {
             $office = Office::query()->get();
         }
@@ -132,15 +134,31 @@ class SearchController extends SimpleController
         Debug::debug("pageInfo");
         $office = Office::where('vanity_url', 'like', '%' . $params . '%')->first();
 
-        $doctor = DentistDetails::where('office_id', $office["office_id"])->get();
-        Debug::debug("dr");
-        Debug::debug(print_r($doctor, true));
-        $hygienist = HygienistDetails::where('office_id', $office["office_id"])->get();
-        $aNPIE = AdultNPIE::where('office_id', $office["office_id"])->get();
-        $cNPIE = ChildNPIE::where('office_id', $office["office_id"])->get();
-        $aRecall = AdultRecall::where('office_id', $office["office_id"])->get();
-        $cRecall = ChildRecall::where('office_id', $office["office_id"])->get();
-        $addDetails = AddDetails::where('office_id', $office["office_id"])->first();
+        $doctorOffice = DrOff::where('office_details_id', $office["id"])->get();
+
+        foreach ($doctorOffice as $drOff){
+            $drId = $drOff["doctor_details_id"];
+            $doctor = DoctorDetails::where('id', $drId)->get();
+            $doctors[] = $doctor;
+        }
+        Debug::debug(print_r($doctors, true));
+
+//        Debug::debug(print_r($doctor, true));
+
+//        $hygienistOffice = HygOff::where('office_details_id', $office["id"])->get();
+//        $hygId = $hygienistOffice[0]["hygienist_details_id"];
+//        $hygienist = HygienistDetails::where('id', $hygId)->get();
+//        Debug::debug("hyg");
+//        Debug::debug(print_r($hygienist, true));
+
+
+//
+//        $hygienist = HygienistDetails::where('office_id', $office["office_id"])->get();
+//        $aNPIE = AdultNPIE::where('office_id', $office["office_id"])->get();
+//        $cNPIE = ChildNPIE::where('office_id', $office["office_id"])->get();
+//        $aRecall = AdultRecall::where('office_id', $office["office_id"])->get();
+//        $cRecall = ChildRecall::where('office_id', $office["office_id"])->get();
+//        $addDetails = AddDetails::where('office_id', $office["office_id"])->first();
 
         $name = $office['name'];
         $patterns = array();
@@ -198,7 +216,7 @@ class SearchController extends SimpleController
         return $this->ci->view->render($response, 'pages/office-single.html.twig', [
             'keyword' => $params,
             'office' => $office,
-            'doctor' => $doctor,
+            'doctor' => $doctors,
             'hygienist' => $hygienist,
             'aNPIE' => $aNPIE,
             'cNPIE' => $cNPIE,
@@ -213,7 +231,8 @@ class SearchController extends SimpleController
             'meritLogo' => 'https://www.meritdental.com/cecdb/images/merit-logo.png',
             'mountainLogo' => 'https://www.meritdental.com/cecdb/images/mountain-logo.png',
             'page' => [
-                'doctor' => $doctor
+                'doctor' => $doctors,
+                'hygienist' => $hygienist
             ]
         ]);
     }

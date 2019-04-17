@@ -6,7 +6,7 @@ use Illuminate\Database\Capsule\Manager as Capsule;
 use UserFrosting\Sprinkle\Core\Controller\SimpleController;
 use UserFrosting\Sprinkle\Core\Facades\Debug;
 use UserFrosting\Sprinkle\Cec\Database\Models\Office;
-use UserFrosting\Sprinkle\Cec\Database\Models\DentistDetails;
+use UserFrosting\Sprinkle\Cec\Database\Models\DoctorDetails;
 use UserFrosting\Sprinkle\Cec\Database\Models\HygienistDetails;
 use UserFrosting\Sprinkle\Cec\Database\Models\AdultNPIE;
 use UserFrosting\Sprinkle\Cec\Database\Models\ChildNPIE;
@@ -112,7 +112,7 @@ class IntakeController extends SimpleController
         Capsule::transaction(function () use ($classMapper, $dentistData, $hygienistData, $ms, $config) {
 
             foreach ($dentistData as $dentist) {
-                $intake = new DentistDetails($dentist);
+                $intake = new DoctorDetails($dentist);
                 Debug::debug("var intake");
                 Debug::debug(print_r($intake, true));
                 // Store new user to database
