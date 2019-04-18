@@ -25,7 +25,8 @@ class AddDetails extends Model
         'NPIE_blocks_request',
         'NPIE_daily_limit',
         'directions',
-        'other'
+        'other',
+        'status'
     ];
 
 

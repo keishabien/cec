@@ -15,12 +15,15 @@ class AdultNPIE extends Model
 
     protected $fillable = [
         'office_id',
+        'dentist_id',
+        'hygienist_id',
         'chair',
         'dr_units',
         'hyg_units',
         'first_visit',
         'cleaning',
-        'notes'
+        'notes',
+        'status'
     ];
 
 

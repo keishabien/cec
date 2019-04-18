@@ -15,13 +15,16 @@ class AdultRecall extends Model
 
     protected $fillable = [
         'office_id',
+        'dentist_id',
+        'hygienist_id',
         'no_plan_units',
         'record_duration',
         'srp_cleaning',
         'srp_transfer',
         'srp_cleaning_units',
         'srp_dr_exam',
-        'perio_units'
+        'perio_units',
+        'status'
     ];
 
 
