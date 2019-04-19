@@ -19,7 +19,7 @@ class AddDetailsTable extends Migration
         if (!$this->schema->hasTable('additional_details')) {
             $this->schema->create('additional_details', function (Blueprint $table) {
                 $table->increments('id');
-                $table->integer('office_id')->unsigned();
+                $table->integer('office_id')->nullable()->unsigned();
                 $table->string('bom_name', 255)->nullable();
                 $table->string('bom_number', 255)->nullable();
                 $table->string('dr_hyg_plan', 255)->nullable();

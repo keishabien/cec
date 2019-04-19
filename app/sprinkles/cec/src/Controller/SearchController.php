@@ -99,7 +99,7 @@ class SearchController extends SimpleController
 
         } else if ($keyword) {
             $office = Office::query()
-                ->join('dentist_details', 'dentist_details.office_id', '=', 'office_details.office_id')
+                ->join('dentist_details', 'dentist_details.office_id', '=', 'office_details.id')
                 ->where('office_details.name', 'like', '%' . $keyword . '%')
                 ->orWhere('dentist_details.name', 'like', '%' . $keyword . '%')
                 ->distinct()->groupBy('dentist_details.office_id')->get();
@@ -132,15 +132,15 @@ class SearchController extends SimpleController
         Debug::debug("pageInfo");
         $office = Office::where('vanity_url', 'like', '%' . $params . '%')->first();
 
-        $doctor = DentistDetails::where('office_id', $office["office_id"])->get();
+        $doctor = DentistDetails::where('office_id', $office["id"])->get();
         Debug::debug("dr");
         Debug::debug(print_r($doctor, true));
-        $hygienist = HygienistDetails::where('office_id', $office["office_id"])->get();
-        $aNPIE = AdultNPIE::where('office_id', $office["office_id"])->get();
-        $cNPIE = ChildNPIE::where('office_id', $office["office_id"])->get();
-        $aRecall = AdultRecall::where('office_id', $office["office_id"])->get();
-        $cRecall = ChildRecall::where('office_id', $office["office_id"])->get();
-        $addDetails = AddDetails::where('office_id', $office["office_id"])->first();
+        $hygienist = HygienistDetails::where('office_id', $office["id"])->get();
+        $aNPIE = AdultNPIE::where('office_id', $office["id"])->get();
+        $cNPIE = ChildNPIE::where('office_id', $office["id"])->get();
+        $aRecall = AdultRecall::where('office_id', $office["id"])->get();
+        $cRecall = ChildRecall::where('office_id', $office["id"])->get();
+        $addDetails = AddDetails::where('office_id', $office["id"])->first();
 
         $name = $office['name'];
         $patterns = array();

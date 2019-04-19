@@ -18,7 +18,7 @@ class ANPIETable extends Migration
         if (!$this->schema->hasTable('anpie_details')) {
             $this->schema->create('anpie_details', function (Blueprint $table) {
                 $table->increments('id');
-                $table->integer('office_id')->unsigned();
+                $table->integer('office_id')->nullable()->unsigned();
                 $table->integer('dentist_id')->nullable()->unsigned();
                 $table->integer('hygienist_id')->nullable()->unsigned();
                 $table->string('chair', 255)->nullable();

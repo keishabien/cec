@@ -17,7 +17,7 @@ class DentistTable extends Migration
         if (!$this->schema->hasTable('dentist_details')) {
             $this->schema->create('dentist_details', function (Blueprint $table) {
                 $table->increments('id');
-                $table->integer('office_id')->unsigned();
+                $table->integer('office_id')->nullable()->unsigned();
                 $table->string('name', 255)->nullable();
                 $table->string('nickname', 255)->nullable();
                 $table->string('provider_num', 255)->nullable();
