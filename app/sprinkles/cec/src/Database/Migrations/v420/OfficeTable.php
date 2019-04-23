@@ -11,7 +11,8 @@ class OfficeTable extends Migration
     {
         if (!$this->schema->hasTable('office_details')) {
             $this->schema->create('office_details', function (Blueprint $table) {
-                $table->increments('id')->unique();
+
+                $table->increments('id');
                 $table->string('page_id', 25)->nullable();
                 $table->string('name', 512)->nullable();
                 $table->string('phone', 255)->nullable();

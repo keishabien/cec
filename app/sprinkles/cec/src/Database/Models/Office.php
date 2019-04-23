@@ -13,5 +13,9 @@ class Office extends Model
 
     protected $table = 'cec.office_details';
 
+    /**
+     * @var bool Enable timestamps for this class.
+     */
+    public $timestamps = true;
 
 }

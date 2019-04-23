@@ -10,6 +10,7 @@ class AddDetailsTable extends Migration
 
     public static $dependencies = [
         '\UserFrosting\Sprinkle\Cec\Database\Migrations\v420\OfficeTable',
+        '\UserFrosting\Sprinkle\Cec\Database\Migrations\v420\DentistTable',
         '\UserFrosting\Sprinkle\Cec\Database\Migrations\v420\StatusTable'
     ];
 
@@ -18,9 +19,8 @@ class AddDetailsTable extends Migration
         if (!$this->schema->hasTable('additional_details')) {
             $this->schema->create('additional_details', function (Blueprint $table) {
 
-                $table->increments('id')->unique();
-                $table->integer('office_id')->unsigned();
-
+                $table->increments('id');
+                $table->integer('office_id')->nullable()->unsigned();
                 $table->string('bom_name', 255)->nullable();
                 $table->string('bom_number', 255)->nullable();
                 $table->string('dr_hyg_plan', 255)->nullable();
@@ -39,8 +39,9 @@ class AddDetailsTable extends Migration
                 $table->integer('status_id')->unsigned();
                 $table->timestamps();
 
-                $table->foreign('office_id')->references('id')->on('office_details');
                 $table->foreign('status_id')->references('id')->on('status');
+                $table->foreign('office_id')->references('id')->on('office_details');
+                $table->index('office_id');
 
                 $table->engine = 'InnoDB';
                 $table->collation = 'utf8_unicode_ci';

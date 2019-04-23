@@ -15,10 +15,13 @@ class ChildRecall extends Model
 
     protected $fillable = [
         'office_id',
+        'dentist_id',
+        'hygienist_id',
         'age_range',
         'braces_units',
         'dr_units',
-        'hyg_units'
+        'hyg_units',
+        'status'
     ];
 
 

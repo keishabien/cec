@@ -20,7 +20,11 @@ class HygienistDetails extends Model
         'provider_num',
         'start_date',
         'end_date',
-        'notes'
+        'leave',
+        'leave_start_date',
+        'leave_end_date',
+        'notes',
+        'status'
     ];
 
 

@@ -23,7 +23,6 @@ class StatusTypes extends BaseSeed
      */
     public function run()
     {
-        Debug::debug("run seed");
 
         $status = array(new Status([
             'record' => 'approved'
@@ -35,49 +34,12 @@ class StatusTypes extends BaseSeed
                 'record' => 'denied'
             ]));
 
-        Debug::debug("var status");
-        Debug::debug(print_r($status, true));
-
         foreach ($status as $sts) {
             // Don't save if already exist
             if (Status::where('record', $sts->record)->first() == null) {
-                Debug::debug("var sts");
-                Debug::debug(print_r($sts, true));
+
                 $sts->save();
             }
         }
-
-
-//        $newStatus = Status::where('record', 'approved')->first();
-
-
-
-//        if (!$newStatus) {
-//            $newGroup = new Status([
-//                'record'        => 'approved'
-//            ]);
-//
-//            $newGroup->save();
-//        }
-
-    }
-
-    /**
-     * @return array Groups to seed
-     */
-    protected function getStatus()
-    {
-
-        return [
-            new Status([
-                'record' => 'approved'
-            ]),
-            new Status([
-                'record' => 'pending'
-            ]),
-            new Status([
-                'record' => 'denied'
-            ])
-        ];
     }
 }

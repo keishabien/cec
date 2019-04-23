@@ -5,57 +5,57 @@
 
 {% block page_title %}
 
-        {{ office.brand }} Dental - {{ newName }}
-        <div id="hours">Hours <i class="fa fa-chevron-down"></i></div>
+    {{ office.brand }} Dental - {{ newName }}
+    <div id="hours">Hours <i class="fa fa-chevron-down"></i></div>
 
 
-        <div id="hours-menu">
-            {% if day %}
-                <div class="open">
-                    <p><b>Open Today:</b>
-                        <span><b>{{ day }}</b></span>
-                    </p>
-                </div>
-                <div class="divide"></div>
-            {% endif %}
-            {% if office.mon_hours %}
-                <p>Mon:
-                    <span>{{ office.mon_hours }}</span>
+    <div id="hours-menu">
+        {% if day %}
+            <div class="open">
+                <p><b>Open Today:</b>
+                    <span><b>{{ day }}</b></span>
                 </p>
+            </div>
+            <div class="divide"></div>
+        {% endif %}
+        {% if office.mon_hours %}
+            <p>Mon:
+                <span>{{ office.mon_hours }}</span>
+            </p>
+        {% endif %}
+        {% if office.tue_hours %}
+            <p>Tue:
+                <span>{{ office.tue_hours }}</span>
+            </p>
+        {% endif %}
+        {% if office.wed_hours %}
+            <p>Wed:
+                <span>{{ office.wed_hours }}</span>
+            </p>
+        {% endif %}
+        {% if office.thu_hours %}
+            <p>Thu:
+                <span> {{ office.thu_hours }}</span>
+            </p>
+        {% endif %}
+        {% if office.fri_hours %}
+            <p>Fri:
+                <span> {{ office.fri_hours }}</span>
+            </p>
+        {% endif %}
+        {% if office.sat_hours %}
+            <p>Sat:
+                <span> {{ office.sat_hours }}</span>
+            </p>
+        {% endif %}
+        {% if office.Sun_hours %}
+        <p>Sun:
+            <span> {{ office.sun_hours }}</span>
             {% endif %}
-            {% if office.tue_hours %}
-                <p>Tue:
-                    <span>{{ office.tue_hours }}</span>
-                </p>
-            {% endif %}
-            {% if office.wed_hours %}
-                <p>Wed:
-                    <span>{{ office.wed_hours }}</span>
-                </p>
-            {% endif %}
-            {% if office.thu_hours %}
-                <p>Thu:
-                    <span> {{ office.thu_hours }}</span>
-                </p>
-            {% endif %}
-            {% if office.fri_hours %}
-                <p>Fri:
-                    <span> {{ office.fri_hours }}</span>
-                </p>
-            {% endif %}
-            {% if office.sat_hours %}
-                <p>Sat:
-                    <span> {{ office.sat_hours }}</span>
-                </p>
-            {% endif %}
-            {% if office.Sun_hours %}
-            <p>Sun:
-                <span> {{ office.sun_hours }}</span>
-                {% endif %}
-                <small>*Please note office hours are subject to change.</small>
+            <small>*Please note office hours are subject to change.</small>
 
 
-        </div>
+    </div>
 
 {% endblock %}
 
@@ -261,6 +261,11 @@
             <div class="col-sm-3">
                 <div class="adult">
                     <h3>NPIE Adult</h3>
+                    <ul class="npie">
+                        {% for a in aNPIE %}
+                            <li>{{ a.dr_units }} DDS</li>
+                        {% endfor %}
+                    </ul>
                 </div>
             </div>
             <div class="col-sm-3">
