@@ -75,3 +75,6 @@ app/sprinkles/cec/templates/pages/partials/key.js.twig
 
 # Ignore phpstorm workspace
 .idea/
+
+# Ignore files
+files/
