@@ -9,6 +9,7 @@
       <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/src/Sprunje/OfficeSprunje.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/cec/src/Sprunje/OfficeSprunje.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/templates/navigation/breadcrumb.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/cec/templates/navigation/breadcrumb.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/templates/pages/dashboard/office.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/cec/templates/pages/dashboard/office.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/templates/pages/office-single.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/cec/templates/pages/office-single.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/templates/tables/offices.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/cec/templates/tables/offices.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -61,10 +62,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/templates/tables/offices.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
+            <state relative-caret-position="276">
               <caret line="48" column="50" selection-start-line="48" selection-start-column="50" selection-end-line="48" selection-end-column="50" />
             </state>
           </provider>
@@ -72,7 +73,18 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/templates/pages/dashboard/office.html.twig">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-276" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/templates/pages/office-single.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="299">
+              <caret line="270" column="63" selection-start-line="270" selection-start-column="63" selection-end-line="270" selection-end-column="63" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -96,15 +108,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="414">
               <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/logs/userfrosting.log">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2150832">
-              <caret line="31557" column="4" selection-start-line="31557" selection-start-column="4" selection-end-line="31557" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -178,7 +181,6 @@
         <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/StatusTable.php" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/DoctorTable.php" />
         <option value="$USER_HOME$/AppData/Local/Temp/scp13868/wp-content/themes/midwest-2016/templates/page-locations.php" />
-        <option value="$PROJECT_DIR$/app/sprinkles/cec/templates/pages/office-single.html.twig" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/templates/pages/intake/page4.html.twig" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/templates/navigation/sidebar-menu.html.twig" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/templates/navigation/main-nav.html.twig" />
@@ -214,6 +216,7 @@
         <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Controller/OfficeController.php" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Sprunje/OfficeSprunje.php" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/templates/tables/offices.html.twig" />
+        <option value="$PROJECT_DIR$/app/sprinkles/cec/templates/pages/office-single.html.twig" />
       </list>
     </option>
   </component>
@@ -635,12 +638,12 @@
       <workItem from="1555616490471" duration="4682000" />
       <workItem from="1555688579804" duration="10418000" />
       <workItem from="1556045545037" duration="4438000" />
-      <workItem from="1556133834722" duration="6097000" />
+      <workItem from="1556133834722" duration="6276000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25650000" />
+    <option name="totallyTimeSpent" value="25829000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -951,13 +954,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/templates/pages/office-single.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Models/Office.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -1029,9 +1025,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/templates/pages/dashboard/office.html.twig">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/templates/pages/dashboard/offices.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="529">
@@ -1041,8 +1034,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/templates/tables/offices.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
+        <state relative-caret-position="276">
           <caret line="48" column="50" selection-start-line="48" selection-start-column="50" selection-end-line="48" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/templates/pages/dashboard/office.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-276" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/templates/pages/office-single.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="270" column="63" selection-start-line="270" selection-start-column="63" selection-end-line="270" selection-end-column="63" />
         </state>
       </provider>
     </entry>
