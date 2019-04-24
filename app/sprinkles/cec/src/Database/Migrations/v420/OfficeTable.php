@@ -11,12 +11,10 @@ class OfficeTable extends Migration
     {
         if (!$this->schema->hasTable('office_details')) {
             $this->schema->create('office_details', function (Blueprint $table) {
-<<<<<<< HEAD
+
 
                 $table->increments('id');
-=======
-                $table->increments('office_id');
->>>>>>> 977d424d1ce6ee511a538a80c689bbadc6c2f62e
+
                 $table->string('page_id', 25)->nullable();
                 $table->string('name', 512)->nullable();
                 $table->string('phone', 255)->nullable();
@@ -51,11 +49,7 @@ class OfficeTable extends Migration
                 $table->engine = 'InnoDB';
                 $table->collation = 'utf8_unicode_ci';
                 $table->charset = 'utf8';
-<<<<<<< HEAD
 
-=======
-                $table->index('office_id');
->>>>>>> 977d424d1ce6ee511a538a80c689bbadc6c2f62e
             });
         }
     }
