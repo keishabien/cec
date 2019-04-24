@@ -205,7 +205,7 @@ class SearchController extends SimpleController
             'keyword' => $params,
             'office' => $office,
 
-            'doctor' => $doctors,
+            'doctor' => $doctor,
 
             'hygienist' => $hygienist,
             'aNPIE' => $aNPIE,
@@ -222,7 +222,7 @@ class SearchController extends SimpleController
             'mountainLogo' => 'https://www.meritdental.com/cecdb/images/mountain-logo.png',
             'page' => [
 
-                'doctor' => $doctors,
+                'doctor' => $doctor,
                 'hygienist' => $hygienist
 
             ]
