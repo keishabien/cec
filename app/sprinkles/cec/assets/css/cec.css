@@ -611,6 +611,15 @@ a:hover, a:focus {
     margin: 0;
 }
 
+ul.notes {
+    background-color: #F7F5F5;
+    padding: 20px;
+}
+ul.notes li {
+    color: #000;
+    list-style-position: inside;
+}
+
 .offers {
     background-color: #f7f5f5;
     padding: 20px;

@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="95fb9069-ea9a-48fe-ac49-9fc94a362f1a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/assets/css/cec.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/cec/assets/css/cec.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/assets/js/offices.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/cec/assets/js/offices.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/src/Controller/OfficeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/cec/src/Controller/OfficeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/src/Controller/SearchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/cec/src/Controller/SearchController.php" afterDir="false" />
@@ -23,11 +24,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/templates/pages/office-single.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="286" column="61" selection-start-line="286" selection-start-column="61" selection-end-line="286" selection-end-column="61" />
+            <state relative-caret-position="230">
+              <caret line="303" column="18" selection-start-line="303" selection-start-column="18" selection-end-line="303" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/assets/css/cec.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="552">
+              <caret line="615" column="18" selection-start-line="615" selection-start-column="18" selection-end-line="615" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -138,7 +148,6 @@
         <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Controller/PageController.php" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/schema/requests/hygienist.yaml" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/routes/routes.php" />
-        <option value="$PROJECT_DIR$/app/sprinkles/cec/assets/css/cec.css" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/asset-bundles.json" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/templates/pages/intake/page1.html.twig" />
@@ -161,6 +170,7 @@
         <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Sprunje/OfficeSprunje.php" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/templates/tables/offices.html.twig" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/templates/pages/office-single.html.twig" />
+        <option value="$PROJECT_DIR$/app/sprinkles/cec/assets/css/cec.css" />
       </list>
     </option>
   </component>
@@ -354,6 +364,23 @@
               <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="sprinkles" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="cec" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="assets" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="userfrosting2" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="sprinkles" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="cec" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="assets" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="css" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="userfrosting2" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="sprinkles" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="cec" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="routes" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
@@ -516,6 +543,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="SQL" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app/sprinkles/cec" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -582,12 +610,12 @@
       <workItem from="1555616490471" duration="4682000" />
       <workItem from="1555688579804" duration="10418000" />
       <workItem from="1556045545037" duration="4438000" />
-      <workItem from="1556133834722" duration="6668000" />
+      <workItem from="1556133834722" duration="6918000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26221000" />
+    <option name="totallyTimeSpent" value="26471000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -673,13 +701,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/assets/css/cec.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="580" lean-forward="true" selection-start-line="580" selection-end-line="580" />
         </state>
       </provider>
     </entry>
@@ -993,8 +1014,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/templates/pages/office-single.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="286" column="61" selection-start-line="286" selection-start-column="61" selection-end-line="286" selection-end-column="61" />
+        <state relative-caret-position="230">
+          <caret line="303" column="18" selection-start-line="303" selection-start-column="18" selection-end-line="303" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/assets/css/cec.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="615" column="18" selection-start-line="615" selection-start-column="18" selection-end-line="615" selection-end-column="18" />
         </state>
       </provider>
     </entry>

@@ -282,6 +282,7 @@
             <div class="col-sm-3">
                 <div class="adult">
                     <h3>Recall Adult</h3>
+
                     <ul class="npie">
                         {% for a in aRecall %}
                             <li>{{ a.no_plan_units }} no plan units</li>
@@ -302,17 +303,19 @@
             <div class="col-sm-6">
                 <div class="notes">
                     <h3>NPIE Notes</h3>
-                    <ul class="npie">
+
+                    <ul class="notes">
                         {% for a in aNPIE %}
                             <li>{{ a.notes }}</li>
                         {% endfor %}
                     </ul>
+
                 </div>
             </div>
             <div class="col-sm-6">
                 <div class="notes">
                     <h3>Recall Notes</h3>
-                    <ul class="npie">
+                    <ul class="notes">
                         {% for a in aRecall %}
                             <li>{{ a.notes }}</li>
                         {% endfor %}
