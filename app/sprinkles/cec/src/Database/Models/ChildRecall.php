@@ -21,7 +21,7 @@ class ChildRecall extends Model
         'braces_units',
         'dr_units',
         'hyg_units',
-        'status'
+        'status_id'
     ];
 
 

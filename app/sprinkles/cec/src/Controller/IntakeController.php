@@ -79,7 +79,7 @@ class IntakeController extends SimpleController
                 return $response->withStatus(400);
             }
 
-            $dData["office_id"] = $location["id"];
+            $dData["office_id"] = $location["office_id"];
             $dData["status_id"] = "1";
 
             $dentistData[] = $dData;
@@ -104,7 +104,7 @@ class IntakeController extends SimpleController
                 return $response->withStatus(400);
             }
 
-            $hData["office_id"] = $location["id"];
+            $hData["office_id"] = $location["office_id"];
             $hData["status_id"] = "1";
 
             $hygienistData[] = $hData;
@@ -198,6 +198,7 @@ class IntakeController extends SimpleController
                 return $response->withStatus(400);
             }
             $aData["office_id"] = $params["office_id"];
+            $aData["status_id"] = "1";
             $adultData[] = $aData;
         }
         Debug::debug("var adultData");
@@ -215,6 +216,7 @@ class IntakeController extends SimpleController
                 return $response->withStatus(400);
             }
             $cData["office_id"] = $params["office_id"];
+            $cData["status_id"] = "1";
             $childData[] = $cData;
         }
         Debug::debug("var childData");
@@ -303,6 +305,7 @@ class IntakeController extends SimpleController
                 return $response->withStatus(400);
             }
             $aData["office_id"] = $params["office_id"];
+            $aData["status_id"] = "1";
             $adultData[] = $aData;
         }
         Debug::debug("var adultData");
@@ -324,6 +327,7 @@ class IntakeController extends SimpleController
                 return $response->withStatus(400);
             }
             $cData["office_id"] = $params["office_id"];
+            $cData["status_id"] = "1";
             $childData[] = $cData;
         }
         Debug::debug("var childData");
@@ -403,6 +407,7 @@ class IntakeController extends SimpleController
             return $response->withStatus(400);
         }
         $data["office_id"] = $params["office_id"];
+        $data["status_id"] = "1";
 
 
         Debug::debug("var addData");

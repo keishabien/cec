@@ -25,9 +25,7 @@
             <select class="form-control" name="office_id" id="offices">
                 <option value="">Please Select Your Office</option>
                 {% for office in offices %}
-
                     <option value="{{ office.id }}">{{ office.name }}</option>
-
                 {% endfor %}
             </select>
         </div>

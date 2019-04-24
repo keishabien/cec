@@ -25,12 +25,8 @@ class AddDetails extends Model
         'NPIE_blocks_request',
         'NPIE_daily_limit',
         'directions',
-<<<<<<< HEAD
-        'other',
-        'status'
-=======
-        'other'
->>>>>>> 977d424d1ce6ee511a538a80c689bbadc6c2f62e
+        'notes',
+        'status_id'
     ];
 
 

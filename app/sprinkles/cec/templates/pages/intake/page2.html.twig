@@ -11,11 +11,11 @@
     <div id="alerts-page"></div>
 
 
-    <form class="form-inline npie" method="post" action="{{ site.uri.public }}/intake/npie">
+    <form class="form-inline npie" method="post" action="{{ site.uri.public }}/intake/recall">
         {% include "forms/csrf.html.twig" %}
 
 
-        <input type="text" hidden name="office_id" value="{{ office.id }}">
+        <input type="text" hidden name="office_id" value="{{ office_id }}">
 
 
         {% verbatim %}
@@ -336,7 +336,7 @@
         }).on("submitSuccess.ufForm", function (event, data, textStatus, jqXHR) {
             var id = $('input[name="office_id"]').val();
 
-            window.location.replace(site.uri.public + "/intake/npie?id="+id);
+            window.location.replace(site.uri.public + "/intake/recall?id="+id);
 
         }).on("submitError.ufForm", function (event, data, textStatus, jqXHR) {
             console.log(data.responseText);
