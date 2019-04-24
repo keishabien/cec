@@ -24,7 +24,7 @@ class AdultRecall extends Model
         'srp_cleaning_units',
         'srp_dr_exam',
         'perio_units',
-        'status'
+        'status_id'
     ];
 
 

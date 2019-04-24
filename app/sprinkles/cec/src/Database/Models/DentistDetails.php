@@ -25,8 +25,7 @@ class DentistDetails extends Model
         'leave_start_date',
         'leave_end_date',
         'notes',
-        'status'
-
+        'status_id'
     ];
 
 

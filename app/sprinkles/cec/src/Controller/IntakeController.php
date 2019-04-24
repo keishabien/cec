@@ -6,7 +6,7 @@ use Illuminate\Database\Capsule\Manager as Capsule;
 use UserFrosting\Sprinkle\Core\Controller\SimpleController;
 use UserFrosting\Sprinkle\Core\Facades\Debug;
 use UserFrosting\Sprinkle\Cec\Database\Models\Office;
-use UserFrosting\Sprinkle\Cec\Database\Models\DoctorDetails;
+use UserFrosting\Sprinkle\Cec\Database\Models\DentistDetails;
 use UserFrosting\Sprinkle\Cec\Database\Models\HygienistDetails;
 use UserFrosting\Sprinkle\Cec\Database\Models\AdultNPIE;
 use UserFrosting\Sprinkle\Cec\Database\Models\ChildNPIE;
@@ -78,7 +78,8 @@ class IntakeController extends SimpleController
                 Debug::debug(print_r($dData, true));
                 return $response->withStatus(400);
             }
-            $dData["office_id"] = $location["office_id"];
+            $dData["office_id"] = $location["id"];
+            $dData["status_id"] = "1";
             $dentistData[] = $dData;
         }
         Debug::debug("var dentistData");
@@ -100,7 +101,8 @@ class IntakeController extends SimpleController
                 Debug::debug(print_r($hData, true));
                 return $response->withStatus(400);
             }
-            $hData["office_id"] = $location["office_id"];
+            $hData["office_id"] = $location["id"];
+            $hData["status_id"] = "1";
             $hygienistData[] = $hData;
         }
         Debug::debug("var hygienistData");
@@ -112,7 +114,7 @@ class IntakeController extends SimpleController
         Capsule::transaction(function () use ($classMapper, $dentistData, $hygienistData, $ms, $config) {
 
             foreach ($dentistData as $dentist) {
-                $intake = new DoctorDetails($dentist);
+                $intake = new DentistDetails($dentist);
                 Debug::debug("var intake");
                 Debug::debug(print_r($intake, true));
                 // Store new user to database

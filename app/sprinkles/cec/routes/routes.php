@@ -4,23 +4,23 @@ $app->get('/', 'UserFrosting\Sprinkle\Cec\Controller\PageController:pageIndex')-
 
 // INTAKE FORM
 $app->group('/intake', function () {
-    $this->get('/1', 'UserFrosting\Sprinkle\Cec\Controller\IntakeController:pageDetails')->setName('details');
+    $this->get('/staff', 'UserFrosting\Sprinkle\Cec\Controller\IntakeController:pageDetails')->setName('details');
     //post this form
-    $this->post('/2', 'UserFrosting\Sprinkle\Cec\Controller\IntakeController:details');
+    $this->post('/npie', 'UserFrosting\Sprinkle\Cec\Controller\IntakeController:details');
 
 
-    $this->get('/2', 'UserFrosting\Sprinkle\Cec\Controller\IntakeController:pageNPIE')->setName('npie');
+    $this->get('/npie', 'UserFrosting\Sprinkle\Cec\Controller\IntakeController:pageNPIE')->setName('npie');
     //post this form
-    $this->post('/3', 'UserFrosting\Sprinkle\Cec\Controller\IntakeController:npie');
+    $this->post('/recall', 'UserFrosting\Sprinkle\Cec\Controller\IntakeController:npie');
 
 
-    $this->get('/3', 'UserFrosting\Sprinkle\Cec\Controller\IntakeController:pageRecall')->setName('npie');
+    $this->get('/recall', 'UserFrosting\Sprinkle\Cec\Controller\IntakeController:pageRecall')->setName('npie');
     //post this form
-    $this->post('/4', 'UserFrosting\Sprinkle\Cec\Controller\IntakeController:recall');
+    $this->post('/additional', 'UserFrosting\Sprinkle\Cec\Controller\IntakeController:recall');
 
-    $this->get('/4', 'UserFrosting\Sprinkle\Cec\Controller\IntakeController:pageAdditional')->setName('final');
+    $this->get('/additional', 'UserFrosting\Sprinkle\Cec\Controller\IntakeController:pageAdditional')->setName('final');
     //post this form
-    $this->post('/5', 'UserFrosting\Sprinkle\Cec\Controller\IntakeController:additional');
+    $this->post('/completed', 'UserFrosting\Sprinkle\Cec\Controller\IntakeController:additional');
 
-    $this->get('/5', 'UserFrosting\Sprinkle\Cec\Controller\IntakeController:pageComplete')->setName('completed');
+    $this->get('/completed', 'UserFrosting\Sprinkle\Cec\Controller\IntakeController:pageComplete')->setName('completed');
 });

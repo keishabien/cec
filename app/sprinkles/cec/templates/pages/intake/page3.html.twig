@@ -11,7 +11,7 @@
     <div id="alerts-page"></div>
 
 
-    <form class="form-inline recall" method="post" action="{{ site.uri.public }}/intake/4">
+    <form class="form-inline recall" method="post" action="{{ site.uri.public }}/intake/recall">
         {% include "forms/csrf.html.twig" %}
         <input type="text" hidden name="office_id" value="{{ office_id }}">
 
@@ -350,7 +350,7 @@
             validators: page.validators.recall
         }).on("submitSuccess.ufForm", function (event, data, textStatus, jqXHR) {
             var id = $('input[name="office_id"]').val();
-            window.location.replace(site.uri.public + "/intake/4?id="+id);
+            window.location.replace(site.uri.public + "/intake/recall?id="+id);
         }).on("submitError.ufForm", function (event, data, textStatus, jqXHR) {
             console.log(data.responseText);
         });

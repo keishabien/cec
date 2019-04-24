@@ -21,3 +21,49 @@ provider_num:
     required:
       label: Hygienist Provider Number
       message: "Please provide a hygienist provider number."
+
+nickname:
+  validators:
+    regex:
+      regex: ^[a-zA-Z ]*.[a-zA-Z ]*$
+      message: "Please provide only letters."
+    length:
+      label: Dentist Called Name
+      min: 1
+      max: 50
+      message: "Dentist nickname must be between {{min}} and {{max}} characters."
+  transformations:
+    - escape
+    - trim
+
+start_date:
+  validators:
+    regex:
+      regex: ^(0[1-9]|1[0-2])\/(0[1-9]|[12]\d|3[01])\/[12]\d{3}$
+      message: "The date you provided is not valid."
+    required:
+      label: Dentist Start Date
+      message: "Please provide a start date."
+
+end_date:
+  validators:
+    regex:
+      regex: ^(0[1-9]|1[0-2])\/(0[1-9]|[12]\d|3[01])\/[12]\d{3}$
+      message: "The end date you provided is not valid."
+
+leave:
+  validators:
+    required:
+      message: "Please select an option."
+
+leave_start_date:
+  validators:
+    regex:
+      regex: ^(0[1-9]|1[0-2])\/(0[1-9]|[12]\d|3[01])\/[12]\d{3}$
+      message: "The leave start date you provided is not valid."
+
+leave_end_date:
+  validators:
+    regex:
+      regex: ^(0[1-9]|1[0-2])\/(0[1-9]|[12]\d|3[01])\/[12]\d{3}$
+      message: "The leave end date you provided is not valid."

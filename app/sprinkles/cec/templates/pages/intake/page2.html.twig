@@ -10,7 +10,7 @@
 {% block body_matter %}
     <div id="alerts-page"></div>
 
-    <form class="form-inline npie" method="post" action="{{ site.uri.public }}/intake/3">
+    <form class="form-inline npie" method="post" action="{{ site.uri.public }}/intake/npie">
         {% include "forms/csrf.html.twig" %}
 
         {%  if office_id %}
@@ -343,7 +343,7 @@
             validators: page.validators.npie
         }).on("submitSuccess.ufForm", function (event, data, textStatus, jqXHR) {
             var id = $('input[name="office_id"]').val();
-            window.location.replace(site.uri.public + "/intake/3?id="+id);
+            window.location.replace(site.uri.public + "/intake/npie?id="+id);
         }).on("submitError.ufForm", function (event, data, textStatus, jqXHR) {
             console.log(data.responseText);
         });
