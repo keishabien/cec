@@ -14,16 +14,20 @@
 {% endblock %}
 
 {% block body_matter %}
+
     <div id="alerts-page"></div>
 
     <form class="form-inline intake" method="post" action="{{ site.uri.public }}/intake/npie">
+
 
         {% include "forms/csrf.html.twig" %}
         <div class="office-select">
             <select class="form-control" name="office_id" id="offices">
                 <option value="">Please Select Your Office</option>
                 {% for office in offices %}
+
                     <option value="{{ office.id }}">{{ office.name }}</option>
+
                 {% endfor %}
             </select>
         </div>
@@ -226,6 +230,7 @@
                         </div>
                     </div>
                 </div>
+
 
                 <div class="row">
                     <div class="col-xs-12">

@@ -14,6 +14,7 @@ class DentistDetails extends Model
     protected $table = 'cec.dentist_details';
 
     protected $fillable = [
+        'office_id',
         'name',
         'nickname',
         'provider_num',

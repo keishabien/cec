@@ -11,7 +11,9 @@
 
     <div id="alerts-page"></div>
 
+
     <form class="form-inline additional" method="post" action="{{ site.uri.public }}/intake/completed">
+
         {% include "forms/csrf.html.twig" %}
         <input type="text" hidden name="office_id" value="{{ office_id }}">
 

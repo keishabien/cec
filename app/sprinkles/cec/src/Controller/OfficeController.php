@@ -32,11 +32,13 @@ class OfficeController extends SimpleController
             throw new ForbiddenException();
         }
 
+
         $office = Office::query()->get();
 
         return $this->ci->view->render($response, 'pages/dashboard/offices.html.twig', [
             'office' => $office
         ]);
+
     }
 
     public function getList($request, $response, $args)
@@ -121,7 +123,6 @@ class OfficeController extends SimpleController
     public function pageInfo($request, $response, $args)
     {
         $office = $this->getUserFromParams($args);
-
 
         // If the user no longer exists, forward to main user listing page
         if (!$office) {

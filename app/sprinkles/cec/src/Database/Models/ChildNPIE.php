@@ -23,7 +23,7 @@ class ChildNPIE extends Model
         'first_visit',
         'cleaning',
         'notes',
-        'status'
+        'status_id'
     ];
 
 

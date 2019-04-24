@@ -10,21 +10,13 @@
 {% block body_matter %}
     <div id="alerts-page"></div>
 
+
     <form class="form-inline npie" method="post" action="{{ site.uri.public }}/intake/npie">
         {% include "forms/csrf.html.twig" %}
 
-        {%  if office_id %}
-        <input type="text" hidden name="office_id" value="{{ office_id }}">
-        {% else %}
-        <div class="office-select">
-            <select class="form-control" name="office_id" id="offices">
-                <option value="">Please Select Your Office</option>
-                {% for office in offices %}
-                    <option value="{{ office.office_id }}">{{ office.name }}</option>
-                {% endfor %}
-            </select>
-        </div>
-        {% endif %}
+
+        <input type="text" hidden name="office_id" value="{{ office.id }}">
+
 
         {% verbatim %}
 <script id="adult-row" type="text/x-handlebars-template">
@@ -343,7 +335,9 @@
             validators: page.validators.npie
         }).on("submitSuccess.ufForm", function (event, data, textStatus, jqXHR) {
             var id = $('input[name="office_id"]').val();
+
             window.location.replace(site.uri.public + "/intake/npie?id="+id);
+
         }).on("submitError.ufForm", function (event, data, textStatus, jqXHR) {
             console.log(data.responseText);
         });

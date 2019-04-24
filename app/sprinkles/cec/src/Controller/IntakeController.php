@@ -78,8 +78,10 @@ class IntakeController extends SimpleController
                 Debug::debug(print_r($dData, true));
                 return $response->withStatus(400);
             }
+
             $dData["office_id"] = $location["id"];
             $dData["status_id"] = "1";
+
             $dentistData[] = $dData;
         }
         Debug::debug("var dentistData");
@@ -101,8 +103,10 @@ class IntakeController extends SimpleController
                 Debug::debug(print_r($hData, true));
                 return $response->withStatus(400);
             }
+
             $hData["office_id"] = $location["id"];
             $hData["status_id"] = "1";
+
             $hygienistData[] = $hData;
         }
         Debug::debug("var hygienistData");
@@ -140,11 +144,13 @@ class IntakeController extends SimpleController
         $schema = new RequestSchema('schema://requests/npie.yaml');
         $validator = new JqueryValidationAdapter($schema, $this->ci->translator);
         $rules = $validator->rules();
+
         $offices = Office::query()->orderBy('name', 'ASC')->get();
 
         return $this->ci->view->render($response, 'pages/intake/page2.html.twig', [
             'office_id' => $id,
             'offices' => $offices,
+
             'page' => [
                 'validators' => [
                     'npie' => $rules
@@ -163,6 +169,7 @@ class IntakeController extends SimpleController
         $params = $request->getParsedBody();
         Debug::debug("var params 1");
         Debug::debug(print_r($params, true));
+
 
         $officeSchema = new RequestSchema('schema://requests/office.yaml');
         $officeTransformer = new RequestDataTransformer($officeSchema);
@@ -250,11 +257,13 @@ class IntakeController extends SimpleController
         $cValidator = new JqueryValidationAdapter($cSchema, $this->ci->translator);
         $cRules = $cValidator->rules();
 
+
         $offices = Office::query()->orderBy('name', 'ASC')->get();
 
         return $this->ci->view->render($response, 'pages/intake/page3.html.twig', [
             'office_id' => $id,
             'offices' => $offices,
+
             'page' => [
                 'validators' => [
                     'recall' => [
@@ -353,10 +362,12 @@ class IntakeController extends SimpleController
         $validator = new JqueryValidationAdapter($schema, $this->ci->translator);
         $rules = $validator->rules();
 
+
         $offices = Office::query()->orderBy('name', 'ASC')->get();
         return $this->ci->view->render($response, 'pages/intake/page4.html.twig', [
             'office_id' => $id,
             'offices' => $offices,
+
             'page' => [
                 'validators' => [
                     'rules' => $rules

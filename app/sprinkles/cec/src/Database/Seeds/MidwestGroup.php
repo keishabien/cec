@@ -23,6 +23,7 @@ class MidwestGroup extends BaseSeed
     public function run()
     {
         $groups = $this->getGroups();
+
         foreach ($groups as $group) {
             // Don't save if already exist
             if (Group::where('slug', $group->slug)->first() == null) {
@@ -30,6 +31,7 @@ class MidwestGroup extends BaseSeed
             }
         }
     }
+
     /**
      * @return array Groups to seed
      */
@@ -39,6 +41,7 @@ class MidwestGroup extends BaseSeed
             new Group([
                 'slug'        => 'midwest',
                 'name'        => 'Midwest'
+
             ])
         ];
     }

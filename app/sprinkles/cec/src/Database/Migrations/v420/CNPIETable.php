@@ -1,7 +1,9 @@
 <?php
+
 namespace UserFrosting\Sprinkle\Cec\Database\Migrations\v420;
 use Illuminate\Database\Schema\Blueprint;
 use UserFrosting\Sprinkle\Core\Database\Migration;
+
 class CNPIETable extends Migration
 {
     public static $dependencies = [
@@ -10,14 +12,17 @@ class CNPIETable extends Migration
         '\UserFrosting\Sprinkle\Cec\Database\Migrations\v420\HygienistTable',
         '\UserFrosting\Sprinkle\Cec\Database\Migrations\v420\StatusTable'
     ];
+
     public function up()
     {
         if (!$this->schema->hasTable('cnpie_details')) {
             $this->schema->create('cnpie_details', function (Blueprint $table) {
                 $table->increments('id');
+
                 $table->integer('office_id')->nullable()->unsigned();
                 $table->integer('dentist_id')->nullable()->unsigned();
                 $table->integer('hygienist_id')->nullable()->unsigned();
+
                 $table->string('chair', 255)->nullable();
                 $table->string('age_range', 255)->nullable();
                 $table->string('dr_units', 255)->nullable();
@@ -25,6 +30,7 @@ class CNPIETable extends Migration
                 $table->string('first_visit', 255)->nullable();
                 $table->string('cleaning', 255)->nullable();
                 $table->string('notes', 1000)->nullable();
+
                 $table->integer('status_id')->unsigned();
                 $table->timestamps();
                 $table->foreign('status_id')->references('id')->on('status');
@@ -34,12 +40,14 @@ class CNPIETable extends Migration
                 $table->index('dentist_id');
                 $table->foreign('hygienist_id')->references('id')->on('hygienist_details');
                 $table->index('hygienist_id');
+
                 $table->engine = 'InnoDB';
                 $table->collation = 'utf8_unicode_ci';
                 $table->charset = 'utf8';
             });
         }
     }
+
     public function down()
     {
         $this->schema->drop('cnpie_details');

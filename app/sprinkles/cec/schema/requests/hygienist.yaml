@@ -22,6 +22,7 @@ provider_num:
       label: Hygienist Provider Number
       message: "Please provide a hygienist provider number."
 
+
 nickname:
   validators:
     regex:

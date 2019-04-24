@@ -4,6 +4,7 @@ $app->get('/', 'UserFrosting\Sprinkle\Cec\Controller\PageController:pageIndex')-
 
 // INTAKE FORM
 $app->group('/intake', function () {
+
     $this->get('/staff', 'UserFrosting\Sprinkle\Cec\Controller\IntakeController:pageDetails')->setName('details');
     //post this form
     $this->post('/npie', 'UserFrosting\Sprinkle\Cec\Controller\IntakeController:details');
@@ -23,4 +24,5 @@ $app->group('/intake', function () {
     $this->post('/completed', 'UserFrosting\Sprinkle\Cec\Controller\IntakeController:additional');
 
     $this->get('/completed', 'UserFrosting\Sprinkle\Cec\Controller\IntakeController:pageComplete')->setName('completed');
+
 });

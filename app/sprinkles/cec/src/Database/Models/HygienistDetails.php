@@ -15,6 +15,7 @@ class HygienistDetails extends Model
 
 
     protected $fillable = [
+
         'name',
         'nickname',
         'provider_num',

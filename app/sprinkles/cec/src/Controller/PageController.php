@@ -6,7 +6,9 @@ use Illuminate\Database\Capsule\Manager as Capsule;
 use UserFrosting\Sprinkle\Core\Controller\SimpleController;
 use UserFrosting\Sprinkle\Core\Facades\Debug;
 use UserFrosting\Sprinkle\Cec\Database\Models\Office;
-use UserFrosting\Sprinkle\Cec\Database\Models\DoctorDetails;
+
+use UserFrosting\Sprinkle\Cec\Database\Models\DentistDetails;
+
 use UserFrosting\Sprinkle\Cec\Database\Models\HygienistDetails;
 use UserFrosting\Fortress\Adapter\JqueryValidationAdapter;
 use UserFrosting\Fortress\RequestSchema;

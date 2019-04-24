@@ -19,10 +19,10 @@ use UserFrosting\Sprinkle\Core\Facades\Debug;
 use UserFrosting\Sprinkle\Cec\Database\Models\Search;
 use UserFrosting\Sprinkle\Cec\Database\Models\Office;
 use UserFrosting\Sprinkle\Cec\Database\Models\ZipCodes;
-use UserFrosting\Sprinkle\Cec\Database\Models\DoctorDetails;
-use UserFrosting\Sprinkle\Cec\Database\Models\DrOff;
+
+use UserFrosting\Sprinkle\Cec\Database\Models\DentistDetails;
 use UserFrosting\Sprinkle\Cec\Database\Models\HygienistDetails;
-use UserFrosting\Sprinkle\Cec\Database\Models\HygOff;
+
 use UserFrosting\Sprinkle\Cec\Database\Models\AddDetails;
 use UserFrosting\Sprinkle\Cec\Database\Models\AdultNPIE;
 use UserFrosting\Sprinkle\Cec\Database\Models\AdultRecall;
@@ -101,10 +101,12 @@ class SearchController extends SimpleController
 
         } else if ($keyword) {
             $office = Office::query()
+
                 ->join('dentist_details', 'dentist_details.office_id', '=', 'office_details.id')
                 ->where('office_details.name', 'like', '%' . $keyword . '%')
                 ->orWhere('doctor_details.name', 'like', '%' . $keyword . '%')
                 ->distinct()->groupBy('doctor_details.id')->get();
+
         } else {
             $office = Office::query()->get();
         }
@@ -144,6 +146,7 @@ class SearchController extends SimpleController
         $aRecall = AdultRecall::where('office_id', $office["id"])->get();
         $cRecall = ChildRecall::where('office_id', $office["id"])->get();
         $addDetails = AddDetails::where('office_id', $office["id"])->first();
+
 
         $name = $office['name'];
         $patterns = array();
@@ -201,7 +204,9 @@ class SearchController extends SimpleController
         return $this->ci->view->render($response, 'pages/office-single.html.twig', [
             'keyword' => $params,
             'office' => $office,
+
             'doctor' => $doctors,
+
             'hygienist' => $hygienist,
             'aNPIE' => $aNPIE,
             'cNPIE' => $cNPIE,
@@ -216,8 +221,10 @@ class SearchController extends SimpleController
             'meritLogo' => 'https://www.meritdental.com/cecdb/images/merit-logo.png',
             'mountainLogo' => 'https://www.meritdental.com/cecdb/images/mountain-logo.png',
             'page' => [
+
                 'doctor' => $doctors,
                 'hygienist' => $hygienist
+
             ]
         ]);
     }

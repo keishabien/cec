@@ -73,8 +73,11 @@ build/package.lock
 # Ignore api key
 app/sprinkles/cec/templates/pages/partials/key.js.twig
 
+
 #Ignore idea
 .idea/
 
 # Ignore files
 files/
+
+
