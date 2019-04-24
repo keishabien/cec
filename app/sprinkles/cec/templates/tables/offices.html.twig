@@ -12,7 +12,7 @@
            data-sortlist="{{ table.sortlist }}">
         <thead>
         <tr>
-            <th class="sorter-metatext" data-column-name="page_title" data-column-template="#user-table-column-info"
+            <th class="sorter-metatext" data-column-name="name" data-column-template="#user-table-column-info"
                 data-priority="1">{{ translate('OFFICE') }} <i class="fa fa-sort"></i></th>
             {#{% if 'last_activity' in table.columns %}#}
                 {#<th class="sorter-metanum" data-column-name="last_activity"#}
@@ -44,9 +44,9 @@
     #}
     {% verbatim %}
     <script id="user-table-column-info" type="text/x-handlebars-template">
-        <td data-text="{{row.page_title}}">
+        <td data-text="{{row.name}}">
             <strong>
-                <a href="{{site.uri.public}}/offices/o/{{row.page_title}}">{{row.page_title}}</a>
+                <a href="{{site.uri.public}}/dash/offices/o/{{row.name}}">{{row.name}}</a>
             </strong>
             <div class="js-copy-container">
                 <span class="js-copy-target">{{row.email}}</span>

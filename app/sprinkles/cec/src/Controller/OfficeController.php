@@ -16,6 +16,9 @@ use UserFrosting\Fortress\RequestSchema;
 use UserFrosting\Fortress\ServerSideValidator;
 use UserFrosting\Support\Exception\BadRequestException;
 
+use UserFrosting\Support\Exception\HttpException;
+use UserFrosting\Sprinkle\Core\Facades\Debug;
+
 
 class OfficeController extends SimpleController
 {
@@ -34,6 +37,9 @@ class OfficeController extends SimpleController
 
 
         $office = Office::query()->get();
+
+        Debug::debug("office");
+        Debug::debug(print_r($office, true));
 
         return $this->ci->view->render($response, 'pages/dashboard/offices.html.twig', [
             'office' => $office
@@ -150,7 +156,7 @@ class OfficeController extends SimpleController
         $locales = $config->getDefined('site.locales.available');
 
         // Determine fields that currentUser is authorized to view
-        $fieldNames = ['page_title', 'page_id', 'phone', 'address', 'city', 'state', 'zip'];
+        $fieldNames = ['name',  'phone', 'address', 'city', 'state', 'zip'];
 
         // Generate form
         $fields = [

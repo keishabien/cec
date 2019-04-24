@@ -368,7 +368,7 @@ class SearchController extends SimpleController
 //            ->first();
 
 
-//        $office = Office::distinct()->where('page_title', $data['office_name'])->get();
+//        $office = Office::distinct()->where('name', $data['office_name'])->get();
         $office = Office::distinct()->where('name', 'like', '%' . $data['input'] . '%')->get();
 //        $details = Search::distinct()->where('name', $data['keyword'])->get();
 

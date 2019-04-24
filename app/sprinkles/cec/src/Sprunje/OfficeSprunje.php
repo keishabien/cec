@@ -12,12 +12,12 @@ class OfficeSprunje extends Sprunje
     protected $name = 'office_details';
 
     protected $sortable = [
-        'page_title',
+        'name',
         'state'
     ];
 
     protected $filterable = [
-        'page_title',
+        'name',
         'state'
     ];
 

@@ -8,7 +8,7 @@
 {# Overrides blocks in head of base template #}
 {% block page_title %}{{ translate("OFFICE", 1)}} | {{office[0].city}}, {{ office[0].state }}{% endblock %}
 
-{% block page_description %}{{ translate("OFFICE.INFO_PAGE", {name: office[0].page_title}) }}{% endblock %}
+{% block page_description %}{{ translate("OFFICE.INFO_PAGE", {name: office[0].name}) }}{% endblock %}
 
 {% block body_matter %}
     {% block group_box %}
@@ -29,7 +29,7 @@
                                         <ul class="dropdown-menu box-tool-menu">
                                             {% block tools %}
                                                 <li>
-                                                    <a href="#" class="js-user-edit" data-office_name="{{office[0].page_title}}">
+                                                    <a href="#" class="js-user-edit" data-office_name="{{office[0].name}}">
                                                         <i class="fa fa-edit fa-fw"></i> {{translate('EDIT')}}
                                                     </a>
                                                 </li>
@@ -78,13 +78,13 @@
                         </div>
                         <div class="box-body box-profile">
                             {% if office[0].brand == "Midwest" %}
-                                <img class="office-user-img img-responsive" src="{{midwestLogo}}" alt="{{office[0].page_title}}">
+                                <img class="office-user-img img-responsive" src="{{midwestLogo}}" alt="{{office[0].name}}">
                             {% elseif office[0].brand == "Mondovi" %}
-                                <img class="office-user-img img-responsive" src="{{mondoviLogo}}" alt="{{office[0].page_title}}">
+                                <img class="office-user-img img-responsive" src="{{mondoviLogo}}" alt="{{office[0].name}}">
                             {% elseif office[0].brand == "Mountain" %}
-                                <img class="office-user-img img-responsive" src="{{mountainLogo}}" alt="{{office[0].page_title}}">
+                                <img class="office-user-img img-responsive" src="{{mountainLogo}}" alt="{{office[0].name}}">
                             {% elseif office[0].brand == "Merit" %}
-                                <img class="office-user-img img-responsive" src="{{meritLogo}}" alt="{{office[0].page_title}}">
+                                <img class="office-user-img img-responsive" src="{{meritLogo}}" alt="{{office[0].name}}">
                             {% endif %}
 
 
@@ -159,7 +159,7 @@
         true,               // deep extend
         {
             {#"user_name": "{{user.user_name}}",#}
-            "office_name": "{{office[0].page_title}}"
+            "office_name": "{{office[0].name}}"
         },
         page
     );

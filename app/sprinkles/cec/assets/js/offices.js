@@ -10,7 +10,7 @@
 $(document).ready(function () {
     // Set up table of users
     $('#widget-offices').ufTable({
-        dataUrl: site.uri.public + '/api/offices',
+        dataUrl: site.uri.public + '/api/dash/offices',
         useLoadingTransition: site.uf_table.use_loading_transition
     });
 
