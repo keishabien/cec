@@ -54,10 +54,8 @@ class DentistTable extends Migration
 
     public function down()
     {
-<<<<<<< HEAD
-        $this->schema->drop('doctor_details');
-=======
+
         $this->schema->drop('dentist_details');
->>>>>>> 977d424d1ce6ee511a538a80c689bbadc6c2f62e
+
     }
 }

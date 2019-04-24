@@ -10848,11 +10848,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/DentistTable.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+            <state relative-caret-position="974">
+              <caret line="57" column="47" lean-forward="true" selection-start-line="57" selection-start-column="47" selection-end-line="57" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -10866,7 +10866,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/OfficeTable.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1150">
@@ -10907,7 +10907,6 @@
       <find>304</find>
       <find>305</find>
       <find>306</find>
-      <find>doctor_details</find>
       <find>((\W*))</find>
       <find>);</find>
       <find>leave_strat_date</find>
@@ -10918,11 +10917,13 @@
       <find>DoctorDetails</find>
       <find>$location[&quot;office_id&quot;];</find>
       <find>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</find>
+      <find>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</find>
+      <find>``</find>
+      <find>doctor_details</find>
     </findStrings>
     <replaceStrings>
       <replace>WHERE id = &quot;&quot;;</replace>
       <replace>(</replace>
-      <replace>dentist_details</replace>
       <replace>id</replace>
       <replace>;</replace>
       <replace>leave_start_date</replace>
@@ -10930,6 +10931,7 @@
       <replace>NOW()</replace>
       <replace>/intake/completed</replace>
       <replace>DentistDetails</replace>
+      <replace>dentist_details</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -10992,8 +10994,8 @@
         <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/ANPIETable.php" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/ARecallTable.php" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/CRecallTable.php" />
-        <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/DentistTable.php" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/OfficeTable.php" />
+        <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/DentistTable.php" />
       </list>
     </option>
   </component>
@@ -11404,12 +11406,12 @@
       <workItem from="1555616490471" duration="4682000" />
       <workItem from="1555688579804" duration="10418000" />
       <workItem from="1556045545037" duration="4438000" />
-      <workItem from="1556133834722" duration="4050000" />
+      <workItem from="1556133834722" duration="4121000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23603000" />
+    <option name="totallyTimeSpent" value="23674000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -11752,13 +11754,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/DentistTable.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/HygienistTable.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="667">
@@ -11780,6 +11775,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1150">
           <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/DentistTable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="974">
+          <caret line="57" column="47" lean-forward="true" selection-start-line="57" selection-start-column="47" selection-end-line="57" selection-end-column="47" />
         </state>
       </provider>
     </entry>
