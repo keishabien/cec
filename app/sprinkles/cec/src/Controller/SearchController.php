@@ -104,8 +104,8 @@ class SearchController extends SimpleController
 
                 ->join('dentist_details', 'dentist_details.office_id', '=', 'office_details.id')
                 ->where('office_details.name', 'like', '%' . $keyword . '%')
-                ->orWhere('doctor_details.name', 'like', '%' . $keyword . '%')
-                ->distinct()->groupBy('doctor_details.id')->get();
+                ->orWhere('dentist_details.name', 'like', '%' . $keyword . '%')
+                ->distinct()->groupBy('office_details.id')->get();
 
         } else {
             $office = Office::query()->get();
