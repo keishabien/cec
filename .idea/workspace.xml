@@ -2,19 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="95fb9069-ea9a-48fe-ac49-9fc94a362f1a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/assets/css/cec.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/cec/assets/css/cec.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/assets/js/offices.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/cec/assets/js/offices.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/routes/dashboard_offices.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/cec/routes/dashboard_offices.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/src/Controller/OfficeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/cec/src/Controller/OfficeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/src/Controller/SearchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/cec/src/Controller/SearchController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/ARecallTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/ARecallTable.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/src/Sprunje/OfficeSprunje.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/cec/src/Sprunje/OfficeSprunje.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/templates/navigation/breadcrumb.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/cec/templates/navigation/breadcrumb.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/templates/navigation/sidebar-menu.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/cec/templates/navigation/sidebar-menu.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/templates/pages/dashboard/office.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/cec/templates/pages/dashboard/office.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/StatusTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/StatusTable.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/sprinkles/cec/templates/pages/office-single.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/sprinkles/cec/templates/pages/office-single.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,66 +18,49 @@
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/templates/pages/dashboard/offices.html.twig">
+    <leaf>
+      <file leaf-file-name="office-all.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/templates/pages/office-all.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="22" column="46" lean-forward="true" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
+            <state relative-caret-position="-624" />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cec.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/assets/css/cec.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="142">
+              <caret line="734" column="26" selection-start-line="734" selection-start-column="26" selection-end-line="734" selection-end-column="26" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/templates/tables/offices.html.twig">
+      <file leaf-file-name="office-single.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/templates/pages/office-single.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="964">
-              <caret line="82" column="9" lean-forward="true" selection-start-line="82" selection-start-column="9" selection-end-line="82" selection-end-column="9" />
+            <state relative-caret-position="392">
+              <caret line="276" column="62" selection-start-line="276" selection-start-column="62" selection-end-line="276" selection-end-column="62" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/sprinkles/admin/templates/pages/permissions.html.twig">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/sprinkles/admin/templates/tables/permissions.html.twig">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/sprinkles/admin/templates/tables/users.html.twig">
+      <file leaf-file-name="StatusTable.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/StatusTable.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2762">
-              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/sprinkles/admin/routes/permissions.php">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/routes/dashboard_offices.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="16" column="83" selection-start-line="16" selection-start-column="83" selection-end-line="16" selection-end-column="83" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Controller/SearchController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="107" column="53" selection-start-line="107" selection-start-column="53" selection-end-line="107" selection-end-column="53" />
+            <state relative-caret-position="171">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
               <folding>
-                <element signature="e#56#107#0#PHP" expanded="true" />
+                <element signature="e#70#111#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ARecallTable.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/ARecallTable.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="9" selection-start-line="9" selection-end-line="16" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -155,7 +132,6 @@
         <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Seeds/StatusTypes.php" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Models/Status.php" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Models/DoctorDetails.php" />
-        <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/StatusTable.php" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/DoctorTable.php" />
         <option value="$USER_HOME$/AppData/Local/Temp/scp13868/wp-content/themes/midwest-2016/templates/page-locations.php" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/templates/pages/intake/page4.html.twig" />
@@ -189,15 +165,262 @@
         <option value="$PROJECT_DIR$/app/sprinkles/cec/assets/js/offices.js" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Controller/OfficeController.php" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Sprunje/OfficeSprunje.php" />
-        <option value="$PROJECT_DIR$/app/sprinkles/cec/templates/pages/office-single.html.twig" />
-        <option value="$PROJECT_DIR$/app/sprinkles/cec/assets/css/cec.css" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Seeds/OfficePermissions.php" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/templates/tables/offices.html.twig" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/templates/navigation/sidebar-menu.html.twig" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/routes/dashboard_offices.php" />
         <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Controller/SearchController.php" />
+        <option value="$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/StatusTable.php" />
+        <option value="$PROJECT_DIR$/app/sprinkles/cec/assets/css/cec.css" />
+        <option value="$PROJECT_DIR$/app/sprinkles/cec/templates/pages/office-single.html.twig" />
       </list>
     </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/build/node_modules" />
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/app/assets/package.json" />
+      <path value="$PROJECT_DIR$/app/sprinkles/cec/assets/vendor/bootstrap/package.json" />
+      <path value="$PROJECT_DIR$/app/sprinkles/cec/assets/vendor/clipboard/package.json" />
+      <path value="$PROJECT_DIR$/app/sprinkles/cec/assets/vendor/handlebars/package.json" />
+      <path value="$PROJECT_DIR$/app/sprinkles/cec/assets/vendor/jquery-slimscroll/package.json" />
+      <path value="$PROJECT_DIR$/app/sprinkles/cec/assets/vendor/jquery-validation/package.json" />
+      <path value="$PROJECT_DIR$/app/sprinkles/cec/assets/vendor/select2/package.json" />
+      <path value="$PROJECT_DIR$/app/sprinkles/cec/assets/vendor/speakingurl/package.json" />
+      <path value="$PROJECT_DIR$/app/sprinkles/cec/package.json" />
+      <path value="$PROJECT_DIR$/app/sprinkles/core/package.json" />
+      <path value="$PROJECT_DIR$/build/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/ansi-bgblack/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/ansi-bgblue/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/ansi-bgcyan/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/ansi-bggreen/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/ansi-bgmagenta/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/ansi-bgred/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/ansi-bgwhite/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/ansi-bgyellow/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/ansi-black/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/ansi-blue/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/ansi-bold/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/ansi-colors/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/ansi-cyan/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/ansi-dim/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/ansi-gray/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/ansi-green/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/ansi-grey/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/ansi-hidden/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/ansi-inverse/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/ansi-italic/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/ansi-magenta/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/ansi-red/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/ansi-reset/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/ansi-strikethrough/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/ansi-underline/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/ansi-white/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/ansi-wrap/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/ansi-yellow/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/argparse/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/arr-diff/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/arr-flatten/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/arr-union/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/array-sort/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/array-sort/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/array-unique/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/assign-symbols/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/async/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/atob/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/autolinker/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/base/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/base/node_modules/is-accessor-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/base/node_modules/is-data-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/base/node_modules/is-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/base/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/braces/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/cache-base/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/class-utils/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/class-utils/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/collection-visit/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/commander/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/component-emitter/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/copy-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/create-frame/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/create-frame/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/date.js/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/decode-uri-component/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/default-compare/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/default-compare/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/define-property/node_modules/is-accessor-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/define-property/node_modules/is-data-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/define-property/node_modules/is-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/ent/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/error-symbol/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/expand-brackets/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/expand-brackets/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/expand-brackets/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/extend-shallow/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/extglob/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/extglob/node_modules/is-accessor-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/extglob/node_modules/is-data-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/extglob/node_modules/is-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/extglob/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/falsey/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/falsey/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fill-range/node_modules/is-number/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fill-range/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fill-range/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/for-in/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/for-own/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fragment-cache/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fs-exists-sync/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/get-object/node_modules/is-number/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/get-object/node_modules/isobject/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/get-object/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/get-object/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/get-value/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/handlebars-helper-create-frame/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/handlebars-utils/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/handlebars/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/has-value/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/has-values/node_modules/is-number/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/has-values/node_modules/is-number/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/has-values/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/has-values/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/helper-date/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/helper-markdown/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/helper-md/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/highlight.js/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/html-tag/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/info-symbol/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-accessor-descriptor/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-accessor-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-buffer/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-data-descriptor/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-data-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-descriptor/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-even/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-extendable/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-extglob/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-glob/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-number/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-odd/node_modules/is-number/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-odd/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-odd/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-plain-object/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-self-closing/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-windows/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/isarray/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/isobject/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/lazy-cache/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/lodash/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/log-ok/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/log-utils/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/logging-helpers/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/map-cache/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/map-visit/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/micromatch/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/micromatch/node_modules/extend-shallow/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/micromatch/node_modules/is-accessor-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/micromatch/node_modules/is-data-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/micromatch/node_modules/is-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/micromatch/node_modules/is-extendable/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/micromatch/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/minimist/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/mixin-deep/node_modules/is-extendable/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/mixin-deep/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/moment/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/ms/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/nanomatch/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/nanomatch/node_modules/extend-shallow/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/nanomatch/node_modules/is-accessor-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/nanomatch/node_modules/is-data-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/nanomatch/node_modules/is-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/nanomatch/node_modules/is-extendable/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/nanomatch/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/object-copy/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/object-copy/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/object-copy/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/object-visit/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/object.pick/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/optimist/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/pascalcase/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/posix-character-classes/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/regex-not/node_modules/extend-shallow/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/regex-not/node_modules/is-extendable/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/regex-not/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/relative/node_modules/isobject/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/relative/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/remarkable/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/repeat-element/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/repeat-string/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/resolve-url/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/ret/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/safe-regex/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/self-closing-tags/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/set-getter/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/set-value/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/snapdragon-node/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/snapdragon-node/node_modules/is-accessor-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/snapdragon-node/node_modules/is-data-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/snapdragon-node/node_modules/is-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/snapdragon-node/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/snapdragon-util/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/snapdragon-util/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/snapdragon/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/snapdragon/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/snapdragon/node_modules/source-map/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/snapdragon/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/source-map-resolve/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/source-map-url/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/source-map/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/split-string/node_modules/extend-shallow/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/split-string/node_modules/is-extendable/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/split-string/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/static-extend/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/static-extend/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/striptags/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/success-symbol/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/time-stamp/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/to-gfm-code-block/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/to-object-path/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/to-object-path/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/to-regex-range/node_modules/is-number/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/to-regex-range/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/to-regex-range/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/to-regex/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/to-regex/node_modules/extend-shallow/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/to-regex/node_modules/is-accessor-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/to-regex/node_modules/is-data-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/to-regex/node_modules/is-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/to-regex/node_modules/is-extendable/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/to-regex/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/typeof-article/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/typeof-article/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/uglify-js/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/underscore.string/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/underscore/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/union-value/node_modules/set-value/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/union-value/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/unset-value/node_modules/has-value/node_modules/isobject/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/unset-value/node_modules/has-value/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/unset-value/node_modules/has-values/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/unset-value/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/urix/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/use/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/warning-symbol/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/wordwrap/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/year/package.json" />
+    </packageJsonPaths>
   </component>
   <component name="PHPCSFixerBlackList">
     <option name="filePaths">
@@ -330,14 +553,96 @@
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="1" id="Add" />
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
+              <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
+              <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
+              <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
+              <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
+              <item name="cec" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
+              <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
+              <item name="cec" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
+              <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
+              <item name="cec" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Database" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
+              <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
+              <item name="cec" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Database" type="462c0819:PsiDirectoryNode" />
+              <item name="Migrations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
+              <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
+              <item name="cec" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Database" type="462c0819:PsiDirectoryNode" />
+              <item name="Migrations" type="462c0819:PsiDirectoryNode" />
+              <item name="v420" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
+              <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
+              <item name="cec" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="userfrosting" type="b2602c69:ProjectViewProjectNode" />
+              <item name="userfrosting" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="sprinkles" type="462c0819:PsiDirectoryNode" />
+              <item name="cec" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope">
         <subPane subId="Scope 'Changed Files'; set:Changed Files; ALL; class com.intellij.packageDependencies.ChangeListScope">
           <expand>
@@ -412,7 +717,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -445,7 +749,6 @@
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
-      <method v="2" />
     </configuration>
   </component>
   <component name="SvnConfiguration">
@@ -492,67 +795,78 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28914000" />
+    <option name="totallyTimeSpent" value="32353000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19852448" />
+      <window_info anchor="bottom" id="TODO" order="5" />
+      <window_info anchor="bottom" id="Docker" order="6" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5010661" side_tool="true" weight="0.30769232" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Run" order="1" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" x="22" y="389" width="1876" height="261" id="Terminal" order="9" sideWeight="0.4989339" weight="0.325" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="2" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="6" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
+      <window_info anchor="right" id="Remote Host" order="3" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21108742" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Run" order="1" />
-      <window_info anchor="bottom" id="Debug" order="2" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="5" />
-      <window_info anchor="bottom" id="Docker" order="6" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" x="22" y="389" width="1876" height="261" id="Terminal" order="9" sideWeight="0.4989339" visible="true" weight="0.21235102" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5010661" side_tool="true" weight="0.30769232" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Remote Host" order="3" />
+      <window_info anchor="bottom" id="TODO" order="5" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Run" order="1" />
+      <window_info anchor="bottom" id="Debug" order="2" weight="0.4" />
       <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5010661" side_tool="true" weight="0.30769232" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info anchor="right" id="Find" order="5" weight="0.2510661" />
+      <window_info anchor="bottom" x="22" y="389" width="1876" height="261" id="Terminal" order="9" sideWeight="0.4989339" visible="true" weight="0.21235102" />
+      <window_info id="Favorites" order="2" side_tool="true" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19616205" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Run" order="1" />
-      <window_info anchor="bottom" id="Debug" order="2" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="5" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="6" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" id="Remote Host" order="3" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19616205" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="5" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="1" />
+      <window_info anchor="right" id="Find" order="5" weight="0.2510661" />
+      <window_info anchor="bottom" id="Debug" order="2" weight="0.4" />
+      <window_info anchor="right" id="Database" order="4" />
       <window_info anchor="bottom" x="22" y="389" width="1876" height="261" id="Terminal" order="9" sideWeight="0.4989339" visible="true" weight="0.24160346" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5010661" side_tool="true" weight="0.30769232" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Remote Host" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
-      <window_info anchor="right" id="Find" order="5" weight="0.2510661" />
+      <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info id="Favorites" order="2" side_tool="true" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.log" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/schema/requests/office.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="6" selection-start-column="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/templates/pages/intake/page1.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -651,9 +965,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="928">
           <caret line="49" selection-start-line="49" selection-end-line="49" />
-          <folding>
-            <element signature="e#69#110#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -671,16 +982,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/StatusTable.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-          <folding>
-            <element signature="e#70#111#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/OfficeTable.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1150">
@@ -688,9 +989,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/scp40049/var/www/midwest/cec/app/logs/.gitkeep">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/scp40049/var/www/midwest/cec/app/logs/.gitkeep" />
     <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/DentistTable.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="974">
@@ -726,20 +1025,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/scp51736/var/www/midwest/cec/cec docs/arecall_details.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="12" lean-forward="true" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/ARecallTable.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-69">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/scp51736/var/www/midwest/cec/cec docs/arecall_details.csv" />
     <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Models/AdultRecall.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="291">
@@ -796,23 +1082,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1932">
           <caret line="90" column="65" selection-start-line="90" selection-start-column="65" selection-end-line="90" selection-end-column="65" />
-          <folding>
-            <element signature="e#56#90#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/templates/pages/office-single.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="303" column="18" selection-start-line="303" selection-start-column="18" selection-end-line="303" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/assets/css/cec.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="615" column="18" selection-start-line="615" selection-start-column="18" selection-end-line="615" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -827,19 +1096,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="334">
           <caret line="36" column="35" lean-forward="true" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="35" />
-          <folding>
-            <element signature="e#324#380#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/scp25441/var/www/midwest/cec/app/logs/userfrosting.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="208673" column="43" lean-forward="true" selection-start-line="208673" selection-start-column="43" selection-end-line="208673" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/scp25441/var/www/midwest/cec/app/logs/userfrosting.log" />
     <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/templates/navigation/sidebar-menu.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
@@ -888,9 +1148,42 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="107" column="53" selection-start-line="107" selection-start-column="53" selection-end-line="107" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/ARecallTable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="9" selection-start-line="9" selection-end-line="16" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/src/Database/Migrations/v420/StatusTable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
           <folding>
-            <element signature="e#56#107#0#PHP" expanded="true" />
+            <element signature="e#70#111#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/assets/css/cec.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="734" column="26" selection-start-line="734" selection-start-column="26" selection-end-line="734" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/templates/pages/office-all.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-624" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sprinkles/cec/templates/pages/office-single.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="276" column="62" selection-start-line="276" selection-start-column="62" selection-end-line="276" selection-end-column="62" />
         </state>
       </provider>
     </entry>

@@ -7,6 +7,8 @@ use UserFrosting\Sprinkle\Core\Database\Migration;
 
 class StatusTable extends Migration
 {
+
+
     public function up()
     {
         if (!$this->schema->hasTable('status')) {
