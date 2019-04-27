@@ -141,7 +141,12 @@ class SearchController extends SimpleController
         Debug::debug("dr");
         Debug::debug(print_r($doctor, true));
         $hygienist = HygienistDetails::where('office_id', $office["id"])->get();
-        $aNPIE = AdultNPIE::where('office_id', $office["id"])->get();
+
+//        $aNPIE = AdultNPIE::where('office_id', $office["id"])->get();
+        $aNPIE = AdultNPIE::where('office_id', $office["id"])
+        ->with('dentists')->get();
+
+
         $cNPIE = ChildNPIE::where('office_id', $office["id"])->get();
         $aRecall = AdultRecall::where('office_id', $office["id"])->get();
         $cRecall = ChildRecall::where('office_id', $office["id"])->get();
@@ -223,7 +228,8 @@ class SearchController extends SimpleController
             'page' => [
 
                 'doctor' => $doctor,
-                'hygienist' => $hygienist
+                'hygienist' => $hygienist,
+                'aNPIE' => $aNPIE,
 
             ]
         ]);

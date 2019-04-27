@@ -4,6 +4,8 @@ namespace UserFrosting\Sprinkle\Cec\Database\Models;
 
 use Illuminate\Database\Capsule\Manager as Capsule;
 use UserFrosting\Sprinkle\Core\Database\Models\Model;
+use UserFrosting\Sprinkle\Cec\Database\Models\Office;
+use UserFrosting\Sprinkle\Cec\Database\Models\DentistDetails;
 
 class AdultNPIE extends Model
 {
@@ -24,7 +26,6 @@ class AdultNPIE extends Model
         'cleaning',
         'notes',
         'status_id'
-
     ];
 
 
@@ -35,7 +36,11 @@ class AdultNPIE extends Model
 
     public function offices()
     {
-        return $this->belongsToMany('App\Office');
+        return $this->belongsToMany('UserFrosting\Sprinkle\Cec\Database\Models\Office', 'office_id');
     }
 
+    public function dentists()
+    {
+        return $this->belongsTo('UserFrosting\Sprinkle\Cec\Database\Models\DentistDetails', 'dentist_id');
+    }
 }

@@ -405,12 +405,12 @@ a:hover, a:focus {
     border-top-color: #f8971d;
 }
 
-.table > thead > tr > th, .table > tbody > tr > th,
-.table > tfoot > tr > th, .table > thead > tr > td,
-.table > tbody > tr > td, .table > tfoot > tr > td {
-    border-top: none;
-    padding: 0;
-}
+/*.table > thead > tr > th, .table > tbody > tr > th,*/
+/*.table > tfoot > tr > th, .table > thead > tr > td,*/
+/*.table > tbody > tr > td, .table > tfoot > tr > td {*/
+    /*border-top: none;*/
+    /*padding: 0;*/
+/*}*/
 
 /* paddings */
 .no-l-pad {
@@ -449,11 +449,15 @@ a:hover, a:focus {
     line-height: 24px;
     padding: 20px 0;
     margin: 0;
-    min-height: 90px;
+    height: 90px;
+    display: table-cell;
+    vertical-align: middle;
 }
 
 .single p.distance {
     padding: 0 0 20px;
+    display: block;
+    height: auto;
 }
 
 .single a {
