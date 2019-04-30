@@ -40,4 +40,11 @@ class DentistDetails extends Model
         return $this->belongsToMany('App\Office');
     }
 
+    public function anpies()
+    {
+        $classMapper = static::$ci->classMapper;
+
+        return $this->hasMany($classMapper->getClassMapping('anpie'), 'dentist_id');
+    }
+
 }

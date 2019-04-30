@@ -101,7 +101,6 @@ class SearchController extends SimpleController
 
         } else if ($keyword) {
             $office = Office::query()
-
                 ->join('dentist_details', 'dentist_details.office_id', '=', 'office_details.id')
                 ->where('office_details.name', 'like', '%' . $keyword . '%')
                 ->orWhere('dentist_details.name', 'like', '%' . $keyword . '%')
@@ -143,8 +142,12 @@ class SearchController extends SimpleController
         $hygienist = HygienistDetails::where('office_id', $office["id"])->get();
 
 //        $aNPIE = AdultNPIE::where('office_id', $office["id"])->get();
-        $aNPIE = AdultNPIE::where('office_id', $office["id"])
-        ->with('dentists')->get();
+//        $aNPIE = AdultNPIE::with('dentists')
+//            ->where('office_id', $office["id"])
+//            ->get();
+
+        $user->posts()->where('active', 1)->get();
+        $aNPIE = AdultNPIE->
 
 
         $cNPIE = ChildNPIE::where('office_id', $office["id"])->get();

@@ -36,11 +36,14 @@ class AdultNPIE extends Model
 
     public function offices()
     {
-        return $this->belongsToMany('UserFrosting\Sprinkle\Cec\Database\Models\Office', 'office_id');
+        return $this->hasMany('UserFrosting\Sprinkle\Cec\Database\Models\Office', 'office_id', 'id');
     }
 
     public function dentists()
     {
-        return $this->belongsTo('UserFrosting\Sprinkle\Cec\Database\Models\DentistDetails', 'dentist_id');
+        $classMapper = static::$ci->classMapper;
+
+        return $this->belongsTo($classMapper->getClassMapping('dentist'), 'dentist_id');
+//        return $this->belongsTo('UserFrosting\Sprinkle\Cec\Database\Models\DentistDetails', 'id','dentist_id');
     }
 }

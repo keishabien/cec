@@ -320,14 +320,14 @@
 
                         <li>    {{ aNPIE }}</li>
                         {% for a in aNPIE %}
-                            in anpie
 
-                                    in doctor
-                                    <li>dentist id {{ a.dentist_id }}</li>
-
-                                    {#<li>hygienist id {{ a.hygienist_id }}</li>#}
-                                    {#<li>chair {{ a.chair }}</li>#}
-                                    {#<li>dr units {{ a.dr_units }}</li>#}
+                            {% if a.dentists is defined %}
+                                {#{{ a.dentists }}#}
+                                <li>dentist id {{ a.dentist_id }}</li>
+                            {% endif %}
+                            {#<li>hygienist id {{ a.hygienist_id }}</li>#}
+                            {#<li>chair {{ a.chair }}</li>#}
+                            {#<li>dr units {{ a.dr_units }}</li>#}
 
                         {% endfor %}
                     </ul>
