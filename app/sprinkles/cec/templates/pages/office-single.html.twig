@@ -317,23 +317,32 @@
                     <h3>NPIE Notes</h3>
 
                     <ul class="notes">
-
-                        <li>    {{ aNPIE }}</li>
                         {% for a in aNPIE %}
+                            {{ a }}
 
-                            {% if a.dentists is defined %}
-                                {#{{ a.dentists }}#}
-                                <li>dentist id {{ a.dentist_id }}</li>
+                            {% if a.dr_units %}
+                                <li>{% if a.dentists.name %}
+                                        {{ a.dentists.name }}:
+                                    {% endif %} {{ a.dr_units }} units
+                                </li>
                             {% endif %}
-                            {#<li>hygienist id {{ a.hygienist_id }}</li>#}
-                            {#<li>chair {{ a.chair }}</li>#}
-                            {#<li>dr units {{ a.dr_units }}</li>#}
+
+                            {% if a.hyg_units %}
+                                <li>{% if a.dentists.name %}
+                                        {{ a.dentists.name }}:
+                                    {% endif %} {{ a.dr_units }} units
+                                </li>
+                            {% endif %}
 
                         {% endfor %}
                     </ul>
 
                 </div>
             </div>
+            {#<li>hygienist id {{ a.hygienist_id }}</li>#}
+            {#<li>chair {{ a.chair }}</li>#}
+            {#<li>dr units {{ a.dr_units }}</li>#}
+
             <div class="col-sm-6">
                 <div class="notes">
                     <h3>Recall Notes</h3>
@@ -356,7 +365,6 @@
             </div>
         </section>
         <div class="clear space-20"></div>
-
 
 
         <section class="row">

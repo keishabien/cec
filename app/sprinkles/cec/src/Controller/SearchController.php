@@ -146,8 +146,11 @@ class SearchController extends SimpleController
 //            ->where('office_id', $office["id"])
 //            ->get();
 
-        $user->posts()->where('active', 1)->get();
-        $aNPIE = AdultNPIE->
+//        $user->posts()->where('active', 1)->get();
+        $aNPIE = AdultNPIE::with('dentists')
+            ->with('hygienists')->with('status')
+            ->where('office_id', $office["id"])
+            ->where('status_id', '1')->get();
 
 
         $cNPIE = ChildNPIE::where('office_id', $office["id"])->get();

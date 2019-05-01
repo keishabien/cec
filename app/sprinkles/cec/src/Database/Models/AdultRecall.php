@@ -37,7 +37,25 @@ class AdultRecall extends Model
 
     public function offices()
     {
-        return $this->belongsToMany('App\Office');
+        return $this->hasMany('UserFrosting\Sprinkle\Cec\Database\Models\Office', 'office_id', 'id');
+    }
+
+    public function dentists()
+    {
+        $classMapper = static::$ci->classMapper;
+        return $this->belongsTo($classMapper->getClassMapping('dentist'), 'dentist_id');
+    }
+
+    public function hygienists()
+    {
+        $classMapper = static::$ci->classMapper;
+        return $this->belongsTo($classMapper->getClassMapping('hygienist'), 'hygienist_id');
+    }
+
+    public function status()
+    {
+        $classMapper = static::$ci->classMapper;
+        return $this->belongsTo($classMapper->getClassMapping('status'), 'status_id');
     }
 
 }
