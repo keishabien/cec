@@ -158,65 +158,71 @@
         <div class="visible-sm-block visible-md-block visible-lg-block">
             <div class="col-md-6 left">
                 <div class="col-sm-4 title">
-                    <p>Masking #:</p>
-                    <p>Office Extension:</p>
                     <p>Office #:</p>
+                    {% if office.extension %}
+                        <p>Office Extension:</p>
+                    {% endif %}
+                    {% if office.masking_number %}
+                        <p>Masking #:</p>
+                    {% endif %}
                     <p>Email Address:</p>
                     <p>Office Address:</p>
                     <p>Doctors:</p>
                 </div>
                 <div class="col-sm-8 info">
-                    <p>{{ office.masking_number }}</p>
-                    <p>{{ office.extension }}</p>
                     <p>{{ office.phone }}</p>
+                    {% if office.extension %}
+                        <p>{{ office.extension }}</p>
+                    {% endif %}
+                    {% if office.masking_number %}
+                        <p>{{ office.masking_number }}</p>
+                    {% endif %}
                     <p><a href="mailto:{{ office.email }}">{{ office.email }}</a></p>
                     <p>{{ office.address }}</p>
 
 
                     {% if doctor %}
+                        {% for dr in doctor %}
+                            <p class="dr-name">{{ dr.name }} {% if dr.provider_num %}- {{ dr.provider_num }}{% endif %}</p>
+                            <div class="dr-div">
+                                <p><strong>Name:</strong> <span>{{ dr.name }}</span></p>
+                                {% if dr.provider_num %}
+                                    <p><strong>Provider Number:</strong> <span>{{ dr.provider_num }}</span></p>
+                                {% endif %}
 
-                    {% for dr in doctor %}
-                        <p class="dr-name">{{ dr.name }} {% if dr.provider_num %}- {{ dr.provider_num }}{% endif %}</p>
-                        <div class="dr-div">
-                            <p><strong>Name:</strong> <span>{{ dr.name }}</span></p>
-                            {% if dr.provider_num %}
-                                <p><strong>Provider Number:</strong> <span>{{ dr.provider_num }}</span></p>
-                            {% endif %}
+                                {% if dr.nickname %}
+                                    <p><strong>Nickname:</strong> <span>{{ dr.nickname }}</span></p>
+                                {% endif %}
 
-                            {% if dr.nickname %}
-                                <p><strong>Nickname:</strong> <span>{{ dr.nickname }}</span></p>
-                            {% endif %}
+                                {% if dr.emergency_num %}
+                                    <p><strong>Phone Number:</strong> <span>{{ dr.emergency_num }}</span></p>
+                                {% endif %}
 
-                            {% if dr.emergency_num %}
-                                <p><strong>Phone Number:</strong> <span>{{ dr.emergency_num }}</span></p>
-                            {% endif %}
-
-                            {% if dr.locum %}
-                                <p><strong>Permanent/Locum:</strong>
-                                    <span>
+                                {% if dr.locum %}
+                                    <p><strong>Permanent/Locum:</strong>
+                                        <span>
                                 {% if  dr.locum  == "N" %}
                                     Permanent
                                 {% else %}
                                     Locum
                                 {% endif %}
                             </span>
-                                </p>
-                            {% endif %}
+                                    </p>
+                                {% endif %}
 
-                            {% if dr.start_date %}
-                                <p><strong>Start Date:</strong> <span>{{ dr.start_date }}</span></p>
-                            {% endif %}
+                                {% if dr.start_date %}
+                                    <p><strong>Start Date:</strong> <span>{{ dr.start_date }}</span></p>
+                                {% endif %}
 
-                            {% if dr.end_date %}
-                                <p><strong>End Date:</strong> <span>{{ dr.end_date }}</span></p>
-                            {% endif %}
+                                {% if dr.end_date %}
+                                    <p><strong>End Date:</strong> <span>{{ dr.end_date }}</span></p>
+                                {% endif %}
 
-                            {% if dr.leave is same as("N") %}{% endif %}
-                        </div>
-                    {% endfor %}
+                                {% if dr.leave is same as("N") %}{% endif %}
+                            </div>
+                        {% endfor %}
 
                     {% endif %}
-
 
 
                 </div>
@@ -231,7 +237,6 @@
                     <p>{{ add.bom_name }}</p>
                     <p>{{ add.bom_number }}</p>
                     {% for hyg in hygienist %}
-
                         <p class="dr-name">{{ hyg.name }} {% if hyg.provider_num %}- {{ hyg.provider_num }}{% endif %}</p>
                         <div class="dr-div">
                             <p><strong>Name:</strong> <span>{{ hyg.name }}</span></p>
@@ -263,23 +268,28 @@
 
 
         <section class="row">
-            <div class="col-sm-3">
+            <div class="col-xs-12 col-sm-6 col-md-3">
                 <div class="adult">
                     <h3>NPIE Adult</h3>
                     <ul class="npie">
+                        <li>    {{ aNPIE }}</li>
                         {% for a in aNPIE %}
-                            <li>{{ a.dr_units }} DDS units</li>
+                            <li>
+                                {{ a.dr_units }} DDS units
+                            </li>
                         {% endfor %}
+
+
                     </ul>
 
                 </div>
             </div>
-            <div class="col-sm-3">
+            <div class="col-xs-12 col-sm-6 col-md-3">
                 <div class="child">
                     <h3>NPIE Child</h3>
                 </div>
             </div>
-            <div class="col-sm-3">
+            <div class="col-xs-12 col-sm-6 col-md-3">
                 <div class="adult">
                     <h3>Recall Adult</h3>
 
@@ -288,9 +298,11 @@
                             <li>{{ a.no_plan_units }} no plan units</li>
                         {% endfor %}
                     </ul>
+
+                    {{ aRecall }}
                 </div>
             </div>
-            <div class="col-sm-3">
+            <div class="col-xs-12 col-sm-6 col-md-3">
                 <div class="child">
                     <h3>Recall Child</h3>
                 </div>
@@ -306,12 +318,31 @@
 
                     <ul class="notes">
                         {% for a in aNPIE %}
-                            <li>{{ a.notes }}</li>
+                            {{ a }}
+
+                            {% if a.dr_units %}
+                                <li>{% if a.dentists.name %}
+                                        {{ a.dentists.name }}:
+                                    {% endif %} {{ a.dr_units }} units
+                                </li>
+                            {% endif %}
+
+                            {% if a.hyg_units %}
+                                <li>{% if a.dentists.name %}
+                                        {{ a.dentists.name }}:
+                                    {% endif %} {{ a.dr_units }} units
+                                </li>
+                            {% endif %}
+
                         {% endfor %}
                     </ul>
 
                 </div>
             </div>
+            {#<li>hygienist id {{ a.hygienist_id }}</li>#}
+            {#<li>chair {{ a.chair }}</li>#}
+            {#<li>dr units {{ a.dr_units }}</li>#}
+
             <div class="col-sm-6">
                 <div class="notes">
                     <h3>Recall Notes</h3>
@@ -334,7 +365,6 @@
             </div>
         </section>
         <div class="clear space-20"></div>
-
 
 
         <section class="row">
@@ -369,7 +399,8 @@
             var map;
 
             function initMap() {
-                var isDraggable = $(document).width() > 480 ? true : false; /* If document (your website) is wider than 480px, isDraggable = true, else isDraggable = false*/
+                var isDraggable = $(document).width() > 480 ? true : false;
+                /* If document (your website) is wider than 480px, isDraggable = true, else isDraggable = false*/
                 var myLatlng = new google.maps.LatLng( {{ office.latitude }}, {{ office.longitude }});
 
                 var mapDiv = document.getElementById('google-map');

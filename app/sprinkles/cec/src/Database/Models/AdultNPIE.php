@@ -5,6 +5,7 @@ namespace UserFrosting\Sprinkle\Cec\Database\Models;
 use Illuminate\Database\Capsule\Manager as Capsule;
 use UserFrosting\Sprinkle\Core\Database\Models\Model;
 
+
 class AdultNPIE extends Model
 {
     /**
@@ -24,7 +25,6 @@ class AdultNPIE extends Model
         'cleaning',
         'notes',
         'status_id'
-
     ];
 
 
@@ -35,7 +35,24 @@ class AdultNPIE extends Model
 
     public function offices()
     {
-        return $this->belongsToMany('App\Office');
+        return $this->hasMany('UserFrosting\Sprinkle\Cec\Database\Models\Office', 'office_id', 'id');
     }
 
+    public function dentists()
+    {
+        $classMapper = static::$ci->classMapper;
+        return $this->belongsTo($classMapper->getClassMapping('dentist'), 'dentist_id');
+    }
+
+    public function hygienists()
+    {
+        $classMapper = static::$ci->classMapper;
+        return $this->belongsTo($classMapper->getClassMapping('hygienist'), 'hygienist_id');
+    }
+
+    public function status()
+    {
+        $classMapper = static::$ci->classMapper;
+        return $this->belongsTo($classMapper->getClassMapping('status'), 'status_id');
+    }
 }

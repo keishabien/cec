@@ -20,6 +20,10 @@ class ServicesProvider
     {
         $container->extend('classMapper', function ($classMapper, $c) {
             $classMapper->setClassMapping('office', 'UserFrosting\Sprinkle\Cec\Database\Models\Office');
+            $classMapper->setClassMapping('dentist', 'UserFrosting\Sprinkle\Cec\Database\Models\DentistDetails');
+            $classMapper->setClassMapping('hygienist', 'UserFrosting\Sprinkle\Cec\Database\Models\HygienistDetails');
+            $classMapper->setClassMapping('status', 'UserFrosting\Sprinkle\Cec\Database\Models\Status');
+            $classMapper->setClassMapping('anpie', 'UserFrosting\Sprinkle\Cec\Database\Models\AdultNPIE');
             return $classMapper;
         });
 
