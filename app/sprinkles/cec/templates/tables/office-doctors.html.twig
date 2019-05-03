@@ -35,10 +35,10 @@
     <script id="user-table-column-info" type="text/x-handlebars-template">
         <td data-text="{{doctor.name}}">
             <strong>
-                <a href="{{site.uri.public}}/dash/offices/o/{{row.name}}">{{doctor.name}}</a>
+                <a href="{{site.uri.public}}/dash/offices/o/{{row.name}}">{{office[1].name}}</a>
             </strong>
             <div class="js-copy-container">
-                <a href="mailto:{{row.email}}"><span class="js-copy-target">{{doctor.name}}</span></a>
+                <a href="mailto:{{row.email}}"><span class="js-copy-target">{{office[1].name}}</span></a>
                 <button class="btn btn-xs uf-copy-trigger js-copy-trigger"><i class="fa fa-copy"></i></button>
             </div>
         </td>

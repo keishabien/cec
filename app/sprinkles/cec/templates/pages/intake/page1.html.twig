@@ -17,11 +17,11 @@
 
     <div id="alerts-page"></div>
 
-    <form class="form-inline intake" method="post" action="{{ site.uri.public }}/intake/npie">
+    <form class="intake" method="post" action="{{ site.uri.public }}/intake/npie">
 
 
         {% include "forms/csrf.html.twig" %}
-        <div class="office-select">
+        <div class="office-select form-inline ">
             <select class="form-control" name="office_id" id="offices">
                 <option value="">Please Select Your Office</option>
                 {% for office in offices %}
@@ -47,7 +47,7 @@
 
                 <div class="row">
                     <div class="col-sm-5">
-                        <div class="form-group has-feedback">
+                        <div class="form-inline form-group has-feedback">
                             <label for="dentist[{{ rownum }}][name]" class="control-label">Dentist Full Name</label>
                             <input type="text" class="form-control customer" name="dentist[{{ rownum }}][name]" id="dentist[{{ rownum }}][name]"
                                    placeholder="Full Name">
@@ -84,7 +84,8 @@
 
                 <div class="row">
                     <div class="col-sm-4">
-                        <div class="form-group has-feedback radio">
+
+                        <div class="form-horizontal form-group has-feedback radio">
                             Permanent or Locum?
                             <div class="radio">
                                 <label for="dentist[{{ rownum }}][permanent]">
@@ -99,6 +100,7 @@
                                 </label>
                             </div>
                         </div>
+
                     </div>
 
                     <div class="col-sm-8">

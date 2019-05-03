@@ -40,7 +40,7 @@
                                 <hr>
                                 <strong><i class="fa fa-envelope margin-r-5"></i> {{translate("EMAIL")}}</strong>
                                 <p class="text-muted box-profile-property js-copy-container">
-                                    <a href="mailto:{{office[0].office_email}}"><span class="js-copy-target">{{office[0].email}}</span></a>
+                                    <a href="mailto:{{office[0].email}}"><span class="js-copy-target">{{office[0].email}}</span></a>
                                     <i class="fa fa-copy uf-copy-trigger js-copy-trigger"></i>
                                 </p>
                             {% endif %}
@@ -114,7 +114,7 @@
     <script>
         {% include "pages/partials/page.js.twig" %}
 
-        // Add user name
+        // Add office name
         page = $.extend(
             true,               // deep extend
             {
