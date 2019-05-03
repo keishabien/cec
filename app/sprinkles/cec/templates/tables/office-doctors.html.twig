@@ -5,18 +5,15 @@
  # to render the table cells with the data from the AJAX request.
 #}
 
-{% extends "tables/table-paginated.html.twig" %}
+
 
 {% block table %}
     <table id="{{ table.id }}" class="tablesorter table table-bordered table-hover table-striped"
            data-sortlist="{{ table.sortlist }}">
         <thead>
         <tr>
-            <th class="sorter-metatext" data-column-name="name" data-column-template="#user-table-column-info"
-                data-priority="1">{{ translate('OFFICE') }} <i class="fa fa-sort"></i></th>
-
-            <th class="filter-select" data-column-name="state" data-column-template="#office-table-column-state"
-                data-priority="1">State <i class="fa fa-sort"></i></th>
+            <th data-sorter="false" data-filter="false" data-column-name="doctors" data-column-template="#user-table-column-info"
+                data-priority="1">Doctors </th>
 
             <th data-column-name="actions" data-column-template="#user-table-column-actions" data-sorter="false"
                 data-filter="false" data-priority="1">{{ translate("ACTIONS") }}</th>
@@ -36,22 +33,14 @@
     #}
     {% verbatim %}
     <script id="user-table-column-info" type="text/x-handlebars-template">
-        <td data-text="{{row.name}}">
+        <td data-text="{{doctor.name}}">
             <strong>
-                <a href="{{site.uri.public}}/dash/offices/o/{{row.vanity_url}}">{{row.name}}</a>
+                <a href="{{site.uri.public}}/dash/offices/o/{{row.name}}">{{doctor.name}}</a>
             </strong>
             <div class="js-copy-container">
-                <a href="mailto:{{row.email}}"><span class="js-copy-target">{{row.email}}</span></a>
+                <a href="mailto:{{row.email}}"><span class="js-copy-target">{{doctor.name}}</span></a>
                 <button class="btn btn-xs uf-copy-trigger js-copy-trigger"><i class="fa fa-copy"></i></button>
             </div>
-        </td>
-    </script>
-
-    <script id="office-table-column-state" type="text/x-handlebars-template">
-        <td data-text="{{row.state}}">
-            <strong>
-                {{row.state}}
-            </strong>
         </td>
     </script>
 
