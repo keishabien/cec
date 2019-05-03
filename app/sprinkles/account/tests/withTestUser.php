@@ -1,5 +1,6 @@
 <?php
-/**
+
+/*
  * UserFrosting (http://www.userfrosting.com)
  *
  * @link      https://github.com/userfrosting/UserFrosting
@@ -83,7 +84,7 @@ trait withTestUser
 
         $permission = $fm->create(Permission::class, [
             'slug'       => $slug,
-            'conditions' => $conditions
+            'conditions' => $conditions,
         ]);
 
         // Add the permission to the user
