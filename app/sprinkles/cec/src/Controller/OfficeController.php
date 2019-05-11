@@ -259,7 +259,7 @@ class OfficeController extends SimpleController
         Debug::debug("officeInfo: doctor");
         Debug::debug(print_r($doctor, true));
 
-        return $this->ci->view->render($response, 'pages/dashboard/office.html.twig', [
+        return $this->ci->view->render($response, 'pages/dashboard/office-single.html.twig', [
             'office' => $office,
             'doctor' => $doctor,
             'locales' => $locales,

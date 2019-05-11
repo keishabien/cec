@@ -30,6 +30,18 @@
                 }
             }
         },
+        "js/dashboard-office": {
+            "scripts": [
+                "js/offices.js"
+            ],
+            "options": {
+                "result": {
+                    "type": {
+                        "scripts": "plain"
+                    }
+                }
+            }
+        },
         "js/intake": {
             "scripts": [
                 "vendor/speakingurl/speakingurl.min.js",

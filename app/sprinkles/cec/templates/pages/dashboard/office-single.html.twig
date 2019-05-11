@@ -120,25 +120,20 @@
                 </div>
 
 
-                <div id="myUserTable" class="box box-primary">
-                    <div class="box-header">
-                        <h3 class="box-title pull-left"><i class="fa fa-fw fa-user"></i> Members</h3>
-                        {% include "tables/table-tool-menu.html.twig" %}
-                    </div>
-                    <div class="box-body">
-                        {% include "tables/office-doctors.html.twig" with {
-                            "table" : {
-                                "id" : "table-doctors"
-                            }
-                        }
-                        %}
-                    </div>
-                    <div class="box-footer">
-                        <button type="button" class="btn btn-success js-member-create">
-                            <i class="fa fa-plus-square"></i>  Create member
-                        </button>
-                    </div>
-                </div>
+                {#<div id="myUserTable" class="box box-primary">#}
+                    {#<div class="box-header">#}
+                        {#<h3 class="box-title pull-left"><i class="fa fa-fw fa-user"></i> Members</h3>#}
+                        {#{% include "tables/table-tool-menu.html.twig" %}#}
+                    {#</div>#}
+                    {#<div class="box-body">#}
+                        {#{% include "tables/office-doctors.html.twig" with {#}
+                            {#"table" : {#}
+                                {#"id" : "office-doctors"#}
+                            {#}#}
+                        {#}#}
+                        {#%}#}
+                    {#</div>#}
+                {#</div>#}
 
             </div>
 
@@ -152,21 +147,11 @@
     {{ assets.js('js/form-widgets') | raw }}
 
     <!-- Include page-specific JS -->
-    {{ assets.js('js/cec') | raw }}
+    {{ assets.js('js/office') | raw }}
 
 
     <!-- Include page variables -->
     <script>
         {% include "pages/partials/page.js.twig" %}
-
-        // Add office name
-        page = $.extend(
-            true,               // deep extend
-            {
-                {#"user_name": "{{user.user_name}}",#}
-                "office_name": "{{office[0].name}}"
-            },
-            page
-        );
     </script>
 {% endblock %}
