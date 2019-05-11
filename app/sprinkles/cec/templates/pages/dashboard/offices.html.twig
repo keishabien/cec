@@ -32,16 +32,17 @@
     </div>
 {% endblock %}
 {% block scripts_page %}
-    <!-- Include validation rules -->
-    <script>
-        {% include "pages/partials/page.js.twig" %}
-    </script>
-
     <!-- Include form widgets JS -->
     {{ assets.js('js/form-widgets') | raw }}
 
     <!-- Include page-specific JS -->
     {{ assets.js('js/cec') | raw }}
+
+    <!-- Include page-specific variables -->
+    <script>
+        {% include "pages/partials/page.js.twig" %}
+
+    </script>
 
 {% endblock %}
                {#{% if checkAccess('create_user') %}#}

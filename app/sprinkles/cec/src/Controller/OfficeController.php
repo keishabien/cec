@@ -41,11 +41,12 @@ class OfficeController extends SimpleController
         Debug::debug("office");
         Debug::debug(print_r($office, true));
 
-        $doctor = DentistDetails::where('office_id', $office[0]["id"])->get();
+//        $doctor = DentistDetails::where('office_id', $office["id"])->get();
+//        Debug::debug("doctor");
+//        Debug::debug(print_r($doctor, true));
 
         return $this->ci->view->render($response, 'pages/dashboard/offices.html.twig', [
-            'office' => $office,
-            'doctor' => $doctor
+            'office' => $office
         ]);
 
     }
@@ -137,9 +138,12 @@ class OfficeController extends SimpleController
      * This page requires authentication.
      * Request type: GET
      */
-    public function pageInfo($request, $response, $params)
+    public function officeInfo($request, $response, $params)
     {
         $office = Office::distinct()->where('vanity_url', $params['office_name'])->get();
+        Debug::debug("officeInfo: office");
+        Debug::debug(print_r($office, true));
+        Debug::debug(print_r($office[0]["id"], true));
 
         // If the user no longer exists, forward to main user listing page
         if (!$office) {
@@ -167,12 +171,12 @@ class OfficeController extends SimpleController
         $locales = $config->getDefined('site.locales.available');
 
         // Determine fields that currentUser is authorized to view
-        $fieldNames = ['name', 'phone', 'address', 'city', 'state', 'zip'];
+        $fieldNames = ['name', 'locum', 'start_date', 'end_date', 'leave', 'leave_start', 'leave_end'];
 
         // Generate form
         $fields = [
             // Always hide these
-            'hidden' => ['theme']
+//            'hidden' => ['theme']
         ];
 
         // Determine which fields should be hidden
@@ -252,6 +256,8 @@ class OfficeController extends SimpleController
 //        }
 
         $doctor = DentistDetails::where('office_id', $office[0]["id"])->get();
+        Debug::debug("officeInfo: doctor");
+        Debug::debug(print_r($doctor, true));
 
         return $this->ci->view->render($response, 'pages/dashboard/office.html.twig', [
             'office' => $office,

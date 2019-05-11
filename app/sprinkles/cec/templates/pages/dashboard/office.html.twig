@@ -89,20 +89,56 @@
 
             <div class="col-lg-8">
 
-                    <div id="widget-office-doctors" class="box box-primary">
-                        <div class="box-header">
-                            <h3 class="box-title"><i class="fa fa-fw fa-tasks"></i> Doctors</h3>
-                            {% include "tables/table-tool-menu.html.twig" %}
-                        </div>
-                        <div class="box-body">
-                            {% include "tables/office-doctors.html.twig" with {
-                                "table" : {
-                                    "id" : "table-offices-doctors"
-                                }
-                            }
-                            %}
-                        </div>
+                    {#<div id="widget-office-doctors" class="box box-primary">#}
+                        {#<div class="box-header">#}
+                            {#<h3 class="box-title"><i class="fa fa-fw fa-tasks"></i> Doctors</h3>#}
+                            {#{% include "tables/table-tool-menu.html.twig" %}#}
+                        {#</div>#}
+                        {#<div class="box-body">#}
+                            {#{% include "tables/office-doctors.html.twig" with {#}
+                                {#"table" : {#}
+                                    {#"id" : "table-offices-doctors"#}
+                                {#}#}
+                            {#}#}
+                            {#%}#}
+                        {#</div>#}
+                    {#</div>#}
+                <div id="widget-doctors" class="box box-primary">
+                    <div class="box-header">
+                        <h3 class="box-title pull-left"><i class="fa fa-fw fa-user"></i> Doctors
+                        </h3>
+                        {% include "tables/table-tool-menu.html.twig" %}
                     </div>
+                    <div class="box-body">
+                        {% include "tables/office-doctors.html.twig" with {
+                            "table" : {
+                                "id" : "table-doctors"
+                            }
+                        } %}
+                    </div>
+
+                </div>
+
+
+                <div id="myUserTable" class="box box-primary">
+                    <div class="box-header">
+                        <h3 class="box-title pull-left"><i class="fa fa-fw fa-user"></i> Members</h3>
+                        {% include "tables/table-tool-menu.html.twig" %}
+                    </div>
+                    <div class="box-body">
+                        {% include "tables/office-doctors.html.twig" with {
+                            "table" : {
+                                "id" : "table-doctors"
+                            }
+                        }
+                        %}
+                    </div>
+                    <div class="box-footer">
+                        <button type="button" class="btn btn-success js-member-create">
+                            <i class="fa fa-plus-square"></i>  Create member
+                        </button>
+                    </div>
+                </div>
 
             </div>
 
@@ -110,6 +146,15 @@
 
 {% endblock %}
 {% block scripts_page %}
+
+
+    <!-- Include form widgets JS -->
+    {{ assets.js('js/form-widgets') | raw }}
+
+    <!-- Include page-specific JS -->
+    {{ assets.js('js/cec') | raw }}
+
+
     <!-- Include page variables -->
     <script>
         {% include "pages/partials/page.js.twig" %}
@@ -124,10 +169,4 @@
             page
         );
     </script>
-
-    <!-- Include form widgets JS -->
-    {{ assets.js('js/form-widgets') | raw }}
-
-    <!-- Include page-specific JS -->
-    {{ assets.js('js/office') | raw }}
 {% endblock %}

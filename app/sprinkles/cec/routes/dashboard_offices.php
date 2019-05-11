@@ -8,7 +8,7 @@ $app->group('/dash/offices', function () {
     $this->get('', 'UserFrosting\Sprinkle\Cec\Controller\OfficeController:pageList')
         ->setName('uri_offices');
 
-    $this->get('/o/{office_name}', 'UserFrosting\Sprinkle\Cec\Controller\OfficeController:pageInfo');
+    $this->get('/o/{office_name}', 'UserFrosting\Sprinkle\Cec\Controller\OfficeController:officeInfo');
 })->add('authGuard');
 
 

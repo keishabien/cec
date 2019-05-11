@@ -18,7 +18,9 @@
         "js/office": {
             "scripts": [
                 "js/office.js",
-                "js/widgets/office.js"
+                "js/widgets/office.js",
+                "js/searchAll.js",
+                "js/offices.js"
             ],
             "options": {
                 "result": {

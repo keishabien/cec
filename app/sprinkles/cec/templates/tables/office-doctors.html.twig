@@ -1,66 +1,138 @@
-{# This partial template renders a table of users, to be populated with rows via an AJAX request.
- # This extends a generic template for paginated tables.
- #
- # Note that this template contains a "skeleton" table with an empty table body, and then a block of Handlebars templates which are used
- # to render the table cells with the data from the AJAX request.
-#}
+{# This partial template renders a table of users, to be populated with rows via an AJAX request.#}
+ {## This extends a generic template for paginated tables.#}
+ {###}
+ {## Note that this template contains a "skeleton" table with an empty table body, and then a block of Handlebars templates which are used#}
+ {## to render the table cells with the data from the AJAX request.#}
+{##}
 
 
 
-{% block table %}
-    <table id="{{ table.id }}" class="tablesorter table table-bordered table-hover table-striped"
-           data-sortlist="{{ table.sortlist }}">
-        <thead>
-        <tr>
-            <th class="sorter-metatext" data-column-name="name" data-column-template="#doctor-table-column-doctor"
-                data-priority="1">Doctors</th>
+{#{% block table %}#}
+    {#<table id="{{ table.id }}" class="tablesorter table table-bordered table-hover table-striped"#}
+           {#data-sortlist="{{ table.sortlist }}">#}
+        {#<thead>#}
+        {#<tr>#}
+            {#<th class="sorter-metatext" data-column-name="name" data-column-template="#doctor-table-column-doctor"#}
+                {#data-priority="1">Doctors</th>#}
+            {#<th class="filter-select" data-column-name="status" data-column-template="#doctor-table-column-status"#}
+                {#data-priority="1">State <i class="fa fa-sort"></i></th>#}
+            {#<th data-column-name="actions" data-column-template="#doctor-table-column-actions" data-sorter="false"#}
+                {#data-filter="false" data-priority="1">{{ translate("ACTIONS") }}</th>#}
+        {#</tr>#}
+        {#</thead>#}
+        {#<tbody>#}
+        {#</tbody>#}
+    {#</table>#}
+{#{% endblock %}#}
 
-            <th data-column-name="actions" data-column-template="#doctor-table-column-actions" data-sorter="false"
-                data-filter="false" data-priority="1">{{ translate("ACTIONS") }}</th>
-        </tr>
-        </thead>
-        <tbody>
-        </tbody>
-    </table>
-{% endblock %}
-
-{% block table_cell_templates %}
-    {# This contains a series of <script> blocks, each of which is a client-side Handlebars template.
-     # Note that these are NOT Twig templates, although the syntax is similar.  We wrap them in the `verbatim` tag,
-     # so that Twig will output them directly into the DOM instead of trying to treat them like Twig templates.
-     #
-     # These templates require handlebars-helpers.js, moment.js
-    #}
-    {% verbatim %}
-    <script id="doctor-table-column-doctor" type="text/x-handlebars-template">
-        <td data-text="{{doctor[0].name}}">
-            <strong>
-                {{doctor[0].name}}
-            </strong>
-            <div class="js-copy-container">
-                <a href="mailto:{{row.email}}"><span class="js-copy-target">{{office[1].name}}</span></a>
-                <button class="btn btn-xs uf-copy-trigger js-copy-trigger"><i class="fa fa-copy"></i></button>
-            </div>
-        </td>
-    </script>
+{#{% block table_cell_templates %}#}
+    {# This contains a series of <script> blocks, each of which is a client-side Handlebars template.#}
+     {## Note that these are NOT Twig templates, although the syntax is similar.  We wrap them in the `verbatim` tag,#}
+     {## so that Twig will output them directly into the DOM instead of trying to treat them like Twig templates.#}
+     {###}
+     {## These templates require handlebars-helpers.js, moment.js#}
+    {##}
+    {#{% verbatim %}#}
+    {#<!--<script id="doctor-table-column-doctor" type="text/x-handlebars-template">-->#}
+        {#<!--<td data-text="{{doctor.name}}">-->#}
+            {#<!--<strong>-->#}
+                {#<!--{{doctor[0].name}}-->#}
+            {#<!--</strong>-->#}
+            {#<!--&lt;!&ndash;<div class="js-copy-container">&ndash;&gt;-->#}
+                {#<!--&lt;!&ndash;<span class="js-copy-target">{{office[1].name}}</span></a>&ndash;&gt;-->#}
+                {#<!--&lt;!&ndash;<button class="btn btn-xs uf-copy-trigger js-copy-trigger"><i class="fa fa-copy"></i></button>&ndash;&gt;-->#}
+            {#<!--&lt;!&ndash;</div>&ndash;&gt;-->#}
+        {#<!--</td>-->#}
+    {#<!--</script>-->#}
 
 
-    <script id="office-table-column-actions" type="text/x-handlebars-template">
-        <td class="uf-table-fit-width">
-            <div class="btn-group">
-                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">{% endverbatim %}{{ translate("ACTIONS") }}{% verbatim %}<span class="caret"></span></button>
-                <ul class="dropdown-menu dropdown-menu-right-responsive" role="menu">
 
-                    <li>
-                        <a href="#" data-user_name="{{row.user_name}}" class="js-user-edit">
-                        <i class="fa fa-edit"></i> {% endverbatim %}{{ translate("USER.EDIT") }}{% verbatim %}
-                        </a>
-                    </li>
 
-                </ul>
-            </div>
-        </td>
-    </script>
 
-    {% endverbatim %}
-{% endblock %}
+  {#<script id="doctor-table-column-doctor" type="text/x-handlebars-template">#}
+        {#<td data-text="{{row.name}}">#}
+            {#<strong>#}
+                {#<a href="{{site.uri.public}}/dash/offices/o/{{row.vanity_url}}">{{row.name}}</a>#}
+            {#</strong>#}
+            {#<div class="js-copy-container">#}
+                {#<a href="mailto:{{row.email}}"><span class="js-copy-target">{{row.email}}</span></a>#}
+                {#<button class="btn btn-xs uf-copy-trigger js-copy-trigger"><i class="fa fa-copy"></i></button>#}
+            {#</div>#}
+        {#</td>#}
+    {#</script>#}
+
+
+    {#<script id="doctor-table-column-status" type="text/x-handlebars-template">#}
+        {#<td data-text="{{row.status}}">#}
+            {#<strong>#}
+                {#{{row.status}}#}
+            {#</strong>#}
+        {#</td>#}
+    {#</script>#}
+
+
+    {#<script id="doctor-table-column-actions" type="text/x-handlebars-template">#}
+        {#<td class="uf-table-fit-width">#}
+            {#<div class="btn-group">#}
+                {#<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">{% endverbatim %}{{ translate("ACTIONS") }}{% verbatim %}<span class="caret"></span></button>#}
+                {#<ul class="dropdown-menu dropdown-menu-right-responsive" role="menu">#}
+
+                    {#<li>#}
+                        {#<a href="#" data-user_name="{{row.user_name}}" class="js-user-edit">#}
+                        {#<i class="fa fa-edit"></i> {% endverbatim %}{{ translate("USER.EDIT") }}{% verbatim %}#}
+                        {#</a>#}
+                    {#</li>#}
+
+                {#</ul>#}
+            {#</div>#}
+        {#</td>#}
+    {#</script>#}
+
+    {#{% endverbatim %}#}
+{#{% endblock %}#}
+
+{#{% extends "tables/table-paginated.html.twig" %}#}
+
+{#{% block table %}#}
+    {#<table id="{{table.id}}" class="tablesorter table table-bordered table-hover table-striped" data-sortlist="{{table.sortlist}}">#}
+        {#<thead>#}
+        {#<tr>#}
+            {#<th class="sorter-metatext" data-column-name="name" data-column-template="#doctor-table-column-name" data-priority="1">User info <i class="fa fa-sort"></i></th>#}
+            {#<th class="sorter-metanum" data-column-name="last_activity" data-column-template="#user-table-column-last-activity" data-priority="1">Last activity <i class="fa fa-sort"></i></th>#}
+        {#</tr>#}
+        {#</thead>#}
+        {#<tbody>#}
+        {#</tbody>#}
+    {#</table>#}
+{#{% endblock %}#}
+
+{#{% block table_cell_templates %}#}
+
+    {#{% verbatim %}#}
+    {#<script id="doctor-table-column-name" type="text/x-handlebars-template">#}
+        {#<td data-text="{{row.name}}">#}
+            {#<strong>#}
+              {#{{row.name}}#}
+            {#</strong>#}
+
+        {#</td>#}
+    {#</script>#}
+
+    {#<script id="user-table-column-last-activity" type="text/x-handlebars-template">#}
+        {#{#}{#if row.last_activity }}#}
+        {#<td data-num="{{dateFormat row.last_activity.occurred_at format='x'}}">#}
+            {#{{dateFormat row.last_activity.occurred_at format="dddd"}}<br>{{dateFormat row.last_activity.occurred_at format="MMM Do, YYYY h:mm a"}}#}
+            {#<br>#}
+            {#<i>{{row.last_activity.description}}</i>#}
+        {#</td>#}
+        {#{{ else }}#}
+        {#<td data-num="0">#}
+            {#<i>Unknown</i>#}
+        {#</td>#}
+        {#{{/if }}#}
+    {#</script>#}
+
+
+    {#{% endverbatim %}#}
+
+{#{% endblock %}#}

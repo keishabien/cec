@@ -33,7 +33,7 @@ class DentistSprunje extends Sprunje
 //        $instance = new Office();
 
         // Alternatively, if you have defined a class mapping, you can use the classMapper:
-         $instance = $this->classMapper->createInstance('office');
+         $instance = $this->classMapper->createInstance('dentist');
 
         return $instance->newQuery();
     }
