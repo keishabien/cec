@@ -17,8 +17,12 @@ class OfficeSprunje extends Sprunje
     ];
 
     protected $filterable = [
-        'name',
         'state'
+    ];
+
+    protected $listable = [
+        'state',
+        'name'
     ];
 
     /**

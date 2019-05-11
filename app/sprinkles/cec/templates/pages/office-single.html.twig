@@ -272,16 +272,27 @@
                 <div class="adult">
                     <h3>NPIE Adult</h3>
                     <ul class="npie">
-                        <li>    {{ aNPIE }}</li>
                         {% for a in aNPIE %}
-                            <li>
-                                {{ a.dr_units }} DDS units
-                            </li>
+                            {% if a.dr_units %}
+                                <li>{% if a.dentists.name %}
+                                        {{ a.dentists.name }}:
+                                    {% endif %} {{ a.dr_units }} DDS units
+                                </li>
+                            {% endif %}
+
+                            {% if a.hyg_units %}
+                                <li>{% if a.hygienists.name %}
+                                        {{ a.hygienists.name }}:
+                                    {% endif %} {{ a.hyg_units }} Hyg units
+                                </li>
+                            {% endif %}
+
+                            {% if a.chair %}
+                                <li>Schedule in {{ a.chair }} chair
+                                </li>
+                            {% endif %}
                         {% endfor %}
-
-
                     </ul>
-
                 </div>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-3">
@@ -299,7 +310,7 @@
                         {% endfor %}
                     </ul>
 
-                    {{ aRecall }}
+                    {#{{ aRecall }}#}
                 </div>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-3">
@@ -318,19 +329,9 @@
 
                     <ul class="notes">
                         {% for a in aNPIE %}
-                            {{ a }}
 
-                            {% if a.dr_units %}
-                                <li>{% if a.dentists.name %}
-                                        {{ a.dentists.name }}:
-                                    {% endif %} {{ a.dr_units }} units
-                                </li>
-                            {% endif %}
-
-                            {% if a.hyg_units %}
-                                <li>{% if a.dentists.name %}
-                                        {{ a.dentists.name }}:
-                                    {% endif %} {{ a.dr_units }} units
+                            {% if a.notes %}
+                                <li>{{ a.notes }}
                                 </li>
                             {% endif %}
 

@@ -19,7 +19,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 h2 {
-    margin-top: 0px;
+    margin-top: 0;
     font-size: 20px;
     font-weight: bold;
 }
@@ -263,6 +263,15 @@ a:hover, a:focus {
     background-color: #f4f2f1;
     padding: 15px;
     margin-bottom: 20px;
+}
+
+#dentist-div td,
+#hygienist-div td,
+#adult-div td,
+#child-div td,
+#final-div td {
+    border-top: none;
+    padding: 0;
 }
 
 .dentist-section:first-of-type h2 i {

@@ -8,8 +8,8 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Exception\NotFoundException;
 use UserFrosting\Support\Exception\ForbiddenException;
 use UserFrosting\Sprinkle\Core\Controller\SimpleController;
-use UserFrosting\Sprinkle\Cec\Database\Models\Search;
 use UserFrosting\Sprinkle\Cec\Database\Models\Office;
+use UserFrosting\Sprinkle\Cec\Database\Models\DentistDetails;
 use UserFrosting\Sprinkle\Cec\Sprunje\OfficeSprunje;
 use UserFrosting\Fortress\RequestDataTransformer;
 use UserFrosting\Fortress\RequestSchema;
@@ -41,8 +41,11 @@ class OfficeController extends SimpleController
         Debug::debug("office");
         Debug::debug(print_r($office, true));
 
+        $doctor = DentistDetails::where('office_id', $office[0]["id"])->get();
+
         return $this->ci->view->render($response, 'pages/dashboard/offices.html.twig', [
-            'office' => $office
+            'office' => $office,
+            'doctor' => $doctor
         ]);
 
     }
@@ -68,6 +71,8 @@ class OfficeController extends SimpleController
 
         $sprunje = new OfficeSprunje($classMapper, $params);
 
+        $doctor = DentistDetails::where('office_id', $office["id"])->get();
+
         // Be careful how you consume this data - it has not been escaped and contains untrusted user-supplied content.
         // For example, if you plan to insert it into an HTML DOM, you must escape it on the client side (or use client-side templating).
         return $sprunje->toResponse($response);
@@ -79,9 +84,11 @@ class OfficeController extends SimpleController
      * This page requires authentication.
      * Request type: GET
      */
-    public function getInfo($request, $response, $args)
+    public function getInfo($request, $response, $params)
     {
-        $office = $this->getUserFromParams($args);
+//        $office = $this->getUserFromParams($args);
+
+        $office = Office::distinct()->where('vanity_url', $params['office_name'])->get();
 
         // If the user doesn't exist, return 404
         if (!$office) {
@@ -109,7 +116,11 @@ class OfficeController extends SimpleController
             throw new ForbiddenException();
         }
 
-        $result = $office->toArray();
+        $doctor = DentistDetails::where('office_id', $office[0]["id"])->get();
+
+        $merged = $office->merge($doctor);
+
+        $result = $merged->all();
 
         // Be careful how you consume this data - it has not been escaped and contains untrusted user-supplied content.
         // For example, if you plan to insert it into an HTML DOM, you must escape it on the client side (or use client-side templating).
@@ -126,9 +137,9 @@ class OfficeController extends SimpleController
      * This page requires authentication.
      * Request type: GET
      */
-    public function pageInfo($request, $response, $args)
+    public function pageInfo($request, $response, $params)
     {
-        $office = $this->getUserFromParams($args);
+        $office = Office::distinct()->where('vanity_url', $params['office_name'])->get();
 
         // If the user no longer exists, forward to main user listing page
         if (!$office) {
@@ -156,7 +167,7 @@ class OfficeController extends SimpleController
         $locales = $config->getDefined('site.locales.available');
 
         // Determine fields that currentUser is authorized to view
-        $fieldNames = ['name',  'phone', 'address', 'city', 'state', 'zip'];
+        $fieldNames = ['name', 'phone', 'address', 'city', 'state', 'zip'];
 
         // Generate form
         $fields = [
@@ -240,8 +251,11 @@ class OfficeController extends SimpleController
 //            $widgets['hidden'][] = 'activities';
 //        }
 
+        $doctor = DentistDetails::where('office_id', $office[0]["id"])->get();
+
         return $this->ci->view->render($response, 'pages/dashboard/office.html.twig', [
             'office' => $office,
+            'doctor' => $doctor,
             'locales' => $locales,
             'fields' => $fields,
             'tools' => $editButtons,
@@ -249,7 +263,10 @@ class OfficeController extends SimpleController
             'midwestLogo' => 'https://www.meritdental.com/cecdb/images/midwest-logo.png',
             'mondoviLogo' => 'https://www.meritdental.com/cecdb/images/mondovi-logo.png',
             'meritLogo' => 'https://www.meritdental.com/cecdb/images/merit-logo.png',
-            'mountainLogo' => 'https://www.meritdental.com/cecdb/images/mountain-logo.png'
+            'mountainLogo' => 'https://www.meritdental.com/cecdb/images/mountain-logo.png',
+            'page' => [
+                'doctor' => $doctor
+            ]
         ]);
     }
 
