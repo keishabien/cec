@@ -6,7 +6,7 @@
 {% endblock %}
 
 {# Overrides blocks in head of base template #}
-{% block page_title %}{{ translate("OFFICE", 1)}} | {{office[0].city}}, {{ office[0].state }}{% endblock %}
+{% block page_title %}{{ translate("OFFICE", 1) }} | {{ office[0].city }}, {{ office[0].state }}{% endblock %}
 
 {% block page_description %}{{ translate("OFFICE.INFO_PAGE", {name: office[0].name}) }}{% endblock %}
 
@@ -19,28 +19,35 @@
                 {% block user_box %}
                     <div class="box box-primary">
                         <div class="box-header with-border">
-                            <h3 class="box-title">{{translate('OFFICE.SUMMARY')}}</h3>
+                            <h3 class="box-title">{{ translate('OFFICE.SUMMARY') }}</h3>
                         </div>
                         <div class="box-body box-profile">
                             {% if office[0].brand == "Midwest" %}
-                                <img class="office-user-img img-responsive" src="{{midwestLogo}}" alt="{{office[0].name}}">
+                                <img class="office-user-img img-responsive" src="{{ midwestLogo }}"
+                                     alt="{{ office[0].name }}">
                             {% elseif office[0].brand == "Mondovi" %}
-                                <img class="office-user-img img-responsive" src="{{mondoviLogo}}" alt="{{office[0].name}}">
+                                <img class="office-user-img img-responsive" src="{{ mondoviLogo }}"
+                                     alt="{{ office[0].name }}">
                             {% elseif office[0].brand == "Mountain" %}
-                                <img class="office-user-img img-responsive" src="{{mountainLogo}}" alt="{{office[0].name}}">
+                                <img class="office-user-img img-responsive" src="{{ mountainLogo }}"
+                                     alt="{{ office[0].name }}">
                             {% elseif office[0].brand == "Merit" %}
-                                <img class="office-user-img img-responsive" src="{{meritLogo}}" alt="{{office[0].name}}">
+                                <img class="office-user-img img-responsive" src="{{ meritLogo }}"
+                                     alt="{{ office[0].name }}">
                             {% endif %}
 
 
-                            <h4 class="text-muted text-center"><a href="{{ office[0].page_url }}" target="_blank">View Website</a> • <a href="{{site.uri.public}}/offices/o/{{ office[0].vanity_url }}" target="_blank">View CEC Page</a></h4>
+                            <h4 class="text-muted text-center"><a href="{{ office[0].page_url }}" target="_blank">View
+                                    Website</a> • <a href="{{ site.uri.public }}/offices/o/{{ office[0].vanity_url }}"
+                                                     target="_blank">View CEC Page</a></h4>
 
 
                             {% if 'email' not in fields.hidden %}
                                 <hr>
-                                <strong><i class="fa fa-envelope margin-r-5"></i> {{translate("EMAIL")}}</strong>
+                                <strong><i class="fa fa-envelope margin-r-5"></i> {{ translate("EMAIL") }}</strong>
                                 <p class="text-muted box-profile-property js-copy-container">
-                                    <a href="mailto:{{office[0].email}}"><span class="js-copy-target">{{office[0].email}}</span></a>
+                                    <a href="mailto:{{ office[0].email }}"><span
+                                                class="js-copy-target">{{ office[0].email }}</span></a>
                                     <i class="fa fa-copy uf-copy-trigger js-copy-trigger"></i>
                                 </p>
                             {% endif %}
@@ -49,7 +56,7 @@
                                 <hr>
                                 <strong><i class="fa fa-phone margin-r-5"></i> Phone</strong>
                                 <p class="text-muted box-profile-property js-copy-container">
-                                    <span class="js-copy-target">{{office[0].phone}}</span>
+                                    <span class="js-copy-target">{{ office[0].phone }}</span>
                                     <i class="fa fa-copy uf-copy-trigger js-copy-trigger"></i>
                                 </p>
                             {% endif %}
@@ -58,7 +65,7 @@
                                 <hr>
                                 <strong><i class="fa fa-phone margin-r-5"></i> Fax</strong>
                                 <p class="text-muted box-profile-property js-copy-container">
-                                    <span class="js-copy-target">{{office[0].fax}}</span>
+                                    <span class="js-copy-target">{{ office[0].fax }}</span>
                                     <i class="fa fa-copy uf-copy-trigger js-copy-trigger"></i>
                                 </p>
                             {% endif %}
@@ -67,7 +74,8 @@
                                 <hr>
                                 <strong><i class="fa fa-map-marker margin-r-5"></i> Address</strong>
                                 <p class="text-muted box-profile-property js-copy-container">
-                                    <a href="{{ office[0].map_url }}" target="_blank"><span class="js-copy-target">{{office[0].address}}, {{office[0].city}}, {{office[0].state}} {{office[0].zip}}</span></a>
+                                    <a href="{{ office[0].map_url }}" target="_blank"><span
+                                                class="js-copy-target">{{ office[0].address }}, {{ office[0].city }}, {{ office[0].state }} {{ office[0].zip }}</span></a>
                                     <i class="fa fa-copy uf-copy-trigger js-copy-trigger "></i>
                                 </p>
                             {% endif %}
@@ -76,7 +84,7 @@
                                 <hr>
                                 <strong><i class="fa fa-map margin-r-5"></i> Directions</strong>
                                 <p class="text-muted box-profile-property js-copy-container">
-                                    {{office[0].directions}}
+                                    {{ office[0].directions }}
 
                                 </p>
                             {% endif %}
@@ -87,55 +95,85 @@
             </div>
         </div>
 
-            <div class="col-lg-8">
+        <div class="col-lg-4">
 
-                    {#<div id="widget-office-doctors" class="box box-primary">#}
-                        {#<div class="box-header">#}
-                            {#<h3 class="box-title"><i class="fa fa-fw fa-tasks"></i> Doctors</h3>#}
-                            {#{% include "tables/table-tool-menu.html.twig" %}#}
-                        {#</div>#}
-                        {#<div class="box-body">#}
-                            {#{% include "tables/office-doctors.html.twig" with {#}
-                                {#"table" : {#}
-                                    {#"id" : "table-offices-doctors"#}
-                                {#}#}
-                            {#}#}
-                            {#%}#}
-                        {#</div>#}
-                    {#</div>#}
-                <div id="widget-doctors" class="box box-primary">
-                    <div class="box-header">
-                        <h3 class="box-title pull-left"><i class="fa fa-fw fa-user"></i> Doctors
-                        </h3>
-                        {% include "tables/table-tool-menu.html.twig" %}
-                    </div>
-                    <div class="box-body">
-                        {% include "tables/office-doctors.html.twig" with {
-                            "table" : {
-                                "id" : "table-doctors"
-                            }
-                        } %}
-                    </div>
+            {#<div id="widget-office-doctors" class="box box-primary">#}
+            {#<div class="box-header">#}
+            {#<h3 class="box-title"><i class="fa fa-fw fa-tasks"></i> Doctors</h3>#}
+            {#{% include "tables/table-tool-menu.html.twig" %}#}
+            {#</div>#}
+            {#<div class="box-body">#}
+            {#{% include "tables/office-doctors.html.twig" with {#}
+            {#"table" : {#}
+            {#"id" : "table-offices-doctors"#}
+            {#}#}
+            {#}#}
+            {#%}#}
+            {#</div>#}
+            {#</div>#}
+            <div id="widget-doctors" class="box box-primary">
+                <div class="box-header">
+                    <h3 class="box-title pull-left"><i class="fa fa-fw fa-user"></i> Doctors
+                    </h3>
+                    {% include "tables/table-tool-menu.html.twig" %}
+                </div>
+                <div class="box-body">
+                    <table id="doctors" class="tablesorter table table-bordered table-hover">
+
+                        {% if doctor %}
+                            {% for dr in doctor %}
+                                <tr>
+                                    <td>
+                                        <p class="dr-name"><b>{{ dr.name }}</b><br>
+                                            {{ dr.provider_num }}</p>
+                                    </td>
+                                    <td>
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-primary dropdown-toggle"
+                                                    data-toggle="dropdown">{{ translate("ACTIONS") }}<span
+                                                        class="caret"></span></button>
+                                            <ul class="dropdown-menu dropdown-menu-right-responsive" role="menu">
+
+                                                <li>
+                                                    <a href="#" data-user_name="{{ row.user_name }}"
+                                                       class="js-user-edit">
+                                                        <i class="fa fa-edit"></i> {{ translate("USER.EDIT") }}
+                                                    </a>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                            {% endfor %}
+                        {% endif %}
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
 
                 </div>
 
-
-                {#<div id="myUserTable" class="box box-primary">#}
-                    {#<div class="box-header">#}
-                        {#<h3 class="box-title pull-left"><i class="fa fa-fw fa-user"></i> Members</h3>#}
-                        {#{% include "tables/table-tool-menu.html.twig" %}#}
-                    {#</div>#}
-                    {#<div class="box-body">#}
-                        {#{% include "tables/office-doctors.html.twig" with {#}
-                            {#"table" : {#}
-                                {#"id" : "office-doctors"#}
-                            {#}#}
-                        {#}#}
-                        {#%}#}
-                    {#</div>#}
-                {#</div>#}
-
             </div>
+
+
+            {#<div id="myUserTable" class="box box-primary">#}
+            {#<div class="box-header">#}
+            {#<h3 class="box-title pull-left"><i class="fa fa-fw fa-user"></i> Members</h3>#}
+            {#{% include "tables/table-tool-menu.html.twig" %}#}
+            {#</div>#}
+            {#<div class="box-body">#}
+            {#{% include "tables/office-doctors.html.twig" with {#}
+            {#"table" : {#}
+            {#"id" : "office-doctors"#}
+            {#}#}
+            {#}#}
+            {#%}#}
+            {#</div>#}
+            {#</div>#}
+
+        </div>
 
     </div>
 
@@ -156,10 +194,10 @@
 
 
         // Set up table of users
-        $('#widget-doctors').ufTable({
-            dataUrl: site.uri.public + '/api/dash/offices/o/{{ office[0].city }}/doctors',
-            useLoadingTransition: site.uf_table.use_loading_transition
-        });
+        {#$('#widget-doctors').ufTable({#}
+        {#    dataUrl: site.uri.public + '/api/dash/offices/o/{{ office[0].city }}/doctors',#}
+        {#    useLoadingTransition: site.uf_table.use_loading_transition#}
+        {#});#}
 
         // Bind creation button
         // bindUserCreationButton($('#widget-doctors'));

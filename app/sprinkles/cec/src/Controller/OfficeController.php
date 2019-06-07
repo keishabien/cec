@@ -57,6 +57,7 @@ class OfficeController extends SimpleController
         // GET parameters
         $params = $request->getQueryParams();
 
+
         /** @var UserFrosting\Sprinkle\Account\Authorize\AuthorizationManager */
         $authorizer = $this->ci->authorizer;
 
@@ -122,20 +123,14 @@ class OfficeController extends SimpleController
     }
 
 
-
     /**
      * Returns info for a single office.
      *
      * This page requires authentication.
      * Request type: GET
      */
-    public function getDoctors($request, $response, $args)
+    public function getDoctors($request, $response, $params)
     {
-        $params = $request->getQueryParams();
-
-        Debug::debug("params");
-        Debug::debug(print_r($params, true));
-
         $office = Office::distinct()->where('vanity_url', $params['office_name'])->get();
 
         // If the user doesn't exist, return 404
@@ -158,22 +153,12 @@ class OfficeController extends SimpleController
 
         $doctor = DentistDetails::where('office_id', $office[0]["id"])->get();
 
-        /** @var UserFrosting\Sprinkle\Core\Util\ClassMapper $classMapper */
-        $classMapper = $this->ci->classMapper;
-
-        $sprunje = new DentistSprunje($classMapper, $params);
-
         // Be careful how you consume this data - it has not been escaped and contains untrusted user-supplied content.
         // For example, if you plan to insert it into an HTML DOM, you must escape it on the client side (or use client-side templating).
 //        return $response->withJson($doctor, 200, JSON_PRETTY_PRINT);
-        return $sprunje->toResponse($response);
+//        return $sprunje->toResponse($response);
+        return $response->withJson($doctor, 200, JSON_PRETTY_PRINT);
     }
-
-
-
-
-
-
 
 
     /**

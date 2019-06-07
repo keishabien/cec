@@ -13,8 +13,6 @@
         <tr>
             <th class="sorter-metatext" data-column-name="name" data-column-template="#doctor-table-column-doctor"
                 data-priority="1">Doctors</th>
-            <th class="filter-select" data-column-name="status" data-column-template="#doctor-table-column-status"
-                data-priority="1">State <i class="fa fa-sort"></i></th>
             <th data-column-name="actions" data-column-template="#doctor-table-column-actions" data-sorter="false"
                 data-filter="false" data-priority="1">{{ translate("ACTIONS") }}</th>
         </tr>
@@ -49,23 +47,14 @@
 
 
   <script id="doctor-table-column-doctor" type="text/x-handlebars-template">
-        <td data-text="{{row.name}}">
+        <td data-text="{{office.name}}">
             <strong>
-                <a href="{{site.uri.public}}/dash/offices/o/{{row.vanity_url}}">{{row.name}}</a>
+            {{office[0].fax}}
             </strong>
             <div class="js-copy-container">
                 <a href="mailto:{{row.email}}"><span class="js-copy-target">{{row.email}}</span></a>
                 <button class="btn btn-xs uf-copy-trigger js-copy-trigger"><i class="fa fa-copy"></i></button>
             </div>
-        </td>
-    </script>
-
-
-    <script id="doctor-table-column-status" type="text/x-handlebars-template">
-        <td data-text="{{row.status}}">
-            <strong>
-                {{row.status}}
-            </strong>
         </td>
     </script>
 
