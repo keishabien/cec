@@ -453,6 +453,9 @@
             rows = '';
 
         if (data) {
+            console.log(data);
+            console.log(data.rows);
+
             var size = data.rows.length;
 
             // Render table rows and cells via Handlebars

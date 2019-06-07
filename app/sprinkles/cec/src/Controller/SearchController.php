@@ -248,7 +248,7 @@ class SearchController extends SimpleController
      * This page requires authentication.
      * Request type: GET
      */
-    public function getInfo($request, $response, $args)
+    public function getSingle($request, $response, $args)
     {
         // Load the request schema
         $schema = new RequestSchema('schema://requests/search.yaml');
@@ -325,7 +325,7 @@ class SearchController extends SimpleController
      * This page requires authentication.
      * Request type: GET
      */
-    public function getInput($request, $response, $args)
+    public function getAll($request, $response, $args)
     {
         $params = $request->getQueryParams();
         // Load the request schema
@@ -346,47 +346,5 @@ class SearchController extends SimpleController
         // For example, if you plan to insert it into an HTML DOM, you must escape it on the client side (or use client-side templating).
         return $response->withJson($result, 200, JSON_PRETTY_PRINT);
 
-    }
-
-
-    protected function getUserFromParams($params)
-    {
-
-        // Load the request schema
-        $schema = new RequestSchema('schema://requests/search.yaml');
-
-        // Whitelist and set parameter defaults
-        $transformer = new RequestDataTransformer($schema);
-        $data = $transformer->transform($params);
-
-        // Validate, and throw exception on validation errors.
-        $validator = new ServerSideValidator($schema, $this->ci->translator);
-        if (!$validator->validate($data)) {
-            // TODO: encapsulate the communication of error messages from ServerSideValidator to the BadRequestException
-            $e = new BadRequestException();
-            foreach ($validator->errors() as $idx => $field) {
-                foreach ($field as $eidx => $error) {
-                    $e->addUserMessage($error);
-                }
-            }
-            throw $e;
-        }
-
-        /** @var UserFrosting\Sprinkle\Core\Util\ClassMapper $classMapper */
-//        $classMapper = $this->ci->classMapper;
-
-        // Get the user to delete
-//        $office = $classMapper->staticMethod('Office', 'where', 'name', $data['input'])
-//            ->first();
-
-
-//        $office = Office::distinct()->where('name', $data['office_name'])->get();
-        $office = Office::distinct()->where('name', 'like', '%' . $data['input'] . '%')->get();
-//        $details = Search::distinct()->where('name', $data['keyword'])->get();
-
-//        $office = $office->merge($details);
-
-
-        return $office;
     }
 }

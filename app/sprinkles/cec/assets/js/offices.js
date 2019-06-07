@@ -9,30 +9,7 @@
 
 $(document).ready(function () {
     // Set up table of users
-    $('#widget-offices').ufTable({
-        dataUrl: site.uri.public + '/api/dash/offices',
-        useLoadingTransition: site.uf_table.use_loading_transition
-    });
 
-    // Bind creation button
-    bindUserCreationButton($('#widget-offices'));
 
-    // Bind table buttons
-    $('#widget-offices').on('pagerComplete.ufTable', function () {
-        bindUserButtons($(this));
-    });
 
-    // Set up table of users
-    $('#widget-doctors').ufTable({
-        dataUrl: site.uri.public + '/api/dash/offices/o/{office_name}',
-        useLoadingTransition: site.uf_table.use_loading_transition
-    });
-
-    // Bind creation button
-    bindUserCreationButton($('#widget-doctors'));
-
-    // Bind table buttons
-    $('#widget-doctors').on('pagerComplete.ufTable', function () {
-        bindUserButtons($(this));
-    });
 });

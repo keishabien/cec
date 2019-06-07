@@ -6,6 +6,7 @@ use Illuminate\Support\Collection;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Exception\NotFoundException;
+use UserFrosting\Sprinkle\Cec\Sprunje\DentistSprunje;
 use UserFrosting\Support\Exception\ForbiddenException;
 use UserFrosting\Sprinkle\Core\Controller\SimpleController;
 use UserFrosting\Sprinkle\Cec\Database\Models\Office;
@@ -72,7 +73,7 @@ class OfficeController extends SimpleController
 
         $sprunje = new OfficeSprunje($classMapper, $params);
 
-        $doctor = DentistDetails::where('office_id', $office["id"])->get();
+//        $doctor = DentistDetails::where('office_id', $office["id"])->get();
 
         // Be careful how you consume this data - it has not been escaped and contains untrusted user-supplied content.
         // For example, if you plan to insert it into an HTML DOM, you must escape it on the client side (or use client-side templating).
@@ -96,13 +97,51 @@ class OfficeController extends SimpleController
             throw new NotFoundException($request, $response);
         }
 
-        /** @var UserFrosting\Sprinkle\Core\Util\ClassMapper $classMapper */
-//        $classMapper = $this->ci->classMapper;
+        /** @var UserFrosting\Sprinkle\Account\Authorize\AuthorizationManager $authorizer */
+        $authorizer = $this->ci->authorizer;
 
-        // Join user's most recent activity
-//        $office = $classMapper->createInstance('office')
-//            ->where('page_title', $office->page_title)
-//            ->first();
+        /** @var UserFrosting\Sprinkle\Account\Database\Models\User $currentUser */
+        $currentUser = $this->ci->currentUser;
+
+        // Access-controlled page
+        if (!$authorizer->checkAccess($currentUser, 'api_office', [
+            'office' => $office
+        ])) {
+            throw new ForbiddenException();
+        }
+
+//        $doctor = DentistDetails::where('office_id', $office[0]["id"])->get();
+//
+//        $merged = $office->merge($doctor);
+//
+//        $result = $merged->all();
+
+        // Be careful how you consume this data - it has not been escaped and contains untrusted user-supplied content.
+        // For example, if you plan to insert it into an HTML DOM, you must escape it on the client side (or use client-side templating).
+        return $response->withJson($office, 200, JSON_PRETTY_PRINT);
+    }
+
+
+
+    /**
+     * Returns info for a single office.
+     *
+     * This page requires authentication.
+     * Request type: GET
+     */
+    public function getDoctors($request, $response, $args)
+    {
+        $params = $request->getQueryParams();
+
+        Debug::debug("params");
+        Debug::debug(print_r($params, true));
+
+        $office = Office::distinct()->where('vanity_url', $params['office_name'])->get();
+
+        // If the user doesn't exist, return 404
+        if (!$office) {
+            throw new NotFoundException($request, $response);
+        }
 
         /** @var UserFrosting\Sprinkle\Account\Authorize\AuthorizationManager $authorizer */
         $authorizer = $this->ci->authorizer;
@@ -119,14 +158,22 @@ class OfficeController extends SimpleController
 
         $doctor = DentistDetails::where('office_id', $office[0]["id"])->get();
 
-        $merged = $office->merge($doctor);
+        /** @var UserFrosting\Sprinkle\Core\Util\ClassMapper $classMapper */
+        $classMapper = $this->ci->classMapper;
 
-        $result = $merged->all();
+        $sprunje = new DentistSprunje($classMapper, $params);
 
         // Be careful how you consume this data - it has not been escaped and contains untrusted user-supplied content.
         // For example, if you plan to insert it into an HTML DOM, you must escape it on the client side (or use client-side templating).
-        return $response->withJson($result, 200, JSON_PRETTY_PRINT);
+//        return $response->withJson($doctor, 200, JSON_PRETTY_PRINT);
+        return $sprunje->toResponse($response);
     }
+
+
+
+
+
+
 
 
     /**

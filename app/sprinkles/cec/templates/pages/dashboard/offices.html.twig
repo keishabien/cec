@@ -35,13 +35,23 @@
     <!-- Include form widgets JS -->
     {{ assets.js('js/form-widgets') | raw }}
 
-    <!-- Include page-specific JS -->
-    {{ assets.js('js/cec') | raw }}
 
     <!-- Include page-specific variables -->
     <script>
         {% include "pages/partials/page.js.twig" %}
 
+        $('#widget-offices').ufTable({
+            dataUrl: site.uri.public + '/api/dash/offices',
+            useLoadingTransition: site.uf_table.use_loading_transition
+        });
+
+        // Bind creation button
+        // bindUserCreationButton($('#widget-offices'));
+
+        // Bind table buttons
+        // $('#widget-offices').on('pagerComplete.ufTable', function () {
+        //     bindUserButtons($(this));
+        // });
     </script>
 
 {% endblock %}

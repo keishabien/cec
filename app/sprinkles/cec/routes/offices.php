@@ -12,11 +12,11 @@ $app->group('/offices', function () {
 })->add('authGuard');
 
 
-
+//API
 $app->group('/api/offices', function () {
-    $this->get('', 'UserFrosting\Sprinkle\Cec\Controller\SearchController:getInput');
+    $this->get('', 'UserFrosting\Sprinkle\Cec\Controller\SearchController:getAll');
 
-    $this->get('/{input}', 'UserFrosting\Sprinkle\Cec\Controller\SearchController:getInfo');
+    $this->get('/{input}', 'UserFrosting\Sprinkle\Cec\Controller\SearchController:getSingle');
 
 //    $this->get('?keyword={input}', 'UserFrosting\Sprinkle\Cec\Controller\SearchController:getInput');
 })->add('authGuard');

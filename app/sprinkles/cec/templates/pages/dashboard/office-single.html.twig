@@ -146,12 +146,27 @@
     <!-- Include form widgets JS -->
     {{ assets.js('js/form-widgets') | raw }}
 
-    <!-- Include page-specific JS -->
-    {{ assets.js('js/office') | raw }}
-
 
     <!-- Include page variables -->
     <script>
         {% include "pages/partials/page.js.twig" %}
+
+
+
+
+
+        // Set up table of users
+        $('#widget-doctors').ufTable({
+            dataUrl: site.uri.public + '/api/dash/offices/o/{{ office[0].city }}/doctors',
+            useLoadingTransition: site.uf_table.use_loading_transition
+        });
+
+        // Bind creation button
+        // bindUserCreationButton($('#widget-doctors'));
+
+        // Bind table buttons
+        // $('#widget-doctors').on('pagerComplete.ufTable', function () {
+        //     bindUserButtons($(this));
+        // });
     </script>
 {% endblock %}

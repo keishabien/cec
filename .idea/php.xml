@@ -118,7 +118,6 @@
       <path value="$PROJECT_DIR$/app/vendor/phpunit/php-code-coverage" />
       <path value="$PROJECT_DIR$/app/vendor/phpunit/php-file-iterator" />
       <path value="$PROJECT_DIR$/app/vendor/phpunit/php-timer" />
-      <path value="$PROJECT_DIR$/app/vendor/nikic/php-parser_compare" />
       <path value="$PROJECT_DIR$/app/vendor/symfony/contracts" />
       <path value="$PROJECT_DIR$/app/vendor/doctrine/event-manager" />
     </include_path>

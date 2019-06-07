@@ -16,8 +16,10 @@ $app->group('/dash/offices', function () {
 $app->group('/api/dash/offices', function () {
     $this->get('', 'UserFrosting\Sprinkle\Cec\Controller\OfficeController:getList');
 
-    $this->get('/o/{office_name}', 'UserFrosting\Sprinkle\Cec\Controller\OfficeController:getInfo')
-        ->add('authGuard');
-});
+    $this->get('/o/{office_name}', 'UserFrosting\Sprinkle\Cec\Controller\OfficeController:getInfo');
+
+    $this->get('/o/{office_name}/doctors', 'UserFrosting\Sprinkle\Cec\Controller\OfficeController:getDoctors');
+
+})->add('authGuard');
 
 
